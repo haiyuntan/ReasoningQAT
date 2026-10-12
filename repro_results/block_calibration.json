@@ -1,0 +1,28 @@
+{
+  "smoke": {
+    "seed": 2,
+    "sampler": "Unmodified official sweep_0.8 token selection and shuffle",
+    "training_source_requires_all_120_shards": false,
+    "splits": {
+      "train": {
+        "samples": 5,
+        "sequence_length": 128,
+        "token_sha256": "e388dad99239927b453f319018068fe435c3adef3a1266cdea118cf902d56e7a",
+        "path": "hf_cache/block_qat/smoke/dataloader_Qwen3-1.7B_sweep_0.8_5_5_128_train.cache",
+        "bytes": 14220,
+        "reasoning_samples": 4,
+        "fineweb_samples": 1
+      },
+      "val": {
+        "samples": 5,
+        "sequence_length": 128,
+        "token_sha256": "437dc305c3e0f86bcc9492c11ed519bf2726798586409711d5edcd3ce0307103",
+        "path": "hf_cache/block_qat/smoke/dataloader_Qwen3-1.7B_sweep_0.8_5_5_128_val.cache",
+        "bytes": 14192,
+        "reasoning_samples": 4,
+        "fineweb_samples": 1
+      }
+    },
+    "diagnostic_partial_source": true
+  }
+}
