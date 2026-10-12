@@ -1,0 +1,9 @@
+# Detached experiment campaign
+
+From the workspace root, run `bash ReasoningQAT/repro_scripts/start_background.sh SESSION` after stopping existing project jobs. The launcher starts exactly one resumable downloader and one campaign under nohup, redirects standard input from `/dev/null`, and writes PID files under `results/`. Completed shards and `.partial` files are never removed by restart. The downloader uses one stream and SHA256 validation before final rename.
+
+The campaign runs all required smoke methods plus both optional R6 ablations serially. Every smoke run must pass its complete training/reload/export/five-task gate. Failure stops the campaign and publishes a compact failure report. Once smoke passes, it waits for all download targets, prepares formal calibration only when the formal code/protocol audit is READY, and launches the formal pipeline. No unknown author settings are bypassed.
+
+Current formal audit is **BLOCKED**: the independent R8/R9 adapters implement two-step smoke, not three-epoch formal training with effective batch64; author clipping/optimizer/trajectory/evaluation configurations also remain unverified. The background runner cannot repair source code itself and will not execute formal experiments until these issues are resolved. It records `BLOCKED_FORMAL` after successful smoke and complete data, rechecks readiness every 50 seconds without holding GPU resources, and proceeds automatically if subsequent code/configuration corrections make the fresh audit READY. It publishes a blocked report only when the reasons change.
+
+Status: `results/background-campaign.json`; formal audit: `results/formal-code-audit.json`; supervisor log: `logs/SESSION.nohup.log`; smoke log: `logs/SESSION.smoke.log`; download log: `logs/download-serial.log`. Model/data/native binary artifacts remain outside Git. Compact state, audit, metrics, commands and hashes are published to the reproduction branch.
