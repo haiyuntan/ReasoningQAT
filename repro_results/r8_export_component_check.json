@@ -1,0 +1,20 @@
+{
+  "method": "R8",
+  "bits": 2,
+  "group_size": 128,
+  "replaced_linears": 196,
+  "reload_logits_max_diff": 0.0,
+  "native_materialization_max_diff": 0.0,
+  "strict_native_reload": true,
+  "storage": "BF16 materialized W2 weights; native checkpoint authoritative",
+  "status": "PASS",
+  "meaning": "Full-model R8 export component only; not five-task evaluation",
+  "native_checkpoint": "outputs/smoke/smoke_all_fixed_20261012/R8",
+  "peak_training_memory_bytes": 4880125440,
+  "cleanup": {
+    "path": "outputs/smoke/smoke_all_fixed_20261012/R8_hf",
+    "reason": "Verified temporary export can be regenerated from retained native checkpoint",
+    "removed_bytes": 3457069062,
+    "file_count": 11
+  }
+}
