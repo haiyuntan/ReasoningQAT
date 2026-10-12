@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "device": "CPU",
+  "meaning": "Original operator tests only; not a Qwen3 adapter or benchmark result",
+  "checks": [
+    "CAKLD beta=0/0.37/1 value and student-gradient parity",
+    "Both KL directions match original sequence-sum/example-mean normalization",
+    "Padding mask has zero gradient; teacher logits detached",
+    "Asymmetric INT2 group128 has <=4 levels and codes 0..3",
+    "Original INT2 STE produces finite nonzero weight gradients"
+  ],
+  "R8_adapter_status": "BLOCKED_PENDING_IMPLEMENTATION",
+  "R9_adapter_status": "BLOCKED_PENDING_IMPLEMENTATION"
+}

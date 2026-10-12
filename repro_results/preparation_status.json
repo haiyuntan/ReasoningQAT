@@ -1,0 +1,102 @@
+{
+  "status": "PREPARING",
+  "checks": {
+    "Qwen/Qwen3-1.7B": {
+      "passed": true,
+      "detail": {
+        "complete": 2,
+        "required": 2
+      }
+    },
+    "open-thoughts/OpenThoughts3-1.2M": {
+      "passed": false,
+      "detail": {
+        "complete": 45,
+        "required": 120
+      }
+    },
+    "HuggingFaceFW/fineweb-edu": {
+      "passed": true,
+      "detail": {
+        "complete": 1,
+        "required": 1
+      }
+    },
+    "AI-MO/NuminaMath-CoT": {
+      "passed": true,
+      "detail": {
+        "complete": 1,
+        "required": 1
+      }
+    },
+    "env_train": {
+      "passed": true,
+      "detail": "No broken requirements found."
+    },
+    "env_gptq": {
+      "passed": true,
+      "detail": "No broken requirements found."
+    },
+    "env_eval": {
+      "passed": true,
+      "detail": "No broken requirements found."
+    },
+    "cpu_loss_checks": {
+      "passed": true,
+      "detail": "Actual CPU loss and trainable tests"
+    },
+    "numinamath_128": {
+      "passed": true,
+      "detail": "Frozen 128 samples and checksum"
+    },
+    "five_benchmark_data": {
+      "passed": true,
+      "detail": "All five benchmark manifests"
+    },
+    "block_calibration": {
+      "passed": false,
+      "detail": "4096/64 \u00d7 2048 CPU-prepared data"
+    },
+    "qat_baseline_assets": {
+      "passed": true,
+      "detail": "Official source revisions, papers and Qwen3 runtime environments"
+    },
+    "qat_baseline_adapters": {
+      "passed": false,
+      "detail": "Independent R8/R9 adapters must pass smoke before reporting all preparations complete"
+    }
+  },
+  "gpu_validation_passed": true,
+  "gpu_released_by_user": true,
+  "formal_protocol": {
+    "datasets": [
+      "math_500",
+      "live_code_bench",
+      "mmlu_redux",
+      "gpqa_diamond",
+      "ifeval"
+    ],
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "temperature": 0.6,
+    "top_k": 20,
+    "top_p": 1.0,
+    "max_tokens": 32768,
+    "thinking": true,
+    "few_shot_num": 0,
+    "tolerance_percentage_points": 2.0,
+    "confirmed_paper_protocol": false,
+    "unresolved": [
+      "Author EvalScope version, prompt templates and benchmark revisions",
+      "LiveCodeBench date/version slice and code execution scorer",
+      "Exact 128 NuminaMath indices, prompt and GPTQ/AWQ settings",
+      "Stage 2 max training length: 8192 is README assumption, not specified in paper",
+      "R6 W2 epochs: table reports W2, text describes W3 single epoch; W2 3 epochs inferred from Section 4.1",
+      "Author stop tokens, thinking settings and 32K vs 8K per-model generation limits"
+    ]
+  },
+  "note": "GPU use is authorized. A passed model component check is not completed R0\u2013R6 evaluation. Formal comparison also requires protocol confirmation."
+}

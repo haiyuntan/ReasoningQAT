@@ -1,0 +1,34 @@
+{
+  "recorded_utc": "2026-10-12T11:04:12.237435+00:00",
+  "method": "Single-file streaming HTTP Range resume via hf-mirror; SHA256 before final rename",
+  "repositories": {
+    "Qwen/Qwen3-1.7B": {
+      "complete_files": 2,
+      "required_files": 2,
+      "downloaded_bytes": 4063515592,
+      "required_bytes": 4063515592,
+      "percent": 100.0
+    },
+    "open-thoughts/OpenThoughts3-1.2M": {
+      "complete_files": 43,
+      "required_files": 120,
+      "downloaded_bytes": 11507310515,
+      "required_bytes": 28188197544,
+      "percent": 40.82
+    },
+    "HuggingFaceFW/fineweb-edu": {
+      "complete_files": 1,
+      "required_files": 1,
+      "downloaded_bytes": 2152819114,
+      "required_bytes": 2152819114,
+      "percent": 100.0
+    },
+    "AI-MO/NuminaMath-CoT": {
+      "complete_files": 1,
+      "required_files": 1,
+      "downloaded_bytes": 246635854,
+      "required_bytes": 246635854,
+      "percent": 100.0
+    }
+  }
+}

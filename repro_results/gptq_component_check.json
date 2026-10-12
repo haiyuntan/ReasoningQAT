@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "meaning": "Two-sample W2 GPTQ quantize/save/reload/inference component check; not R1 evaluation",
+  "bits": 2,
+  "group_size": 128,
+  "backend": "TORCH",
+  "samples": 2,
+  "sequence_length": 128,
+  "checkpoint_bytes": 1017728665,
+  "peak_memory_bytes": 1090074112,
+  "reload_inference_seconds": 11.26810410618782,
+  "quantization_metadata": {
+    "method": "GPTQ",
+    "bits": 2,
+    "group_size": 128,
+    "samples": 2,
+    "seqlen": 128,
+    "desc_act": false,
+    "sym": true,
+    "calibration_sha256": "7bdb3877fd21dd5670f93204920420d5a19fd70fb620d66aa746b90d490973a9",
+    "comparability": "Author exact GPTQ settings/NuminaMath selection unavailable"
+  },
+  "quantize_config": {
+    "bits": 2,
+    "group_size": 128,
+    "desc_act": false,
+    "sym": true,
+    "lm_head": false,
+    "quant_method": "gptq",
+    "checkpoint_format": "gptq",
+    "pack_dtype": "int32",
+    "meta": {
+      "quantizer": [
+        "gptqmodel:2.2.0"
+      ],
+      "uri": "https://github.com/modelcloud/gptqmodel",
+      "damp_percent": 0.01,
+      "damp_auto_increment": 0.0025,
+      "static_groups": false,
+      "true_sequential": true,
+      "mse": 0.0
+    }
+  },
+  "cleanup": {
+    "path": "outputs/component_checks/R1",
+    "reason": "Passed reproducible two-sample GPTQ component check",
+    "removed_bytes": 1017728665,
+    "file_count": 13
+  }
+}

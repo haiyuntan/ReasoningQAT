@@ -1,0 +1,45 @@
+{
+  "R8": {
+    "method": "EfficientQAT",
+    "upstream": "https://github.com/OpenGVLab/EfficientQAT",
+    "commit": "39f37f3b6053681c9b1cd4c9dcaf692d8999459e",
+    "environment": "env/efficientqat_qwen3",
+    "environment_layout": "Isolated venv; shares pinned train runtime read-only to avoid CUDA library duplication",
+    "dependency_check_passed": true,
+    "dependency_check": "No broken requirements found.",
+    "paper": {
+      "url": "https://aclanthology.org/2025.acl-long.498.pdf",
+      "path": "papers/efficientqat_acl2025.pdf",
+      "sha256": "70192d1dcb69efc0cf9b37c50f08ddcc829e3514b9832f3d2067ffee3633c244",
+      "pages": 20
+    },
+    "adapter_status": "BLOCKED_PENDING_IMPLEMENTATION",
+    "blockers": [
+      "Port and verify Qwen3 block capture and native packed E2E-QP",
+      "Audit R3 vs upstream Block-AP equivalence",
+      "Confirm author baseline optimizer and token budget"
+    ]
+  },
+  "R9": {
+    "method": "BitDistiller",
+    "upstream": "https://github.com/OpenBitSys/BitDistiller",
+    "commit": "9faaab822614a167fdf3d4421d0a054c55c56f9c",
+    "environment": "env/bitdistiller_qwen3",
+    "environment_layout": "Isolated venv; shares pinned train runtime read-only to avoid CUDA library duplication",
+    "dependency_check_passed": true,
+    "dependency_check": "No broken requirements found.",
+    "paper": {
+      "url": "https://aclanthology.org/2024.acl-long.7.pdf",
+      "path": "papers/bitdistiller_acl2024.pdf",
+      "sha256": "7c3442ba994ea73a1501954c9b31a2cf356bc1687a97837c05472fd8bff709c1",
+      "pages": 15
+    },
+    "adapter_status": "BLOCKED_PENDING_IMPLEMENTATION",
+    "blockers": [
+      "Port mixed-domain clipping and Qwen3 INT2 QLinear save/reload",
+      "Port single-process CAKLD confidence calculation and Trainer API",
+      "Confirm author clipping sample count and teacher trajectory choice",
+      "Verify effective token budget against R4"
+    ]
+  }
+}

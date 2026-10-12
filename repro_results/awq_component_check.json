@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "meaning": "Two-sample AWQ search/quantize/save/reload parity only; not R2 evaluation",
+  "quantization_metadata": {
+    "method": "AWQ",
+    "bits": 2,
+    "group_size": 128,
+    "storage": "BF16 W2 pseudo-quantized weights",
+    "samples": 2,
+    "seqlen": 128,
+    "calibration_sha256": "7bdb3877fd21dd5670f93204920420d5a19fd70fb620d66aa746b90d490973a9",
+    "reload_logits_max_diff": 0.0
+  },
+  "checkpoint_bytes": 3476990737,
+  "cleanup": {
+    "path": "outputs/component_checks/R2",
+    "reason": "Passed reproducible two-sample AWQ component check",
+    "removed_bytes": 3476990737,
+    "file_count": 12
+  }
+}
