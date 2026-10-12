@@ -36,7 +36,8 @@ for run in ('R8','R9'):
         assert len(names)==11
         teacher=None
         # Native upstream pack and CPU dequant parity, including scale gradients.
-        Fake,Original,_=efficient_ops()
+        Fake,Original,quantizer=efficient_ops()
+        assert Fake.__init__.__globals__['UniformAffineQuantizer'] is quantizer.UniformAffineQuantizer
         linear=torch.nn.Linear(128,64,bias=False).half()
         fake=Fake(linear,2,128)
         with torch.no_grad(): linear.weight.copy_(fake.weight_quantizer(linear.weight))

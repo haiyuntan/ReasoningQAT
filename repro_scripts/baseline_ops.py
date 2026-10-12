@@ -32,8 +32,8 @@ def efficient_ops():
         sys.modules[name]=module
         exec(compile(source,str(path/filename),'exec'),module.__dict__)
         return module
-    adapted('rq_efficient_quantize.utils','utils.py')
     fake=adapted('rq_efficient_quantize.int_linear_fake','int_linear_fake.py')
+    adapted('rq_efficient_quantize.utils','utils.py')
     real=adapted('rq_efficient_quantize.int_linear_real','int_linear_real.py')
     return fake.QuantLinear,real.QuantLinear,quantizer
 
@@ -59,8 +59,11 @@ def portable_packed_class():
         """Upstream packing/state layout, differentiable PyTorch dequantization."""
         def forward(self,x):
             weight=packed_weight(self)
-            result=x@weight.to(x.dtype)
-            return result if self.bias is None else result+self.bias.to(x.dtype)
+            # Canonical F.linear layout matches the materialized HF module.
+            # x@W and F.linear(x,W.T) select different BF16 GEMM layouts on
+            # CUDA, which can accumulate visible errors across 28 blocks.
+            return F.linear(x,weight.t().contiguous().to(x.dtype),
+                            None if self.bias is None else self.bias.to(x.dtype))
     return PortablePackedLinear
 
 def bitdistiller_ops():

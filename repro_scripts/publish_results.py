@@ -42,6 +42,7 @@ def main():
                           ('results/qat-baselines-preparation.json','qat_baselines_preparation.json'),
                           ('results/qat-baseline-components.json','qat_baseline_components.json'),
                           ('results/qat-baseline-adapters.json','qat_baseline_adapters.json'),
+                          ('results/r8-export-component-check.json','r8_export_component_check.json'),
                           ('datasets/manifests/smoke_openthoughts.json','smoke_openthoughts.json'),
                           ('results/awq-component-check.json','awq_component_check.json'),
                           ('datasets/manifests/numinamath.json','numinamath.json'),

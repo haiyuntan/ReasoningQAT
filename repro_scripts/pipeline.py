@@ -157,6 +157,7 @@ def main():
             raise FileNotFoundError('Prepare the frozen smoke fixture first')
         env['RQ_SMOKE_OPENTHOUGHTS']=str(fixture)
     env.update({'CUDA_VISIBLE_DEVICES':'0','HF_HUB_OFFLINE':'1','HF_DATASETS_OFFLINE':'1',
+                'OMP_NUM_THREADS':'4','TOKENIZERS_PARALLELISM':'false',
                 'PYTHONPATH':str(REPO)+os.pathsep+str(ROOT/'ptq/llm-awq'),
                 'RQ_ROOT':str(ROOT),'RQ_DATA':str(ROOT/'datasets'),
                 'RQ_OPENTHOUGHTS_PARQUET_GLOB':str(ROOT/'datasets/openthoughts3/data/**/*.parquet'),

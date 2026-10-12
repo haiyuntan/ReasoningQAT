@@ -59,14 +59,14 @@ def export(path,output,device='cuda'):
         count=materialize(model,metadata['run'])
         materialized=model(**tokens).logits.float().cpu()
     assert torch.isfinite(before).all()
-    assert torch.equal(before,materialized),'Native materialization changed logits'
+    assert torch.equal(before,materialized),f'Native materialization changed logits: {(before-materialized).abs().max().item()}'
     model.save_pretrained(output,safe_serialization=True)
     tokenizer.save_pretrained(output)
     del model
     if device=='cuda': torch.cuda.empty_cache()
     reloaded=AutoModelForCausalLM.from_pretrained(output,local_files_only=True,torch_dtype=torch.bfloat16,attn_implementation='eager').to(device).eval()
     with torch.no_grad(): after=reloaded(**tokens).logits.float().cpu()
-    assert torch.equal(before,after),'Baseline HF reload changed logits'
+    assert torch.equal(before,after),f'Baseline HF reload changed logits: {(before-after).abs().max().item()}'
     evidence={'method':metadata['run'],'bits':2,'group_size':128,'replaced_linears':count,
               'reload_logits_max_diff':float((before-after).abs().max()),
               'native_materialization_max_diff':float((before-materialized).abs().max()),
