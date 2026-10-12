@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "device": "CPU",
+  "meaning": "Controller simulations only; no real experiment results",
+  "checks": [
+    {
+      "case": "Smoke failure prevents formal",
+      "status": "PASS",
+      "simulated_modes": [
+        "smoke"
+      ]
+    },
+    {
+      "case": "Unknown author config prevents formal",
+      "status": "PASS",
+      "simulated_modes": [
+        "smoke"
+      ]
+    },
+    {
+      "case": "Ready flow starts formal after smoke",
+      "status": "PASS",
+      "simulated_modes": [
+        "smoke",
+        "formal"
+      ]
+    },
+    {
+      "case": "Incomplete data waits before formal",
+      "status": "PASS",
+      "simulated_modes": [
+        "smoke",
+        "formal"
+      ]
+    }
+  ]
+}
