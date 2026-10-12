@@ -1,0 +1,9 @@
+{
+  "authorized_by_user": true,
+  "terminated_previous_task_pids": [
+    43019,
+    43056,
+    45274
+  ],
+  "our_gpu_experiments_started": false
+}

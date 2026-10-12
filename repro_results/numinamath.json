@@ -1,0 +1,7 @@
+{
+  "count": 128,
+  "sha256": "7bdb3877fd21dd5670f93204920420d5a19fd70fb620d66aa746b90d490973a9",
+  "source": "datasets/numinamath_source/data/train-00000-of-00005.parquet",
+  "selection": "First 128 original train rows, problem-only. Author indices/template unpublished.",
+  "comparability": "IMPLEMENTATION_ASSUMPTION"
+}

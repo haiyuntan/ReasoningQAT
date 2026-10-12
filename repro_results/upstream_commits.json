@@ -1,0 +1,8 @@
+{
+  "ReasoningQAT": "f99b65d51124a81d29a91e55bd49003617675590",
+  "ptq/GPTQModel": "ca9d634db6a933cfae2c2d8e8be3fe78f76b802d",
+  "ptq/llm-awq": "d6e797a42b9ef7778de8ee2352116e0f48a78d61",
+  "ptq/Qwen3-Quantization-Toolkit": "771fb45e20a936cc8b9f35775a880416f872fabe",
+  "ptq/evalscope": "cbe6c8019c72a75749290b02a95be03aea094e49",
+  "paper_sha256": "6e21c1699259420b49238ab39ca2f1d42ec6991b4b77d674f78a814f0f799a5d"
+}

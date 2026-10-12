@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "meaning": "GPU model loading and finite generation only; not R0 evaluation",
+  "device": "NVIDIA A800 80GB PCIe",
+  "dtype": "torch.bfloat16",
+  "generated_tokens": 16,
+  "text": "<think>\nOkay, the user is asking \"What is 2 + 2",
+  "peak_memory_bytes": 3467226624,
+  "wall_seconds": 38.34758253302425
+}

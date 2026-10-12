@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "device": "cpu",
+  "checks": [
+    "Explicit user GPU release required",
+    "Active GPU process blocks execution without stopping it",
+    "Unresolved protocol blocks formal runs",
+    "All Stage 2 runs use the same R3; smoke has two steps; formal retains 32768 samples",
+    "R5 excludes Teacher-RR/KL",
+    "Average and individual score failures stop formal gate",
+    "Formal requires three seeds; smoke remains execution-only"
+  ]
+}
