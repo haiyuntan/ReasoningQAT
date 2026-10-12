@@ -219,3 +219,25 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Reproduction assets remain local. Track only reviewed compact summaries.
+/models/
+/datasets/
+/hf_cache/
+/logs/
+/ptq/
+/papers/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.parquet
+*.arrow
+*.ckpt
+*.partial
+*.pdf
+checkpoint-*/
+.env.*
+**/predictions/
+**/reviews/
+**/raw_generations/

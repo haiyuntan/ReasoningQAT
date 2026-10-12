@@ -1,0 +1,50 @@
+{
+  "model": "Qwen/Qwen3-1.7B",
+  "bits": 2,
+  "group_size": 128,
+  "seed": 2,
+  "formal": {
+    "calibration_samples": 128,
+    "ptq_sequence_length": 512,
+    "block_train_size": 4096,
+    "block_val_size": 64,
+    "block_sequence_length": 2048,
+    "block_epochs": 2,
+    "block_batch_size": 2,
+    "block_weight_lr": 0.00002,
+    "block_quant_lr": 0.0001,
+    "e2e_dataset_size": 32768,
+    "e2e_max_length": 8192,
+    "e2e_micro_batch": 1,
+    "e2e_accumulation": 64,
+    "e2e_learning_rate": 0.000005,
+    "e2e_scheduler": "cosine",
+    "runs": {
+      "R4": {"epochs": 3, "alpha": 0.2, "kl": 1.0, "teacher_rr": true},
+      "R4a": {"epochs": 1, "alpha": 0.2, "kl": 1.0, "teacher_rr": true},
+      "R5": {"epochs": 1, "alpha": 1.0, "kl": 0.0, "teacher_rr": false},
+      "R6_rr": {"epochs": 3, "alpha": 1.0, "kl": 0.0, "teacher_rr": true},
+      "R6_kl": {"epochs": 3, "alpha": 0.0, "kl": 1.0, "teacher_rr": true}
+    }
+  },
+  "smoke": {
+    "calibration_samples": 2,
+    "ptq_sequence_length": 128,
+    "block_train_size": 5,
+    "block_val_size": 5,
+    "block_sequence_length": 128,
+    "block_epochs": 1,
+    "block_batch_size": 1,
+    "block_weight_lr": 0.00002,
+    "block_quant_lr": 0.0001,
+    "e2e_dataset_size": 2,
+    "e2e_max_length": 256,
+    "e2e_micro_batch": 1,
+    "e2e_accumulation": 1,
+    "e2e_learning_rate": 0.000005,
+    "e2e_scheduler": "cosine",
+    "e2e_max_steps": 2,
+    "eval_limit": 1,
+    "eval_max_tokens": 64
+  }
+}

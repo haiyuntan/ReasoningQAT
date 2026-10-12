@@ -32,6 +32,7 @@ from accelerate import infer_auto_device_map, dispatch_model
 from trl import GKDConfig, GKDTrainer
 from trl.trainer.utils import empty_cache
 from datasets import load_dataset
+from repro_scripts.local_datasets import load_local_or_hf_openthoughts
 import copy
 import quantize.int_linear_fake as int_linear_fake
 from quantize.utils import set_op_by_name, set_quant_state, quant_inplace
@@ -310,6 +311,10 @@ class PolicyGKDTrainer(GKDTrainer):
         del shifted_labels
 
         loss = self.cross_entropy_weight * cross_entropy_loss + self.kl_weight * kl_loss
+        if not torch.isfinite(loss):
+            raise FloatingPointError('Non-finite QAT loss')
+        self.log({'teacher_rr_or_ce': float(cross_entropy_loss.detach()),
+                  'truncated_kl': float(kl_loss.detach()) if torch.is_tensor(kl_loss) else float(kl_loss)})
         # loss = cross_entropy_loss
 
         # Delete student_outputs if not returning them
@@ -530,8 +535,8 @@ def add_weight_monitor_hook(module, name=""):
 
 def scale_param_grad_hook(param, full_param_name):
     def _param_grad_hook(grad):
-        nan_mask = torch.isnan(grad)
-        grad = torch.where(nan_mask, torch.zeros_like(grad), grad)
+        if not torch.isfinite(grad).all():
+            raise FloatingPointError(f'Non-finite scale gradient: {full_param_name}')
         return grad
 
     return param.register_hook(_param_grad_hook)
@@ -568,6 +573,8 @@ def main():
     parser.add_argument("--quantizer_class", type=str, default="UniformAffineQuantizer", help="quantizer class to use (e.g., UniformAffineQuantizer, LogQuantizer)")
     parser.add_argument("--learning_rate", type=float, default=1e-4, help="learning rate")
     parser.add_argument("--optim", type=str, default="adamw_torch", help="optimizer")
+    parser.add_argument("--lr_scheduler_type", type=str, default="cosine")
+    parser.add_argument("--max_steps", type=int, default=-1, help="Positive only for smoke; formal uses full epochs")
     parser.add_argument("--max_length", type=int, default=None, help="maximum sequence length")
     parser.add_argument("--per_device_train_batch_size", type=int, default=1, help="per device train batch size")
     parser.add_argument("--gradient_accumulation_steps", type=int, default=1, help="gradient accumulation steps")
@@ -612,6 +619,11 @@ def main():
     training_args = GKDConfig(
         beta=1.0, # KL(student || teacher)
         num_train_epochs=args.epochs,
+        max_steps=args.max_steps,
+        lr_scheduler_type=args.lr_scheduler_type,
+        seed=args.seed,
+        data_seed=args.seed,
+        report_to="none",
         max_length=args.max_length,
         per_device_train_batch_size=args.per_device_train_batch_size,
         gradient_accumulation_steps=args.gradient_accumulation_steps,
@@ -684,7 +696,7 @@ def main():
         # if ('embed_tokens' in name) or ('zero_point' in name):
 
         if args.enable_efficient_qat:
-            if 'scale' in name:
+            if name.endswith('.weight_quantizer.scale'):
                 param.requires_grad = True
                 scale_param_grad_hook(param, name)
             else:
@@ -705,7 +717,7 @@ def main():
     data_collator = None
     # Load dataset based on dataset_type argument
     if args.dataset_type == "openthoughts":
-        dataset = load_dataset("open-thoughts/OpenThoughts3-1.2M", split="train", verification_mode="no_checks")
+        dataset = load_local_or_hf_openthoughts()
         dataset = dataset.shuffle(seed=args.seed)
         logger.info(f"Using OpenThoughts dataset: open-thoughts/OpenThoughts3-1.2M")
         data_collator = CustomDataCollatorForChatML(tokenizer=tokenizer, max_length=args.max_length)
@@ -715,7 +727,7 @@ def main():
         dataset = dataset.select(range(args.dataset_start_index, actual_end_index))
     elif args.dataset_type == "openthoughts-math":
         logger.info(f"Loading OpenThoughts dataset from HuggingFace...")
-        dataset = load_dataset("open-thoughts/OpenThoughts3-1.2M", split="train", verification_mode="no_checks")
+        dataset = load_local_or_hf_openthoughts()
 
         total_cpus = os.cpu_count()
         num_proc = max(1, total_cpus // max(1, torch.cuda.device_count())) if torch.cuda.is_available() else total_cpus
@@ -846,6 +858,7 @@ def main():
         logger.info(f"[MEMORY] Rank {local_rank} - After mean_prob cleanup - GPU {local_rank}: {torch.cuda.memory_allocated(local_rank) / 1024**3:.2f} GB allocated, {torch.cuda.memory_reserved(local_rank) / 1024**3:.2f} GB reserved")
 
     trainer = PolicyGKDTrainer(
+        beta=1.0,
         kl_weight=args.kl_weight,
         cross_entropy_weight=args.cross_entropy_weight,
         use_teacher_weight=args.use_teacher_weight,

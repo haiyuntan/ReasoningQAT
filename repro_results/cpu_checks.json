@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "device": "cpu",
+  "checks": [
+    "Teacher-RR value/gradient/detached teacher",
+    "beta=1 full and top-k truncated KL value/mask/gradient",
+    "scale-only update; frozen weight unchanged"
+  ]
+}

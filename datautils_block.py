@@ -1,5 +1,6 @@
 from transformers import AutoTokenizer
 from datasets import load_dataset
+from repro_scripts.local_datasets import load_local_or_hf_openthoughts, load_local_or_hf_fineweb
 import numpy as np
 import torch
 import random
@@ -62,7 +63,7 @@ def format_openthoughts_sample(example):
 
 def get_openthoughts_shuffled(tokenizer, train_size, val_size, seed, seqlen, test_only=False):
     print("get_openthoughts shuffled")
-    traindata = load_dataset("open-thoughts/OpenThoughts3-1.2M", split="train")
+    traindata = load_local_or_hf_openthoughts()
     random.seed(seed)
     traindata = traindata.shuffle(seed=seed)
 
@@ -95,6 +96,7 @@ def get_openthoughts_shuffled(tokenizer, train_size, val_size, seed, seqlen, tes
             # Skip samples that cause tokenization errors
             continue
     
+    assert len(trainloader) == train_size and len(valloader) == val_size, 'Incomplete reasoning calibration'
     print(f"OpenThoughts: collected {len(trainloader)} train samples and {len(valloader)} val samples")
     return trainloader, valloader
 
@@ -113,7 +115,7 @@ def get_redpajama_concat(tokenizer, train_size, val_size, seed, seqlen, test_onl
     split_train_size = train_size
     split_val_size = val_size
     # general data
-    general_dataset = load_dataset("HuggingFaceFW/fineweb-edu", name="sample-10BT", split="train", streaming=True)
+    general_dataset = load_local_or_hf_fineweb()
     for i, sample in enumerate(general_dataset):
         if len(localtrainloader) >= split_train_size and len(localvalloader) >= split_val_size:
             break
@@ -129,6 +131,7 @@ def get_redpajama_concat(tokenizer, train_size, val_size, seed, seqlen, test_onl
                 localvalloader.append((inp, tar))
             
             data_buffer = ""
+    assert len(localtrainloader) == train_size and len(localvalloader) == val_size, 'Incomplete FineWeb calibration'
     return localtrainloader, localvalloader
 
 def get_sweep_dataset(tokenizer, train_size, val_size, seed, seqlen, test_only=False, reasoning_ratio=0.5):

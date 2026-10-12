@@ -182,8 +182,13 @@ def main():
             current_group_size = group_size_from_path if group_size_from_path is not None else args.group_size
 
             from quantize.int_linear_fake import load_quantized_model
-            model, tokenizer = load_quantized_model(args.model, current_wbits, current_group_size, replace=True, strict=True, quantizer_class=args.quantizer_class)
-            logger.info(f"Loaded quantized model with wbits={current_wbits}, group_size={current_group_size}")
+            if wbits_from_path is None:
+                # A local BF16 snapshot is not a quantized checkpoint.
+                tokenizer = AutoTokenizer.from_pretrained(args.model, local_files_only=True)
+                model = AutoModelForCausalLM.from_pretrained(args.model, device_map='cuda', torch_dtype=torch.float16, attn_implementation='flash_attention_2', local_files_only=True)
+            else:
+                model, tokenizer = load_quantized_model(args.model, current_wbits, current_group_size, replace=True, strict=True, quantizer_class=args.quantizer_class)
+            logger.info(f"Loaded model with target wbits={current_wbits}, group_size={current_group_size}")
         else:
             # load fp quantized model
             config = AutoConfig.from_pretrained(args.model)
@@ -202,8 +207,7 @@ def main():
             if os.path.exists(cache_trainloader) and os.path.exists(cache_valloader):
                 trainloader = torch.load(cache_trainloader)
                 logger.info(f"load trainloader from {cache_trainloader}, len(trainloader): {len(trainloader)}")
-                # valloader = torch.load(cache_valloader)
-                valloader = None
+                valloader = torch.load(cache_valloader)
             else:
                 trainloader, valloader = get_loaders(
                     args.calib_dataset,
