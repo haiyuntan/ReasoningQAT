@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "device": "CPU",
+  "meaning": "Tiny real Qwen3 adapter integration; full-model GPU smoke still required",
+  "runs": {
+    "R8": {
+      "status": "PASS",
+      "native_reload_max_diff": 0.0,
+      "materialization_max_diff": 0.0,
+      "quantized_linears": 7,
+      "train_steps": [
+        {
+          "step": 0,
+          "loss": 11.9168701171875,
+          "grad_norm": 4.903809547424316
+        },
+        {
+          "step": 1,
+          "loss": 11.832438468933105,
+          "grad_norm": 4.718765735626221
+        }
+      ],
+      "updated_parameter_probe_values": 448,
+      "stage1_strict_reload": true,
+      "confidence_beta": null,
+      "teacher_used": false
+    },
+    "R9": {
+      "status": "PASS",
+      "native_reload_max_diff": 0.0,
+      "materialization_max_diff": 0.0,
+      "quantized_linears": 7,
+      "train_steps": [
+        {
+          "step": 0,
+          "loss": 0.023462729528546333,
+          "grad_norm": 0.875
+        },
+        {
+          "step": 1,
+          "loss": 0.05733732506632805,
+          "grad_norm": 0.61328125
+        }
+      ],
+      "updated_parameter_probe_values": 512,
+      "stage1_strict_reload": true,
+      "confidence_beta": 2.2610161977354437e-05,
+      "teacher_used": true
+    }
+  },
+  "R4_collator_parity": {
+    "samples": 2,
+    "tokens_after_mask": 204,
+    "causal_target_tokens": 204,
+    "collator": "TRL DataCollatorForChatML, same shortening and seed as R4",
+    "tensor_sha256": "5b9620badb41abcc6fc994c7e6b11432b22a0373837c1d7673f68eadc8484fcc",
+    "trajectory": "Fixed dataset assistant trajectory; no regeneration"
+  },
+  "formal_rejects_smoke_fixture": true
+}

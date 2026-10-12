@@ -1,0 +1,12 @@
+{
+  "purpose": "Diagnostic smoke only; not the formal globally shuffled sample",
+  "source": "datasets/openthoughts3/data/train-00000-of-00120.parquet",
+  "source_rows": [
+    0,
+    64
+  ],
+  "records": 64,
+  "source_revision": "61bcf9d4eb38b30295efc2021227a63cc5bb34c8",
+  "sha256": "f5d97dbc8fe75a08d2012f557af0408a6c714768b013fff301c11c835388b1d8",
+  "bytes": 3777370
+}

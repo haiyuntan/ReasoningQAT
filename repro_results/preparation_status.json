@@ -11,7 +11,7 @@
     "open-thoughts/OpenThoughts3-1.2M": {
       "passed": false,
       "detail": {
-        "complete": 48,
+        "complete": 61,
         "required": 120
       }
     },
@@ -55,7 +55,11 @@
     },
     "block_calibration": {
       "passed": false,
-      "detail": "4096/64 \u00d7 2048 CPU-prepared data"
+      "detail": "Formal 4096/64 \u00d7 2048 CPU-prepared data"
+    },
+    "smoke_block_calibration": {
+      "passed": true,
+      "detail": "Diagnostic 5/5 \u00d7 128 CPU-prepared data"
     },
     "qat_baseline_assets": {
       "passed": true,
