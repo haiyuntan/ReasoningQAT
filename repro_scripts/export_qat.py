@@ -3,6 +3,8 @@ import argparse
 import json
 from pathlib import Path
 import torch
+from runtime_compat import ensure_dtensor_alias
+ensure_dtensor_alias()
 from transformers import AutoModelForCausalLM
 from quantize.int_linear_fake import load_quantized_model,QuantLinear
 from quantize.utils import set_quant_state,set_op_by_name

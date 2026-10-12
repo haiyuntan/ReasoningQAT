@@ -35,6 +35,13 @@ def main():
                           ('results/cpu-pipeline-check.json','cpu_pipeline_checks.json'),
                           ('results/gpu-model-check.json','gpu_model_check.json'),
                           ('results/gpu_handoff.json','gpu_handoff.json'),
+                          ('results/download-status.json','download_status.json'),
+                          ('results/gptq-component-check.json','gptq_component_check.json'),
+                          ('datasets/manifests/block_calibration.json','block_calibration.json'),
+                          ('results/queued-smoke.json','queued_smoke.json'),
+                          ('results/qat-baselines-preparation.json','qat_baselines_preparation.json'),
+                          ('results/qat-baseline-components.json','qat_baseline_components.json'),
+                          ('results/awq-component-check.json','awq_component_check.json'),
                           ('datasets/manifests/numinamath.json','numinamath.json'),
                           ('datasets/manifests/benchmarks.json','benchmarks.json'),
                           ('results/preparation_status.json','preparation_status.json')]:

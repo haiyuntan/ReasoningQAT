@@ -22,7 +22,9 @@ def prune(path, reason):
     if path.is_symlink() or not any(root in path.resolve().parents for root in allowed):
         raise ValueError(f'Unsafe cleanup path: {path}')
     # A cleanup target must be a single run artifact, never a mode/session root.
-    if len(path.relative_to(ROOT).parts) < 4:
+    parts=path.relative_to(ROOT).parts
+    component=(len(parts)==3 and parts[:2]==('outputs','component_checks') and parts[2] in ('R1','R2'))
+    if len(parts) < 4 and not component:
         raise ValueError(f'Cleanup target too broad: {path}')
     measured = inventory([path])
     record = {'path': str(path.relative_to(ROOT)), 'reason': reason,

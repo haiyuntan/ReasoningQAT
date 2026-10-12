@@ -23,6 +23,8 @@ for seed in seeds:
     # Formal must supply a reviewed, paper-comparable slice and all overrides.
     for key,value in protocol.get('dataset_args',{}).items():
         dataset_args[key].update(value)
+    if a.mode=='smoke':
+        dataset_args['mmlu_redux']['subset_list']=['abstract_algebra']
     config=TaskConfig(model='rq-model',eval_type='openai_api',api_url=f'http://127.0.0.1:{a.port}/v1',api_key='EMPTY',
                       datasets=protocol['datasets'],dataset_args=dataset_args,eval_batch_size=1,
                       generation_config={'temperature':0.6,'top_p':1.0,'max_tokens':32768 if a.mode=='formal' else 64,

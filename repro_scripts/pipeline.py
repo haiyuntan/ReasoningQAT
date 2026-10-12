@@ -18,7 +18,8 @@ except ImportError:
 REPO=Path(__file__).resolve().parents[1]
 ROOT=REPO.parent
 MATRIX=json.loads((REPO/'repro_configs/matrix.json').read_text())
-ORDER=['R0','R1','R2','R3','R4','R4a','R5','R6_rr','R6_kl']
+ORDER=['R0','R1','R2','R3','R4','R4a','R5','R8','R9','R6_rr','R6_kl']
+REQUIRED=ORDER[:9]
 TABLE2={'R0':65.2,'R1':4.2,'R2':9.5,'R4':28.4}
 TABLE2_TASKS={'R0':[89.,53.6,74.7,38.4,70.4], 'R1':[2.1,0.,5.8,4.7,8.5],
               'R2':[0.,0.,27.3,8.1,12.3], 'R4':[48.6,6.5,40.1,14.5,32.2]}
@@ -51,6 +52,9 @@ def train_command(run,mode,out,session):
     python=str(ROOT/'env/train/bin/python')
     model=str(ROOT/'models/Qwen3-1.7B')
     logs=str(ROOT/'logs'/mode/session/run)
+    if run in ('R8','R9'):
+        return ['/bin/bash',str(REPO/'repro_scripts'/('r8_efficientqat_w2.sh' if run=='R8' else 'r9_bitdistiller_w2.sh')),
+                '--mode',mode,'--output',str(out)]
     if run in ('R1','R2'):
         python=str(ROOT/'env/gptq/bin/python') if run=='R1' else python
         script='ptq_gptq_w2.py' if run=='R1' else 'ptq_awq_w2.py'
@@ -97,6 +101,13 @@ def gate(run,mode,metrics):
     if len(metrics['seeds'])!=3:
         raise ValueError('Formal evaluation requires three seeds')
     tolerance=2.
+    if run in ('R8','R9'):
+        refs=json.loads((REPO/'repro_configs/qat_baselines.json').read_text())[run]['reference_percent']
+        if abs(metrics['average_percent']-refs['average'])>tolerance:
+            raise ValueError('Table 3 average outside fixed tolerance')
+        for task in metrics['protocol']['datasets']:
+            if abs(metrics['means_percent'][task]-refs[task])>tolerance:
+                raise ValueError(f'Table 3 task {task} outside fixed tolerance')
     if run in TABLE2:
         if abs(metrics['average_percent']-TABLE2[run])>tolerance:
             raise ValueError(f'Table 2 Avg outside fixed ±{tolerance}pp tolerance')
@@ -119,7 +130,7 @@ def gate(run,mode,metrics):
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--mode',choices=['smoke','formal'],required=True)
-    parser.add_argument('--runs',nargs='+',choices=ORDER,default=ORDER)
+    parser.add_argument('--runs',nargs='+',choices=ORDER,default=REQUIRED)
     parser.add_argument('--session',default=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ'))
     parser.add_argument('--dry-run',action='store_true')
     a=parser.parse_args()
@@ -205,7 +216,9 @@ def main():
             telemetry=[json.loads(line) for line in (logdir/'generation_telemetry.jsonl').read_text().splitlines()]
             summary['peak_generation_memory_bytes']=max(row['peak_memory_bytes'] for row in telemetry)
         except Exception as exc:
-            summary['status']='FAIL'
+            baseline_blocked=run in ('R8','R9') and not json.loads(
+                (REPO/'repro_configs/qat_baselines.json').read_text())[run]['adapter_verified']
+            summary['status']='BLOCKED' if baseline_blocked else 'FAIL'
             summary['error']=f'{type(exc).__name__}: {exc}'
             raise
         finally:

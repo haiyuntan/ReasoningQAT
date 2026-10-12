@@ -1,0 +1,41 @@
+{
+  "required_order": ["R0", "R1", "R2", "R3", "R4", "R4a", "R5", "R8", "R9"],
+  "optional_runs": ["R6_rr", "R6_kl", "R7"],
+  "shared_contract": {
+    "model": "Qwen/Qwen3-1.7B",
+    "bits": 2,
+    "activation_bits": 16,
+    "group_size": 128,
+    "calibration_reasoning_ratio": 0.8,
+    "stage2_samples": 32768,
+    "stage2_epochs": 3,
+    "stage2_effective_tokens": "Must match R4 after collator masking and truncation",
+    "evaluation": "repro_configs/evaluation.json",
+    "reference_values_are_observations": false
+  },
+  "R8": {
+    "method": "EfficientQAT",
+    "upstream": "https://github.com/OpenGVLab/EfficientQAT",
+    "commit": "39f37f3b6053681c9b1cd4c9dcaf692d8999459e",
+    "environment": "efficientqat_qwen3",
+    "initialization": "Independent Block-AP; R3 reuse requires equivalence evidence",
+    "stage1_samples": 4096,
+    "stage1_sequence_length": 2048,
+    "stage2_objective": "CE, scale-only E2E-QP, no BF16 Teacher",
+    "reference_percent": {"math_500": 24.8, "live_code_bench": 0.6, "mmlu_redux": 29.1, "gpqa_diamond": 12.1, "ifeval": 25.1, "average": 18.3},
+    "adapter_verified": false,
+    "blockers": ["Port and verify Qwen3 block capture and native packed E2E-QP", "Audit R3 vs upstream Block-AP equivalence", "Confirm author baseline optimizer and token budget"]
+  },
+  "R9": {
+    "method": "BitDistiller",
+    "upstream": "https://github.com/OpenBitSys/BitDistiller",
+    "commit": "9faaab822614a167fdf3d4421d0a054c55c56f9c",
+    "environment": "bitdistiller_qwen3",
+    "initialization": "Independent asymmetric INT2 clipping; never use R3",
+    "stage1_samples": null,
+    "stage2_objective": "Upstream CAKLD with audited confidence coefficient and mask normalization",
+    "reference_percent": {"math_500": 12.2, "live_code_bench": 1.0, "mmlu_redux": 22.4, "gpqa_diamond": 21.7, "ifeval": 19.0, "average": 15.2},
+    "adapter_verified": false,
+    "blockers": ["Port mixed-domain clipping and Qwen3 INT2 QLinear save/reload", "Port single-process CAKLD confidence calculation and Trainer API", "Confirm author clipping sample count and teacher trajectory choice", "Verify effective token budget against R4"]
+  }
+}

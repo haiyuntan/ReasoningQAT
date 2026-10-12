@@ -3,6 +3,8 @@ import sys
 import random
 import numpy as np
 import torch
+from repro_scripts.runtime_compat import ensure_dtensor_alias
+ensure_dtensor_alias()
 import time
 from datautils_block import get_loaders, test_ppl
 import torch.nn as nn

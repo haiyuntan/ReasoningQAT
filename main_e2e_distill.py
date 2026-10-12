@@ -3,6 +3,8 @@ import sys
 import random
 import numpy as np
 import torch
+from repro_scripts.runtime_compat import ensure_dtensor_alias
+ensure_dtensor_alias()
 
 # # patch_dist_ops.py  ← 実行スクリプトの一番最初で import
 # import os, traceback

@@ -3,6 +3,8 @@ import hashlib
 import json
 from pathlib import Path
 import torch
+from runtime_compat import ensure_dtensor_alias
+ensure_dtensor_alias()
 from transformers import AutoTokenizer
 from gptqmodel import GPTQModel, QuantizeConfig
 

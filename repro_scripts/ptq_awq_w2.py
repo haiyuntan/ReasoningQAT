@@ -1,8 +1,11 @@
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import torch
+from runtime_compat import ensure_dtensor_alias
+ensure_dtensor_alias()
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from awq.quantize.pre_quant import run_awq
 from awq.quantize.quantizer import pseudo_quantize_model_weight
@@ -13,12 +16,16 @@ p.add_argument('--output',required=True)
 p.add_argument('--samples',type=int,default=128)
 p.add_argument('--seqlen',type=int,default=512)
 a=p.parse_args()
+os.environ.setdefault('RQ_DATA',str(Path(__file__).resolve().parents[2]/'datasets'))
 out=Path(a.output)
 out.mkdir(parents=True,exist_ok=True)
 tokenizer=AutoTokenizer.from_pretrained(a.model,local_files_only=True)
 model=AutoModelForCausalLM.from_pretrained(a.model,torch_dtype=torch.bfloat16,attn_implementation='eager',local_files_only=True)
 cfg={'zero_point':True,'q_group_size':128}
+original_use_cache=model.config.use_cache
+model.config.use_cache=False
 scales=run_awq(model,tokenizer,w_bit=2,q_config=cfg,n_samples=a.samples,seqlen=a.seqlen,calib_data='numinamath_local')
+model.config.use_cache=original_use_cache
 torch.save(scales,out/'awq_scales.pt')
 pseudo_quantize_model_weight(model,w_bit=2,q_config=cfg)
 model=model.cuda().eval()
