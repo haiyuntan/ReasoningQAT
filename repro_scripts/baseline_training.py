@@ -130,10 +130,14 @@ def efficient_block_ap(model,sequences,val_sequences,device,cfg):
         for module in layer.modules():
             if isinstance(module,Fake):
                 module.set_quant_state(True)
-                module.weight.requires_grad_(True)
-                weight_params.append(module.weight)
-                for param in module.weight_quantizer.parameters():
-                    param.requires_grad_(True);quant_params.append(param)
+        # Match upstream weight_parameters/set_weight_parameters exactly:
+        # includes RMSNorm/q_norm/k_norm weights, not only projection weights.
+        weight_names=[];quant_names=[]
+        for name,param in layer.named_parameters():
+            if 'scale' in name or 'zero_point' in name:
+                param.requires_grad_(True);quant_params.append(param);quant_names.append(name)
+            elif 'weight' in name:
+                param.requires_grad_(True);weight_params.append(param);weight_names.append(name)
         optimizer=torch.optim.AdamW([{'params':weight_params,'lr':cfg['block_weight_lr']},
                                      {'params':quant_params,'lr':cfg['block_quant_lr']}],weight_decay=0.)
         total=cfg['block_epochs']*len(sequences)
@@ -155,7 +159,8 @@ def efficient_block_ap(model,sequences,val_sequences,device,cfg):
                     layer_output(layer,hidden.to(device),to_device_kwargs(kwargs,device)).float(),targets[i].to(device)))
                     for i,(hidden,kwargs) in enumerate(quant) if i>=len(sequences))/len(val_sequences)
             if not math.isfinite(val_loss): raise FloatingPointError('Block validation is nonfinite')
-            history.append({'block':index,'epoch':epoch,'mse':sum(losses)/len(losses),'val_mse':val_loss,'grad_norm':norm})
+            history.append({'block':index,'epoch':epoch,'mse':sum(losses)/len(losses),'val_mse':val_loss,'grad_norm':norm,
+                            'weight_parameter_names':weight_names,'quant_parameter_names':quant_names})
         del optimizer
         # Use upstream native pack exactly. Quantize in FP16 as its Block-AP
         # does; packed scales are FP16. PyTorch unpack is only a kernel port.

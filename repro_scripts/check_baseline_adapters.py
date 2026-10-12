@@ -30,6 +30,10 @@ for run in ('R8','R9'):
     model=copy.deepcopy(base)
     if run=='R8':
         initialization=efficient_block_ap(model,[tokens],[tokens.flip(-1)],device,train_cfg)
+        names=initialization[0]['weight_parameter_names']
+        assert {'input_layernorm.weight','post_attention_layernorm.weight',
+                'self_attn.q_norm.weight','self_attn.k_norm.weight'}<=set(names)
+        assert len(names)==11
         teacher=None
         # Native upstream pack and CPU dequant parity, including scale gradients.
         Fake,Original,_=efficient_ops()
