@@ -30,7 +30,10 @@ record('cpu_loss_checks',cpu.exists() and json.loads(cpu.read_text()).get('statu
 record('numinamath_128',(ROOT/'datasets/manifests/numinamath.json').exists(),'Frozen 128 samples and checksum')
 record('five_benchmark_data',(ROOT/'datasets/manifests/benchmarks.json').exists() and
        len(json.loads((ROOT/'datasets/manifests/benchmarks.json').read_text()))==5,'All five benchmark manifests')
-record('block_calibration',(ROOT/'datasets/manifests/block_calibration.json').exists(),'4096/64 × 2048 CPU-prepared data')
+block_manifest=ROOT/'datasets/manifests/block_calibration.json'
+block_data=json.loads(block_manifest.read_text()) if block_manifest.exists() else {}
+record('block_calibration','formal' in block_data,'Formal 4096/64 × 2048 CPU-prepared data')
+record('smoke_block_calibration','smoke' in block_data,'Diagnostic 5/5 × 128 CPU-prepared data')
 baseline_manifest=ROOT/'results/qat-baselines-preparation.json'
 baseline_assets=json.loads(baseline_manifest.read_text()) if baseline_manifest.exists() else {}
 record('qat_baseline_assets',all(run in baseline_assets and baseline_assets[run]['dependency_check_passed']

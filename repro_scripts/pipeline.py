@@ -149,6 +149,13 @@ def main():
     fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
     fingerprint=code_fingerprint()
     env=os.environ.copy()
+    env['RQ_RUN_MODE']=a.mode
+    env.pop('RQ_SMOKE_OPENTHOUGHTS',None)
+    if a.mode=='smoke':
+        fixture=ROOT/'datasets/smoke/openthoughts.jsonl'
+        if not fixture.is_file():
+            raise FileNotFoundError('Prepare the frozen smoke fixture first')
+        env['RQ_SMOKE_OPENTHOUGHTS']=str(fixture)
     env.update({'CUDA_VISIBLE_DEVICES':'0','HF_HUB_OFFLINE':'1','HF_DATASETS_OFFLINE':'1',
                 'PYTHONPATH':str(REPO)+os.pathsep+str(ROOT/'ptq/llm-awq'),
                 'RQ_ROOT':str(ROOT),'RQ_DATA':str(ROOT/'datasets'),
