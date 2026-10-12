@@ -575,6 +575,7 @@ def main():
     parser.add_argument("--optim", type=str, default="adamw_torch", help="optimizer")
     parser.add_argument("--lr_scheduler_type", type=str, default="cosine")
     parser.add_argument("--max_steps", type=int, default=-1, help="Positive only for smoke; formal uses full epochs")
+    parser.add_argument("--smoke_short_text", action="store_true", help="Smoke only: retain short real prompt/assistant spans")
     parser.add_argument("--max_length", type=int, default=None, help="maximum sequence length")
     parser.add_argument("--per_device_train_batch_size", type=int, default=1, help="per device train batch size")
     parser.add_argument("--gradient_accumulation_steps", type=int, default=1, help="gradient accumulation steps")
@@ -593,14 +594,14 @@ def main():
     parser.add_argument("--cakld_steps", type=int, default=100, help="Number of steps to calculate mean probability for CAKLD loss")
     parser.add_argument("--enable_efficient_qat", action="store_true", help="Enable efficient QAT mode: only train scale parameters, freeze all other parameters")
 
+    args = parser.parse_args()
     os.environ['TOKENIZERS_PARALLELISM'] = 'false'
     # print all environment variables related to DDP
     print(f"RANK: {os.environ.get('RANK', -1)}, LOCAL_RANK: {os.environ.get('LOCAL_RANK', -1)}, WORLD_SIZE: {os.environ.get('WORLD_SIZE', -1)}")
-    local_rank = int(os.environ["LOCAL_RANK"])
+    local_rank = int(os.environ.get("LOCAL_RANK", "0"))
     torch.cuda.set_device(local_rank)  # ← 各プロセスは自分のGPUに固定
     device = torch.device("cuda", local_rank)
     # device name print
-    args = parser.parse_args()
     random.seed(args.seed)
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
@@ -632,6 +633,8 @@ def main():
         adam_beta1=0.9,     # Default AdamW beta1
         adam_beta2=0.95,   # Default AdamW beta2
         output_dir=args.output_dir,
+        save_strategy="epoch",
+        save_total_limit=1,
         gradient_checkpointing=True,
         seq_kd=False, # enforce supervised KD
         lmbda=0.0, # enforce supervised KD
@@ -762,6 +765,24 @@ def main():
         actual_end_index = min(end_index, len(dataset))
         dataset = dataset.select(range(args.dataset_start_index, actual_end_index))
 
+    if len(dataset) != args.dataset_size:
+        raise ValueError('Stage 2 dataset selection is incomplete')
+    if args.smoke_short_text:
+        if args.max_steps <= 0 or args.dataset_size > 16:
+            raise ValueError('Short text is restricted to explicit smoke runs')
+        def shorten(sample):
+            conversations = []
+            for message in sample['conversations']:
+                limit = 32 if message['from'] == 'human' else 96
+                text = tokenizer.decode(tokenizer.encode(message['value'], add_special_tokens=False)[:limit], skip_special_tokens=True)
+                conversations.append({**message, 'value': text})
+            return {'conversations': conversations}
+        dataset = dataset.map(shorten)
+    trainable_names = [name for name, param in model.named_parameters() if param.requires_grad]
+    if args.enable_efficient_qat:
+        assert trainable_names and all(name.endswith('.weight_quantizer.scale') for name in trainable_names)
+    import json
+    Path(args.output_dir, 'trainable_names.json').write_text(json.dumps(trainable_names, indent=2))
     logger.info(f"Dataset selection: start_index={args.dataset_start_index}, requested_size={args.dataset_size}")
     logger.info(f"Dataset selection: actual_end_index={actual_end_index}, selected_samples={len(dataset)}")
     # apply chat template to prompt
@@ -889,6 +910,8 @@ def main():
     else:
         print("No valid checkpoint found. Starting training from scratch.")
         trainer.train()
+
+    trainer.save_state()
 
 
     # save model

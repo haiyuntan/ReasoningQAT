@@ -1,14 +1,15 @@
-"""Resume large HF files with bounded HTTP ranges and checksum validation."""
+"""Serial streaming HTTP resume with official SHA256 validation."""
 import concurrent.futures
 import hashlib
 import json
 import os
+import re
 import time
 from pathlib import Path
 import requests
 
 ROOT = Path(__file__).resolve().parents[2]
-CHUNK = 8 * 1024 * 1024
+CHUNK = 1024 * 1024
 
 def download(entry):
     repo, source, relative, size, expected = entry
@@ -20,21 +21,33 @@ def download(entry):
     offset = part.stat().st_size if part.exists() else 0
     session = requests.Session()
     while offset < size:
-        end = min(offset + CHUNK, size) - 1
+        start_offset = offset
         for attempt in range(12):
             try:
-                # Cache key must include range; some CDNs cache a previous range.
-                url = source + f'?download=true&rq_offset={offset}'
-                response = session.get(url, headers={'Range': f'bytes={offset}-{end}'}, timeout=(30, 120))
-                response.raise_for_status()
-                data = response.content
-                content_range = response.headers.get('Content-Range', '')
-                if response.status_code != 206 or not content_range.startswith(f'bytes {offset}-{end}/') or len(data) != end-offset+1:
-                    raise ValueError(f'Invalid range: {response.status_code} {content_range} {len(data)}')
-                with part.open('ab') as f:
-                    f.write(data)
-                offset += len(data)
-                print(f'PROGRESS {relative} {offset}/{size}', flush=True)
+                # One continuous response, not a new connection per 8MB.
+                url = source + f'?download=true&rq_stream_offset={offset}'
+                with session.get(url, headers={'Range': f'bytes={offset}-'}, stream=True, timeout=(30, 120)) as response:
+                    response.raise_for_status()
+                    content_range = response.headers.get('Content-Range', '')
+                    match = re.fullmatch(r'bytes (\d+)-(\d+)/(\d+)', content_range)
+                    if response.status_code == 206:
+                        if not match or int(match[1]) != offset or int(match[3]) != size:
+                            raise ValueError(f'Invalid range: {response.status_code} {content_range}')
+                    elif response.status_code != 200 or offset != 0:
+                        raise ValueError(f'Server did not resume: {response.status_code} {content_range}')
+                    last_report = offset
+                    with part.open('ab') as f:
+                        for data in response.iter_content(chunk_size=CHUNK):
+                            if offset + len(data) > size:
+                                raise ValueError('Response exceeds official file size')
+                            f.write(data)
+                            offset += len(data)
+                            if offset-last_report >= 16*1024*1024 or offset == size:
+                                f.flush()
+                                print(f'PROGRESS {relative} {offset}/{size}', flush=True)
+                                last_report = offset
+                if offset == start_offset:
+                    raise IOError('Empty download response')
                 break
             except Exception as exc:
                 print(f'RETRY {relative} offset={offset} attempt={attempt+1} {type(exc).__name__}: {str(exc)[:160]}', flush=True)
@@ -95,7 +108,9 @@ def main():
             url = f'https://hf-mirror.com/{prefix}{repo}/resolve/{revision}/{path}'
             entries.append((repo, url, info['destination']+'/'+path, size, sha))
     manifest_path.write_text(json.dumps(manifest, indent=2))
-    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
+    # Prioritize the small mandatory sources before the full OpenThoughts corpus.
+    entries.sort(key=lambda x: 3 if 'OpenThoughts' in x[0] else (0 if x[0].startswith('Qwen/') else 1))
+    with concurrent.futures.ThreadPoolExecutor(max_workers=int(os.environ.get('RQ_DOWNLOAD_WORKERS','1'))) as pool:
         for _ in pool.map(download, entries):
             pass
     (ROOT / 'results/download-complete.json').write_text(json.dumps({'status':'PASS', 'files':len(entries)}))

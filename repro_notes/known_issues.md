@@ -14,7 +14,9 @@ No GPU experiment has been run. The pre-existing GPU process is preserved.
 
 - Upstream requires accelerate<0.34 but TRL 0.17 requires accelerate>=0.34. The isolated training environment uses accelerate=1.6.0; this deviation must be documented and checked.
 - Official PyPI's large torch wheel stalled. A private copy of torch=2.2.2/triton=2.2.0 and CUDA libraries from the existing efficientqat environment is being used in the new environment. No package in the old environment is modified.
-- HF large files time out. The resumable mirror downloader uses bounded ranges and checks official LFS SHA256 values. A `.partial` file is never considered a completed asset.
+- HF large files time out. After testing parallel bounded ranges, the user requested single-file resume. The mirror downloader now uses one continuous streaming connection per file, resumes on disconnect and checks official LFS SHA256. A `.partial` file is never considered a completed asset.
+- Current Arrow 26 wheels require NumPy 2 at import time, even though pip check passes. Training pins Arrow 19.0.1, pandas 2.2.3, scipy 1.15.3, scikit-learn 1.6.1 and PEFT 0.15.2 with NumPy 1.26.4 / transformers 4.52.4.
+- GPTQModel v2.2.0 supports Qwen3 and W2 TORCH inference. Its wheel command accesses optional `torch.xpu` on torch 2.2. CPU-only Python wheel construction uses `GPTQMODEL_FORCE_BUILD=1` with CUDA hidden, avoiding both that branch and CUDA extension compilation. GPU quantization/reload remains unvalidated until user release.
 
 ## Strict comparison blockers
 

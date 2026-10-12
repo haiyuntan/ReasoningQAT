@@ -1,0 +1,56 @@
+diff --git a/awq/quantize/auto_scale.py b/awq/quantize/auto_scale.py
+index fe60490..ad64596 100644
+--- a/awq/quantize/auto_scale.py
++++ b/awq/quantize/auto_scale.py
+@@ -9,0 +10 @@ from transformers.models.qwen2.modeling_qwen2 import Qwen2RMSNorm, Qwen2DecoderL
++from transformers.models.qwen3.modeling_qwen3 import Qwen3RMSNorm, Qwen3DecoderLayer
+@@ -215 +216 @@ def auto_scale_block(module, module_kwargs, w_bit, q_config, input_feat):
+-    elif isinstance(module, (LlamaDecoderLayer, Qwen2DecoderLayer)):
++    elif isinstance(module, (LlamaDecoderLayer, Qwen2DecoderLayer, Qwen3DecoderLayer)):
+@@ -462 +463 @@ def apply_scale(module, scales_list, input_feat_dict=None):
+-        elif isinstance(prev_op, (nn.LayerNorm, LlamaRMSNorm, Qwen2RMSNorm)):
++        elif isinstance(prev_op, (nn.LayerNorm, LlamaRMSNorm, Qwen2RMSNorm, Qwen3RMSNorm)):
+diff --git a/awq/quantize/pre_quant.py b/awq/quantize/pre_quant.py
+index 23a5ecb..81c5105 100644
+--- a/awq/quantize/pre_quant.py
++++ b/awq/quantize/pre_quant.py
+@@ -17,0 +18 @@ from transformers.models.qwen2.modeling_qwen2 import Qwen2ForCausalLM
++from transformers.models.qwen3.modeling_qwen3 import Qwen3ForCausalLM
+@@ -30 +31 @@ def get_blocks(model):
+-    if model.__class__.__name__ in ("LlamaForCausalLM", "Qwen2ForCausalLM"):
++    if model.__class__.__name__ in ("LlamaForCausalLM", "Qwen2ForCausalLM", "Qwen3ForCausalLM"):
+@@ -58 +59 @@ def move_embed(model, device):
+-    if isinstance(model, (LlamaForCausalLM, Qwen2ForCausalLM)):
++    if isinstance(model, (LlamaForCausalLM, Qwen2ForCausalLM, Qwen3ForCausalLM)):
+diff --git a/awq/quantize/qmodule.py b/awq/quantize/qmodule.py
+index d7b477c..c978fd6 100644
+--- a/awq/quantize/qmodule.py
++++ b/awq/quantize/qmodule.py
+@@ -4 +4,4 @@ import torch.nn as nn
+-import awq_inference_engine  # with CUDA kernels
++try:
++    import awq_inference_engine  # Optional INT4 kernels; W2 fake-quant needs none.
++except ImportError:
++    awq_inference_engine = None
+diff --git a/awq/utils/calib_data.py b/awq/utils/calib_data.py
+index 96514ef..01b4b73 100644
+--- a/awq/utils/calib_data.py
++++ b/awq/utils/calib_data.py
+@@ -5,0 +6,17 @@ def get_calib_dataset(data="pileval", tokenizer=None, n_samples=512, block_size=
++    if data == 'numinamath_local':
++        import json
++        import os
++        from pathlib import Path
++        source = Path(os.environ['RQ_DATA']) / 'numinamath_128/calib.jsonl'
++        rows = [json.loads(line) for line in source.read_text().splitlines()]
++        assert len(rows) == 128
++        assert 0 < n_samples <= len(rows)
++        samples = []
++        for row in rows[:n_samples]:
++            tokens = tokenizer.encode(row['text'], add_special_tokens=True)[:block_size]
++            if not tokens:
++                raise ValueError('Empty NuminaMath sample')
++            tokens += [tokenizer.eos_token_id] * (block_size-len(tokens))
++            samples.append(torch.tensor([tokens]))
++        print(f'Frozen NuminaMath: {len(samples)} samples, length={block_size}')
++        return samples
