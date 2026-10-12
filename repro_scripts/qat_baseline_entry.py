@@ -1,4 +1,4 @@
-"""Explicit baseline contract entry; reject execution until its adapter is verified."""
+"""Baseline entry: executable diagnostic adapters, formal protocol remains gated."""
 import argparse
 import json
 from pathlib import Path
@@ -16,4 +16,5 @@ def main(run):
     print(json.dumps(contract,indent=2),flush=True)
     if args.plan_only:
         return
-    raise SystemExit('BLOCKED: '+ '; '.join(config[run]['blockers']))
+    from baseline_training import train_baseline
+    train_baseline(run,args.mode,args.output)

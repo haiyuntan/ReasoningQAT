@@ -41,6 +41,8 @@ def main():
                           ('results/queued-smoke.json','queued_smoke.json'),
                           ('results/qat-baselines-preparation.json','qat_baselines_preparation.json'),
                           ('results/qat-baseline-components.json','qat_baseline_components.json'),
+                          ('results/qat-baseline-adapters.json','qat_baseline_adapters.json'),
+                          ('datasets/manifests/smoke_openthoughts.json','smoke_openthoughts.json'),
                           ('results/awq-component-check.json','awq_component_check.json'),
                           ('datasets/manifests/numinamath.json','numinamath.json'),
                           ('datasets/manifests/benchmarks.json','benchmarks.json'),

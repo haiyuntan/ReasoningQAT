@@ -54,6 +54,8 @@ def cleanup_verified_run(run, mode, out, eval_model, logdir, evidence_dir):
         (evidence_dir / f'{run}.checkpoint.json').write_text(json.dumps(
             {'native_files': manifest, 'export_verification': metadata}, indent=2))
         records.append(prune(eval_model, 'Verified HF export can be rebuilt from native checkpoint'))
+        if run in ('R8','R9') and (out/'stage1').is_dir():
+            records.append(prune(out/'stage1','Passed native final reload/export supersedes Stage 1 checkpoint'))
     for path in sorted(logdir.glob('checkpoint-*')):
         records.append(prune(path, 'Final checkpoint and completed evaluation supersede trainer snapshot'))
     if mode == 'smoke' and run not in ('R0', 'R3'):

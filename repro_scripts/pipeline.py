@@ -1,4 +1,4 @@
-"""Explicit R0–R6 pipeline; fails on missing evidence and requires GPU release."""
+"""Explicit reproduction pipeline including independent R8/R9 QAT baselines."""
 import argparse
 import datetime
 import fcntl
@@ -188,11 +188,15 @@ def main():
             if summary['command']:
                 execute(summary['command'],logdir/'train.console.log',env)
                 assert (out/'config.json').exists(), 'Checkpoint not saved'
+                if run in ('R8','R9'):
+                    summary['baseline_adapter']=json.loads((out/'baseline_adapter.json').read_text())
+                    summary['baseline_contract']=json.loads((REPO/'repro_configs/qat_baselines.json').read_text())[run]
             if run in ('R0','R1','R2'):
                 eval_model=ROOT/'models/Qwen3-1.7B' if run=='R0' else out
             else:
                 eval_model=session_root/(run+'_hf')
-                execute([str(ROOT/'env/train/bin/python'),str(REPO/'repro_scripts/export_qat.py'),
+                exporter='export_baseline.py' if run in ('R8','R9') else 'export_qat.py'
+                execute([str(ROOT/'env/train/bin/python'),str(REPO/'repro_scripts'/exporter),
                          '--input',str(out),'--output',str(eval_model)],logdir/'export.console.log',env)
             port=18080
             server_python=ROOT/('env/gptq/bin/python' if run=='R1' else 'env/train/bin/python')
@@ -223,8 +227,7 @@ def main():
             telemetry=[json.loads(line) for line in (logdir/'generation_telemetry.jsonl').read_text().splitlines()]
             summary['peak_generation_memory_bytes']=max(row['peak_memory_bytes'] for row in telemetry)
         except Exception as exc:
-            baseline_blocked=run in ('R8','R9') and not json.loads(
-                (REPO/'repro_configs/qat_baselines.json').read_text())[run]['adapter_verified']
+            baseline_blocked=run in ('R8','R9') and ('NOT_COMPARABLE' in str(exc) or 'BLOCKED:' in str(exc))
             summary['status']='BLOCKED' if baseline_blocked else 'FAIL'
             summary['error']=f'{type(exc).__name__}: {exc}'
             raise

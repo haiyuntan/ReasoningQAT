@@ -21,3 +21,5 @@ Git receives compact scores, protocol and configuration, timing, memory measurem
 The stored AWQ source patch uses zero context; apply it to the pinned upstream revision with `git apply --unidiff-zero <patch-path>`.
 
 For R8/R9, reserve an additional 20–40 GB provisionally for independent stage checkpoints, transient exports and evaluation records. No extra BF16 base model or training dataset download is needed. Exact storage and peak memory remain unmeasured until their adapters pass smoke.
+
+The executable smoke adapters save a temporary `stage1/baseline_state.pt`, reload it strictly for Stage 2, then save a final `baseline_state.pt`. R9 also retains `clip_ranges.pt` (group-wise upper/lower bounds). `baseline_adapter.json` contains loss/gradient/update evidence, masked-token counts and initialization provenance. After final native reload, verified HF export and all evaluation gates pass, temporary Stage 1 and export duplicates are removed. Successful smoke final weights are also removed; compact evidence and clipping/checkpoint hashes remain in Git. Failed runs retain diagnostic artifacts until reviewed.

@@ -24,7 +24,10 @@
     "stage2_objective": "CE, scale-only E2E-QP, no BF16 Teacher",
     "reference_percent": {"math_500": 24.8, "live_code_bench": 0.6, "mmlu_redux": 29.1, "gpqa_diamond": 12.1, "ifeval": 25.1, "average": 18.3},
     "adapter_verified": false,
-    "blockers": ["Port and verify Qwen3 block capture and native packed E2E-QP", "Audit R3 vs upstream Block-AP equivalence", "Confirm author baseline optimizer and token budget"]
+    "implementation_available": true,
+    "cpu_integration_verified": true,
+    "formal_supported": false,
+    "blockers": ["Full-model GPU smoke pending", "Confirm author baseline optimizer and formal token budget"]
   },
   "R9": {
     "method": "BitDistiller",
@@ -36,6 +39,9 @@
     "stage2_objective": "Upstream CAKLD with audited confidence coefficient and mask normalization",
     "reference_percent": {"math_500": 12.2, "live_code_bench": 1.0, "mmlu_redux": 22.4, "gpqa_diamond": 21.7, "ifeval": 19.0, "average": 15.2},
     "adapter_verified": false,
-    "blockers": ["Port mixed-domain clipping and Qwen3 INT2 QLinear save/reload", "Port single-process CAKLD confidence calculation and Trainer API", "Confirm author clipping sample count and teacher trajectory choice", "Verify effective token budget against R4"]
+    "implementation_available": true,
+    "cpu_integration_verified": true,
+    "formal_supported": false,
+    "blockers": ["Full-model GPU smoke pending", "Confirm author clipping sample count and teacher trajectory choice", "Confirm author confidence estimator and formal token budget"]
   }
 }
