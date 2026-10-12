@@ -11,7 +11,7 @@
     "open-thoughts/OpenThoughts3-1.2M": {
       "passed": false,
       "detail": {
-        "complete": 45,
+        "complete": 48,
         "required": 120
       }
     },
