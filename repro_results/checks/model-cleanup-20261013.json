@@ -1,0 +1,1501 @@
+{
+  "recorded_utc": "2026-10-13T02:56:55.544403+00:00",
+  "training_check": {
+    "status": "PASS",
+    "scope": "Two-step full-model training/backward/save only; evaluation not claimed",
+    "runs": {
+      "R4": [
+        {
+          "teacher_rr_or_ce": 2.878884792327881,
+          "truncated_kl": 5.539100170135498,
+          "epoch": 0
+        },
+        {
+          "loss": 6.1149,
+          "grad_norm": 0.0022792816162109375,
+          "learning_rate": 0.0,
+          "epoch": 0.5
+        },
+        {
+          "teacher_rr_or_ce": 2.9602248668670654,
+          "truncated_kl": 4.85353946685791,
+          "epoch": 0.5
+        },
+        {
+          "loss": 5.4456,
+          "grad_norm": 0.0027256011962890625,
+          "learning_rate": 5e-06,
+          "epoch": 1.0
+        },
+        {
+          "train_runtime": 11.5281,
+          "train_samples_per_second": 0.173,
+          "train_steps_per_second": 0.173,
+          "train_loss": 5.780230760574341,
+          "epoch": 1.0
+        },
+        {
+          "trainer_state": {
+            "best_global_step": null,
+            "best_metric": null,
+            "best_model_checkpoint": null,
+            "epoch": 1.0,
+            "eval_steps": 500,
+            "global_step": 2,
+            "is_hyper_param_search": false,
+            "is_local_process_zero": true,
+            "is_world_process_zero": true,
+            "log_history": [
+              {
+                "epoch": 0,
+                "step": 0,
+                "teacher_rr_or_ce": 2.878884792327881,
+                "truncated_kl": 5.539100170135498
+              },
+              {
+                "epoch": 0.5,
+                "grad_norm": 0.0022792816162109375,
+                "learning_rate": 0.0,
+                "loss": 6.1149,
+                "step": 1
+              },
+              {
+                "epoch": 0.5,
+                "step": 1,
+                "teacher_rr_or_ce": 2.9602248668670654,
+                "truncated_kl": 4.85353946685791
+              },
+              {
+                "epoch": 1.0,
+                "grad_norm": 0.0027256011962890625,
+                "learning_rate": 5e-06,
+                "loss": 5.4456,
+                "step": 2
+              }
+            ],
+            "logging_steps": 1,
+            "max_steps": 2,
+            "num_input_tokens_seen": 0,
+            "num_train_epochs": 1,
+            "save_steps": 500,
+            "stateful_callbacks": {
+              "TrainerControl": {
+                "args": {
+                  "should_epoch_stop": false,
+                  "should_evaluate": false,
+                  "should_log": false,
+                  "should_save": true,
+                  "should_training_stop": true
+                },
+                "attributes": {}
+              }
+            },
+            "total_flos": 2439156965376.0,
+            "train_batch_size": 1,
+            "trial_name": null,
+            "trial_params": null
+          }
+        }
+      ],
+      "R4a": [
+        {
+          "teacher_rr_or_ce": 2.878884792327881,
+          "truncated_kl": 5.539100170135498,
+          "epoch": 0
+        },
+        {
+          "loss": 6.1149,
+          "grad_norm": 0.0022792816162109375,
+          "learning_rate": 0.0,
+          "epoch": 0.5
+        },
+        {
+          "teacher_rr_or_ce": 2.9602248668670654,
+          "truncated_kl": 4.85353946685791,
+          "epoch": 0.5
+        },
+        {
+          "loss": 5.4456,
+          "grad_norm": 0.0027256011962890625,
+          "learning_rate": 5e-06,
+          "epoch": 1.0
+        },
+        {
+          "train_runtime": 8.5531,
+          "train_samples_per_second": 0.234,
+          "train_steps_per_second": 0.234,
+          "train_loss": 5.780230760574341,
+          "epoch": 1.0
+        },
+        {
+          "trainer_state": {
+            "best_global_step": null,
+            "best_metric": null,
+            "best_model_checkpoint": null,
+            "epoch": 1.0,
+            "eval_steps": 500,
+            "global_step": 2,
+            "is_hyper_param_search": false,
+            "is_local_process_zero": true,
+            "is_world_process_zero": true,
+            "log_history": [
+              {
+                "epoch": 0,
+                "step": 0,
+                "teacher_rr_or_ce": 2.878884792327881,
+                "truncated_kl": 5.539100170135498
+              },
+              {
+                "epoch": 0.5,
+                "grad_norm": 0.0022792816162109375,
+                "learning_rate": 0.0,
+                "loss": 6.1149,
+                "step": 1
+              },
+              {
+                "epoch": 0.5,
+                "step": 1,
+                "teacher_rr_or_ce": 2.9602248668670654,
+                "truncated_kl": 4.85353946685791
+              },
+              {
+                "epoch": 1.0,
+                "grad_norm": 0.0027256011962890625,
+                "learning_rate": 5e-06,
+                "loss": 5.4456,
+                "step": 2
+              }
+            ],
+            "logging_steps": 1,
+            "max_steps": 2,
+            "num_input_tokens_seen": 0,
+            "num_train_epochs": 1,
+            "save_steps": 500,
+            "stateful_callbacks": {
+              "TrainerControl": {
+                "args": {
+                  "should_epoch_stop": false,
+                  "should_evaluate": false,
+                  "should_log": false,
+                  "should_save": true,
+                  "should_training_stop": true
+                },
+                "attributes": {}
+              }
+            },
+            "total_flos": 2439156965376.0,
+            "train_batch_size": 1,
+            "trial_name": null,
+            "trial_params": null
+          }
+        }
+      ],
+      "R5": [
+        {
+          "teacher_rr_or_ce": 6.282509803771973,
+          "truncated_kl": 0.0,
+          "epoch": 0
+        },
+        {
+          "loss": 6.2825,
+          "grad_norm": 0.0023212432861328125,
+          "learning_rate": 0.0,
+          "epoch": 0.5
+        },
+        {
+          "teacher_rr_or_ce": 6.190683364868164,
+          "truncated_kl": 0.0,
+          "epoch": 0.5
+        },
+        {
+          "loss": 6.1907,
+          "grad_norm": 0.00142669677734375,
+          "learning_rate": 5e-06,
+          "epoch": 1.0
+        },
+        {
+          "train_runtime": 8.1374,
+          "train_samples_per_second": 0.246,
+          "train_steps_per_second": 0.246,
+          "train_loss": 6.236596584320068,
+          "epoch": 1.0
+        },
+        {
+          "trainer_state": {
+            "best_global_step": null,
+            "best_metric": null,
+            "best_model_checkpoint": null,
+            "epoch": 1.0,
+            "eval_steps": 500,
+            "global_step": 2,
+            "is_hyper_param_search": false,
+            "is_local_process_zero": true,
+            "is_world_process_zero": true,
+            "log_history": [
+              {
+                "epoch": 0,
+                "step": 0,
+                "teacher_rr_or_ce": 6.282509803771973,
+                "truncated_kl": 0.0
+              },
+              {
+                "epoch": 0.5,
+                "grad_norm": 0.0023212432861328125,
+                "learning_rate": 0.0,
+                "loss": 6.2825,
+                "step": 1
+              },
+              {
+                "epoch": 0.5,
+                "step": 1,
+                "teacher_rr_or_ce": 6.190683364868164,
+                "truncated_kl": 0.0
+              },
+              {
+                "epoch": 1.0,
+                "grad_norm": 0.00142669677734375,
+                "learning_rate": 5e-06,
+                "loss": 6.1907,
+                "step": 2
+              }
+            ],
+            "logging_steps": 1,
+            "max_steps": 2,
+            "num_input_tokens_seen": 0,
+            "num_train_epochs": 1,
+            "save_steps": 500,
+            "stateful_callbacks": {
+              "TrainerControl": {
+                "args": {
+                  "should_epoch_stop": false,
+                  "should_evaluate": false,
+                  "should_log": false,
+                  "should_save": true,
+                  "should_training_stop": true
+                },
+                "attributes": {}
+              }
+            },
+            "total_flos": 2439156965376.0,
+            "train_batch_size": 1,
+            "trial_name": null,
+            "trial_params": null
+          }
+        }
+      ],
+      "R6_rr": [
+        {
+          "teacher_rr_or_ce": 2.878884792327881,
+          "truncated_kl": 0.0,
+          "epoch": 0
+        },
+        {
+          "loss": 2.8789,
+          "grad_norm": 0.000995635986328125,
+          "learning_rate": 0.0,
+          "epoch": 0.5
+        },
+        {
+          "teacher_rr_or_ce": 2.9602248668670654,
+          "truncated_kl": 0.0,
+          "epoch": 0.5
+        },
+        {
+          "loss": 2.9602,
+          "grad_norm": 0.0009737014770507812,
+          "learning_rate": 5e-06,
+          "epoch": 1.0
+        },
+        {
+          "train_runtime": 8.7915,
+          "train_samples_per_second": 0.227,
+          "train_steps_per_second": 0.227,
+          "train_loss": 2.919554829597473,
+          "epoch": 1.0
+        },
+        {
+          "trainer_state": {
+            "best_global_step": null,
+            "best_metric": null,
+            "best_model_checkpoint": null,
+            "epoch": 1.0,
+            "eval_steps": 500,
+            "global_step": 2,
+            "is_hyper_param_search": false,
+            "is_local_process_zero": true,
+            "is_world_process_zero": true,
+            "log_history": [
+              {
+                "epoch": 0,
+                "step": 0,
+                "teacher_rr_or_ce": 2.878884792327881,
+                "truncated_kl": 0.0
+              },
+              {
+                "epoch": 0.5,
+                "grad_norm": 0.000995635986328125,
+                "learning_rate": 0.0,
+                "loss": 2.8789,
+                "step": 1
+              },
+              {
+                "epoch": 0.5,
+                "step": 1,
+                "teacher_rr_or_ce": 2.9602248668670654,
+                "truncated_kl": 0.0
+              },
+              {
+                "epoch": 1.0,
+                "grad_norm": 0.0009737014770507812,
+                "learning_rate": 5e-06,
+                "loss": 2.9602,
+                "step": 2
+              }
+            ],
+            "logging_steps": 1,
+            "max_steps": 2,
+            "num_input_tokens_seen": 0,
+            "num_train_epochs": 1,
+            "save_steps": 500,
+            "stateful_callbacks": {
+              "TrainerControl": {
+                "args": {
+                  "should_epoch_stop": false,
+                  "should_evaluate": false,
+                  "should_log": false,
+                  "should_save": true,
+                  "should_training_stop": true
+                },
+                "attributes": {}
+              }
+            },
+            "total_flos": 2439156965376.0,
+            "train_batch_size": 1,
+            "trial_name": null,
+            "trial_params": null
+          }
+        }
+      ],
+      "R6_kl": [
+        {
+          "teacher_rr_or_ce": 2.878884792327881,
+          "truncated_kl": 5.539100170135498,
+          "epoch": 0
+        },
+        {
+          "loss": 5.5391,
+          "grad_norm": 0.002056121826171875,
+          "learning_rate": 0.0,
+          "epoch": 0.5
+        },
+        {
+          "teacher_rr_or_ce": 2.9602248668670654,
+          "truncated_kl": 4.85353946685791,
+          "epoch": 0.5
+        },
+        {
+          "loss": 4.8535,
+          "grad_norm": 0.001529693603515625,
+          "learning_rate": 5e-06,
+          "epoch": 1.0
+        },
+        {
+          "train_runtime": 10.9946,
+          "train_samples_per_second": 0.182,
+          "train_steps_per_second": 0.182,
+          "train_loss": 5.196319818496704,
+          "epoch": 1.0
+        },
+        {
+          "trainer_state": {
+            "best_global_step": null,
+            "best_metric": null,
+            "best_model_checkpoint": null,
+            "epoch": 1.0,
+            "eval_steps": 500,
+            "global_step": 2,
+            "is_hyper_param_search": false,
+            "is_local_process_zero": true,
+            "is_world_process_zero": true,
+            "log_history": [
+              {
+                "epoch": 0,
+                "step": 0,
+                "teacher_rr_or_ce": 2.878884792327881,
+                "truncated_kl": 5.539100170135498
+              },
+              {
+                "epoch": 0.5,
+                "grad_norm": 0.002056121826171875,
+                "learning_rate": 0.0,
+                "loss": 5.5391,
+                "step": 1
+              },
+              {
+                "epoch": 0.5,
+                "step": 1,
+                "teacher_rr_or_ce": 2.9602248668670654,
+                "truncated_kl": 4.85353946685791
+              },
+              {
+                "epoch": 1.0,
+                "grad_norm": 0.001529693603515625,
+                "learning_rate": 5e-06,
+                "loss": 4.8535,
+                "step": 2
+              }
+            ],
+            "logging_steps": 1,
+            "max_steps": 2,
+            "num_input_tokens_seen": 0,
+            "num_train_epochs": 1,
+            "save_steps": 500,
+            "stateful_callbacks": {
+              "TrainerControl": {
+                "args": {
+                  "should_epoch_stop": false,
+                  "should_evaluate": false,
+                  "should_log": false,
+                  "should_save": true,
+                  "should_training_stop": true
+                },
+                "attributes": {}
+              }
+            },
+            "total_flos": 2439156965376.0,
+            "train_batch_size": 1,
+            "trial_name": null,
+            "trial_params": null
+          }
+        }
+      ]
+    }
+  },
+  "cleanup": [
+    {
+      "path": "outputs/smoke/nohup_fix_20261013_0235_smoke/R3",
+      "inventory": {
+        "total_bytes": 3501160156,
+        "file_count": 10,
+        "files": [
+          {
+            "path": "outputs/smoke/nohup_fix_20261013_0235_smoke/R3/added_tokens.json",
+            "bytes": 707
+          },
+          {
+            "path": "outputs/smoke/nohup_fix_20261013_0235_smoke/R3/chat_template.jinja",
+            "bytes": 4168
+          },
+          {
+            "path": "outputs/smoke/nohup_fix_20261013_0235_smoke/R3/config.json",
+            "bytes": 726
+          },
+          {
+            "path": "outputs/smoke/nohup_fix_20261013_0235_smoke/R3/generation_config.json",
+            "bytes": 214
+          },
+          {
+            "path": "outputs/smoke/nohup_fix_20261013_0235_smoke/R3/merges.txt",
+            "bytes": 1671853
+          },
+          {
+            "path": "outputs/smoke/nohup_fix_20261013_0235_smoke/R3/model.safetensors",
+            "bytes": 3485276984
+          },
+          {
+            "path": "outputs/smoke/nohup_fix_20261013_0235_smoke/R3/special_tokens_map.json",
+            "bytes": 613
+          },
+          {
+            "path": "outputs/smoke/nohup_fix_20261013_0235_smoke/R3/tokenizer.json",
+            "bytes": 11422654
+          },
+          {
+            "path": "outputs/smoke/nohup_fix_20261013_0235_smoke/R3/tokenizer_config.json",
+            "bytes": 5404
+          },
+          {
+            "path": "outputs/smoke/nohup_fix_20261013_0235_smoke/R3/vocab.json",
+            "bytes": 2776833
+          }
+        ],
+        "file_listing_truncated": false
+      },
+      "deletion": {
+        "path": "outputs/smoke/nohup_fix_20261013_0235_smoke/R3",
+        "reason": "Superseded diagnostic/retry artifact; metrics retained; fresh campaign owns independent checkpoints",
+        "removed_bytes": 3501160156,
+        "file_count": 10
+      }
+    },
+    {
+      "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R3",
+      "inventory": {
+        "total_bytes": 3501160156,
+        "file_count": 10,
+        "files": [
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R3/added_tokens.json",
+            "bytes": 707
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R3/chat_template.jinja",
+            "bytes": 4168
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R3/config.json",
+            "bytes": 726
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R3/generation_config.json",
+            "bytes": 214
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R3/merges.txt",
+            "bytes": 1671853
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R3/model.safetensors",
+            "bytes": 3485276984
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R3/special_tokens_map.json",
+            "bytes": 613
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R3/tokenizer.json",
+            "bytes": 11422654
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R3/tokenizer_config.json",
+            "bytes": 5404
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R3/vocab.json",
+            "bytes": 2776833
+          }
+        ],
+        "file_listing_truncated": false
+      },
+      "deletion": {
+        "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R3",
+        "reason": "Superseded diagnostic/retry artifact; metrics retained; fresh campaign owns independent checkpoints",
+        "removed_bytes": 3501160156,
+        "file_count": 10
+      }
+    },
+    {
+      "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4",
+      "inventory": {
+        "total_bytes": 3501159943,
+        "file_count": 10,
+        "files": [
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4/added_tokens.json",
+            "bytes": 707
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4/chat_template.jinja",
+            "bytes": 4168
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4/config.json",
+            "bytes": 726
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4/generation_config.json",
+            "bytes": 121
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4/merges.txt",
+            "bytes": 1671853
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4/model.safetensors",
+            "bytes": 3485276984
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4/special_tokens_map.json",
+            "bytes": 496
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4/tokenizer.json",
+            "bytes": 11422654
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4/tokenizer_config.json",
+            "bytes": 5401
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4/vocab.json",
+            "bytes": 2776833
+          }
+        ],
+        "file_listing_truncated": false
+      },
+      "deletion": {
+        "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4",
+        "reason": "Superseded diagnostic/retry artifact; metrics retained; fresh campaign owns independent checkpoints",
+        "removed_bytes": 3501159943,
+        "file_count": 10
+      }
+    },
+    {
+      "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/checkpoint-2",
+      "inventory": {
+        "total_bytes": 3545387878,
+        "file_count": 15,
+        "files": [
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/checkpoint-2/added_tokens.json",
+            "bytes": 707
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/checkpoint-2/chat_template.jinja",
+            "bytes": 4168
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/checkpoint-2/config.json",
+            "bytes": 726
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/checkpoint-2/generation_config.json",
+            "bytes": 121
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/checkpoint-2/merges.txt",
+            "bytes": 1671853
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/checkpoint-2/model.safetensors",
+            "bytes": 3485276984
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/checkpoint-2/optimizer.pt",
+            "bytes": 44205242
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/checkpoint-2/rng_state.pth",
+            "bytes": 14244
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/checkpoint-2/scheduler.pt",
+            "bytes": 1064
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/checkpoint-2/special_tokens_map.json",
+            "bytes": 496
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/checkpoint-2/tokenizer.json",
+            "bytes": 11422654
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/checkpoint-2/tokenizer_config.json",
+            "bytes": 5401
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/checkpoint-2/trainer_state.json",
+            "bytes": 1313
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/checkpoint-2/training_args.bin",
+            "bytes": 6072
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/checkpoint-2/vocab.json",
+            "bytes": 2776833
+          }
+        ],
+        "file_listing_truncated": false
+      },
+      "deletion": {
+        "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/checkpoint-2",
+        "reason": "Superseded diagnostic/retry artifact; metrics retained; fresh campaign owns independent checkpoints",
+        "removed_bytes": 3545387878,
+        "file_count": 15
+      }
+    },
+    {
+      "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4a",
+      "inventory": {
+        "total_bytes": 3501159943,
+        "file_count": 10,
+        "files": [
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4a/added_tokens.json",
+            "bytes": 707
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4a/chat_template.jinja",
+            "bytes": 4168
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4a/config.json",
+            "bytes": 726
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4a/generation_config.json",
+            "bytes": 121
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4a/merges.txt",
+            "bytes": 1671853
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4a/model.safetensors",
+            "bytes": 3485276984
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4a/special_tokens_map.json",
+            "bytes": 496
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4a/tokenizer.json",
+            "bytes": 11422654
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4a/tokenizer_config.json",
+            "bytes": 5401
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4a/vocab.json",
+            "bytes": 2776833
+          }
+        ],
+        "file_listing_truncated": false
+      },
+      "deletion": {
+        "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R4a",
+        "reason": "Superseded diagnostic/retry artifact; metrics retained; fresh campaign owns independent checkpoints",
+        "removed_bytes": 3501159943,
+        "file_count": 10
+      }
+    },
+    {
+      "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4a/checkpoint-2",
+      "inventory": {
+        "total_bytes": 3545387878,
+        "file_count": 15,
+        "files": [
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4a/checkpoint-2/added_tokens.json",
+            "bytes": 707
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4a/checkpoint-2/chat_template.jinja",
+            "bytes": 4168
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4a/checkpoint-2/config.json",
+            "bytes": 726
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4a/checkpoint-2/generation_config.json",
+            "bytes": 121
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4a/checkpoint-2/merges.txt",
+            "bytes": 1671853
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4a/checkpoint-2/model.safetensors",
+            "bytes": 3485276984
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4a/checkpoint-2/optimizer.pt",
+            "bytes": 44205242
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4a/checkpoint-2/rng_state.pth",
+            "bytes": 14244
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4a/checkpoint-2/scheduler.pt",
+            "bytes": 1064
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4a/checkpoint-2/special_tokens_map.json",
+            "bytes": 496
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4a/checkpoint-2/tokenizer.json",
+            "bytes": 11422654
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4a/checkpoint-2/tokenizer_config.json",
+            "bytes": 5401
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4a/checkpoint-2/trainer_state.json",
+            "bytes": 1313
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4a/checkpoint-2/training_args.bin",
+            "bytes": 6072
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4a/checkpoint-2/vocab.json",
+            "bytes": 2776833
+          }
+        ],
+        "file_listing_truncated": false
+      },
+      "deletion": {
+        "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4a/checkpoint-2",
+        "reason": "Superseded diagnostic/retry artifact; metrics retained; fresh campaign owns independent checkpoints",
+        "removed_bytes": 3545387878,
+        "file_count": 15
+      }
+    },
+    {
+      "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R5",
+      "inventory": {
+        "total_bytes": 3501159943,
+        "file_count": 10,
+        "files": [
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R5/added_tokens.json",
+            "bytes": 707
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R5/chat_template.jinja",
+            "bytes": 4168
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R5/config.json",
+            "bytes": 726
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R5/generation_config.json",
+            "bytes": 121
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R5/merges.txt",
+            "bytes": 1671853
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R5/model.safetensors",
+            "bytes": 3485276984
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R5/special_tokens_map.json",
+            "bytes": 496
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R5/tokenizer.json",
+            "bytes": 11422654
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R5/tokenizer_config.json",
+            "bytes": 5401
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R5/vocab.json",
+            "bytes": 2776833
+          }
+        ],
+        "file_listing_truncated": false
+      },
+      "deletion": {
+        "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R5",
+        "reason": "Superseded diagnostic/retry artifact; metrics retained; fresh campaign owns independent checkpoints",
+        "removed_bytes": 3501159943,
+        "file_count": 10
+      }
+    },
+    {
+      "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R5/checkpoint-2",
+      "inventory": {
+        "total_bytes": 3545387848,
+        "file_count": 15,
+        "files": [
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R5/checkpoint-2/added_tokens.json",
+            "bytes": 707
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R5/checkpoint-2/chat_template.jinja",
+            "bytes": 4168
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R5/checkpoint-2/config.json",
+            "bytes": 726
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R5/checkpoint-2/generation_config.json",
+            "bytes": 121
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R5/checkpoint-2/merges.txt",
+            "bytes": 1671853
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R5/checkpoint-2/model.safetensors",
+            "bytes": 3485276984
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R5/checkpoint-2/optimizer.pt",
+            "bytes": 44205242
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R5/checkpoint-2/rng_state.pth",
+            "bytes": 14244
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R5/checkpoint-2/scheduler.pt",
+            "bytes": 1064
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R5/checkpoint-2/special_tokens_map.json",
+            "bytes": 496
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R5/checkpoint-2/tokenizer.json",
+            "bytes": 11422654
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R5/checkpoint-2/tokenizer_config.json",
+            "bytes": 5401
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R5/checkpoint-2/trainer_state.json",
+            "bytes": 1283
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R5/checkpoint-2/training_args.bin",
+            "bytes": 6072
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R5/checkpoint-2/vocab.json",
+            "bytes": 2776833
+          }
+        ],
+        "file_listing_truncated": false
+      },
+      "deletion": {
+        "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R5/checkpoint-2",
+        "reason": "Superseded diagnostic/retry artifact; metrics retained; fresh campaign owns independent checkpoints",
+        "removed_bytes": 3545387848,
+        "file_count": 15
+      }
+    },
+    {
+      "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr",
+      "inventory": {
+        "total_bytes": 3501159943,
+        "file_count": 10,
+        "files": [
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/added_tokens.json",
+            "bytes": 707
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/chat_template.jinja",
+            "bytes": 4168
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/config.json",
+            "bytes": 726
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/generation_config.json",
+            "bytes": 121
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/merges.txt",
+            "bytes": 1671853
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/model.safetensors",
+            "bytes": 3485276984
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/special_tokens_map.json",
+            "bytes": 496
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/tokenizer.json",
+            "bytes": 11422654
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/tokenizer_config.json",
+            "bytes": 5401
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/vocab.json",
+            "bytes": 2776833
+          }
+        ],
+        "file_listing_truncated": false
+      },
+      "deletion": {
+        "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr",
+        "reason": "Superseded diagnostic/retry artifact; metrics retained; fresh campaign owns independent checkpoints",
+        "removed_bytes": 3501159943,
+        "file_count": 10
+      }
+    },
+    {
+      "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/checkpoint-2",
+      "inventory": {
+        "total_bytes": 3545387850,
+        "file_count": 15,
+        "files": [
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/checkpoint-2/added_tokens.json",
+            "bytes": 707
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/checkpoint-2/chat_template.jinja",
+            "bytes": 4168
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/checkpoint-2/config.json",
+            "bytes": 726
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/checkpoint-2/generation_config.json",
+            "bytes": 121
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/checkpoint-2/merges.txt",
+            "bytes": 1671853
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/checkpoint-2/model.safetensors",
+            "bytes": 3485276984
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/checkpoint-2/optimizer.pt",
+            "bytes": 44205242
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/checkpoint-2/rng_state.pth",
+            "bytes": 14244
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/checkpoint-2/scheduler.pt",
+            "bytes": 1064
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/checkpoint-2/special_tokens_map.json",
+            "bytes": 496
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/checkpoint-2/tokenizer.json",
+            "bytes": 11422654
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/checkpoint-2/tokenizer_config.json",
+            "bytes": 5401
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/checkpoint-2/trainer_state.json",
+            "bytes": 1285
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/checkpoint-2/training_args.bin",
+            "bytes": 6072
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/checkpoint-2/vocab.json",
+            "bytes": 2776833
+          }
+        ],
+        "file_listing_truncated": false
+      },
+      "deletion": {
+        "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_rr/checkpoint-2",
+        "reason": "Superseded diagnostic/retry artifact; metrics retained; fresh campaign owns independent checkpoints",
+        "removed_bytes": 3545387850,
+        "file_count": 15
+      }
+    },
+    {
+      "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl",
+      "inventory": {
+        "total_bytes": 3501159943,
+        "file_count": 10,
+        "files": [
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/added_tokens.json",
+            "bytes": 707
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/chat_template.jinja",
+            "bytes": 4168
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/config.json",
+            "bytes": 726
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/generation_config.json",
+            "bytes": 121
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/merges.txt",
+            "bytes": 1671853
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/model.safetensors",
+            "bytes": 3485276984
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/special_tokens_map.json",
+            "bytes": 496
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/tokenizer.json",
+            "bytes": 11422654
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/tokenizer_config.json",
+            "bytes": 5401
+          },
+          {
+            "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/vocab.json",
+            "bytes": 2776833
+          }
+        ],
+        "file_listing_truncated": false
+      },
+      "deletion": {
+        "path": "outputs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl",
+        "reason": "Superseded diagnostic/retry artifact; metrics retained; fresh campaign owns independent checkpoints",
+        "removed_bytes": 3501159943,
+        "file_count": 10
+      }
+    },
+    {
+      "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/checkpoint-2",
+      "inventory": {
+        "total_bytes": 3545387876,
+        "file_count": 15,
+        "files": [
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/checkpoint-2/added_tokens.json",
+            "bytes": 707
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/checkpoint-2/chat_template.jinja",
+            "bytes": 4168
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/checkpoint-2/config.json",
+            "bytes": 726
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/checkpoint-2/generation_config.json",
+            "bytes": 121
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/checkpoint-2/merges.txt",
+            "bytes": 1671853
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/checkpoint-2/model.safetensors",
+            "bytes": 3485276984
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/checkpoint-2/optimizer.pt",
+            "bytes": 44205242
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/checkpoint-2/rng_state.pth",
+            "bytes": 14244
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/checkpoint-2/scheduler.pt",
+            "bytes": 1064
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/checkpoint-2/special_tokens_map.json",
+            "bytes": 496
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/checkpoint-2/tokenizer.json",
+            "bytes": 11422654
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/checkpoint-2/tokenizer_config.json",
+            "bytes": 5401
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/checkpoint-2/trainer_state.json",
+            "bytes": 1311
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/checkpoint-2/training_args.bin",
+            "bytes": 6072
+          },
+          {
+            "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/checkpoint-2/vocab.json",
+            "bytes": 2776833
+          }
+        ],
+        "file_listing_truncated": false
+      },
+      "deletion": {
+        "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R6_kl/checkpoint-2",
+        "reason": "Superseded diagnostic/retry artifact; metrics retained; fresh campaign owns independent checkpoints",
+        "removed_bytes": 3545387876,
+        "file_count": 15
+      }
+    },
+    {
+      "path": "outputs/smoke/smoke_all_fixed_20261012/R8",
+      "inventory": {
+        "total_bytes": 2057967913,
+        "file_count": 20,
+        "files": [
+          {
+            "path": "outputs/smoke/smoke_all_fixed_20261012/R8/added_tokens.json",
+            "bytes": 707
+          },
+          {
+            "path": "outputs/smoke/smoke_all_fixed_20261012/R8/baseline_adapter.json",
+            "bytes": 48241
+          },
+          {
+            "path": "outputs/smoke/smoke_all_fixed_20261012/R8/baseline_state.pt",
+            "bytes": 1024067864
+          },
+          {
+            "path": "outputs/smoke/smoke_all_fixed_20261012/R8/chat_template.jinja",
+            "bytes": 4168
+          },
+          {
+            "path": "outputs/smoke/smoke_all_fixed_20261012/R8/config.json",
+            "bytes": 727
+          },
+          {
+            "path": "outputs/smoke/smoke_all_fixed_20261012/R8/merges.txt",
+            "bytes": 1671853
+          },
+          {
+            "path": "outputs/smoke/smoke_all_fixed_20261012/R8/special_tokens_map.json",
+            "bytes": 613
+          },
+          {
+            "path": "outputs/smoke/smoke_all_fixed_20261012/R8/stage1/added_tokens.json",
+            "bytes": 707
+          },
+          {
+            "path": "outputs/smoke/smoke_all_fixed_20261012/R8/stage1/baseline_adapter.json",
+            "bytes": 37925
+          },
+          {
+            "path": "outputs/smoke/smoke_all_fixed_20261012/R8/stage1/baseline_state.pt",
+            "bytes": 1002047768
+          },
+          {
+            "path": "outputs/smoke/smoke_all_fixed_20261012/R8/stage1/chat_template.jinja",
+            "bytes": 4168
+          },
+          {
+            "path": "outputs/smoke/smoke_all_fixed_20261012/R8/stage1/config.json",
+            "bytes": 728
+          },
+          {
+            "path": "outputs/smoke/smoke_all_fixed_20261012/R8/stage1/merges.txt",
+            "bytes": 1671853
+          },
+          {
+            "path": "outputs/smoke/smoke_all_fixed_20261012/R8/stage1/special_tokens_map.json",
+            "bytes": 613
+          },
+          {
+            "path": "outputs/smoke/smoke_all_fixed_20261012/R8/stage1/tokenizer.json",
+            "bytes": 11422752
+          },
+          {
+            "path": "outputs/smoke/smoke_all_fixed_20261012/R8/stage1/tokenizer_config.json",
+            "bytes": 5404
+          },
+          {
+            "path": "outputs/smoke/smoke_all_fixed_20261012/R8/stage1/vocab.json",
+            "bytes": 2776833
+          },
+          {
+            "path": "outputs/smoke/smoke_all_fixed_20261012/R8/tokenizer.json",
+            "bytes": 11422752
+          },
+          {
+            "path": "outputs/smoke/smoke_all_fixed_20261012/R8/tokenizer_config.json",
+            "bytes": 5404
+          },
+          {
+            "path": "outputs/smoke/smoke_all_fixed_20261012/R8/vocab.json",
+            "bytes": 2776833
+          }
+        ],
+        "file_listing_truncated": false
+      },
+      "deletion": {
+        "path": "outputs/smoke/smoke_all_fixed_20261012/R8",
+        "reason": "Superseded diagnostic/retry artifact; metrics retained; fresh campaign owns independent checkpoints",
+        "removed_bytes": 2057967913,
+        "file_count": 20
+      }
+    },
+    {
+      "path": "outputs/smoke/smoke_all_v3_20261012/R8",
+      "inventory": {
+        "total_bytes": 2057967913,
+        "file_count": 20,
+        "files": [
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8/added_tokens.json",
+            "bytes": 707
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8/baseline_adapter.json",
+            "bytes": 48241
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8/baseline_state.pt",
+            "bytes": 1024067864
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8/chat_template.jinja",
+            "bytes": 4168
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8/config.json",
+            "bytes": 727
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8/merges.txt",
+            "bytes": 1671853
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8/special_tokens_map.json",
+            "bytes": 613
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8/stage1/added_tokens.json",
+            "bytes": 707
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8/stage1/baseline_adapter.json",
+            "bytes": 37925
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8/stage1/baseline_state.pt",
+            "bytes": 1002047768
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8/stage1/chat_template.jinja",
+            "bytes": 4168
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8/stage1/config.json",
+            "bytes": 728
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8/stage1/merges.txt",
+            "bytes": 1671853
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8/stage1/special_tokens_map.json",
+            "bytes": 613
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8/stage1/tokenizer.json",
+            "bytes": 11422752
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8/stage1/tokenizer_config.json",
+            "bytes": 5404
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8/stage1/vocab.json",
+            "bytes": 2776833
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8/tokenizer.json",
+            "bytes": 11422752
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8/tokenizer_config.json",
+            "bytes": 5404
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8/vocab.json",
+            "bytes": 2776833
+          }
+        ],
+        "file_listing_truncated": false
+      },
+      "deletion": {
+        "path": "outputs/smoke/smoke_all_v3_20261012/R8",
+        "reason": "Superseded diagnostic/retry artifact; metrics retained; fresh campaign owns independent checkpoints",
+        "removed_bytes": 2057967913,
+        "file_count": 20
+      }
+    },
+    {
+      "path": "outputs/smoke/smoke_all_v3_20261012/R8_hf",
+      "inventory": {
+        "total_bytes": 3457069062,
+        "file_count": 11,
+        "files": [
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8_hf/added_tokens.json",
+            "bytes": 707
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8_hf/chat_template.jinja",
+            "bytes": 4168
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8_hf/config.json",
+            "bytes": 727
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8_hf/generation_config.json",
+            "bytes": 121
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8_hf/merges.txt",
+            "bytes": 1671853
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8_hf/model.safetensors",
+            "bytes": 3441185608
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8_hf/repro_quantization.json",
+            "bytes": 266
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8_hf/special_tokens_map.json",
+            "bytes": 613
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8_hf/tokenizer.json",
+            "bytes": 11422654
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8_hf/tokenizer_config.json",
+            "bytes": 5512
+          },
+          {
+            "path": "outputs/smoke/smoke_all_v3_20261012/R8_hf/vocab.json",
+            "bytes": 2776833
+          }
+        ],
+        "file_listing_truncated": false
+      },
+      "deletion": {
+        "path": "outputs/smoke/smoke_all_v3_20261012/R8_hf",
+        "reason": "Superseded diagnostic/retry artifact; metrics retained; fresh campaign owns independent checkpoints",
+        "removed_bytes": 3457069062,
+        "file_count": 11
+      }
+    }
+  ],
+  "removed_bytes": 49808064245
+}
