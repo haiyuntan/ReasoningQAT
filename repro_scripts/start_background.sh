@@ -11,12 +11,26 @@ if [[ -s "$RQ_ROOT/results/download-background.pid" ]] && kill -0 "$(cat "$RQ_RO
     echo 'Downloader already running; refusing a duplicate stream.' >&2
     exit 1
 fi
-nohup env RQ_DOWNLOAD_WORKERS=1 "$RQ_ROOT/env/bootstrap/bin/python" "$RQ_REPO/repro_scripts/download_ranges.py" \
+export RQ_DOWNLOAD_WORKERS=1
+: > "$RQ_ROOT/results/download-background.pid"
+: > "$RQ_ROOT/results/background-campaign.pid"
+# Double-fork into a separate session: nohup alone can still be reaped with
+# the tool/terminal process group when the launching shell exits.
+nohup setsid --fork /bin/bash -c 'echo "$$" > "$1"; exec "$2" "$3"' rq-download \
+    "$RQ_ROOT/results/download-background.pid" "$RQ_ROOT/env/bootstrap/bin/python" "$RQ_REPO/repro_scripts/download_ranges.py" \
     >> "$RQ_ROOT/logs/download-serial.log" 2>&1 < /dev/null &
-echo "$!" > "$RQ_ROOT/results/download-background.pid"
-nohup "$RQ_ROOT/env/bootstrap/bin/python" -u "$RQ_REPO/repro_scripts/background_campaign.py" --session "$campaign_session" \
+nohup setsid --fork /bin/bash -c 'echo "$$" > "$1"; exec "$2" -u "$3" --session "$4"' rq-campaign \
+    "$RQ_ROOT/results/background-campaign.pid" "$RQ_ROOT/env/bootstrap/bin/python" "$RQ_REPO/repro_scripts/background_campaign.py" "$campaign_session" \
     >> "$RQ_ROOT/logs/$campaign_session.nohup.log" 2>&1 < /dev/null &
-echo "$!" > "$RQ_ROOT/results/background-campaign.pid"
+for ((campaign_attempt=0; campaign_attempt<100; campaign_attempt++)); do
+    if [[ -s "$RQ_ROOT/results/background-campaign.pid" && -s "$RQ_ROOT/results/download-background.pid" ]]; then
+        kill -0 "$(cat "$RQ_ROOT/results/background-campaign.pid")" 2>/dev/null && \
+        kill -0 "$(cat "$RQ_ROOT/results/download-background.pid")" 2>/dev/null && break
+    fi
+    sleep 0.1
+done
+kill -0 "$(cat "$RQ_ROOT/results/background-campaign.pid")"
+kill -0 "$(cat "$RQ_ROOT/results/download-background.pid")"
 echo "Session: $campaign_session"
 echo "Campaign PID: $(cat "$RQ_ROOT/results/background-campaign.pid")"
 echo "Download PID: $(cat "$RQ_ROOT/results/download-background.pid")"
