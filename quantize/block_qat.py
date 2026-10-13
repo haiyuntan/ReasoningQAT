@@ -21,6 +21,14 @@ import shutil
 import os
 import transformers.models.llama.modeling_llama
 
+def decoder_hidden(output):
+    """Normalize decoder Tensor/tuple outputs without detaching gradients."""
+    hidden = output[0] if isinstance(output, (tuple, list)) else output
+    if not isinstance(hidden, torch.Tensor):
+        raise TypeError(f"Unexpected decoder output: {type(output).__name__}")
+    return hidden
+
+
 def evaluate_loss(qlayer, fp_train_inps, quant_train_inps, dev, attention_mask, position_ids, position_embeddings, block_index, loss_func):
     losses= []
     for index, (label, quant_inp) in enumerate(zip(fp_train_inps, quant_train_inps)):
@@ -32,7 +40,7 @@ def evaluate_loss(qlayer, fp_train_inps, quant_train_inps, dev, attention_mask, 
             with torch.amp.autocast(device_type='cuda', dtype=torch.float16):
                 # Transfer position_embeddings tuple to GPU
                 pos_emb_gpu = tuple(emb.to(dev) for emb in position_embeddings[index])
-                output = qlayer(quant_inp, attention_mask=attention_mask, position_ids=position_ids[index].to(dev), position_embeddings=pos_emb_gpu)
+                output = decoder_hidden(qlayer(quant_inp, attention_mask=attention_mask, position_ids=position_ids[index].to(dev), position_embeddings=pos_emb_gpu))
                 # output = output * scale_factor
             loss = loss_func(output.float(), label.float())
             losses.append(loss.mean().item())
@@ -48,11 +56,10 @@ def update_dataset(layer, dataset, dev, attention_mask, position_ids, position_e
                     inps = inps.unsqueeze(0)
                 # Transfer position_embeddings tuple to GPU
                 pos_emb_gpu = tuple(emb.to(dev) for emb in position_embeddings[index])
-                new_data = layer(inps, attention_mask=attention_mask,position_ids=position_ids[index].to(dev), position_embeddings=pos_emb_gpu).to('cpu')
+                new_data = decoder_hidden(layer(inps, attention_mask=attention_mask,position_ids=position_ids[index].to(dev), position_embeddings=pos_emb_gpu)).to('cpu')
                 # detect whether new data is nan
-                if not torch.isfinite(new_data).any():
-                    print(f"new_data is nan at index {index}")
-                    pdb.set_trace()
+                if not torch.isfinite(new_data).all():
+                    raise FloatingPointError(f"Non-finite block output at sample {index}")
                 dataset.update_data(index,new_data)
                 
                 # Log CPU memory usage every iteration to detect memory leaks
@@ -78,11 +85,11 @@ def make_output_data(layer, next_layer, data, dev, attention_mask, position_id, 
             input = data.to(dev)
             if len(input.shape)==2:
                 input = input.unsqueeze(0)
-            output = layer(input, attention_mask=attention_mask,position_ids=position_id, position_embeddings=position_embedding)
+            output = decoder_hidden(layer(input, attention_mask=attention_mask,position_ids=position_id, position_embeddings=position_embedding))
             if isinstance(next_layer, nn.Sequential):
-                tmp_outputs['layer'] = next_layer(output).detach()
+                tmp_outputs['layer'] = decoder_hidden(next_layer(output)).detach()
             else:
-                tmp_outputs['layer'] = next_layer(output, attention_mask=attention_mask,position_ids=position_id, position_embeddings=position_embedding).detach()
+                tmp_outputs['layer'] = decoder_hidden(next_layer(output, attention_mask=attention_mask,position_ids=position_id, position_embeddings=position_embedding)).detach()
             
             # Clean up intermediate variables
             del input, output
@@ -212,7 +219,7 @@ def train_module(args, modules, module_name, layers, quant_train_inps, fp_train_
                     # Forward through all quantized modules in sequence
                     current_output = input
                     for module in modules:
-                        current_output = module(current_output, attention_mask=attention_mask_batch, position_ids=position_ids_gpu, position_embeddings=pos_emb_gpu)
+                        current_output = decoder_hidden(module(current_output, attention_mask=attention_mask_batch, position_ids=position_ids_gpu, position_embeddings=pos_emb_gpu))
                     
                     out_layer = current_output
                 
@@ -223,8 +230,7 @@ def train_module(args, modules, module_name, layers, quant_train_inps, fp_train_
                 loss = reconstruction_loss / gradient_accumulation_steps  # Scale loss for gradient accumulation
 
                 if not math.isfinite(loss.item()):
-                    logger.info("Loss is NAN, stopping training")
-                    pdb.set_trace()
+                    raise FloatingPointError(f"Non-finite reconstruction loss in blocks {block_indices}")
                 
                 # Accumulate loss for logging (unscaled)
                 accumulated_loss += layer_reconstruction_loss.detach().cpu()
@@ -494,7 +500,7 @@ def block_ap(
         #                 label = label.to(dev)
         #                 with torch.amp.autocast(device_type='cuda', dtype=torch.float16):
         #                     pos_emb_gpu = tuple(emb.to(dev) for emb in position_embeddings[index])
-        #                     output = qlayer(quant_inp, attention_mask=attention_mask, position_ids=position_ids[index].to(dev), position_embeddings=pos_emb_gpu)
+        #                     output = decoder_hidden(qlayer(quant_inp, attention_mask=attention_mask, position_ids=position_ids[index].to(dev), position_embeddings=pos_emb_gpu))
         #                 loss = loss_func(output.float(), label.float())
         #                 losses.append(loss.mean().item())
         #         print(f"average loss for layer {block_index}: {sum(losses)/len(losses)}")

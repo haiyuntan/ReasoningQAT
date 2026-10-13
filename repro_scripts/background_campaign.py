@@ -44,7 +44,7 @@ def main():
                 'TOKENIZERS_PARALLELISM':'false','GIT_TERMINAL_PROMPT':'0',
                 'GIT_ASKPASS':'/tmp/rq-git-askpass.py','PYTHONPATH':str(REPO),
                 'HF_HOME':str(ROOT/'hf_cache'),'MODELSCOPE_CACHE':str(ROOT/'hf_cache/modelscope')})
-    runs=['R9','R8','R0','R1','R2','R3','R4','R4a','R5','R6_rr','R6_kl']
+    runs=['R3','R4','R4a','R5','R6_rr','R6_kl','R9','R8','R0','R1','R2']
     smoke=args.session+'_smoke';formal=args.session+'_formal'
     context={'session':args.session,'smoke_session':smoke,'formal_session':formal,'runs':runs,
              'download_policy':'One stream with HTTP Range resume; retain all completed/partial files'}
