@@ -1,5 +1,5 @@
 {
-  "recorded_utc": "2026-10-12T12:52:21.953033+00:00",
+  "recorded_utc": "2026-10-13T01:49:37.304368+00:00",
   "method": "Single-file streaming HTTP Range resume via hf-mirror; SHA256 before final rename",
   "repositories": {
     "Qwen/Qwen3-1.7B": {
