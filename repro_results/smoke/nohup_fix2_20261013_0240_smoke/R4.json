@@ -1,0 +1,119 @@
+{
+  "run": "R4",
+  "mode": "smoke",
+  "session": "nohup_fix2_20261013_0240_smoke",
+  "git_commit": "f096bff21985fef5238ae2904456e5d0cdecc55f",
+  "code_fingerprint": "8716fa227a7d20b95978b4064227ddbad4c309ba31657b97cb561bbccd3afb73",
+  "status": "FAIL",
+  "started_utc": "2026-10-13T02:45:38.528079+00:00",
+  "command": [
+    "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/env/train/bin/python",
+    "main_e2e_distill.py",
+    "--model",
+    "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/outputs/smoke/nohup_fix2_20261013_0240_smoke/R3",
+    "--teacher_model",
+    "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/models/Qwen3-1.7B",
+    "--wbits",
+    "2",
+    "--group_size",
+    "128",
+    "--dataset_type",
+    "openthoughts",
+    "--seed",
+    "2",
+    "--dataset_size",
+    "2",
+    "--epochs",
+    "1",
+    "--learning_rate",
+    "5e-06",
+    "--optim",
+    "adamw_torch",
+    "--lr_scheduler_type",
+    "cosine",
+    "--per_device_train_batch_size",
+    "1",
+    "--gradient_accumulation_steps",
+    "1",
+    "--max_length",
+    "256",
+    "--cross_entropy_weight",
+    "0.2",
+    "--kl_weight",
+    "1.0",
+    "--kd_loss_type",
+    "jsd",
+    "--top_k",
+    "20",
+    "--enable_efficient_qat",
+    "--save_quant_dir",
+    "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/outputs/smoke/nohup_fix2_20261013_0240_smoke/R4",
+    "--output_dir",
+    "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/logs/smoke/nohup_fix2_20261013_0240_smoke/R4",
+    "--use_teacher_weight",
+    "--max_steps",
+    "2",
+    "--smoke_short_text"
+  ],
+  "configuration": {
+    "calibration_samples": 2,
+    "ptq_sequence_length": 128,
+    "block_train_size": 5,
+    "block_val_size": 5,
+    "block_sequence_length": 128,
+    "block_epochs": 1,
+    "block_batch_size": 1,
+    "block_weight_lr": 2e-05,
+    "block_quant_lr": 0.0001,
+    "e2e_dataset_size": 2,
+    "e2e_max_length": 256,
+    "e2e_micro_batch": 1,
+    "e2e_accumulation": 1,
+    "e2e_learning_rate": 5e-06,
+    "e2e_scheduler": "cosine",
+    "e2e_max_steps": 2,
+    "eval_limit": 1,
+    "eval_max_tokens": 64
+  },
+  "error": "CalledProcessError: Command '['/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/env/train/bin/python', 'main_e2e_distill.py', '--model', '/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/outputs/smoke/nohup_fix2_20261013_0240_smoke/R3', '--teacher_model', '/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/models/Qwen3-1.7B', '--wbits', '2', '--group_size', '128', '--dataset_type', 'openthoughts', '--seed', '2', '--dataset_size', '2', '--epochs', '1', '--learning_rate', '5e-06', '--optim', 'adamw_torch', '--lr_scheduler_type', 'cosine', '--per_device_train_batch_size', '1', '--gradient_accumulation_steps', '1', '--max_length', '256', '--cross_entropy_weight', '0.2', '--kl_weight', '1.0', '--kd_loss_type', 'jsd', '--top_k', '20', '--enable_efficient_qat', '--save_quant_dir', '/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/outputs/smoke/nohup_fix2_20261013_0240_smoke/R4', '--output_dir', '/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/logs/smoke/nohup_fix2_20261013_0240_smoke/R4', '--use_teacher_weight', '--max_steps', '2', '--smoke_short_text']' returned non-zero exit status 1.",
+  "wall_seconds": 19.660132715012878,
+  "finished_utc": "2026-10-13T02:45:58.188385+00:00",
+  "storage_before_cleanup": {
+    "total_bytes": 28949,
+    "file_count": 3,
+    "files": [
+      {
+        "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/log_rank0_1791859544.txt",
+        "bytes": 2182
+      },
+      {
+        "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/train.console.log",
+        "bytes": 15187
+      },
+      {
+        "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/trainable_names.json",
+        "bytes": 11580
+      }
+    ],
+    "file_listing_truncated": false
+  },
+  "storage_after_cleanup": {
+    "total_bytes": 28949,
+    "file_count": 3,
+    "files": [
+      {
+        "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/log_rank0_1791859544.txt",
+        "bytes": 2182
+      },
+      {
+        "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/train.console.log",
+        "bytes": 15187
+      },
+      {
+        "path": "logs/smoke/nohup_fix2_20261013_0240_smoke/R4/trainable_names.json",
+        "bytes": 11580
+      }
+    ],
+    "file_listing_truncated": false
+  }
+}
