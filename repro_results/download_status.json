@@ -1,5 +1,5 @@
 {
-  "recorded_utc": "2026-10-13T01:49:37.304368+00:00",
+  "recorded_utc": "2026-10-13T02:15:43.537813+00:00",
   "method": "Single-file streaming HTTP Range resume via hf-mirror; SHA256 before final rename",
   "repositories": {
     "Qwen/Qwen3-1.7B": {
@@ -10,11 +10,11 @@
       "percent": 100.0
     },
     "open-thoughts/OpenThoughts3-1.2M": {
-      "complete_files": 87,
+      "complete_files": 97,
       "required_files": 120,
-      "downloaded_bytes": 21492187951,
+      "downloaded_bytes": 23902984085,
       "required_bytes": 28188197544,
-      "percent": 76.25
+      "percent": 84.8
     },
     "HuggingFaceFW/fineweb-edu": {
       "complete_files": 1,
