@@ -1,0 +1,1918 @@
+{
+  "run": "R8",
+  "mode": "smoke",
+  "session": "nohup_fixed_20261013_0250_smoke",
+  "git_commit": "c5f28a0f1843d715b3497578a54bcc1ffbde82e8",
+  "code_fingerprint": "79fb8332f9d1826543648fb07c73b126a4562fa60c36582214ff69b9289a99bb",
+  "status": "PASS",
+  "started_utc": "2026-10-13T03:14:26.992558+00:00",
+  "command": [
+    "/bin/bash",
+    "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/ReasoningQAT/repro_scripts/r8_efficientqat_w2.sh",
+    "--mode",
+    "smoke",
+    "--output",
+    "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/outputs/smoke/nohup_fixed_20261013_0250_smoke/R8"
+  ],
+  "configuration": {
+    "calibration_samples": 2,
+    "ptq_sequence_length": 128,
+    "block_train_size": 5,
+    "block_val_size": 5,
+    "block_sequence_length": 128,
+    "block_epochs": 1,
+    "block_batch_size": 1,
+    "block_weight_lr": 2e-05,
+    "block_quant_lr": 0.0001,
+    "e2e_dataset_size": 2,
+    "e2e_max_length": 256,
+    "e2e_micro_batch": 1,
+    "e2e_accumulation": 1,
+    "e2e_learning_rate": 5e-06,
+    "e2e_scheduler": "cosine",
+    "e2e_max_steps": 2,
+    "eval_limit": 1,
+    "eval_max_tokens": 64
+  },
+  "baseline_adapter": {
+    "initialization": [
+      {
+        "block": 0,
+        "epoch": 0,
+        "mse": 0.055997162312269214,
+        "val_mse": 0.047673728317022324,
+        "grad_norm": 0.11133841425180435,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 1,
+        "epoch": 0,
+        "mse": 0.1775470495223999,
+        "val_mse": 0.16770201027393342,
+        "grad_norm": 0.4595584571361542,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 2,
+        "epoch": 0,
+        "mse": 143.14182739257814,
+        "val_mse": 142.5069091796875,
+        "grad_norm": 851.9342651367188,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 3,
+        "epoch": 0,
+        "mse": 133.18236083984374,
+        "val_mse": 142.88686828613282,
+        "grad_norm": 0.9597150087356567,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 4,
+        "epoch": 0,
+        "mse": 133.3544921875,
+        "val_mse": 143.0427459716797,
+        "grad_norm": 1.2227988243103027,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 5,
+        "epoch": 0,
+        "mse": 133.7883270263672,
+        "val_mse": 143.49147338867186,
+        "grad_norm": 2.4559736251831055,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 6,
+        "epoch": 0,
+        "mse": 134.34264221191407,
+        "val_mse": 144.06046447753906,
+        "grad_norm": 2.5419986248016357,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 7,
+        "epoch": 0,
+        "mse": 134.93138427734374,
+        "val_mse": 144.63515014648436,
+        "grad_norm": 4.073888301849365,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 8,
+        "epoch": 0,
+        "mse": 135.81243286132812,
+        "val_mse": 145.62928466796876,
+        "grad_norm": 5.464494228363037,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 9,
+        "epoch": 0,
+        "mse": 137.2510955810547,
+        "val_mse": 147.11339416503907,
+        "grad_norm": 8.456892013549805,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 10,
+        "epoch": 0,
+        "mse": 140.71426391601562,
+        "val_mse": 150.7593017578125,
+        "grad_norm": 11.604039192199707,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 11,
+        "epoch": 0,
+        "mse": 144.6744171142578,
+        "val_mse": 154.97808227539062,
+        "grad_norm": 17.238239288330078,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 12,
+        "epoch": 0,
+        "mse": 148.35309448242188,
+        "val_mse": 159.070068359375,
+        "grad_norm": 16.64986801147461,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 13,
+        "epoch": 0,
+        "mse": 153.02922668457032,
+        "val_mse": 164.0372802734375,
+        "grad_norm": 19.921581268310547,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 14,
+        "epoch": 0,
+        "mse": 158.89800109863282,
+        "val_mse": 170.1659698486328,
+        "grad_norm": 25.148048400878906,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 15,
+        "epoch": 0,
+        "mse": 170.7611511230469,
+        "val_mse": 182.20468444824218,
+        "grad_norm": 47.02967834472656,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 16,
+        "epoch": 0,
+        "mse": 193.90558776855468,
+        "val_mse": 205.4083221435547,
+        "grad_norm": 64.83084106445312,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 17,
+        "epoch": 0,
+        "mse": 234.06478881835938,
+        "val_mse": 244.13174743652343,
+        "grad_norm": 146.78404235839844,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 18,
+        "epoch": 0,
+        "mse": 292.9183349609375,
+        "val_mse": 304.8656860351563,
+        "grad_norm": 214.29318237304688,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 19,
+        "epoch": 0,
+        "mse": 396.09404296875,
+        "val_mse": 410.10602416992185,
+        "grad_norm": 298.92864990234375,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 20,
+        "epoch": 0,
+        "mse": 588.9977905273438,
+        "val_mse": 600.2932983398438,
+        "grad_norm": 687.8445434570312,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 21,
+        "epoch": 0,
+        "mse": 817.3025146484375,
+        "val_mse": 828.7083984375,
+        "grad_norm": 860.5584106445312,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 22,
+        "epoch": 0,
+        "mse": 1152.99541015625,
+        "val_mse": 1161.4748046875,
+        "grad_norm": 1313.0076904296875,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 23,
+        "epoch": 0,
+        "mse": 1561.1122314453125,
+        "val_mse": 1580.5890869140626,
+        "grad_norm": 1612.486572265625,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 24,
+        "epoch": 0,
+        "mse": 2181.91015625,
+        "val_mse": 2284.3618896484377,
+        "grad_norm": 1916.686279296875,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 25,
+        "epoch": 0,
+        "mse": 2899.133447265625,
+        "val_mse": 3052.03095703125,
+        "grad_norm": 2936.161376953125,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 26,
+        "epoch": 0,
+        "mse": 4276.581103515625,
+        "val_mse": 4586.446533203125,
+        "grad_norm": 4951.49609375,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      },
+      {
+        "block": 27,
+        "epoch": 0,
+        "mse": 5673.58818359375,
+        "val_mse": 6395.9841796875,
+        "grad_norm": 8381.361328125,
+        "weight_parameter_names": [
+          "self_attn.q_proj.weight",
+          "self_attn.k_proj.weight",
+          "self_attn.v_proj.weight",
+          "self_attn.o_proj.weight",
+          "self_attn.q_norm.weight",
+          "self_attn.k_norm.weight",
+          "mlp.gate_proj.weight",
+          "mlp.up_proj.weight",
+          "mlp.down_proj.weight",
+          "input_layernorm.weight",
+          "post_attention_layernorm.weight"
+        ],
+        "quant_parameter_names": [
+          "self_attn.q_proj.weight_quantizer.scale",
+          "self_attn.q_proj.weight_quantizer.zero_point",
+          "self_attn.k_proj.weight_quantizer.scale",
+          "self_attn.k_proj.weight_quantizer.zero_point",
+          "self_attn.v_proj.weight_quantizer.scale",
+          "self_attn.v_proj.weight_quantizer.zero_point",
+          "self_attn.o_proj.weight_quantizer.scale",
+          "self_attn.o_proj.weight_quantizer.zero_point",
+          "mlp.gate_proj.weight_quantizer.scale",
+          "mlp.gate_proj.weight_quantizer.zero_point",
+          "mlp.up_proj.weight_quantizer.scale",
+          "mlp.up_proj.weight_quantizer.zero_point",
+          "mlp.down_proj.weight_quantizer.scale",
+          "mlp.down_proj.weight_quantizer.zero_point"
+        ]
+      }
+    ],
+    "stage2": {
+      "objective": "CE",
+      "trainable_names": [
+        "model.layers.0.self_attn.q_proj.scales",
+        "model.layers.0.self_attn.k_proj.scales",
+        "model.layers.0.self_attn.v_proj.scales",
+        "model.layers.0.self_attn.o_proj.scales",
+        "model.layers.0.mlp.gate_proj.scales",
+        "model.layers.0.mlp.up_proj.scales",
+        "model.layers.0.mlp.down_proj.scales",
+        "model.layers.1.self_attn.q_proj.scales",
+        "model.layers.1.self_attn.k_proj.scales",
+        "model.layers.1.self_attn.v_proj.scales",
+        "model.layers.1.self_attn.o_proj.scales",
+        "model.layers.1.mlp.gate_proj.scales",
+        "model.layers.1.mlp.up_proj.scales",
+        "model.layers.1.mlp.down_proj.scales",
+        "model.layers.2.self_attn.q_proj.scales",
+        "model.layers.2.self_attn.k_proj.scales",
+        "model.layers.2.self_attn.v_proj.scales",
+        "model.layers.2.self_attn.o_proj.scales",
+        "model.layers.2.mlp.gate_proj.scales",
+        "model.layers.2.mlp.up_proj.scales",
+        "model.layers.2.mlp.down_proj.scales",
+        "model.layers.3.self_attn.q_proj.scales",
+        "model.layers.3.self_attn.k_proj.scales",
+        "model.layers.3.self_attn.v_proj.scales",
+        "model.layers.3.self_attn.o_proj.scales",
+        "model.layers.3.mlp.gate_proj.scales",
+        "model.layers.3.mlp.up_proj.scales",
+        "model.layers.3.mlp.down_proj.scales",
+        "model.layers.4.self_attn.q_proj.scales",
+        "model.layers.4.self_attn.k_proj.scales",
+        "model.layers.4.self_attn.v_proj.scales",
+        "model.layers.4.self_attn.o_proj.scales",
+        "model.layers.4.mlp.gate_proj.scales",
+        "model.layers.4.mlp.up_proj.scales",
+        "model.layers.4.mlp.down_proj.scales",
+        "model.layers.5.self_attn.q_proj.scales",
+        "model.layers.5.self_attn.k_proj.scales",
+        "model.layers.5.self_attn.v_proj.scales",
+        "model.layers.5.self_attn.o_proj.scales",
+        "model.layers.5.mlp.gate_proj.scales",
+        "model.layers.5.mlp.up_proj.scales",
+        "model.layers.5.mlp.down_proj.scales",
+        "model.layers.6.self_attn.q_proj.scales",
+        "model.layers.6.self_attn.k_proj.scales",
+        "model.layers.6.self_attn.v_proj.scales",
+        "model.layers.6.self_attn.o_proj.scales",
+        "model.layers.6.mlp.gate_proj.scales",
+        "model.layers.6.mlp.up_proj.scales",
+        "model.layers.6.mlp.down_proj.scales",
+        "model.layers.7.self_attn.q_proj.scales",
+        "model.layers.7.self_attn.k_proj.scales",
+        "model.layers.7.self_attn.v_proj.scales",
+        "model.layers.7.self_attn.o_proj.scales",
+        "model.layers.7.mlp.gate_proj.scales",
+        "model.layers.7.mlp.up_proj.scales",
+        "model.layers.7.mlp.down_proj.scales",
+        "model.layers.8.self_attn.q_proj.scales",
+        "model.layers.8.self_attn.k_proj.scales",
+        "model.layers.8.self_attn.v_proj.scales",
+        "model.layers.8.self_attn.o_proj.scales",
+        "model.layers.8.mlp.gate_proj.scales",
+        "model.layers.8.mlp.up_proj.scales",
+        "model.layers.8.mlp.down_proj.scales",
+        "model.layers.9.self_attn.q_proj.scales",
+        "model.layers.9.self_attn.k_proj.scales",
+        "model.layers.9.self_attn.v_proj.scales",
+        "model.layers.9.self_attn.o_proj.scales",
+        "model.layers.9.mlp.gate_proj.scales",
+        "model.layers.9.mlp.up_proj.scales",
+        "model.layers.9.mlp.down_proj.scales",
+        "model.layers.10.self_attn.q_proj.scales",
+        "model.layers.10.self_attn.k_proj.scales",
+        "model.layers.10.self_attn.v_proj.scales",
+        "model.layers.10.self_attn.o_proj.scales",
+        "model.layers.10.mlp.gate_proj.scales",
+        "model.layers.10.mlp.up_proj.scales",
+        "model.layers.10.mlp.down_proj.scales",
+        "model.layers.11.self_attn.q_proj.scales",
+        "model.layers.11.self_attn.k_proj.scales",
+        "model.layers.11.self_attn.v_proj.scales",
+        "model.layers.11.self_attn.o_proj.scales",
+        "model.layers.11.mlp.gate_proj.scales",
+        "model.layers.11.mlp.up_proj.scales",
+        "model.layers.11.mlp.down_proj.scales",
+        "model.layers.12.self_attn.q_proj.scales",
+        "model.layers.12.self_attn.k_proj.scales",
+        "model.layers.12.self_attn.v_proj.scales",
+        "model.layers.12.self_attn.o_proj.scales",
+        "model.layers.12.mlp.gate_proj.scales",
+        "model.layers.12.mlp.up_proj.scales",
+        "model.layers.12.mlp.down_proj.scales",
+        "model.layers.13.self_attn.q_proj.scales",
+        "model.layers.13.self_attn.k_proj.scales",
+        "model.layers.13.self_attn.v_proj.scales",
+        "model.layers.13.self_attn.o_proj.scales",
+        "model.layers.13.mlp.gate_proj.scales",
+        "model.layers.13.mlp.up_proj.scales",
+        "model.layers.13.mlp.down_proj.scales",
+        "model.layers.14.self_attn.q_proj.scales",
+        "model.layers.14.self_attn.k_proj.scales",
+        "model.layers.14.self_attn.v_proj.scales",
+        "model.layers.14.self_attn.o_proj.scales",
+        "model.layers.14.mlp.gate_proj.scales",
+        "model.layers.14.mlp.up_proj.scales",
+        "model.layers.14.mlp.down_proj.scales",
+        "model.layers.15.self_attn.q_proj.scales",
+        "model.layers.15.self_attn.k_proj.scales",
+        "model.layers.15.self_attn.v_proj.scales",
+        "model.layers.15.self_attn.o_proj.scales",
+        "model.layers.15.mlp.gate_proj.scales",
+        "model.layers.15.mlp.up_proj.scales",
+        "model.layers.15.mlp.down_proj.scales",
+        "model.layers.16.self_attn.q_proj.scales",
+        "model.layers.16.self_attn.k_proj.scales",
+        "model.layers.16.self_attn.v_proj.scales",
+        "model.layers.16.self_attn.o_proj.scales",
+        "model.layers.16.mlp.gate_proj.scales",
+        "model.layers.16.mlp.up_proj.scales",
+        "model.layers.16.mlp.down_proj.scales",
+        "model.layers.17.self_attn.q_proj.scales",
+        "model.layers.17.self_attn.k_proj.scales",
+        "model.layers.17.self_attn.v_proj.scales",
+        "model.layers.17.self_attn.o_proj.scales",
+        "model.layers.17.mlp.gate_proj.scales",
+        "model.layers.17.mlp.up_proj.scales",
+        "model.layers.17.mlp.down_proj.scales",
+        "model.layers.18.self_attn.q_proj.scales",
+        "model.layers.18.self_attn.k_proj.scales",
+        "model.layers.18.self_attn.v_proj.scales",
+        "model.layers.18.self_attn.o_proj.scales",
+        "model.layers.18.mlp.gate_proj.scales",
+        "model.layers.18.mlp.up_proj.scales",
+        "model.layers.18.mlp.down_proj.scales",
+        "model.layers.19.self_attn.q_proj.scales",
+        "model.layers.19.self_attn.k_proj.scales",
+        "model.layers.19.self_attn.v_proj.scales",
+        "model.layers.19.self_attn.o_proj.scales",
+        "model.layers.19.mlp.gate_proj.scales",
+        "model.layers.19.mlp.up_proj.scales",
+        "model.layers.19.mlp.down_proj.scales",
+        "model.layers.20.self_attn.q_proj.scales",
+        "model.layers.20.self_attn.k_proj.scales",
+        "model.layers.20.self_attn.v_proj.scales",
+        "model.layers.20.self_attn.o_proj.scales",
+        "model.layers.20.mlp.gate_proj.scales",
+        "model.layers.20.mlp.up_proj.scales",
+        "model.layers.20.mlp.down_proj.scales",
+        "model.layers.21.self_attn.q_proj.scales",
+        "model.layers.21.self_attn.k_proj.scales",
+        "model.layers.21.self_attn.v_proj.scales",
+        "model.layers.21.self_attn.o_proj.scales",
+        "model.layers.21.mlp.gate_proj.scales",
+        "model.layers.21.mlp.up_proj.scales",
+        "model.layers.21.mlp.down_proj.scales",
+        "model.layers.22.self_attn.q_proj.scales",
+        "model.layers.22.self_attn.k_proj.scales",
+        "model.layers.22.self_attn.v_proj.scales",
+        "model.layers.22.self_attn.o_proj.scales",
+        "model.layers.22.mlp.gate_proj.scales",
+        "model.layers.22.mlp.up_proj.scales",
+        "model.layers.22.mlp.down_proj.scales",
+        "model.layers.23.self_attn.q_proj.scales",
+        "model.layers.23.self_attn.k_proj.scales",
+        "model.layers.23.self_attn.v_proj.scales",
+        "model.layers.23.self_attn.o_proj.scales",
+        "model.layers.23.mlp.gate_proj.scales",
+        "model.layers.23.mlp.up_proj.scales",
+        "model.layers.23.mlp.down_proj.scales",
+        "model.layers.24.self_attn.q_proj.scales",
+        "model.layers.24.self_attn.k_proj.scales",
+        "model.layers.24.self_attn.v_proj.scales",
+        "model.layers.24.self_attn.o_proj.scales",
+        "model.layers.24.mlp.gate_proj.scales",
+        "model.layers.24.mlp.up_proj.scales",
+        "model.layers.24.mlp.down_proj.scales",
+        "model.layers.25.self_attn.q_proj.scales",
+        "model.layers.25.self_attn.k_proj.scales",
+        "model.layers.25.self_attn.v_proj.scales",
+        "model.layers.25.self_attn.o_proj.scales",
+        "model.layers.25.mlp.gate_proj.scales",
+        "model.layers.25.mlp.up_proj.scales",
+        "model.layers.25.mlp.down_proj.scales",
+        "model.layers.26.self_attn.q_proj.scales",
+        "model.layers.26.self_attn.k_proj.scales",
+        "model.layers.26.self_attn.v_proj.scales",
+        "model.layers.26.self_attn.o_proj.scales",
+        "model.layers.26.mlp.gate_proj.scales",
+        "model.layers.26.mlp.up_proj.scales",
+        "model.layers.26.mlp.down_proj.scales",
+        "model.layers.27.self_attn.q_proj.scales",
+        "model.layers.27.self_attn.k_proj.scales",
+        "model.layers.27.self_attn.v_proj.scales",
+        "model.layers.27.self_attn.o_proj.scales",
+        "model.layers.27.mlp.gate_proj.scales",
+        "model.layers.27.mlp.up_proj.scales",
+        "model.layers.27.mlp.down_proj.scales"
+      ],
+      "steps": [
+        {
+          "step": 0,
+          "loss": 12.0392484664917,
+          "grad_norm": 4641.96728515625
+        },
+        {
+          "step": 1,
+          "loss": 11.817753791809082,
+          "grad_norm": 4073.826904296875
+        }
+      ],
+      "confidence_beta": null,
+      "confidence_estimator": "Mean of actual batches; upstream off-by-one/fixed-denominator/distributed-only bugs corrected",
+      "optimizer": "AdamW",
+      "learning_rate": 5e-06,
+      "scheduler": "cosine",
+      "teacher_used": false,
+      "updated_parameter_probe_values": 12544
+    },
+    "token_budget": {
+      "samples": 2,
+      "tokens_after_mask": 204,
+      "causal_target_tokens": 204,
+      "collator": "TRL DataCollatorForChatML, same shortening and seed as R4",
+      "tensor_sha256": "5b9620badb41abcc6fc994c7e6b11432b22a0373837c1d7673f68eadc8484fcc",
+      "trajectory": "Fixed dataset assistant trajectory; no regeneration"
+    },
+    "mode": "smoke",
+    "seed": 2,
+    "independent_initialization": true,
+    "stage1_strict_reload": true,
+    "peak_training_memory_bytes": 4880125440,
+    "run": "R8",
+    "bits": 2,
+    "group_size": 128,
+    "format": "upstream_packed",
+    "storage": "Native state dictionary; no duplicate model snapshot",
+    "formal_comparable": false
+  },
+  "baseline_contract": {
+    "method": "EfficientQAT",
+    "upstream": "https://github.com/OpenGVLab/EfficientQAT",
+    "commit": "39f37f3b6053681c9b1cd4c9dcaf692d8999459e",
+    "environment": "efficientqat_qwen3",
+    "initialization": "Independent Block-AP; R3 reuse requires equivalence evidence",
+    "stage1_samples": 4096,
+    "stage1_sequence_length": 2048,
+    "stage2_objective": "CE, scale-only E2E-QP, no BF16 Teacher",
+    "reference_percent": {
+      "math_500": 24.8,
+      "live_code_bench": 0.6,
+      "mmlu_redux": 29.1,
+      "gpqa_diamond": 12.1,
+      "ifeval": 25.1,
+      "average": 18.3
+    },
+    "adapter_verified": false,
+    "implementation_available": true,
+    "cpu_integration_verified": true,
+    "formal_supported": false,
+    "blockers": [
+      "Full-model GPU smoke pending",
+      "Confirm author baseline optimizer and formal token budget"
+    ]
+  },
+  "metrics": {
+    "mode": "smoke",
+    "status": "PASS",
+    "seeds": [
+      {
+        "seed": 42,
+        "scores_percent": {
+          "ifeval": 0.0,
+          "live_code_bench": 0.0,
+          "gpqa_diamond": 0.0,
+          "math_500": 0.0,
+          "mmlu_redux": 100.0
+        },
+        "report_details": {
+          "ifeval": {
+            "metric_identity": {
+              "name": "prompt_level_strict",
+              "aggregation": "mean",
+              "dimensions": {}
+            },
+            "num": 1,
+            "execution_summary": {
+              "requested": 1,
+              "succeeded": 1,
+              "errored": 0,
+              "incomplete": false,
+              "subsets": {
+                "default": {
+                  "requested": 1,
+                  "succeeded": 1,
+                  "errored": 0
+                }
+              }
+            }
+          },
+          "live_code_bench": {
+            "metric_identity": {
+              "name": "accuracy",
+              "aggregation": "pass_at_k",
+              "dimensions": {
+                "k": 1
+              }
+            },
+            "num": 1,
+            "execution_summary": {
+              "requested": 1,
+              "succeeded": 1,
+              "errored": 0,
+              "incomplete": false,
+              "subsets": {
+                "release_v1": {
+                  "requested": 1,
+                  "succeeded": 1,
+                  "errored": 0
+                }
+              }
+            }
+          },
+          "gpqa_diamond": {
+            "metric_identity": {
+              "name": "accuracy",
+              "aggregation": "mean",
+              "dimensions": {}
+            },
+            "num": 1,
+            "execution_summary": {
+              "requested": 1,
+              "succeeded": 1,
+              "errored": 0,
+              "incomplete": false,
+              "subsets": {
+                "default": {
+                  "requested": 1,
+                  "succeeded": 1,
+                  "errored": 0
+                }
+              }
+            }
+          },
+          "math_500": {
+            "metric_identity": {
+              "name": "accuracy",
+              "aggregation": "mean",
+              "dimensions": {}
+            },
+            "num": 5,
+            "execution_summary": {
+              "requested": 5,
+              "succeeded": 5,
+              "errored": 0,
+              "incomplete": false,
+              "subsets": {
+                "Level 1": {
+                  "requested": 1,
+                  "succeeded": 1,
+                  "errored": 0
+                },
+                "Level 2": {
+                  "requested": 1,
+                  "succeeded": 1,
+                  "errored": 0
+                },
+                "Level 3": {
+                  "requested": 1,
+                  "succeeded": 1,
+                  "errored": 0
+                },
+                "Level 4": {
+                  "requested": 1,
+                  "succeeded": 1,
+                  "errored": 0
+                },
+                "Level 5": {
+                  "requested": 1,
+                  "succeeded": 1,
+                  "errored": 0
+                }
+              }
+            }
+          },
+          "mmlu_redux": {
+            "metric_identity": {
+              "name": "accuracy",
+              "aggregation": "mean",
+              "dimensions": {}
+            },
+            "num": 1,
+            "execution_summary": {
+              "requested": 1,
+              "succeeded": 1,
+              "errored": 0,
+              "incomplete": false,
+              "subsets": {
+                "abstract_algebra": {
+                  "requested": 1,
+                  "succeeded": 1,
+                  "errored": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "means_percent": {
+      "math_500": 0.0,
+      "live_code_bench": 0.0,
+      "mmlu_redux": 100.0,
+      "gpqa_diamond": 0.0,
+      "ifeval": 0.0
+    },
+    "average_percent": 20.0,
+    "protocol": {
+      "datasets": [
+        "math_500",
+        "live_code_bench",
+        "mmlu_redux",
+        "gpqa_diamond",
+        "ifeval"
+      ],
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "temperature": 0.6,
+      "top_k": 20,
+      "top_p": 1.0,
+      "max_tokens": 32768,
+      "thinking": true,
+      "few_shot_num": 0,
+      "tolerance_percentage_points": 2.0,
+      "confirmed_paper_protocol": false,
+      "unresolved": [
+        "Author EvalScope version, prompt templates and benchmark revisions",
+        "LiveCodeBench date/version slice and code execution scorer",
+        "Exact 128 NuminaMath indices, prompt and GPTQ/AWQ settings",
+        "Stage 2 max training length: 8192 is README assumption, not specified in paper",
+        "R6 W2 epochs: table reports W2, text describes W3 single epoch; W2 3 epochs inferred from Section 4.1",
+        "Author stop tokens, thinking settings and 32K vs 8K per-model generation limits"
+      ]
+    }
+  },
+  "gate": {
+    "status": "PASS",
+    "meaning": "Pipeline execution only; not paper reproduction"
+  },
+  "peak_generation_memory_bytes": 3540420608,
+  "wall_seconds": 316.2766463411972,
+  "finished_utc": "2026-10-13T03:19:43.269363+00:00",
+  "storage_before_cleanup": {
+    "total_bytes": 5515597440,
+    "file_count": 63,
+    "files": [
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/added_tokens.json",
+        "bytes": 707
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/baseline_adapter.json",
+        "bytes": 48241
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/baseline_state.pt",
+        "bytes": 1024067864
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/chat_template.jinja",
+        "bytes": 4168
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/config.json",
+        "bytes": 727
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/merges.txt",
+        "bytes": 1671853
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/special_tokens_map.json",
+        "bytes": 613
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/stage1/added_tokens.json",
+        "bytes": 707
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/stage1/baseline_adapter.json",
+        "bytes": 37925
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/stage1/baseline_state.pt",
+        "bytes": 1002047768
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/stage1/chat_template.jinja",
+        "bytes": 4168
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/stage1/config.json",
+        "bytes": 728
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/stage1/merges.txt",
+        "bytes": 1671853
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/stage1/special_tokens_map.json",
+        "bytes": 613
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/stage1/tokenizer.json",
+        "bytes": 11422752
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/stage1/tokenizer_config.json",
+        "bytes": 5404
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/stage1/vocab.json",
+        "bytes": 2776833
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/tokenizer.json",
+        "bytes": 11422752
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/tokenizer_config.json",
+        "bytes": 5404
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/vocab.json",
+        "bytes": 2776833
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_hf/added_tokens.json",
+        "bytes": 707
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_hf/chat_template.jinja",
+        "bytes": 4168
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_hf/config.json",
+        "bytes": 727
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_hf/generation_config.json",
+        "bytes": 121
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_hf/merges.txt",
+        "bytes": 1671853
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_hf/model.safetensors",
+        "bytes": 3441185608
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_hf/repro_quantization.json",
+        "bytes": 266
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_hf/special_tokens_map.json",
+        "bytes": 613
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_hf/tokenizer.json",
+        "bytes": 11422654
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_hf/tokenizer_config.json",
+        "bytes": 5512
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_hf/vocab.json",
+        "bytes": 2776833
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/metrics.json",
+        "bytes": 4655
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/configs/task_config.yaml",
+        "bytes": 7165
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/logs/eval_log.log",
+        "bytes": 27745
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/predictions/rq-model/gpqa_diamond_default.jsonl",
+        "bytes": 7146
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/predictions/rq-model/ifeval_default.jsonl",
+        "bytes": 7983
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/predictions/rq-model/live_code_bench_release_v1.jsonl",
+        "bytes": 11565
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/predictions/rq-model/math_500_Level 1.jsonl",
+        "bytes": 7256
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/predictions/rq-model/math_500_Level 2.jsonl",
+        "bytes": 7385
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/predictions/rq-model/math_500_Level 3.jsonl",
+        "bytes": 6485
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/predictions/rq-model/math_500_Level 4.jsonl",
+        "bytes": 8712
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/predictions/rq-model/math_500_Level 5.jsonl",
+        "bytes": 9048
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/predictions/rq-model/mmlu_redux_abstract_algebra.jsonl",
+        "bytes": 8171
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reports/report.html",
+        "bytes": 195037
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reports/rq-model/gpqa_diamond.json",
+        "bytes": 8826
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reports/rq-model/ifeval.json",
+        "bytes": 13465
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reports/rq-model/live_code_bench.json",
+        "bytes": 10638
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reports/rq-model/math_500.json",
+        "bytes": 10292
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reports/rq-model/mmlu_redux.json",
+        "bytes": 8897
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reviews/rq-model/gpqa_diamond_default.jsonl",
+        "bytes": 1870
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reviews/rq-model/ifeval_default.jsonl",
+        "bytes": 2607
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reviews/rq-model/live_code_bench_release_v1.jsonl",
+        "bytes": 3597
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reviews/rq-model/math_500_Level 1.jsonl",
+        "bytes": 1917
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reviews/rq-model/math_500_Level 2.jsonl",
+        "bytes": 1988
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reviews/rq-model/math_500_Level 3.jsonl",
+        "bytes": 1665
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reviews/rq-model/math_500_Level 4.jsonl",
+        "bytes": 2404
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reviews/rq-model/math_500_Level 5.jsonl",
+        "bytes": 2508
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reviews/rq-model/mmlu_redux_abstract_algebra.jsonl",
+        "bytes": 2214
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R8/eval.console.log",
+        "bytes": 139687
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R8/export.console.log",
+        "bytes": 267
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R8/generation_telemetry.jsonl",
+        "bytes": 5004
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R8/server.console.log",
+        "bytes": 2355
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R8/train.console.log",
+        "bytes": 31911
+      }
+    ],
+    "file_listing_truncated": false
+  },
+  "cleanup": [
+    {
+      "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_hf",
+      "reason": "Verified HF export can be rebuilt from native checkpoint",
+      "removed_bytes": 3457069062,
+      "file_count": 11
+    },
+    {
+      "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8/stage1",
+      "reason": "Passed native final reload/export supersedes Stage 1 checkpoint",
+      "removed_bytes": 1017968751,
+      "file_count": 10
+    },
+    {
+      "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8",
+      "reason": "Passed smoke artifact; minimal training is reproducible",
+      "removed_bytes": 1039999162,
+      "file_count": 10
+    }
+  ],
+  "storage_after_cleanup": {
+    "total_bytes": 560465,
+    "file_count": 32,
+    "files": [
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/metrics.json",
+        "bytes": 4655
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/configs/task_config.yaml",
+        "bytes": 7165
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/logs/eval_log.log",
+        "bytes": 27745
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/predictions/rq-model/gpqa_diamond_default.jsonl",
+        "bytes": 7146
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/predictions/rq-model/ifeval_default.jsonl",
+        "bytes": 7983
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/predictions/rq-model/live_code_bench_release_v1.jsonl",
+        "bytes": 11565
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/predictions/rq-model/math_500_Level 1.jsonl",
+        "bytes": 7256
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/predictions/rq-model/math_500_Level 2.jsonl",
+        "bytes": 7385
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/predictions/rq-model/math_500_Level 3.jsonl",
+        "bytes": 6485
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/predictions/rq-model/math_500_Level 4.jsonl",
+        "bytes": 8712
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/predictions/rq-model/math_500_Level 5.jsonl",
+        "bytes": 9048
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/predictions/rq-model/mmlu_redux_abstract_algebra.jsonl",
+        "bytes": 8171
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reports/report.html",
+        "bytes": 195037
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reports/rq-model/gpqa_diamond.json",
+        "bytes": 8826
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reports/rq-model/ifeval.json",
+        "bytes": 13465
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reports/rq-model/live_code_bench.json",
+        "bytes": 10638
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reports/rq-model/math_500.json",
+        "bytes": 10292
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reports/rq-model/mmlu_redux.json",
+        "bytes": 8897
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reviews/rq-model/gpqa_diamond_default.jsonl",
+        "bytes": 1870
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reviews/rq-model/ifeval_default.jsonl",
+        "bytes": 2607
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reviews/rq-model/live_code_bench_release_v1.jsonl",
+        "bytes": 3597
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reviews/rq-model/math_500_Level 1.jsonl",
+        "bytes": 1917
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reviews/rq-model/math_500_Level 2.jsonl",
+        "bytes": 1988
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reviews/rq-model/math_500_Level 3.jsonl",
+        "bytes": 1665
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reviews/rq-model/math_500_Level 4.jsonl",
+        "bytes": 2404
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reviews/rq-model/math_500_Level 5.jsonl",
+        "bytes": 2508
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R8_eval/seed_42/reviews/rq-model/mmlu_redux_abstract_algebra.jsonl",
+        "bytes": 2214
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R8/eval.console.log",
+        "bytes": 139687
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R8/export.console.log",
+        "bytes": 267
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R8/generation_telemetry.jsonl",
+        "bytes": 5004
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R8/server.console.log",
+        "bytes": 2355
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R8/train.console.log",
+        "bytes": 31911
+      }
+    ],
+    "file_listing_truncated": false
+  }
+}
