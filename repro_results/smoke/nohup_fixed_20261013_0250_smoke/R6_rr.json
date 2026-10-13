@@ -1,0 +1,726 @@
+{
+  "run": "R6_rr",
+  "mode": "smoke",
+  "session": "nohup_fixed_20261013_0250_smoke",
+  "git_commit": "c5f28a0f1843d715b3497578a54bcc1ffbde82e8",
+  "code_fingerprint": "79fb8332f9d1826543648fb07c73b126a4562fa60c36582214ff69b9289a99bb",
+  "status": "PASS",
+  "started_utc": "2026-10-13T03:02:49.308909+00:00",
+  "command": [
+    "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/env/train/bin/python",
+    "main_e2e_distill.py",
+    "--model",
+    "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/outputs/smoke/nohup_fixed_20261013_0250_smoke/R3",
+    "--teacher_model",
+    "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/models/Qwen3-1.7B",
+    "--wbits",
+    "2",
+    "--group_size",
+    "128",
+    "--dataset_type",
+    "openthoughts",
+    "--seed",
+    "2",
+    "--dataset_size",
+    "2",
+    "--epochs",
+    "1",
+    "--learning_rate",
+    "5e-06",
+    "--optim",
+    "adamw_torch",
+    "--lr_scheduler_type",
+    "cosine",
+    "--per_device_train_batch_size",
+    "1",
+    "--gradient_accumulation_steps",
+    "1",
+    "--max_length",
+    "256",
+    "--cross_entropy_weight",
+    "1.0",
+    "--kl_weight",
+    "0.0",
+    "--kd_loss_type",
+    "jsd",
+    "--top_k",
+    "20",
+    "--enable_efficient_qat",
+    "--save_quant_dir",
+    "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr",
+    "--output_dir",
+    "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr",
+    "--use_teacher_weight",
+    "--max_steps",
+    "2",
+    "--smoke_short_text"
+  ],
+  "configuration": {
+    "calibration_samples": 2,
+    "ptq_sequence_length": 128,
+    "block_train_size": 5,
+    "block_val_size": 5,
+    "block_sequence_length": 128,
+    "block_epochs": 1,
+    "block_batch_size": 1,
+    "block_weight_lr": 2e-05,
+    "block_quant_lr": 0.0001,
+    "e2e_dataset_size": 2,
+    "e2e_max_length": 256,
+    "e2e_micro_batch": 1,
+    "e2e_accumulation": 1,
+    "e2e_learning_rate": 5e-06,
+    "e2e_scheduler": "cosine",
+    "e2e_max_steps": 2,
+    "eval_limit": 1,
+    "eval_max_tokens": 64
+  },
+  "metrics": {
+    "mode": "smoke",
+    "status": "PASS",
+    "seeds": [
+      {
+        "seed": 42,
+        "scores_percent": {
+          "ifeval": 0.0,
+          "live_code_bench": 0.0,
+          "gpqa_diamond": 0.0,
+          "math_500": 0.0,
+          "mmlu_redux": 0.0
+        },
+        "report_details": {
+          "ifeval": {
+            "metric_identity": {
+              "name": "prompt_level_strict",
+              "aggregation": "mean",
+              "dimensions": {}
+            },
+            "num": 1,
+            "execution_summary": {
+              "requested": 1,
+              "succeeded": 1,
+              "errored": 0,
+              "incomplete": false,
+              "subsets": {
+                "default": {
+                  "requested": 1,
+                  "succeeded": 1,
+                  "errored": 0
+                }
+              }
+            }
+          },
+          "live_code_bench": {
+            "metric_identity": {
+              "name": "accuracy",
+              "aggregation": "pass_at_k",
+              "dimensions": {
+                "k": 1
+              }
+            },
+            "num": 1,
+            "execution_summary": {
+              "requested": 1,
+              "succeeded": 1,
+              "errored": 0,
+              "incomplete": false,
+              "subsets": {
+                "release_v1": {
+                  "requested": 1,
+                  "succeeded": 1,
+                  "errored": 0
+                }
+              }
+            }
+          },
+          "gpqa_diamond": {
+            "metric_identity": {
+              "name": "accuracy",
+              "aggregation": "mean",
+              "dimensions": {}
+            },
+            "num": 1,
+            "execution_summary": {
+              "requested": 1,
+              "succeeded": 1,
+              "errored": 0,
+              "incomplete": false,
+              "subsets": {
+                "default": {
+                  "requested": 1,
+                  "succeeded": 1,
+                  "errored": 0
+                }
+              }
+            }
+          },
+          "math_500": {
+            "metric_identity": {
+              "name": "accuracy",
+              "aggregation": "mean",
+              "dimensions": {}
+            },
+            "num": 5,
+            "execution_summary": {
+              "requested": 5,
+              "succeeded": 5,
+              "errored": 0,
+              "incomplete": false,
+              "subsets": {
+                "Level 1": {
+                  "requested": 1,
+                  "succeeded": 1,
+                  "errored": 0
+                },
+                "Level 2": {
+                  "requested": 1,
+                  "succeeded": 1,
+                  "errored": 0
+                },
+                "Level 3": {
+                  "requested": 1,
+                  "succeeded": 1,
+                  "errored": 0
+                },
+                "Level 4": {
+                  "requested": 1,
+                  "succeeded": 1,
+                  "errored": 0
+                },
+                "Level 5": {
+                  "requested": 1,
+                  "succeeded": 1,
+                  "errored": 0
+                }
+              }
+            }
+          },
+          "mmlu_redux": {
+            "metric_identity": {
+              "name": "accuracy",
+              "aggregation": "mean",
+              "dimensions": {}
+            },
+            "num": 1,
+            "execution_summary": {
+              "requested": 1,
+              "succeeded": 1,
+              "errored": 0,
+              "incomplete": false,
+              "subsets": {
+                "abstract_algebra": {
+                  "requested": 1,
+                  "succeeded": 1,
+                  "errored": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "means_percent": {
+      "math_500": 0.0,
+      "live_code_bench": 0.0,
+      "mmlu_redux": 0.0,
+      "gpqa_diamond": 0.0,
+      "ifeval": 0.0
+    },
+    "average_percent": 0.0,
+    "protocol": {
+      "datasets": [
+        "math_500",
+        "live_code_bench",
+        "mmlu_redux",
+        "gpqa_diamond",
+        "ifeval"
+      ],
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "temperature": 0.6,
+      "top_k": 20,
+      "top_p": 1.0,
+      "max_tokens": 32768,
+      "thinking": true,
+      "few_shot_num": 0,
+      "tolerance_percentage_points": 2.0,
+      "confirmed_paper_protocol": false,
+      "unresolved": [
+        "Author EvalScope version, prompt templates and benchmark revisions",
+        "LiveCodeBench date/version slice and code execution scorer",
+        "Exact 128 NuminaMath indices, prompt and GPTQ/AWQ settings",
+        "Stage 2 max training length: 8192 is README assumption, not specified in paper",
+        "R6 W2 epochs: table reports W2, text describes W3 single epoch; W2 3 epochs inferred from Section 4.1",
+        "Author stop tokens, thinking settings and 32K vs 8K per-model generation limits"
+      ]
+    }
+  },
+  "gate": {
+    "status": "PASS",
+    "meaning": "Pipeline execution only; not paper reproduction"
+  },
+  "peak_generation_memory_bytes": 3540420608,
+  "wall_seconds": 114.8682794640772,
+  "finished_utc": "2026-10-13T03:04:44.177321+00:00",
+  "storage_before_cleanup": {
+    "total_bytes": 10504166504,
+    "file_count": 71,
+    "files": [
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/added_tokens.json",
+        "bytes": 707
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/chat_template.jinja",
+        "bytes": 4168
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/config.json",
+        "bytes": 726
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/generation_config.json",
+        "bytes": 121
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/merges.txt",
+        "bytes": 1671853
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/model.safetensors",
+        "bytes": 3485276984
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/special_tokens_map.json",
+        "bytes": 496
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/tokenizer.json",
+        "bytes": 11422654
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/tokenizer_config.json",
+        "bytes": 5401
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/vocab.json",
+        "bytes": 2776833
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_hf/added_tokens.json",
+        "bytes": 707
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_hf/chat_template.jinja",
+        "bytes": 4168
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_hf/config.json",
+        "bytes": 726
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_hf/generation_config.json",
+        "bytes": 121
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_hf/merges.txt",
+        "bytes": 1671853
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_hf/model.safetensors",
+        "bytes": 3441185296
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_hf/repro_quantization.json",
+        "bytes": 178
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_hf/special_tokens_map.json",
+        "bytes": 610
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_hf/tokenizer.json",
+        "bytes": 11422654
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_hf/tokenizer_config.json",
+        "bytes": 5401
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_hf/vocab.json",
+        "bytes": 2776833
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/metrics.json",
+        "bytes": 4650
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/configs/task_config.yaml",
+        "bytes": 7168
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/logs/eval_log.log",
+        "bytes": 27772
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/predictions/rq-model/gpqa_diamond_default.jsonl",
+        "bytes": 6620
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/predictions/rq-model/ifeval_default.jsonl",
+        "bytes": 7143
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/predictions/rq-model/live_code_bench_release_v1.jsonl",
+        "bytes": 11007
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/predictions/rq-model/math_500_Level 1.jsonl",
+        "bytes": 6652
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/predictions/rq-model/math_500_Level 2.jsonl",
+        "bytes": 7407
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/predictions/rq-model/math_500_Level 3.jsonl",
+        "bytes": 6051
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/predictions/rq-model/math_500_Level 4.jsonl",
+        "bytes": 8658
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/predictions/rq-model/math_500_Level 5.jsonl",
+        "bytes": 8284
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/predictions/rq-model/mmlu_redux_abstract_algebra.jsonl",
+        "bytes": 8121
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reports/report.html",
+        "bytes": 194969
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reports/rq-model/gpqa_diamond.json",
+        "bytes": 8835
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reports/rq-model/ifeval.json",
+        "bytes": 13435
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reports/rq-model/live_code_bench.json",
+        "bytes": 10638
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reports/rq-model/math_500.json",
+        "bytes": 10291
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reports/rq-model/mmlu_redux.json",
+        "bytes": 8897
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reviews/rq-model/gpqa_diamond_default.jsonl",
+        "bytes": 1696
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reviews/rq-model/ifeval_default.jsonl",
+        "bytes": 2157
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reviews/rq-model/live_code_bench_release_v1.jsonl",
+        "bytes": 3411
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reviews/rq-model/math_500_Level 1.jsonl",
+        "bytes": 1728
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reviews/rq-model/math_500_Level 2.jsonl",
+        "bytes": 1998
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reviews/rq-model/math_500_Level 3.jsonl",
+        "bytes": 1522
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reviews/rq-model/math_500_Level 4.jsonl",
+        "bytes": 2391
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reviews/rq-model/math_500_Level 5.jsonl",
+        "bytes": 2258
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reviews/rq-model/mmlu_redux_abstract_algebra.jsonl",
+        "bytes": 2195
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/checkpoint-2/added_tokens.json",
+        "bytes": 707
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/checkpoint-2/chat_template.jinja",
+        "bytes": 4168
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/checkpoint-2/config.json",
+        "bytes": 726
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/checkpoint-2/generation_config.json",
+        "bytes": 121
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/checkpoint-2/merges.txt",
+        "bytes": 1671853
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/checkpoint-2/model.safetensors",
+        "bytes": 3485276984
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/checkpoint-2/optimizer.pt",
+        "bytes": 44205242
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/checkpoint-2/rng_state.pth",
+        "bytes": 14244
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/checkpoint-2/scheduler.pt",
+        "bytes": 1064
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/checkpoint-2/special_tokens_map.json",
+        "bytes": 496
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/checkpoint-2/tokenizer.json",
+        "bytes": 11422654
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/checkpoint-2/tokenizer_config.json",
+        "bytes": 5401
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/checkpoint-2/trainer_state.json",
+        "bytes": 1285
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/checkpoint-2/training_args.bin",
+        "bytes": 6072
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/checkpoint-2/vocab.json",
+        "bytes": 2776833
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/eval.console.log",
+        "bytes": 139754
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/export.console.log",
+        "bytes": 2135
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/generation_telemetry.jsonl",
+        "bytes": 5006
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/log_rank0_1791860574.txt",
+        "bytes": 2191
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/server.console.log",
+        "bytes": 2355
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/train.console.log",
+        "bytes": 9668
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/trainable_names.json",
+        "bytes": 11580
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/trainer_state.json",
+        "bytes": 1521
+      }
+    ],
+    "file_listing_truncated": false
+  },
+  "cleanup": [
+    {
+      "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_hf",
+      "reason": "Verified HF export can be rebuilt from native checkpoint",
+      "removed_bytes": 3457068547,
+      "file_count": 11
+    },
+    {
+      "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/checkpoint-2",
+      "reason": "Final checkpoint and completed evaluation supersede trainer snapshot",
+      "removed_bytes": 3545387850,
+      "file_count": 15
+    },
+    {
+      "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr",
+      "reason": "Passed smoke artifact; minimal training is reproducible",
+      "removed_bytes": 3501159943,
+      "file_count": 10
+    }
+  ],
+  "storage_after_cleanup": {
+    "total_bytes": 550164,
+    "file_count": 35,
+    "files": [
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/metrics.json",
+        "bytes": 4650
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/configs/task_config.yaml",
+        "bytes": 7168
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/logs/eval_log.log",
+        "bytes": 27772
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/predictions/rq-model/gpqa_diamond_default.jsonl",
+        "bytes": 6620
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/predictions/rq-model/ifeval_default.jsonl",
+        "bytes": 7143
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/predictions/rq-model/live_code_bench_release_v1.jsonl",
+        "bytes": 11007
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/predictions/rq-model/math_500_Level 1.jsonl",
+        "bytes": 6652
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/predictions/rq-model/math_500_Level 2.jsonl",
+        "bytes": 7407
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/predictions/rq-model/math_500_Level 3.jsonl",
+        "bytes": 6051
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/predictions/rq-model/math_500_Level 4.jsonl",
+        "bytes": 8658
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/predictions/rq-model/math_500_Level 5.jsonl",
+        "bytes": 8284
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/predictions/rq-model/mmlu_redux_abstract_algebra.jsonl",
+        "bytes": 8121
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reports/report.html",
+        "bytes": 194969
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reports/rq-model/gpqa_diamond.json",
+        "bytes": 8835
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reports/rq-model/ifeval.json",
+        "bytes": 13435
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reports/rq-model/live_code_bench.json",
+        "bytes": 10638
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reports/rq-model/math_500.json",
+        "bytes": 10291
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reports/rq-model/mmlu_redux.json",
+        "bytes": 8897
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reviews/rq-model/gpqa_diamond_default.jsonl",
+        "bytes": 1696
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reviews/rq-model/ifeval_default.jsonl",
+        "bytes": 2157
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reviews/rq-model/live_code_bench_release_v1.jsonl",
+        "bytes": 3411
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reviews/rq-model/math_500_Level 1.jsonl",
+        "bytes": 1728
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reviews/rq-model/math_500_Level 2.jsonl",
+        "bytes": 1998
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reviews/rq-model/math_500_Level 3.jsonl",
+        "bytes": 1522
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reviews/rq-model/math_500_Level 4.jsonl",
+        "bytes": 2391
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reviews/rq-model/math_500_Level 5.jsonl",
+        "bytes": 2258
+      },
+      {
+        "path": "outputs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr_eval/seed_42/reviews/rq-model/mmlu_redux_abstract_algebra.jsonl",
+        "bytes": 2195
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/eval.console.log",
+        "bytes": 139754
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/export.console.log",
+        "bytes": 2135
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/generation_telemetry.jsonl",
+        "bytes": 5006
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/log_rank0_1791860574.txt",
+        "bytes": 2191
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/server.console.log",
+        "bytes": 2355
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/train.console.log",
+        "bytes": 9668
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/trainable_names.json",
+        "bytes": 11580
+      },
+      {
+        "path": "logs/smoke/nohup_fixed_20261013_0250_smoke/R6_rr/trainer_state.json",
+        "bytes": 1521
+      }
+    ],
+    "file_listing_truncated": false
+  }
+}
