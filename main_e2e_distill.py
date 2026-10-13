@@ -112,6 +112,13 @@ def DFTCausalLMLoss(
     return loss
 
 class PolicyGKDTrainer(GKDTrainer):
+    def _prepare_dataset(self, dataset, *args):
+        # ChatML collator owns tokenization and completion masking.
+        # Avoid SFT preprocessing creating conflicting input_ids columns.
+        if "messages" not in dataset.column_names:
+            raise ValueError("ChatML training requires messages")
+        return dataset
+
     def __init__(self, kl_weight=1.0, cross_entropy_weight=1.0, use_teacher_weight=False, use_dft_loss=False, top_k=None, kd_loss_type="jsd", mean_prob=0, beta=0.5, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.kl_weight = kl_weight
