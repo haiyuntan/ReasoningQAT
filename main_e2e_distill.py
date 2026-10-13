@@ -780,6 +780,9 @@ def main():
                 conversations.append({**message, 'value': text})
             return {'conversations': conversations}
         dataset = dataset.map(shorten)
+    # TRL 0.17 GKDTrainer replaces the supplied collator with ChatML.
+    # Supply the same messages used by our original ChatML conversion.
+    dataset = dataset.map(lambda sample: format_openthoughts_sample(sample["conversations"]))
     trainable_names = [name for name, param in model.named_parameters() if param.requires_grad]
     if args.enable_efficient_qat:
         assert trainable_names and all(name.endswith('.weight_quantizer.scale') for name in trainable_names)
