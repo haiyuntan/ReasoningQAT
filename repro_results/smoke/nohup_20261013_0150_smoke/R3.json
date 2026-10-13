@@ -1,0 +1,102 @@
+{
+  "run": "R3",
+  "mode": "smoke",
+  "session": "nohup_20261013_0150_smoke",
+  "git_commit": "ca0fd82210a45c8bbe65cc0fdffaa92430e36c4d",
+  "code_fingerprint": "937cc659e16d417d99fb2f4f34e0d438a0c1fb34ee53bf85dc6e5e2898e4b556",
+  "status": "FAIL",
+  "started_utc": "2026-10-13T02:27:40.702815+00:00",
+  "command": [
+    "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/env/train/bin/python",
+    "main_block_qat.py",
+    "--model",
+    "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/models/Qwen3-1.7B",
+    "--net",
+    "Qwen3-1.7B",
+    "--wbits",
+    "2",
+    "--group_size",
+    "128",
+    "--calib_dataset",
+    "sweep_0.8",
+    "--seed",
+    "2",
+    "--train_size",
+    "5",
+    "--val_size",
+    "5",
+    "--training_seqlen",
+    "128",
+    "--epochs",
+    "1",
+    "--batch_size",
+    "1",
+    "--weight_lr",
+    "2e-05",
+    "--quant_lr",
+    "0.0001",
+    "--nblock",
+    "1",
+    "--max_memory",
+    "70GiB",
+    "--cache_dir",
+    "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/hf_cache/block_qat/smoke",
+    "--save_quant_dir",
+    "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/outputs/smoke/nohup_20261013_0150_smoke/R3",
+    "--output_dir",
+    "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/logs/smoke/nohup_20261013_0150_smoke/R3"
+  ],
+  "configuration": {
+    "calibration_samples": 2,
+    "ptq_sequence_length": 128,
+    "block_train_size": 5,
+    "block_val_size": 5,
+    "block_sequence_length": 128,
+    "block_epochs": 1,
+    "block_batch_size": 1,
+    "block_weight_lr": 2e-05,
+    "block_quant_lr": 0.0001,
+    "e2e_dataset_size": 2,
+    "e2e_max_length": 256,
+    "e2e_micro_batch": 1,
+    "e2e_accumulation": 1,
+    "e2e_learning_rate": 5e-06,
+    "e2e_scheduler": "cosine",
+    "e2e_max_steps": 2,
+    "eval_limit": 1,
+    "eval_max_tokens": 64
+  },
+  "error": "CalledProcessError: Command '['/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/env/train/bin/python', 'main_block_qat.py', '--model', '/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/models/Qwen3-1.7B', '--net', 'Qwen3-1.7B', '--wbits', '2', '--group_size', '128', '--calib_dataset', 'sweep_0.8', '--seed', '2', '--train_size', '5', '--val_size', '5', '--training_seqlen', '128', '--epochs', '1', '--batch_size', '1', '--weight_lr', '2e-05', '--quant_lr', '0.0001', '--nblock', '1', '--max_memory', '70GiB', '--cache_dir', '/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/hf_cache/block_qat/smoke', '--save_quant_dir', '/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/outputs/smoke/nohup_20261013_0150_smoke/R3', '--output_dir', '/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/logs/smoke/nohup_20261013_0150_smoke/R3']' returned non-zero exit status 1.",
+  "wall_seconds": 22.400777919217944,
+  "finished_utc": "2026-10-13T02:28:03.103749+00:00",
+  "storage_before_cleanup": {
+    "total_bytes": 7484,
+    "file_count": 2,
+    "files": [
+      {
+        "path": "logs/smoke/nohup_20261013_0150_smoke/R3/log_rank0_1791858467.txt",
+        "bytes": 2073
+      },
+      {
+        "path": "logs/smoke/nohup_20261013_0150_smoke/R3/train.console.log",
+        "bytes": 5411
+      }
+    ],
+    "file_listing_truncated": false
+  },
+  "storage_after_cleanup": {
+    "total_bytes": 7484,
+    "file_count": 2,
+    "files": [
+      {
+        "path": "logs/smoke/nohup_20261013_0150_smoke/R3/log_rank0_1791858467.txt",
+        "bytes": 2073
+      },
+      {
+        "path": "logs/smoke/nohup_20261013_0150_smoke/R3/train.console.log",
+        "bytes": 5411
+      }
+    ],
+    "file_listing_truncated": false
+  }
+}
