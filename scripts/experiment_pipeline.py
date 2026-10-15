@@ -28,7 +28,7 @@ def fingerprint(root=ROOT):
     in pipeline.json; the adapter must verify complete model hashes at runtime.
     """
     selected = []
-    for folder in ('research', 'REALPROVER', 'ReasoningQAT', 'qat_baselines/EfficientQAT'):
+    for folder in ('research', 'REALPROVER', 'ReasoningQAT', 'qat_baselines/EfficientQAT', 'ptq/llm-awq/awq', 'ptq/GPTQModel/gptqmodel'):
         base = root / folder
         for p in base.rglob('*'):
             if (not p.is_file() or any(x in p.parts for x in
@@ -43,6 +43,45 @@ def fingerprint(root=ROOT):
     for p in sorted(selected):
         h.update(str(p.relative_to(root)).encode() + b'\0')
         h.update(p.read_bytes())
+    # Runtime choices participate too: switching Python, Lean binaries or the
+    # retrieval endpoint invalidates old smoke evidence.
+    import os
+    runtime_path = root / 'research/configs/runtime.json'
+    if runtime_path.exists():
+        runtime = read(runtime_path)
+        for role, value in runtime['python'].items():
+            value = os.environ.get(f'REALPROVER_{role.upper()}_PYTHON', value)
+            executable = Path(value)
+            if not executable.is_absolute():
+                executable = root / executable
+            h.update(str(executable.resolve()).encode())
+            if executable.exists():
+                stat = executable.stat()
+                h.update(str((stat.st_size, stat.st_mtime_ns)).encode())
+            for metadata in sorted(executable.parent.parent.glob('lib/python*/site-packages/*.dist-info/METADATA')):
+                if metadata.parent.name.lower().startswith(('torch-', 'transformers-', 'accelerate-', 'vllm-', 'gptqmodel-', 'trl-')):
+                    h.update(metadata.read_bytes())
+    for key in ('REALPROVER_LEAN_WORKSPACE', 'REALPROVER_JIXIA_BIN', 'REALPROVER_INTERACTIVE_ROOT', 'LEANSEARCH_PORT'):
+        h.update((key + '=' + os.environ.get(key, '')).encode())
+    lean = Path(os.environ.get('REALPROVER_LEAN_WORKSPACE', str(root / 'REALPROVER/dependencies/lean_test_v4160')))
+    jixia = Path(os.environ.get('REALPROVER_JIXIA_BIN', str(root / 'REALPROVER/dependencies/jixia/.lake/build/bin/jixia')))
+    interactive = Path(os.environ.get('REALPROVER_INTERACTIVE_ROOT', str(root / 'REALPROVER/dependencies/interactive')))
+    for path in (lean / 'lean-toolchain', lean / 'Header.lean', lean / 'lake-manifest.json', jixia,
+                 interactive / '.lake/build/bin/interactive', interactive / 'lake-manifest.json'):
+        if path.is_file():
+            with path.open('rb') as stream:
+                for chunk in iter(lambda: stream.read(8 * 1024 * 1024), b''):
+                    h.update(chunk)
+    for pattern in ('datasets/manifests/*.json', 'datasets/numinamath_128/calib.jsonl',
+                    'datasets/eval/legacy_candidate/*.jsonl', 'REALPROVER/data/*.jsonl'):
+        for path in sorted(root.glob(pattern)):
+            h.update(str(path.relative_to(root)).encode() + b'\0' + path.read_bytes())
+    # Large raw datasets: detect replacement without hashing 28GB on each
+    # command. Actual selected token/mask hashes are saved by training adapters.
+    for folder in ('datasets/openthoughts3', 'datasets/fineweb-edu'):
+        for path in sorted((root / folder).rglob('*.parquet')):
+            stat = path.stat()
+            h.update(str((str(path.relative_to(root)), stat.st_size, stat.st_mtime_ns)).encode())
     return h.hexdigest()
 
 
@@ -111,7 +150,7 @@ def plan(config, mode):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('action', choices=('plan', 'gate', 'run'))
+    ap.add_argument('action', choices=('plan', 'gate', 'run', 'campaign'))
     ap.add_argument('--mode', choices=('smoke', 'formal'), default='smoke')
     ap.add_argument('--run', choices=ORDER)
     ap.add_argument('--results', type=Path, default=ROOT / 'runs/realprover_pipeline')
@@ -125,8 +164,27 @@ def main():
         gate(args.results, 'smoke', ORDER, digest)
         print('PASS: all P0-P6 smoke receipts match current code/config and evidence')
         return
+    if args.action == 'campaign':
+        if args.mode == 'formal':
+            gate(args.results, 'smoke', ORDER, digest)
+        for run in ORDER:
+            if (args.results / args.mode / run / 'receipt.json').exists():
+                gate(args.results, args.mode, [run], digest)
+                print(f'SKIP validated {args.mode} {run}', flush=True)
+                continue
+            subprocess.run([sys.executable, str(Path(__file__).resolve()), 'run', '--mode', args.mode,
+                            '--run', run, '--results', str(args.results.resolve())], check=True)
+        return
     if not args.run:
         ap.error('run requires --run')
+    import fcntl
+    lock_path = ROOT / 'runs/realprover_pipeline.lock'
+    lock_path.parent.mkdir(parents=True, exist_ok=True)
+    lock = lock_path.open('a')
+    try:
+        fcntl.flock(lock.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        raise ValueError('Another REAL-Prover pipeline run holds the single-GPU lock')
     if args.mode == 'formal':
         gate(args.results, 'smoke', ORDER, digest)
     gate(args.results, args.mode, DEPENDENCIES[args.run], digest)
@@ -135,8 +193,8 @@ def main():
         raise ValueError(f'{args.run}: BLOCKED_ADAPTER_NOT_BOUND; no fallback command')
     destination = args.results / args.mode / args.run
     destination.mkdir(parents=True, exist_ok=True)
-    if (destination / 'receipt.json').exists():
-        raise ValueError('Refusing to overwrite an existing run; use a new --results directory')
+    if any(destination.iterdir()):
+        raise ValueError('Refusing to overwrite a completed/partial run; use a new --results directory')
     import os
     environment = dict(os.environ, REALPROVER_RUN=args.run, REALPROVER_MODE=args.mode,
                        REALPROVER_FINGERPRINT=digest, REALPROVER_OUTPUT=str(destination.resolve()))

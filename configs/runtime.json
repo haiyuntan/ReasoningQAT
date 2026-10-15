@@ -1,0 +1,35 @@
+{
+  "python": {
+    "train": "env/train/bin/python",
+    "gptq": "env/gptq/bin/python",
+    "eval": "/HOME/sysu_qling/sysu_qling_3/HDD_POOL/anaconda3/envs/PROVER/bin/python"
+  },
+  "seed": 2,
+  "attention": "eager",
+  "smoke": {
+    "block_train": 10,
+    "block_val": 5,
+    "length": 256,
+    "block_epochs": 1,
+    "stage2_samples": 2,
+    "stage2_steps": 2,
+    "accumulation": 1,
+    "ptq_samples": 128,
+    "ptq_length": 512,
+    "eval_search": {
+      "num_samples": 4,
+      "max_depth": 8,
+      "max_calls": 8,
+      "max_retries": 1,
+      "max_nodes": 16
+    }
+  },
+  "export": {
+    "atol": 0.0001,
+    "rtol": 0.0001,
+    "prompt_count": 16
+  },
+  "eval_protocol_status": "CANDIDATE_NOT_OFFICIAL_PARITY_VERIFIED",
+  "eval_candidate": "REALPROVER/configs/p0_candidate.toml",
+  "note": "Training defaults from training_general_data.json. Existing environments are read only; no dependency upgrades."
+}

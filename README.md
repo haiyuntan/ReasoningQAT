@@ -23,3 +23,7 @@ env/bootstrap/bin/python research/scripts/download_realprover.py
 `configs/p0_candidate.toml` 和 smoke 版本尚不可视为正式评测协议，不能直接启动旧运行时。完整执行顺序为：恢复并验证 Lean/检索 → BF16 smoke → 完整 P0 → GPTQ/AWQ → P3 block QAT → P4 Teacher-RR+KL → P5 EfficientQAT / P6 CE 消融。
 
 训练仅使用 OpenThoughts/FineWeb；PTQ 使用固定 NuminaMath 128 条；Lean 文件仅用于评测。P4 与 P6 必须共用同一 P3 初始化。阶段状态和结果空值见 `configs/experiment_matrix.json`。
+
+## P0–P6 流水线
+
+方法适配与 campaign/smoke/formal 门禁现已实现；详细运行方法和验证边界见 [pipeline_adapters.md](reports/pipeline_adapters.md)。小型 Qwen2 算子/GPU 检查通过，真实模型端到端冒烟仍等待模型及 Lean/检索依赖；不能启动正式实验。

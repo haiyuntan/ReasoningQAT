@@ -1,0 +1,2 @@
+# Preserve upstream snapshot formatting; validate project-authored code normally.
+vendor/** -whitespace

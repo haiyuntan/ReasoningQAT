@@ -1,7 +1,19 @@
 {
-  "status": "PREPARATION_ONLY_RUNTIME_ADAPTERS_PENDING",
-  "model": {"repo": "FrenzyMath/REAL-Prover", "revision": "fe76f68d9a88f342cb7b546307c20292fea9cced", "model_type": "qwen2"},
-  "required_smoke_runs": ["P0", "P1", "P2", "P3", "P4", "P5", "P6"],
+  "status": "ADAPTERS_IMPLEMENTED_RUNTIME_VALIDATION_PENDING",
+  "model": {
+    "repo": "FrenzyMath/REAL-Prover",
+    "revision": "fe76f68d9a88f342cb7b546307c20292fea9cced",
+    "model_type": "qwen2"
+  },
+  "required_smoke_runs": [
+    "P0",
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "P6"
+  ],
   "formal_requires_all_smoke": true,
   "awq_blocked_policy": "Block formal campaign; do not silently waive required P2 smoke",
   "methods": {
@@ -13,7 +25,132 @@
     "P5": "Independent EfficientQAT Block-AP + E2E-QP; matched token budget",
     "P6": "Same P3 checkpoint + ordinary CE only; same Stage2 tokens; scale only"
   },
-  "smoke": {"eval_problems": 2, "training_steps_target": 2, "meaning": "execution correctness only; not formal accuracy"},
-  "formal": {"eval_dataset": "miniF2F-test", "eval_problems": 244, "training_config": "training_general_data.json"},
-  "commands": {"smoke": {}, "formal": {}}
+  "smoke": {
+    "eval_problems": 2,
+    "training_steps_target": 2,
+    "meaning": "execution correctness only; not formal accuracy"
+  },
+  "formal": {
+    "eval_dataset": "miniF2F-test",
+    "eval_problems": 244,
+    "training_config": "training_general_data.json"
+  },
+  "commands": {
+    "smoke": {
+      "P0": [
+        "env/bootstrap/bin/python",
+        "research/adapters/run_experiment.py",
+        "--run",
+        "P0",
+        "--mode",
+        "smoke"
+      ],
+      "P1": [
+        "env/bootstrap/bin/python",
+        "research/adapters/run_experiment.py",
+        "--run",
+        "P1",
+        "--mode",
+        "smoke"
+      ],
+      "P2": [
+        "env/bootstrap/bin/python",
+        "research/adapters/run_experiment.py",
+        "--run",
+        "P2",
+        "--mode",
+        "smoke"
+      ],
+      "P3": [
+        "env/bootstrap/bin/python",
+        "research/adapters/run_experiment.py",
+        "--run",
+        "P3",
+        "--mode",
+        "smoke"
+      ],
+      "P4": [
+        "env/bootstrap/bin/python",
+        "research/adapters/run_experiment.py",
+        "--run",
+        "P4",
+        "--mode",
+        "smoke"
+      ],
+      "P5": [
+        "env/bootstrap/bin/python",
+        "research/adapters/run_experiment.py",
+        "--run",
+        "P5",
+        "--mode",
+        "smoke"
+      ],
+      "P6": [
+        "env/bootstrap/bin/python",
+        "research/adapters/run_experiment.py",
+        "--run",
+        "P6",
+        "--mode",
+        "smoke"
+      ]
+    },
+    "formal": {
+      "P0": [
+        "env/bootstrap/bin/python",
+        "research/adapters/run_experiment.py",
+        "--run",
+        "P0",
+        "--mode",
+        "formal"
+      ],
+      "P1": [
+        "env/bootstrap/bin/python",
+        "research/adapters/run_experiment.py",
+        "--run",
+        "P1",
+        "--mode",
+        "formal"
+      ],
+      "P2": [
+        "env/bootstrap/bin/python",
+        "research/adapters/run_experiment.py",
+        "--run",
+        "P2",
+        "--mode",
+        "formal"
+      ],
+      "P3": [
+        "env/bootstrap/bin/python",
+        "research/adapters/run_experiment.py",
+        "--run",
+        "P3",
+        "--mode",
+        "formal"
+      ],
+      "P4": [
+        "env/bootstrap/bin/python",
+        "research/adapters/run_experiment.py",
+        "--run",
+        "P4",
+        "--mode",
+        "formal"
+      ],
+      "P5": [
+        "env/bootstrap/bin/python",
+        "research/adapters/run_experiment.py",
+        "--run",
+        "P5",
+        "--mode",
+        "formal"
+      ],
+      "P6": [
+        "env/bootstrap/bin/python",
+        "research/adapters/run_experiment.py",
+        "--run",
+        "P6",
+        "--mode",
+        "formal"
+      ]
+    }
+  }
 }

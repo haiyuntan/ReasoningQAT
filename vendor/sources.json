@@ -1,0 +1,212 @@
+[
+  {
+    "source": "ReasoningQAT/quantize/block_qat.py",
+    "path": "vendor/reasoningqat/quantize/block_qat.py",
+    "source_sha256": "64f36f09be125f433d16ae52abf92f5dc353ac7aa712acdb17e3cfe37281e237",
+    "adapted_sha256": "48b04e2140f897b0670070721de39a0704543872cf31081800ce7a799708d4ed",
+    "modified": true
+  },
+  {
+    "source": "ReasoningQAT/quantize/utils.py",
+    "path": "vendor/reasoningqat/quantize/utils.py",
+    "source_sha256": "1e9ca3dcd32d2d971bbad33920ba2dd755a8e3eac046a8c975529bbe63e6d609",
+    "adapted_sha256": "135a6d8a5815f082621c6a8b607147c969ca53661f644ee382d18a814b9033b8",
+    "modified": true
+  },
+  {
+    "source": "ReasoningQAT/quantize/__init__.py",
+    "path": "vendor/reasoningqat/quantize/__init__.py",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "adapted_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "modified": false
+  },
+  {
+    "source": "ReasoningQAT/quantize/quantizer.py",
+    "path": "vendor/reasoningqat/quantize/quantizer.py",
+    "source_sha256": "2156c43cd7d503ce742a6946792f5f937ade53b55eec04242837fe78c41c7704",
+    "adapted_sha256": "2156c43cd7d503ce742a6946792f5f937ade53b55eec04242837fe78c41c7704",
+    "modified": false
+  },
+  {
+    "source": "ReasoningQAT/quantize/int_linear_real.py",
+    "path": "vendor/reasoningqat/quantize/int_linear_real.py",
+    "source_sha256": "5bee7901e143473fa49d2f0ed450cd582870519333ea9ce4c2b4f8dcd04d6346",
+    "adapted_sha256": "5bee7901e143473fa49d2f0ed450cd582870519333ea9ce4c2b4f8dcd04d6346",
+    "modified": false
+  },
+  {
+    "source": "ReasoningQAT/quantize/int_linear_fake.py",
+    "path": "vendor/reasoningqat/quantize/int_linear_fake.py",
+    "source_sha256": "5befa02dc1dcc7faef4e22f70fa76b11158f3c59e861ffcdbf4600583869a563",
+    "adapted_sha256": "8f9e1a678746ed8cd0fbf81793f6ae159f7b4e006a22590789f42ca08749ebc7",
+    "modified": true
+  },
+  {
+    "source": "ReasoningQAT/quantize/triton_utils/mixin.py",
+    "path": "vendor/reasoningqat/quantize/triton_utils/mixin.py",
+    "source_sha256": "7a585ce965629aafb9e09556f80c30b0b654722954839c0730f0a6b22de3bd90",
+    "adapted_sha256": "7a585ce965629aafb9e09556f80c30b0b654722954839c0730f0a6b22de3bd90",
+    "modified": false
+  },
+  {
+    "source": "ReasoningQAT/quantize/triton_utils/__init__.py",
+    "path": "vendor/reasoningqat/quantize/triton_utils/__init__.py",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "adapted_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "modified": false
+  },
+  {
+    "source": "ReasoningQAT/quantize/triton_utils/kernels.py",
+    "path": "vendor/reasoningqat/quantize/triton_utils/kernels.py",
+    "source_sha256": "a24be63f515044ae292757aaf2685debeab6c71bf73385fa7dbe6c1ab4cafa29",
+    "adapted_sha256": "a24be63f515044ae292757aaf2685debeab6c71bf73385fa7dbe6c1ab4cafa29",
+    "modified": false
+  },
+  {
+    "source": "ReasoningQAT/quantize/triton_utils/custom_autotune.py",
+    "path": "vendor/reasoningqat/quantize/triton_utils/custom_autotune.py",
+    "source_sha256": "a54245ed93567474ba4aa307f881ca76ab253143c8a19c1450cbc79dfaa618da",
+    "adapted_sha256": "a54245ed93567474ba4aa307f881ca76ab253143c8a19c1450cbc79dfaa618da",
+    "modified": false
+  },
+  {
+    "source": "ReasoningQAT/main_block_qat.py",
+    "path": "vendor/reasoningqat/main_block_qat.py",
+    "source_sha256": "3526b74e6bd665a87be1e640e4cbb22ea1fe057d12bce3fce20b7998a3cb5019",
+    "adapted_sha256": "322c415fa7a19bcd76168a059e534400e9a46282ee021bdedac0603cb6ee3920",
+    "modified": true
+  },
+  {
+    "source": "ReasoningQAT/datautils_block.py",
+    "path": "vendor/reasoningqat/datautils_block.py",
+    "source_sha256": "9062f815f8e67027c33153f9f263365e988754b209d55f04fcc1b1595a2b6051",
+    "adapted_sha256": "9062f815f8e67027c33153f9f263365e988754b209d55f04fcc1b1595a2b6051",
+    "modified": false
+  },
+  {
+    "source": "ReasoningQAT/utils.py",
+    "path": "vendor/reasoningqat/utils.py",
+    "source_sha256": "befb7b966b58ba3e2d61d5a0014bc9d452f5aa88a34169c98733635d53040887",
+    "adapted_sha256": "befb7b966b58ba3e2d61d5a0014bc9d452f5aa88a34169c98733635d53040887",
+    "modified": false
+  },
+  {
+    "source": "ReasoningQAT/repro_scripts/__init__.py",
+    "path": "vendor/reasoningqat/repro_scripts/__init__.py",
+    "source_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "adapted_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "modified": false
+  },
+  {
+    "source": "ReasoningQAT/repro_scripts/local_datasets.py",
+    "path": "vendor/reasoningqat/repro_scripts/local_datasets.py",
+    "source_sha256": "a8b15fd0e9b21ef7e1765378b29c10912a41094ad3017e1c6ee4f2c1550c074c",
+    "adapted_sha256": "a8b15fd0e9b21ef7e1765378b29c10912a41094ad3017e1c6ee4f2c1550c074c",
+    "modified": false
+  },
+  {
+    "source": "ReasoningQAT/repro_scripts/runtime_compat.py",
+    "path": "vendor/reasoningqat/repro_scripts/runtime_compat.py",
+    "source_sha256": "d08d246f7ab11f2fea5a62578b699fca7e7c1ecf77a046baa4757762c4d300fd",
+    "adapted_sha256": "d08d246f7ab11f2fea5a62578b699fca7e7c1ecf77a046baa4757762c4d300fd",
+    "modified": false
+  },
+  {
+    "source": "ReasoningQAT/repro_scripts/baseline_ops.py",
+    "path": "vendor/reasoningqat/repro_scripts/baseline_ops.py",
+    "source_sha256": "6f52a85185e23db7517351c64279cc14da7c077077c6e0a749abde563f15044d",
+    "adapted_sha256": "f5a83afdd659bd7d08959b776489be592f3e4dbe5461a0252cb05d017a6c93c6",
+    "modified": true
+  },
+  {
+    "source": "ReasoningQAT/repro_scripts/baseline_training.py",
+    "path": "vendor/reasoningqat/repro_scripts/baseline_training.py",
+    "source_sha256": "836fd0bf31bc7f1555ebcc556fd7322b6bcf2e49a60495f59556feaffad394f8",
+    "adapted_sha256": "9fd688fbe80455c7b2bc47873b92a46c3103b280b86e8ba106c69ec6183d33d3",
+    "modified": true
+  },
+  {
+    "source": "qat_baselines/EfficientQAT/quantize/quantizer.py",
+    "path": "vendor/efficientqat/quantize/quantizer.py",
+    "source_sha256": "91a1d53703f4e6e6f320854e9f99c8b27b75ef9eae689e4d0779a84926ccb1bd",
+    "adapted_sha256": "91a1d53703f4e6e6f320854e9f99c8b27b75ef9eae689e4d0779a84926ccb1bd",
+    "modified": false
+  },
+  {
+    "source": "qat_baselines/EfficientQAT/quantize/int_linear_fake.py",
+    "path": "vendor/efficientqat/quantize/int_linear_fake.py",
+    "source_sha256": "6ab4ef6f3a26ffb6f5acd4d6f9d724c0997ad2a5d20494afd17daac85b9891fd",
+    "adapted_sha256": "6ab4ef6f3a26ffb6f5acd4d6f9d724c0997ad2a5d20494afd17daac85b9891fd",
+    "modified": false
+  },
+  {
+    "source": "qat_baselines/EfficientQAT/quantize/utils.py",
+    "path": "vendor/efficientqat/quantize/utils.py",
+    "source_sha256": "95102a47a886532f4c59a2fbac8b705f9133a577c7c2d17cc2551ed7b378094d",
+    "adapted_sha256": "95102a47a886532f4c59a2fbac8b705f9133a577c7c2d17cc2551ed7b378094d",
+    "modified": false
+  },
+  {
+    "source": "qat_baselines/EfficientQAT/quantize/block_ap.py",
+    "path": "vendor/efficientqat/quantize/block_ap.py",
+    "source_sha256": "46c0b31c5feabd47a6665cfe3930056f2321d2898d2ebc33b9e3ea234e0351b7",
+    "adapted_sha256": "46c0b31c5feabd47a6665cfe3930056f2321d2898d2ebc33b9e3ea234e0351b7",
+    "modified": false
+  },
+  {
+    "source": "qat_baselines/EfficientQAT/quantize/__init__.py",
+    "path": "vendor/efficientqat/quantize/__init__.py",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "adapted_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "modified": false
+  },
+  {
+    "source": "qat_baselines/EfficientQAT/quantize/int_linear_real.py",
+    "path": "vendor/efficientqat/quantize/int_linear_real.py",
+    "source_sha256": "1df0ecfba738f366226f1a1f815d01d81452cf6826467d3680a741c8ed646e2a",
+    "adapted_sha256": "1df0ecfba738f366226f1a1f815d01d81452cf6826467d3680a741c8ed646e2a",
+    "modified": false
+  },
+  {
+    "source": "qat_baselines/EfficientQAT/quantize/triton_utils/custom_autotune.py",
+    "path": "vendor/efficientqat/quantize/triton_utils/custom_autotune.py",
+    "source_sha256": "a54245ed93567474ba4aa307f881ca76ab253143c8a19c1450cbc79dfaa618da",
+    "adapted_sha256": "a54245ed93567474ba4aa307f881ca76ab253143c8a19c1450cbc79dfaa618da",
+    "modified": false
+  },
+  {
+    "source": "qat_baselines/EfficientQAT/quantize/triton_utils/kernels.py",
+    "path": "vendor/efficientqat/quantize/triton_utils/kernels.py",
+    "source_sha256": "a24be63f515044ae292757aaf2685debeab6c71bf73385fa7dbe6c1ab4cafa29",
+    "adapted_sha256": "a24be63f515044ae292757aaf2685debeab6c71bf73385fa7dbe6c1ab4cafa29",
+    "modified": false
+  },
+  {
+    "source": "qat_baselines/EfficientQAT/quantize/triton_utils/mixin.py",
+    "path": "vendor/efficientqat/quantize/triton_utils/mixin.py",
+    "source_sha256": "7a585ce965629aafb9e09556f80c30b0b654722954839c0730f0a6b22de3bd90",
+    "adapted_sha256": "7a585ce965629aafb9e09556f80c30b0b654722954839c0730f0a6b22de3bd90",
+    "modified": false
+  },
+  {
+    "source": "qat_baselines/EfficientQAT/quantize/triton_utils/__init__.py",
+    "path": "vendor/efficientqat/quantize/triton_utils/__init__.py",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "adapted_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "modified": false
+  },
+  {
+    "source": "ReasoningQAT/main_e2e_distill.py",
+    "path": "vendor/reasoningqat/reference_e2e_distill.py",
+    "source_sha256": "561982124ea3ec1cbb17e00be04a25196863caea33efd49fdc214e4a68e52325",
+    "adapted_sha256": "561982124ea3ec1cbb17e00be04a25196863caea33efd49fdc214e4a68e52325",
+    "modified": false
+  },
+  {
+    "source": "qat_baselines/EfficientQAT/LICENSE",
+    "path": "vendor/efficientqat/LICENSE",
+    "source_sha256": "fa7c31d97bc23ffcca0afde556f3d8af2275ff33d5d8d87b32c714f577a59bf0",
+    "adapted_sha256": "fa7c31d97bc23ffcca0afde556f3d8af2275ff33d5d8d87b32c714f577a59bf0",
+    "modified": false
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "status": "COMPONENT_CHECKS_PASS_REAL_MODEL_SMOKE_BLOCKED",
+  "scope": "Synthetic Qwen2 and method operator validation; not REAL-Prover smoke or formal results",
+  "passed": {
+    "gate_unit_tests": 3,
+    "native_aggregation_tests": 2,
+    "verifier_contract_tests": 1,
+    "qwen2_and_loss_tests": 4,
+    "gpu_training": [
+      "P3 block MSE and validation",
+      "P4 Teacher RR plus top20 KL",
+      "P6 ordinary CE",
+      "P5 independent Block-AP and scale-only E2E-QP"
+    ],
+    "gpu_ptq": [
+      "GPTQ W2g128 quantize, save, reload, Torch forward",
+      "AWQ W2g128 scale search, clipping, pseudo-quantization"
+    ],
+    "plan": "All seven smoke and formal commands bound",
+    "formal_gate": "Rejected missing P0-P6 smoke receipts",
+    "static": "84 Python ASTs and git diff --check passed"
+  },
+  "blocked": [
+    "Model download incomplete at final validation",
+    "Lean workspace/Header/Jixia/Interactive missing",
+    "Retrieval runtime and index identity not frozen",
+    "Official evaluator/dataset parity and formal protocol not frozen"
+  ],
+  "git_eval_commit": "49b3a231ca59f9a7158857c6f833c75b81815ca6"
+}
