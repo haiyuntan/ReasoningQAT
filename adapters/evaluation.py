@@ -126,6 +126,7 @@ def main():
         raise RuntimeError('Retrieval service identity differs from frozen local assets/source')
     if a.preflight:
         save(a.output / 'preflight.json', {'status': 'PASS', 'lean_version': version.strip(),
+             'engine_options': dict(config.VLLM_ENGINE_OPTIONS),
              'lean_workspace': str(Path(config.LEAN_TEST_PATH).resolve()),
              'retrieval_identity': retrieval_identity,
              'jixia_sha256': sha(config.analyzer_path),
@@ -143,6 +144,7 @@ def main():
     stats = aggregate(dataset, a.output / 'native')
     events = [json.loads(s) for s in telemetry.read_text().splitlines()]
     stats.update(protocol_sha256=protocol_sha, dataset_sha256=sha(dataset), seed=2, native_exit_code=native_exit,
+                 engine_options=dict(config.VLLM_ENGINE_OPTIONS),
                  retrieval_identity=retrieval_identity,
                  lean_version=version.strip(), retrieval_requests=len(events),
                  retrieval_ok=bool(events) and all(e['success'] for e in events))

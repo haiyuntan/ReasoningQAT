@@ -1,0 +1,197 @@
+{
+  "status": "PASS_12_SYNTHETIC_LOAD_CASES",
+  "profiles": [
+    {
+      "memory_utilization": 0.65,
+      "max_num_seqs": 64,
+      "status": "PASS",
+      "cases": [
+        {
+          "case": "smoke",
+          "prompt_tokens": 1024,
+          "requests": 1,
+          "n": 4,
+          "output_tokens": 1024,
+          "seconds": 4.10630007321015,
+          "output_tokens_per_second": 249.37291034346538,
+          "peak_total_mib": 67087.0,
+          "mean_gpu_utilization": 65.0
+        },
+        {
+          "case": "formal",
+          "prompt_tokens": 1024,
+          "requests": 1,
+          "n": 64,
+          "output_tokens": 16384,
+          "seconds": 10.666331164073199,
+          "output_tokens_per_second": 1536.048313893094,
+          "peak_total_mib": 67975.0,
+          "mean_gpu_utilization": 85.71428571428571
+        },
+        {
+          "case": "long_formal",
+          "prompt_tokens": 7936,
+          "requests": 1,
+          "n": 64,
+          "output_tokens": 16384,
+          "seconds": 48.816842840984464,
+          "output_tokens_per_second": 335.6218683246086,
+          "peak_total_mib": 67977.0,
+          "mean_gpu_utilization": 94.32283464566929
+        },
+        {
+          "case": "saturated",
+          "prompt_tokens": 4096,
+          "requests": 32,
+          "n": 4,
+          "output_tokens": 32768,
+          "seconds": 53.92864179844037,
+          "output_tokens_per_second": 607.6177501831255,
+          "peak_total_mib": 67977.0,
+          "mean_gpu_utilization": 92.72857142857143
+        }
+      ],
+      "init_seconds": 55.083403057884425,
+      "peak_total_mib": 67977.0,
+      "minimum_free_mib": 13943.0,
+      "samples": 443
+    },
+    {
+      "memory_utilization": 0.75,
+      "max_num_seqs": 256,
+      "status": "PASS",
+      "cases": [
+        {
+          "case": "smoke",
+          "prompt_tokens": 1024,
+          "requests": 1,
+          "n": 4,
+          "output_tokens": 1024,
+          "seconds": 3.707053553778678,
+          "output_tokens_per_second": 276.23016100110425,
+          "peak_total_mib": 74967.0,
+          "mean_gpu_utilization": 79.54545454545455
+        },
+        {
+          "case": "formal",
+          "prompt_tokens": 1024,
+          "requests": 1,
+          "n": 64,
+          "output_tokens": 16384,
+          "seconds": 10.623822908848524,
+          "output_tokens_per_second": 1542.1943814927351,
+          "peak_total_mib": 75855.0,
+          "mean_gpu_utilization": 83.74074074074075
+        },
+        {
+          "case": "long_formal",
+          "prompt_tokens": 7936,
+          "requests": 1,
+          "n": 64,
+          "output_tokens": 16384,
+          "seconds": 49.039823384955525,
+          "output_tokens_per_second": 334.0958198684357,
+          "peak_total_mib": 75857.0,
+          "mean_gpu_utilization": 95.15503875968992
+        },
+        {
+          "case": "saturated",
+          "prompt_tokens": 4096,
+          "requests": 32,
+          "n": 4,
+          "output_tokens": 32768,
+          "seconds": 49.94278711127117,
+          "output_tokens_per_second": 656.1107598379278,
+          "peak_total_mib": 75857.0,
+          "mean_gpu_utilization": 93.13846153846154
+        }
+      ],
+      "init_seconds": 53.392264040187,
+      "peak_total_mib": 75857.0,
+      "minimum_free_mib": 6063.0,
+      "samples": 420
+    },
+    {
+      "memory_utilization": 0.7,
+      "max_num_seqs": 128,
+      "status": "PASS",
+      "cases": [
+        {
+          "case": "smoke",
+          "prompt_tokens": 1024,
+          "requests": 1,
+          "n": 4,
+          "output_tokens": 1024,
+          "seconds": 5.229852670803666,
+          "output_tokens_per_second": 195.79901470582783,
+          "peak_total_mib": 71207.0,
+          "mean_gpu_utilization": 56.642857142857146
+        },
+        {
+          "case": "formal",
+          "prompt_tokens": 1024,
+          "requests": 1,
+          "n": 64,
+          "output_tokens": 16384,
+          "seconds": 11.454818901140243,
+          "output_tokens_per_second": 1430.315061407832,
+          "peak_total_mib": 72095.0,
+          "mean_gpu_utilization": 80.75
+        },
+        {
+          "case": "long_formal",
+          "prompt_tokens": 7936,
+          "requests": 1,
+          "n": 64,
+          "output_tokens": 16384,
+          "seconds": 49.15986860310659,
+          "output_tokens_per_second": 333.2799794945879,
+          "peak_total_mib": 72097.0,
+          "mean_gpu_utilization": 94.890625
+        },
+        {
+          "case": "saturated",
+          "prompt_tokens": 4096,
+          "requests": 32,
+          "n": 4,
+          "output_tokens": 32768,
+          "seconds": 49.89608000172302,
+          "output_tokens_per_second": 656.7249370866098,
+          "peak_total_mib": 72097.0,
+          "mean_gpu_utilization": 93.42635658914729
+        }
+      ],
+      "init_seconds": 33.8349745022133,
+      "peak_total_mib": 72097.0,
+      "minimum_free_mib": 9823.0,
+      "samples": 377
+    }
+  ],
+  "evidence": [
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_eval_stress_v1/m0.65_s64.json",
+      "sha256": "876b82c33b9d7b9e9ec8b632ee3fba64cd436bc1b53fa32c8d9ff63300f9e7fd"
+    },
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_eval_stress_v1/m0.75_s256.json",
+      "sha256": "a9c9256d910c82990835d0a3d63a257d6a6a9f1428315a27e7a4be7e0e8fe1f2"
+    },
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_eval_stress_v1/m0.7_s128.json",
+      "sha256": "9d23750e00569d4c0043825d608a45e26a43c76b632cc00e962f9bd5e924b98f"
+    }
+  ],
+  "selected_engine_options": {
+    "gpu_memory_utilization": 0.65,
+    "max_model_len": 8192,
+    "max_num_seqs": 64,
+    "max_num_batched_tokens": 8192
+  },
+  "selection_reason": "Current native evaluation submits one state at a time with n<=64. 0.65/64 retains formal-shape throughput with the largest measured free-memory margin. No statistical superiority claimed.",
+  "limitations": "One run per case, synthetic token inputs, BF16 inference only; not Lean correctness, training memory, all quantized exports or a guarantee against every OOM.",
+  "smoke_audit": {
+    "P0": "PASS original fingerprint and every evidence SHA256 verified",
+    "P1": "STOPPED_BY_USER during reload after GPTQ packing, no receipt",
+    "P2_P6": "NOT_STARTED"
+  }
+}
