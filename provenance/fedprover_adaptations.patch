@@ -1,0 +1,53 @@
+--- FedProver/conf/config.py
++++ REALPROVER/conf/config.py
+@@ -19,8 +19,8 @@
+ 
+ # Model paths
+ PROVER_MODEL_ID = 'realprover'
+-PROVER_MODEL_PATH = '/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/model/bubble_merged'
+-LEAN_TEST_PATH = '/HOME/sysu_qling/sysu_qling_3/project/lean_test_v4160'
++PROVER_MODEL_PATH = os.environ.get('REALPROVER_MODEL_PATH', str(Path(__file__).resolve().parents[2] / 'models/REAL-Prover-v1-bf16'))
++LEAN_TEST_PATH = os.environ.get('REALPROVER_LEAN_WORKSPACE', str(Path(__file__).resolve().parents[1] / 'dependencies/lean_test_v4160'))
+ LEAN_ENV_PATH = os.path.expanduser("~/.elan/bin")
+ LEAN_ENV_PATH = os.path.expanduser("~/.elan/bin")
+ 
+@@ -76,9 +76,9 @@
+ 
+ # interactive 用到的一些配置
+ base_path = Path(__file__).parent.parent
+-analyzer_path = Path("/HOME/sysu_qling/sysu_qling_3/project/lean_deps/jixia/.lake/build/bin/jixia")
+-interactive_path = Path("/HOME/sysu_qling/sysu_qling_3/project/lean_deps/interactive")
+-build_path = Path("/HOME/sysu_qling/sysu_qling_3/project/lean_deps/interactive/.lake/build")
++analyzer_path = Path(os.environ.get('REALPROVER_JIXIA_BIN', str(base_path / 'dependencies/jixia/.lake/build/bin/jixia')))
++interactive_path = Path(os.environ.get('REALPROVER_INTERACTIVE_ROOT', str(base_path / 'dependencies/interactive')))
++build_path = interactive_path / '.lake/build'
+ 
+ # 接口验权参数
+ SALT = "ai-for-math"
+--- FedProver/manager/thirdparty/claude.py
++++ REALPROVER/manager/thirdparty/claude.py
+@@ -1,4 +1,3 @@
+-from anthropic import AsyncAnthropic
+ import asyncio
+ 
+ import conf.config
+@@ -12,6 +11,7 @@
+     调用claude接口执行generate
+     """
+     def __init__(self):
++        from anthropic import AsyncAnthropic
+         self.async_client = AsyncAnthropic(
+             base_url=claude_config['base_url'],
+             api_key=claude_config['api_key'],
+--- FedProver/manager/thirdparty/verifier.py
++++ REALPROVER/manager/thirdparty/verifier.py
+@@ -9,7 +9,8 @@
+ import shutil
+ 
+ DEFAULT_LAKE_PATH = os.path.expanduser("~/.elan/bin/lake")
+-DEFAULT_LEAN_WORKSPACE = "/HOME/sysu_qling/sysu_qling_3/project/lean_test_v4160"
++from conf import config
++DEFAULT_LEAN_WORKSPACE = config.LEAN_TEST_PATH
+ 
+ def verify_proof(full_code: str, 
+                 lake_path: str = DEFAULT_LAKE_PATH,

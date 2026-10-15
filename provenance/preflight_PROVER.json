@@ -1,0 +1,24 @@
+{
+  "code_and_data_checks": "PASS",
+  "packages": {
+    "torch": "2.5.1+cu124",
+    "vllm": "0.6.6",
+    "transformers": "4.57.6",
+    "requests": "2.32.3",
+    "heapdict": "1.0.1",
+    "matplotlib": "3.10.9",
+    "networkx": "3.4.2"
+  },
+  "retrieval": {
+    "endpoint": "http://localhost:8080/retrieve_premises",
+    "status": "NOT_PROBED"
+  },
+  "issues": [
+    "Missing lean_workspace: /XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/REALPROVER/dependencies/lean_test_v4160/lean-toolchain",
+    "Missing header: /XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/REALPROVER/dependencies/lean_test_v4160/Header.lean",
+    "Missing jixia: /XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/REALPROVER/dependencies/jixia/.lake/build/bin/jixia",
+    "Missing interactive: /XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/REALPROVER/dependencies/interactive/.lake/build/bin/interactive",
+    "Model weights download incomplete"
+  ],
+  "runtime_status": "BLOCKED"
+}

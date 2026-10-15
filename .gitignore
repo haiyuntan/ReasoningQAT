@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.log
+/dependencies/*
+!/dependencies/README.md
+/experiment/logs/
+/outputs/
