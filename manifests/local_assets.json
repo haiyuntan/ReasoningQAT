@@ -1,0 +1,32 @@
+{
+  "status": "CANDIDATE_NOT_OFFICIAL_PARITY_VERIFIED",
+  "eval": [
+    {
+      "source": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/datasets/eval/legacy_candidate/minif2f_test.jsonl",
+      "count": 244,
+      "sha256": "ff546d896fd3f635d32f5103e7bc20f1a52099c436911efe72920a5a1ef1ab38"
+    },
+    {
+      "source": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/datasets/eval/legacy_candidate/proofnet_test.jsonl",
+      "count": 186,
+      "sha256": "bdf833d6ff3a2c89069bedc170fb882a20d1ccc43835cf00ec0777af7d4e15e2"
+    },
+    {
+      "source": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/datasets/eval/legacy_candidate/fate_m.jsonl",
+      "count": 141,
+      "sha256": "5ea947f51460044ca557c65027f3533c771f1e37c5e6a2c403d7d2d95d62eeb7"
+    }
+  ],
+  "existing_sources_manifest": {
+    "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/datasets/manifests/sources.json",
+    "sha256": "e78f5f037feb0e9c6a66461c971801530bf122590c0a6fe67032f371cf663dc5"
+  },
+  "openthoughts_raw_parquet_count": 120,
+  "fineweb_raw_parquets": [
+    "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/datasets/fineweb-edu/sample/10BT/000_00000.parquet"
+  ],
+  "reuse_rule": "Reuse raw parquet and NuminaMath after hash checks; regenerate Qwen2 token caches. No Qwen3 token cache reuse."
+}

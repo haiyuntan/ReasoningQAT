@@ -1,0 +1,8 @@
+{
+  "repo_id": "FrenzyMath/REAL-Prover",
+  "revision": "fe76f68d9a88f342cb7b546307c20292fea9cced",
+  "status": "DOWNLOADING",
+  "download_endpoint": "https://hf-mirror.com",
+  "download_mode": "serial_http_range",
+  "max_concurrent_files": 1
+}

@@ -1,0 +1,12 @@
+{
+  "scope": "REAL-Prover native Lean evaluation; general-domain QAT data only",
+  "runs": [
+    {"id": "P0", "method": "BF16", "status": "BLOCKED_ASSETS_RUNTIME", "success_rate": null},
+    {"id": "P1", "method": "GPTQ W2g128", "status": "WAITING_P0", "success_rate": null},
+    {"id": "P2", "method": "AWQ W2g128", "status": "WAITING_P0_AND_W2_BACKEND_VALIDATION", "success_rate": null},
+    {"id": "P3", "method": "ReasoningQAT block-only W2g128", "status": "WAITING_P0_AND_QWEN2_ADAPTATION", "success_rate": null},
+    {"id": "P4", "method": "Teacher-RR + top20 KD, scale-only", "status": "WAITING_P3_AND_LOSS_TESTS", "success_rate": null},
+    {"id": "P5", "method": "EfficientQAT independent Block-AP + E2E-QP", "status": "NOT_STARTED", "success_rate": null},
+    {"id": "P6", "method": "CE scale-only from same P3", "status": "WAITING_P3", "success_rate": null}
+  ]
+}

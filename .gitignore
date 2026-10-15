@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.env
+.env.*
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.parquet
+*.arrow
+*.jsonl
+*.log
+*.key
+*.pem

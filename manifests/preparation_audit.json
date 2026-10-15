@@ -1,0 +1,1898 @@
+{
+  "created_utc": "2026-10-15T06:39:01Z",
+  "root": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning",
+  "legacy": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver",
+  "gpu": {
+    "returncode": 0,
+    "stdout": "Thu Oct 15 06:39:01 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 595.45.04              Driver Version: 595.45.04      CUDA Version: 13.2     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA A800 80GB PCIe          On  |   00000000:A4:00.0 Off |                    0 |\n| N/A   29C    P0             47W /  300W |       0MiB /  81920MiB |      0%      Default |\n|                                         |                        |             Disabled |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|  No running processes found                                                             |\n+-----------------------------------------------------------------------------------------+\n",
+    "stderr": ""
+  },
+  "disk": {
+    "returncode": 0,
+    "stdout": "Filesystem                                                                             Size  Used Avail Use% Mounted on\n99.72.2.200@o2ib200:99.72.2.201@o2ib200:99.72.2.200@tcp200:99.72.2.201@tcp200:/XYFS01  7.5P  6.1P  1.1P  86% /XYFS01/HDD_POOL/sysu_qling/sysu_qling_3\n",
+    "stderr": ""
+  },
+  "legacy_sha": {
+    "returncode": 0,
+    "stdout": "c5dd5b75d5ec1e4a3a8b0fb2d1d2ca5246627703\n",
+    "stderr": ""
+  },
+  "legacy_status": {
+    "returncode": 0,
+    "stdout": " D ICASSP/IEEEbib.bst\n D ICASSP/cgs.tex\n D ICASSP/fhqat.tex\n D ICASSP/img/cgs_g9.png\n D ICASSP/img/cgs_semantic.png\n D ICASSP/img/cgs_tailmass.png\n D ICASSP/img/drift_analysis.png\n D ICASSP/img/fhqat_divergence.png\n D ICASSP/img/fhqat_grad.png\n D ICASSP/img/fhqat_heterogeneity.png\n D ICASSP/img/ucss.png\n D ICASSP/img/utility_law.png\n D ICASSP/main.tex\n D ICASSP/refs.bib\n D ICASSP/spconf.sty\n D artifacts/tactic_sensitivity/data_audit.md\n D artifacts/tactic_sensitivity/f_distribution.csv\n D artifacts/tactic_sensitivity/f_distribution.png\n D artifacts/tactic_sensitivity/grouping.json\n D artifacts/tactic_sensitivity/pilot_report.md\n D artifacts/tactic_sensitivity/pilot_throughput.json\n D artifacts/tactic_sensitivity/prompts.sha256.json\n D artifacts/tactic_sensitivity/replay_failures.jsonl\n D artifacts/tactic_sensitivity/run_metadata.json\n D artifacts/tactic_sensitivity/sample_ids.json\n M conf/config.py\n D docs/icassp_fhqat/design.md\n D docs/icassp_fhqat/novelty_audit.md\n D docs/icassp_qar/e1_experiment.md\n D docs/icassp_qar/idea.md\n D docs/superpowers/plans/2026-08-06-dsprover-comparison.md\n D docs/superpowers/plans/2026-08-07-internlm-goedel-comparison.md\n D docs/superpowers/plans/2026-08-11-icassp-confidence-aware-qat-paper.md\n D docs/superpowers/plans/2026-08-14-quantization-utility-law.md\n D docs/superpowers/plans/2026-09-22-section3-2-tactic-quant-sensitivity.md\n D docs/superpowers/specs/2026-08-06-dsprover-comparison-design.md\n D docs/superpowers/specs/2026-08-07-internlm-goedel-comparison-design.md\n D docs/superpowers/specs/2026-08-11-icassp-confidence-aware-qat-paper-design.md\n D docs/superpowers/specs/2026-08-14-quantization-utility-law-design.md\n M experiment/run.py\n D experiments/__init__.py\n D experiments/counterfactual_cgs_scs/counterfactual_cgs.py\n D experiments/counterfactual_cgs_scs/counterfactual_scs_trainer.py\n D experiments/counterfactual_cgs_scs/main_counterfactual.py\n D experiments/counterfactual_cgs_scs/run_mechanism_train_2gpu.sh\n D experiments/fhqat/domain_split/build_domain_clients.py\n D experiments/fhqat/entropy/analyze_client_divergence.py\n D experiments/fhqat/entropy/collect_client_entropy.sh\n D experiments/fhqat/entropy/gradient_contribution_per_client.py\n D experiments/fhqat/entropy/nohup_collect_all.sh\n D experiments/fhqat/entropy/plot_client_figures.py\n D experiments/fhqat/outputs/checkpoint_w1.md\n D experiments/fhqat/outputs/client_distribution.json\n D experiments/fhqat/outputs/clients/client_A.parquet\n D experiments/fhqat/outputs/clients/client_B.parquet\n D experiments/fhqat/outputs/clients/client_C.parquet\n D experiments/fhqat/outputs/clients/client_D.parquet\n D experiments/fhqat/outputs/clients_all.parquet\n D experiments/fhqat/outputs/divergence_report.json\n D experiments/fhqat/outputs/entropy/log_A.txt\n D experiments/fhqat/outputs/entropy/log_B.txt\n D experiments/fhqat/outputs/entropy/log_C.txt\n D experiments/fhqat/outputs/entropy/log_D.txt\n D experiments/fhqat/outputs/entropy/log_grad.txt\n D experiments/fhqat/outputs/entropy/log_serial.txt\n D experiments/fhqat/outputs/entropy/pids.txt\n D experiments/fhqat/outputs/figs/g9_paper.png\n D experiments/fhqat/outputs/figs/per_client_fragile_hist.png\n D experiments/fhqat/outputs/figs/per_client_missedgate.png\n D experiments/fhqat/outputs/figs/per_client_tailmass.png\n D experiments/fhqat/outputs/figs/wordcloud_A.png\n D experiments/fhqat/outputs/figs/wordcloud_B.png\n D experiments/fhqat/outputs/figs/wordcloud_C.png\n D experiments/fhqat/outputs/figs/wordcloud_D.png\n D experiments/fhqat/outputs/fragility_stats.json\n D experiments/fhqat/outputs/g9_curves_smoke/g9_client0.png\n D experiments/fhqat/outputs/g9_curves_smoke/g9_client1.png\n D experiments/fhqat/outputs/g9_curves_smoke/g9_client2.png\n D experiments/fhqat/outputs/g9_curves_smoke/g9_summary_bars.png\n D experiments/fhqat/outputs/grad_contribution.json\n D experiments/fhqat/train/aggregate_eval_results.py\n D experiments/fhqat/train/analyze_g9_curves.py\n D experiments/fhqat/train/plot_g9_paper.py\n D experiments/fhqat/train/run_centralized.sh\n D experiments/fhqat/train/run_fhqat.sh\n D experiments/fhqat/train/validate_fhqat_mechanism.sh\n D experiments/qef_align/README.md\n D experiments/qef_align/__init__.py\n D experiments/qef_align/measure_error_memory.py\n D experiments/qef_align/run_mechanism_smoke_2gpu.sh\n D experiments/qef_align/summarize_error_memory.py\n D experiments/qisr_regret_alignment/ROADMAP.md\n D experiments/qisr_regret_alignment/merge_vqr_scores.py\n D experiments/qisr_regret_alignment/pcqa_main.py\n D experiments/qisr_regret_alignment/pcqa_trainer.py\n D experiments/qisr_regret_alignment/prepare_vqr_labels.py\n D experiments/qisr_regret_alignment/render_vqr_report.py\n D experiments/qisr_regret_alignment/run_generic_kd_safe.sh\n D experiments/qisr_regret_alignment/run_offline_vqr_2gpu.sh\n D experiments/qisr_regret_alignment/run_pcqa_mechanism_2gpu.sh\n D experiments/qisr_regret_alignment/run_pcqa_smoke_2gpu.sh\n D experiments/qisr_regret_alignment/run_vqr_baseline_2gpu.sh\n D experiments/qisr_regret_alignment/run_vqr_scores.py\n D experiments/qisr_regret_alignment/summarize_pcqa.py\n D experiments/qisr_regret_alignment/vqr_metrics.py\n D experiments/reqat_eval/README.md\n D experiments/reqat_eval/aggregate_stage56_results.py\n D experiments/search_consistent_cgs_scs/build_shared_candidate_bank.py\n D experiments/search_consistent_cgs_scs/build_shared_candidate_bank_client.py\n D experiments/search_consistent_cgs_scs/evaluate_shared_candidate_bank.py\n D experiments/search_consistent_cgs_scs/evaluate_shared_candidate_bank_stable.py\n D experiments/search_consistent_cgs_scs/evaluate_shared_candidate_bank_v2.py\n D experiments/search_consistent_cgs_scs/main_search_consistent.py\n D experiments/search_consistent_cgs_scs/main_search_consistent_v2.py\n D experiments/search_consistent_cgs_scs/main_search_consistent_v3.py\n D experiments/search_consistent_cgs_scs/main_search_consistent_v4.py\n D experiments/search_consistent_cgs_scs/main_search_consistent_v5.py\n D experiments/search_consistent_cgs_scs/main_search_consistent_v6.py\n D experiments/search_consistent_cgs_scs/main_search_consistent_v7.py\n D experiments/search_consistent_cgs_scs/main_search_consistent_v8.py\n D experiments/search_consistent_cgs_scs/merge_shared_candidate_bank.py\n D experiments/search_consistent_cgs_scs/run_build_shared_candidate_bank_2gpu.sh\n D experiments/search_consistent_cgs_scs/run_mechanism_train_2gpu.sh\n D experiments/search_consistent_cgs_scs/run_mechanism_train_2gpu_safe.sh\n D experiments/search_consistent_cgs_scs/run_mechanism_train_2gpu_v2.sh\n D experiments/search_consistent_cgs_scs/run_shared_candidate_eval_2gpu.sh\n D experiments/search_consistent_cgs_scs/run_shared_candidate_eval_stable_2gpu.sh\n D experiments/search_consistent_cgs_scs/search_consistent_cgs.py\n D experiments/search_consistent_cgs_scs/search_consistent_scs_trainer.py\n D experiments/search_consistent_cgs_scs/summarize_shared_candidate_eval.py\n D experiments/search_consistent_cgs_scs/summarize_shared_candidate_eval_stable.py\n D experiments/search_consistent_cgs_scs/summarize_shared_candidate_eval_v2.py\n D experiments/search_consistent_cgs_scs/summarize_shared_candidate_eval_v3.py\n D experiments/tactic_quant_sensitivity/__init__.py\n D experiments/tactic_quant_sensitivity/__main__.py\n D experiments/tactic_quant_sensitivity/analyze.py\n D experiments/tactic_quant_sensitivity/audit.py\n D experiments/tactic_quant_sensitivity/common.py\n D experiments/tactic_quant_sensitivity/config.py\n D experiments/tactic_quant_sensitivity/gate_step2.py\n D experiments/tactic_quant_sensitivity/generation.py\n D experiments/tactic_quant_sensitivity/lean_check.py\n D experiments/tactic_quant_sensitivity/leanenv.py\n D experiments/tactic_quant_sensitivity/pilot.py\n D experiments/tactic_quant_sensitivity/prepare.py\n D experiments/tactic_quant_sensitivity/replay_check.py\n M manager/service/base_service.py\n M manager/service/batch_main_service.py\n M manager/thirdparty/verifier.py\n M quantization/__init__.py\n M stage1_qat_design.md\n M tools/mui_analysis/aggregate_eval.py\n M tools/mui_analysis/cross_model.py\n M training_scripts/run_fed_sft_qat.sh\n M training_scripts/run_formal_experiments_single_gpu.sh\n M training_scripts/run_smoke_stage4.sh\n M training_scripts/smoke_lib.sh\n?? .envs/\n?? =0.12.1\n?? \"Quantization Aware Training for Stepwise Formal Theorem Proving (2).zip\"\n?? data/\n?? eval_quantized.py\n?? logs_precision_consistent_smoke_20260822.log\n?? model/\n?? quantization/deployment.py\n?? quantization/modelopt_backend.py\n?? quantize_deploy.py\n?? reply.md\n?? require.md\n?? run_eval_quantized.py\n?? smoke_test_modelopt_qat.py\n?? smoke_test_qat.py\n?? stage2_reqat_design.md\n?? stage2_reqat_experiment_plan.md\n?? stage_qat_modelopt_migration.md\n?? tools/check_loss_full.py\n?? tools/check_loss_mask.py\n?? tools/check_loss_mask_v2.py\n?? tools/entropy_analysis/analyze_entropy.py\n?? tools/entropy_analysis/collect_confidence_stats.py\n?? tools/entropy_analysis/collect_confidence_stats_fast.py\n?? tools/entropy_analysis/collect_entropy_stats.py\n?? tools/entropy_analysis/debug_routing_tactic.py\n?? tools/entropy_analysis/debug_truncation.py\n?? tools/entropy_analysis/debug_valid_tactic_rate.py\n?? tools/entropy_analysis/dequantize_awq.py\n?? tools/entropy_analysis/g12_noise_generation.py\n?? tools/entropy_analysis/g8_entropy_tailmass.py\n?? tools/entropy_analysis/logit_noise_training_pairs.py\n?? tools/entropy_analysis/plot_confidence_mass_ratio.py\n?? tools/entropy_analysis/plot_confidence_mass_ratio_modelvocab.py\n?? tools/entropy_analysis/plot_g9.py\n?? tools/entropy_analysis/plot_tailmass.py\n?? tools/entropy_analysis/plot_wordcloud.py\n?? tools/entropy_analysis/routing_eval.py\n?? tools/entropy_analysis/run_entropy_analysis.sh\n?? tools/entropy_analysis/token_loss_decomposition.py\n?? tools/eval_accuracy.py\n?? tools/merge_proofnet_results.py\n?? tools/model_comparison_results.txt\n?? tools/step1_data_analysis.py\n?? tools/step2_model_comparison.py\n?? tools/step3_checkpoint_progression.py\n?? training_scripts/reqat/\n?? training_scripts/run_formal_eval_parallel.sh\n?? training_scripts/run_formal_eval_proofnet_fatem.sh\n?? training_scripts/run_formal_eval_resume.sh\n?? training_scripts/run_formal_experiments_4gpu.sh\n?? training_scripts/run_other_evals_orchestrated.sh\n?? training_scripts/run_other_evals_staggered.sh\n?? training_scripts/run_smoke_stage3_4.sh\n?? training_scripts/run_smoke_stage_modelopt.sh\n?? training_scripts/run_stage23_proofnet_fatem_2gpu.sh\n?? training_scripts/run_stage3_fatem_1gpu.sh\n?? training_scripts/run_stage4_proofnet_fatem_1gpu.sh\n",
+    "stderr": ""
+  },
+  "environments": {
+    "PROVER": {
+      "returncode": 0,
+      "stdout": "{\"python\": \"3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]\", \"packages\": {\"torch\": \"2.5.1+cu124\", \"vllm\": \"0.6.6\", \"transformers\": \"4.57.6\", \"trl\": null, \"accelerate\": \"1.14.0\", \"flash-attn\": null}}\n",
+      "stderr": ""
+    },
+    "REQAT_PROVER": {
+      "returncode": 0,
+      "stdout": "{\"python\": \"3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]\", \"packages\": {\"torch\": \"2.5.1+cu124\", \"vllm\": \"0.6.6\", \"transformers\": \"4.57.6\", \"trl\": null, \"accelerate\": \"1.14.0\", \"flash-attn\": null}}\n",
+      "stderr": ""
+    }
+  },
+  "eval_candidates": [
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-03/fate_m_bubble_test-fate_m-8-100-1050/config.toml",
+      "sha256": "439170e52afa1e52800cf69845968e179bdff61af19111762235e710cb505a41",
+      "model": "/HOME/sysu_qling/sysu_qling_3/HDD_POOL/tan/FedProver/model/bubble_merged",
+      "data": "data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-06/bubble_fate_m_smoke_test-fate_m-8-100-0244/config.toml",
+      "sha256": "b7c69dc2c8c3e4638a608347399859793be7c2b362c64183cc61bc6249dfa018",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/model/bubble_merged",
+      "data": "data/fate_m.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-06/bubble_fate_m_smoke_test-fate_m-8-100-0245/config.toml",
+      "sha256": "b7c69dc2c8c3e4638a608347399859793be7c2b362c64183cc61bc6249dfa018",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/model/bubble_merged",
+      "data": "data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-06/bubble_fate_m_smoke_test-fate_m-8-100-0251/config.toml",
+      "sha256": "b7c69dc2c8c3e4638a608347399859793be7c2b362c64183cc61bc6249dfa018",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/model/bubble_merged",
+      "data": "data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-06/bubble_fate_m_smoke_test-fate_m-8-100-0258/config.toml",
+      "sha256": "b7c69dc2c8c3e4638a608347399859793be7c2b362c64183cc61bc6249dfa018",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/model/bubble_merged",
+      "data": "data/fate_m.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-06/bubble_fate_m_smoke_test-fate_m-8-100-0316/config.toml",
+      "sha256": "b7c69dc2c8c3e4638a608347399859793be7c2b362c64183cc61bc6249dfa018",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/model/bubble_merged",
+      "data": "data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-06/smoke_v2_fate_m-fate_m-8-100-0519/config.toml",
+      "sha256": "7414ecdd0215fb9300f9e87af41f044a9e700070c56a378cffa9c078ab962121",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/model/smoke_v2_merged",
+      "data": "data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-06/smoke_v2_fate_m-fate_m-8-100-0523/config.toml",
+      "sha256": "7414ecdd0215fb9300f9e87af41f044a9e700070c56a378cffa9c078ab962121",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/model/smoke_v2_merged",
+      "data": "data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-07/smoke_stage2_bf16_baseline_fate_m-fate_m-4-20-1149/config.toml",
+      "sha256": "75b754bec70ee440e17692afbb82cd1f0810b66cc8d89baa764ab851d318cd01",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke/stage2_bf16_baseline/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-09/smoke_stage2_bf16_baseline_fate_m-fate_m-4-20-0651/config.toml",
+      "sha256": "d7fe4d13662cb507042af27a1e54c66ca3501d6d8a267328da379d32ef4b501e",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke/stage2_bf16_baseline/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-09/smoke_stage2_bf16_baseline_fate_m-fate_m-4-20-0740/config.toml",
+      "sha256": "d7fe4d13662cb507042af27a1e54c66ca3501d6d8a267328da379d32ef4b501e",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke/stage2_bf16_baseline/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-09/smoke_stage3_ptq_int8_smoke_fate_m-fate_m-4-20-0829/config.toml",
+      "sha256": "be75906b0ce111b9a376e03111a6497363a0e96dcb9673cd49f654c9a344b744",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke/stage3_ptq_int8_smoke/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-09/smoke_stage4_qat_int8_smoke_fate_m-fate_m-4-20-0829/config.toml",
+      "sha256": "f4a8572836b3508b4ad40db61db08fd75dc6b38b94e4b2a2c261318508708822",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke/stage4_qat_int8_smoke/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-22/smoke_stage3_ptq_int4_fate_m-fate_m-4-20-0828/config.toml",
+      "sha256": "dcac3fbe1d71ec44aab92ebdde9bc792ab84a0e3e5da905cedabc325f758a313",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke/stage3_ptq_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-22/smoke_stage3_ptq_int4_fate_m-fate_m-4-20-0840/config.toml",
+      "sha256": "dcac3fbe1d71ec44aab92ebdde9bc792ab84a0e3e5da905cedabc325f758a313",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke/stage3_ptq_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-22/smoke_stage3_ptq_int4_fate_m-fate_m-4-20-0917/config.toml",
+      "sha256": "dcac3fbe1d71ec44aab92ebdde9bc792ab84a0e3e5da905cedabc325f758a313",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke/stage3_ptq_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-22/smoke_stage_awq_int4_fate_m-fate_m-4-20-0542/config.toml",
+      "sha256": "4d79dd0b4509f623e081ebc7c2c09186a35407c91036a193703c68aa1fcafe90",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke/stage_awq_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-22/smoke_stage_awq_int4_fate_m-fate_m-4-20-0551/config.toml",
+      "sha256": "4d79dd0b4509f623e081ebc7c2c09186a35407c91036a193703c68aa1fcafe90",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke/stage_awq_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-22/smoke_stage_awq_int4_fate_m-fate_m-4-20-0553/config.toml",
+      "sha256": "4d79dd0b4509f623e081ebc7c2c09186a35407c91036a193703c68aa1fcafe90",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke/stage_awq_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-22/smoke_stage_awq_int4_fate_m-fate_m-4-20-0558/config.toml",
+      "sha256": "4d79dd0b4509f623e081ebc7c2c09186a35407c91036a193703c68aa1fcafe90",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke/stage_awq_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-22/smoke_stage_awq_int4_fate_m-fate_m-4-20-0601/config.toml",
+      "sha256": "4d79dd0b4509f623e081ebc7c2c09186a35407c91036a193703c68aa1fcafe90",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke/stage_awq_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-22/smoke_stage_awq_int4_fate_m-fate_m-4-20-0603/config.toml",
+      "sha256": "4d79dd0b4509f623e081ebc7c2c09186a35407c91036a193703c68aa1fcafe90",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke/stage_awq_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-22/smoke_stage_awq_int4_fate_m-fate_m-4-20-0656/config.toml",
+      "sha256": "e58d0dfa8a4f171228306bbf9403ca153740c6d01d25cab2ed42d29eb113d084",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke/stage_awq_int4/autoawq_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-22/smoke_stage_awq_int4_fate_m-fate_m-4-20-0700/config.toml",
+      "sha256": "e58d0dfa8a4f171228306bbf9403ca153740c6d01d25cab2ed42d29eb113d084",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke/stage_awq_int4/autoawq_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-22/smoke_stage_awq_int4_fate_m-fate_m-4-20-0701/config.toml",
+      "sha256": "e58d0dfa8a4f171228306bbf9403ca153740c6d01d25cab2ed42d29eb113d084",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke/stage_awq_int4/autoawq_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-22/smoke_stage_awq_int4_fate_m-fate_m-4-20-0707/config.toml",
+      "sha256": "e58d0dfa8a4f171228306bbf9403ca153740c6d01d25cab2ed42d29eb113d084",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke/stage_awq_int4/autoawq_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-23/formal_stage2_bf16_baseline_fate_m_pass64-fate_m-64-1024-0518/config.toml",
+      "sha256": "0259bbff46bb99605fd5d50709be63852f4dc37153bbfef6612bec2e59dce2dd",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_single_gpu/stage2_bf16_baseline/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-23/paper_verify_realprover_v1_minif2f_pass64-minif2f_test-64-1024-0808/config.toml",
+      "sha256": "73d146475dc5a04a9f71d0807965ec61d015f58ce0af58d9c28d78b9f996639f",
+      "model": "/HOME/sysu_qling/sysu_qling_3/project/REAL-Prover-v1-model",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-23/paper_verify_realprover_v1_minif2f_pass64-minif2f_test-64-1024-0812/config.toml",
+      "sha256": "73d146475dc5a04a9f71d0807965ec61d015f58ce0af58d9c28d78b9f996639f",
+      "model": "/HOME/sysu_qling/sysu_qling_3/project/REAL-Prover-v1-model",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-23/test_eval_final-fate_m-2-10-0225/config.toml",
+      "sha256": "1406cbb6f5c89c5c06784d6a1dffa3312def6a5f2866e02efdc6c88dd2785f05",
+      "model": "/HOME/sysu_qling/sysu_qling_3/HDD_POOL/tan/FedProver/model/smoke_v2_merged",
+      "data": "/HOME/sysu_qling/sysu_qling_3/HDD_POOL/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-23/test_eval_smoke-fate_m-2-10-0206/config.toml",
+      "sha256": "359ce9c448e8f7953890004385eae5576c94b8c78d97906ef1da7c5688f3c94d",
+      "model": "/HOME/sysu_qling/sysu_qling_3/HDD_POOL/tan/FedProver/model/smoke_v2_merged",
+      "data": "/HOME/sysu_qling/sysu_qling_3/HDD_POOL/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-26/formal_stage2_bf16_baseline_minif2f_pass64-minif2f_test-64-1024-1412/config.toml",
+      "sha256": "cc5834b82d22d6f28ced9379e2f66fedcb38ba355bd971edc8ab0b2a44c65b6e",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_single_gpu/stage2_bf16_baseline/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-26/formal_stage2_bf16_baseline_minif2f_pass64-minif2f_test-64-1024-1441/config.toml",
+      "sha256": "9421aa2281dea2112068cccd990b83e97f828e2e5738daa914aa05cf232be263",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_single_gpu/stage2_bf16_baseline/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-27/formal_stage2_bf16_baseline_minif2f_pass64-minif2f_test-64-1024-0732/config.toml",
+      "sha256": "9421aa2281dea2112068cccd990b83e97f828e2e5738daa914aa05cf232be263",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_single_gpu/stage2_bf16_baseline/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-27/smoke_stage4_qat_int8_fate_m-fate_m-4-20-0856/config.toml",
+      "sha256": "6cb8dee7721d8bb457526c70f44870df028364b40c71983e7ac54c750265c63b",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke/stage4_qat_int8/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-28/smoke_qat_awq_fate_m-fate_m-4-20-1244/config.toml",
+      "sha256": "454510f1a61c0f6e36cce569b858129590ec4342129f67a51b0bef5d7b75537a",
+      "model": "/tmp/qat_awq_quantized",
+      "data": "/HOME/sysu_qling/sysu_qling_3/HDD_POOL/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-28/smoke_qat_awq_fate_m-fate_m-4-20-1249/config.toml",
+      "sha256": "454510f1a61c0f6e36cce569b858129590ec4342129f67a51b0bef5d7b75537a",
+      "model": "/tmp/qat_awq_quantized",
+      "data": "/HOME/sysu_qling/sysu_qling_3/HDD_POOL/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-07-31/formal_stage2_bf16_baseline_minif2f_pass64-minif2f_test-64-1024-0131/config.toml",
+      "sha256": "01afe852bad57ca26febc117518e41096f3e3a42ae6acfb8d2131a6363252ccb",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage2_bf16_baseline/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-01/formal_stage2_bf16_baseline_minif2f_pass64-minif2f_test-64-1024-0049/config.toml",
+      "sha256": "01afe852bad57ca26febc117518e41096f3e3a42ae6acfb8d2131a6363252ccb",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage2_bf16_baseline/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-01/formal_stage2_bf16_baseline_minif2f_pass64-minif2f_test-64-1024-0057/config.toml",
+      "sha256": "01afe852bad57ca26febc117518e41096f3e3a42ae6acfb8d2131a6363252ccb",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage2_bf16_baseline/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-01/formal_stage3_ptq_int4_minif2f_pass64-minif2f_test-64-1024-0049/config.toml",
+      "sha256": "1616d0442fa68250fc45ddc8e482f158c42d6f14436f31064461406578579cd8",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage3_ptq_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-01/formal_stage3_ptq_int4_minif2f_pass64-minif2f_test-64-1024-0057/config.toml",
+      "sha256": "1616d0442fa68250fc45ddc8e482f158c42d6f14436f31064461406578579cd8",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage3_ptq_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-01/formal_stage4_qat_int4_awq_minif2f_pass64-minif2f_test-64-1024-0049/config.toml",
+      "sha256": "e6504b66bc649261488aa960d9396e24d9d287b278fce8568620845375c2fa26",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage4_qat_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-01/formal_stage4_qat_int4_awq_minif2f_pass64-minif2f_test-64-1024-0057/config.toml",
+      "sha256": "e6504b66bc649261488aa960d9396e24d9d287b278fce8568620845375c2fa26",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage4_qat_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-03/formal_stage2_bf16_baseline_minif2f_pass64-minif2f_test-64-1024-0349/config.toml",
+      "sha256": "01afe852bad57ca26febc117518e41096f3e3a42ae6acfb8d2131a6363252ccb",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage2_bf16_baseline/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-03/formal_stage3_ptq_int4_minif2f_pass64-minif2f_test-64-1024-0349/config.toml",
+      "sha256": "1616d0442fa68250fc45ddc8e482f158c42d6f14436f31064461406578579cd8",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage3_ptq_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-03/formal_stage4_qat_int4_awq_minif2f_pass64-minif2f_test-64-1024-0349/config.toml",
+      "sha256": "e6504b66bc649261488aa960d9396e24d9d287b278fce8568620845375c2fa26",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage4_qat_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-05/formal_stage2_bf16_baseline_minif2f_pass64_resume-minif2f_test-64-1024-0225/config.toml",
+      "sha256": "3d95fbd7df1b14a831bd4b109f350e984021cfe0935afcb9f6f3c2ba8f0a0b67",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage2_bf16_baseline/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-05/formal_stage2_bf16_baseline_proofnet_test_pass64_gpu0-proofnet_test-64-1024-1209/config.toml",
+      "sha256": "7f4da1e122e642a7376bf54e6b4c81326318752a900e549e29d68a279594a7a7",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage2_bf16_baseline/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-05/formal_stage3_ptq_int4_minif2f_pass64_resume-minif2f_test-64-1024-0225/config.toml",
+      "sha256": "04ff4c10654e180d2a341da1f57ff7d3a2d0ef99ef9af18769044338efc1e2fe",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage3_ptq_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-05/formal_stage3_ptq_int4_proofnet_test_pass64_gpu1-proofnet_test-64-1024-2013/config.toml",
+      "sha256": "1473df16f4a3dd754ce2aaf0bc406a3836c57d376bde135c649aba5e5b6a5aa3",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage3_ptq_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-05/formal_stage4_qat_int4_awq_minif2f_pass64_resume-minif2f_test-64-1024-0225/config.toml",
+      "sha256": "fea4faa83c604a8018fa447d1ef1554a2d1889de62c0d06e4f4b6b4e50810cf6",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage4_qat_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-06/formal_stage4_qat_int4_proofnet_test_pass64_gpu2-proofnet_test-64-1024-0210/config.toml",
+      "sha256": "0ec6661b2c37071650d0503a82ca439c924390f507cf86b1f0d9af39c570dc11",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage4_qat_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-06/smoke_dsprover_rl_fate_m-fate_m-4-20-1031/config.toml",
+      "sha256": "d76cb1e7671e3a26e3cf46231494f1ea5668a708077fb82858340eb9ffe19367",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-06/smoke_dsprover_sft_fate_m-fate_m-4-20-1031/config.toml",
+      "sha256": "885281f38744130c81f7e82f84c745826a5fdc30f4a3705f47a9d9e70e240ebb",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-07/formal_stage2_bf16_baseline_proofnet_test_pass64_gpu0-proofnet_test-64-1024-0219/config.toml",
+      "sha256": "7f4da1e122e642a7376bf54e6b4c81326318752a900e549e29d68a279594a7a7",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage2_bf16_baseline/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-07/formal_stage3_ptq_int4_proofnet_test_pass64_gpu1-proofnet_test-64-1024-0219/config.toml",
+      "sha256": "1473df16f4a3dd754ce2aaf0bc406a3836c57d376bde135c649aba5e5b6a5aa3",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage3_ptq_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-07/formal_stage4_qat_int4_proofnet_test_pass64_gpu2-proofnet_test-64-1024-0219/config.toml",
+      "sha256": "0ec6661b2c37071650d0503a82ca439c924390f507cf86b1f0d9af39c570dc11",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage4_qat_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-07/smoke_goedel_sft_fate_m-fate_m-4-20-0624/config.toml",
+      "sha256": "6e2425584f6ea8e9d8ddb1d2dba5b6049734ffc1a5b83b6978a171bdffb2a3d4",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke_comp_2gpu/goedel_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-07/smoke_goedel_sft_fate_m-fate_m-4-20-0628/config.toml",
+      "sha256": "6e2425584f6ea8e9d8ddb1d2dba5b6049734ffc1a5b83b6978a171bdffb2a3d4",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke_comp_2gpu/goedel_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-07/smoke_goedel_sft_fate_m-fate_m-4-20-0643/config.toml",
+      "sha256": "6e2425584f6ea8e9d8ddb1d2dba5b6049734ffc1a5b83b6978a171bdffb2a3d4",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke_comp_2gpu/goedel_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-07/smoke_internlm_stepprover_fate_m-fate_m-4-20-0628/config.toml",
+      "sha256": "0d6201f6cb70056d29b875be99c2f4ea214f8657226e1f5237a985510b141ad7",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke_comp_2gpu/internlm_stepprover/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-07/smoke_internlm_stepprover_fate_m-fate_m-4-20-0643/config.toml",
+      "sha256": "0d6201f6cb70056d29b875be99c2f4ea214f8657226e1f5237a985510b141ad7",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/smoke_comp_2gpu/internlm_stepprover/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-08/formal_dsprover_rl_minif2f_test_pass64_gpu1-minif2f_test-64-1024-0210/config.toml",
+      "sha256": "6b21436331b8f5b1df2adfa9f21b14f838c1e7f4ea04500b44841e9e237f79fa",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-08/formal_dsprover_sft_minif2f_test_pass64_gpu0-minif2f_test-64-1024-0210/config.toml",
+      "sha256": "b7d50a08583dd99775dbd194a7655d6d034745ada1a4a56ac4e2cd3474b59896",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-08/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-0556/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-08/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-0703/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-08/formal_stage2_bf16_baseline_fate_m_pass64_gpu0-fate_m-64-1024-1637/config.toml",
+      "sha256": "0cbf9f2e64bb875c5120a42d18dc3aa79d333405ffdabdee560d6238eb721900",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage2_bf16_baseline/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-08/formal_stage2_bf16_baseline_proofnet_test_pass64_gpu0-proofnet_test-64-1024-1557/config.toml",
+      "sha256": "7f4da1e122e642a7376bf54e6b4c81326318752a900e549e29d68a279594a7a7",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage2_bf16_baseline/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-08/formal_stage3_ptq_int4_proofnet_test_pass64_gpu1-proofnet_test-64-1024-1557/config.toml",
+      "sha256": "1473df16f4a3dd754ce2aaf0bc406a3836c57d376bde135c649aba5e5b6a5aa3",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage3_ptq_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-08/formal_stage4_qat_int4_proofnet_test_pass64_gpu0-proofnet_test-64-1024-1615/config.toml",
+      "sha256": "c38a690e52d22a5907b3abd9d7be3b330b011d23b58f75cce9d331806d1cf39a",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage4_qat_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-09/formal_dsprover_rl_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-0500/config.toml",
+      "sha256": "989472a28ef657dfe611b49a23fbad0a732d1d43159135a705391b098527bf9f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-09/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-0500/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-09/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-0500/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-09/formal_dsprover_sft_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-0500/config.toml",
+      "sha256": "169a4c6e55aa9a5516fd326f754eabbf2c3562d2989e1ba79e2a0a550c8eec88",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-09/formal_goedel_sft_minif2f_test_pass64_gpu1-minif2f_test-64-1024-0118/config.toml",
+      "sha256": "cdf57d887f126f103a83bee05605981f7ccf2541b216d7fd21bbb72e278eb316",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/goedel_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-09/formal_goedel_sft_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-0544/config.toml",
+      "sha256": "6081d3fb175da92bc0d5cf196302145fba893f38c995bd4d732c92ab94a628f9",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/goedel_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-09/formal_internlm_stepprover_minif2f_test_pass64_gpu0-minif2f_test-64-1024-0118/config.toml",
+      "sha256": "e03983b37c8303b8d973fc04a2751ba330ac923624b1eebed6efaff478ff01e5",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/internlm_stepprover/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-09/formal_internlm_stepprover_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-0544/config.toml",
+      "sha256": "ce8464945002aeb974fbe28789ebe98ed0101089c656b5d9384c89830a68f31b",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/internlm_stepprover/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-09/formal_stage2_bf16_baseline_fate_m_pass64_gpu0-fate_m-64-1024-1603/config.toml",
+      "sha256": "0cbf9f2e64bb875c5120a42d18dc3aa79d333405ffdabdee560d6238eb721900",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage2_bf16_baseline/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-09/formal_stage3_ptq_int4_fate_m_pass64_gpu1-fate_m-64-1024-0252/config.toml",
+      "sha256": "9f06d07fd098d8171e9fb9b92e822caa193eaed41db5c73219e9fd7cbd9ea22a",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage3_ptq_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-09/formal_stage3_ptq_int4_fate_m_pass64_gpu1-fate_m-64-1024-1603/config.toml",
+      "sha256": "9f06d07fd098d8171e9fb9b92e822caa193eaed41db5c73219e9fd7cbd9ea22a",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage3_ptq_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-09/formal_stage4_qat_int4_fate_m_pass64_gpu0-fate_m-64-1024-1023/config.toml",
+      "sha256": "d12f1b8fb2bfe9dfb2ed996b4e517b1b463db400adbeef994664c7ee644dd32f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage4_qat_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-09/reqat_entropy_stage5_taq_entropy_minif2f_test_pass64-minif2f_test-64-1024-0536/config.toml",
+      "sha256": "ca5915a3172751c6c5dbad8f14f186327c8e4b9ae1eddc65a8fe0efc11db6a24",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/reqat_entropy/stage5_taq_entropy_r2/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-09/reqat_entropy_stage5_taq_entropy_minif2f_test_pass64-minif2f_test-64-1024-0547/config.toml",
+      "sha256": "ca5915a3172751c6c5dbad8f14f186327c8e4b9ae1eddc65a8fe0efc11db6a24",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/reqat_entropy/stage5_taq_entropy_r2/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-09/reqat_entropy_stage5_taq_entropy_minif2f_test_pass64-minif2f_test-64-1024-0600/config.toml",
+      "sha256": "ca5915a3172751c6c5dbad8f14f186327c8e4b9ae1eddc65a8fe0efc11db6a24",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/reqat_entropy/stage5_taq_entropy_r2/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-09/reqat_entropy_stage6_taq_sem_entropy_minif2f_test_pass64-minif2f_test-64-1024-0536/config.toml",
+      "sha256": "f77d83dd1e776f512139b275bbc3a65e6e666479e8380723be9e36686a870c0b",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/reqat_entropy/stage6_taq_sem_entropy_r2/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-09/reqat_entropy_stage6_taq_sem_entropy_minif2f_test_pass64-minif2f_test-64-1024-0547/config.toml",
+      "sha256": "f77d83dd1e776f512139b275bbc3a65e6e666479e8380723be9e36686a870c0b",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/reqat_entropy/stage6_taq_sem_entropy_r2/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-09/reqat_entropy_stage6_taq_sem_entropy_minif2f_test_pass64-minif2f_test-64-1024-0600/config.toml",
+      "sha256": "f77d83dd1e776f512139b275bbc3a65e6e666479e8380723be9e36686a870c0b",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/reqat_entropy/stage6_taq_sem_entropy_r2/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-10/formal_dsprover_rl_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-1208/config.toml",
+      "sha256": "989472a28ef657dfe611b49a23fbad0a732d1d43159135a705391b098527bf9f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-10/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-1208/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-10/formal_goedel_sft_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-0652/config.toml",
+      "sha256": "6081d3fb175da92bc0d5cf196302145fba893f38c995bd4d732c92ab94a628f9",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/goedel_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-10/formal_goedel_sft_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-1907/config.toml",
+      "sha256": "6081d3fb175da92bc0d5cf196302145fba893f38c995bd4d732c92ab94a628f9",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/goedel_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-10/formal_internlm_stepprover_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-0652/config.toml",
+      "sha256": "ce8464945002aeb974fbe28789ebe98ed0101089c656b5d9384c89830a68f31b",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/internlm_stepprover/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-10/formal_internlm_stepprover_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-1907/config.toml",
+      "sha256": "ce8464945002aeb974fbe28789ebe98ed0101089c656b5d9384c89830a68f31b",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/internlm_stepprover/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-10/formal_stage4_qat_int4_fate_m_pass64_gpu0-fate_m-64-1024-0806/config.toml",
+      "sha256": "d12f1b8fb2bfe9dfb2ed996b4e517b1b463db400adbeef994664c7ee644dd32f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage4_qat_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-10/reqat_entropy_stage5_taq_entropy_minif2f_test_pass64-minif2f_test-64-1024-0426/config.toml",
+      "sha256": "b39b8bea0d17a690949397f1ca2255b2046d7dca4c2b5bfc89e8bd7e701e84d8",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/reqat_entropy/stage5_taq_entropy_v2/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-10/reqat_entropy_stage6_taq_sem_entropy_minif2f_test_pass64-minif2f_test-64-1024-0426/config.toml",
+      "sha256": "2d92adcd43102d304585275669caa09a99281e49899400529933d94b955c116c",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/reqat_entropy/stage6_taq_sem_entropy_v2/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-11/formal_goedel_sft_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-2008/config.toml",
+      "sha256": "6081d3fb175da92bc0d5cf196302145fba893f38c995bd4d732c92ab94a628f9",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/goedel_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-11/formal_internlm_stepprover_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-2008/config.toml",
+      "sha256": "ce8464945002aeb974fbe28789ebe98ed0101089c656b5d9384c89830a68f31b",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/internlm_stepprover/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-11/formal_stage3_ptq_int4_fate_m_pass64_gpu0-fate_m-64-1024-0726/config.toml",
+      "sha256": "0b096423e50d7884032678dadea52cd477afe646eb3ed40c99fc818b9ecade47",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage3_ptq_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-11/formal_stage4_qat_int4_fate_m_pass64_gpu0-fate_m-64-1024-0455/config.toml",
+      "sha256": "d12f1b8fb2bfe9dfb2ed996b4e517b1b463db400adbeef994664c7ee644dd32f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage4_qat_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-11/stage5_taq_entropy_minif2f_test/config.toml",
+      "sha256": "b39b8bea0d17a690949397f1ca2255b2046d7dca4c2b5bfc89e8bd7e701e84d8",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/reqat_entropy/stage5_taq_entropy_v2/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-11/stage6_taq_sem_entropy_minif2f_test/config.toml",
+      "sha256": "2d92adcd43102d304585275669caa09a99281e49899400529933d94b955c116c",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/reqat_entropy/stage6_taq_sem_entropy_v2/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_rl_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-0156/config.toml",
+      "sha256": "989472a28ef657dfe611b49a23fbad0a732d1d43159135a705391b098527bf9f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_rl_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-0358/config.toml",
+      "sha256": "989472a28ef657dfe611b49a23fbad0a732d1d43159135a705391b098527bf9f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_rl_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-0600/config.toml",
+      "sha256": "989472a28ef657dfe611b49a23fbad0a732d1d43159135a705391b098527bf9f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_rl_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-0800/config.toml",
+      "sha256": "989472a28ef657dfe611b49a23fbad0a732d1d43159135a705391b098527bf9f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_rl_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-1002/config.toml",
+      "sha256": "989472a28ef657dfe611b49a23fbad0a732d1d43159135a705391b098527bf9f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_rl_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-1202/config.toml",
+      "sha256": "989472a28ef657dfe611b49a23fbad0a732d1d43159135a705391b098527bf9f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_rl_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-1403/config.toml",
+      "sha256": "989472a28ef657dfe611b49a23fbad0a732d1d43159135a705391b098527bf9f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_rl_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-1604/config.toml",
+      "sha256": "989472a28ef657dfe611b49a23fbad0a732d1d43159135a705391b098527bf9f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_rl_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-1804/config.toml",
+      "sha256": "989472a28ef657dfe611b49a23fbad0a732d1d43159135a705391b098527bf9f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_rl_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-2005/config.toml",
+      "sha256": "989472a28ef657dfe611b49a23fbad0a732d1d43159135a705391b098527bf9f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_rl_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-2206/config.toml",
+      "sha256": "989472a28ef657dfe611b49a23fbad0a732d1d43159135a705391b098527bf9f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-0156/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-0358/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-0600/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-0800/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-1002/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-1202/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-1403/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-1604/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-1804/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-2005/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-2206/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_goedel_sft_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-2307/config.toml",
+      "sha256": "6081d3fb175da92bc0d5cf196302145fba893f38c995bd4d732c92ab94a628f9",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/goedel_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_internlm_stepprover_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-2307/config.toml",
+      "sha256": "ce8464945002aeb974fbe28789ebe98ed0101089c656b5d9384c89830a68f31b",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/internlm_stepprover/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/formal_stage3_ptq_int4_fate_m_pass64_gpu0-fate_m-64-1024-0428/config.toml",
+      "sha256": "0b096423e50d7884032678dadea52cd477afe646eb3ed40c99fc818b9ecade47",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_4gpu/stage3_ptq_int4/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/stage5_taq_entropy_fate_m/config.toml",
+      "sha256": "a2a3d21376911f9ebfce6cabccb12d744fcd4446b1243bdf88a17cb27716a400",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/reqat_entropy/stage5_taq_entropy_v2/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/stage5_taq_entropy_minif2f_test/config.toml",
+      "sha256": "b39b8bea0d17a690949397f1ca2255b2046d7dca4c2b5bfc89e8bd7e701e84d8",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/reqat_entropy/stage5_taq_entropy_v2/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/stage5_taq_entropy_proofnet_test/config.toml",
+      "sha256": "6908352e10a299610aac3c63a55b2000b5624c20e49c3f6e6cbbb7baa7fe43f6",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/reqat_entropy/stage5_taq_entropy_v2/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/stage6_taq_sem_entropy_fate_m/config.toml",
+      "sha256": "cd5a5ec302567d3f97b10a31824ed9ce15e87cf07773b01871969b0d7af2b2fb",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/reqat_entropy/stage6_taq_sem_entropy_v2/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/stage6_taq_sem_entropy_minif2f_test/config.toml",
+      "sha256": "2d92adcd43102d304585275669caa09a99281e49899400529933d94b955c116c",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/reqat_entropy/stage6_taq_sem_entropy_v2/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-12/stage6_taq_sem_entropy_proofnet_test/config.toml",
+      "sha256": "96aff005676cb4f0adb2c098767f43d5ac056e8f1b6b4900dc444dcfafa5bb37",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/reqat_entropy/stage6_taq_sem_entropy_v2/quantized_int4",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_rl_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-0006/config.toml",
+      "sha256": "989472a28ef657dfe611b49a23fbad0a732d1d43159135a705391b098527bf9f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_rl_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-0207/config.toml",
+      "sha256": "989472a28ef657dfe611b49a23fbad0a732d1d43159135a705391b098527bf9f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_rl_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-0408/config.toml",
+      "sha256": "989472a28ef657dfe611b49a23fbad0a732d1d43159135a705391b098527bf9f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_rl_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-0609/config.toml",
+      "sha256": "989472a28ef657dfe611b49a23fbad0a732d1d43159135a705391b098527bf9f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_rl_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-0810/config.toml",
+      "sha256": "989472a28ef657dfe611b49a23fbad0a732d1d43159135a705391b098527bf9f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_rl_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-1011/config.toml",
+      "sha256": "989472a28ef657dfe611b49a23fbad0a732d1d43159135a705391b098527bf9f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_rl_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-1211/config.toml",
+      "sha256": "989472a28ef657dfe611b49a23fbad0a732d1d43159135a705391b098527bf9f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-1251/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-1412/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-1613/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-1814/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-2015/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-2216/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-0006/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-0207/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-0408/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-0609/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-0810/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-1011/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-1211/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-1412/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-1613/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-1814/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-2015/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-13/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-2216/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-0017/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-0217/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-0419/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-0619/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-0820/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-1019/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-1223/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-1422/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-1624/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-1824/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-2025/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-2225/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-0017/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-0217/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-0419/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-0619/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_sft_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-0820/config.toml",
+      "sha256": "062c1ff049e65dfe4150bb575807002fee6bbda242f3a2c33ae9bc25b733f312",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_sft_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-0952/config.toml",
+      "sha256": "169a4c6e55aa9a5516fd326f754eabbf2c3562d2989e1ba79e2a0a550c8eec88",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_sft_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-1019/config.toml",
+      "sha256": "169a4c6e55aa9a5516fd326f754eabbf2c3562d2989e1ba79e2a0a550c8eec88",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_sft_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-1223/config.toml",
+      "sha256": "169a4c6e55aa9a5516fd326f754eabbf2c3562d2989e1ba79e2a0a550c8eec88",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_sft_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-1422/config.toml",
+      "sha256": "169a4c6e55aa9a5516fd326f754eabbf2c3562d2989e1ba79e2a0a550c8eec88",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_sft_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-1624/config.toml",
+      "sha256": "169a4c6e55aa9a5516fd326f754eabbf2c3562d2989e1ba79e2a0a550c8eec88",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_sft_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-1824/config.toml",
+      "sha256": "169a4c6e55aa9a5516fd326f754eabbf2c3562d2989e1ba79e2a0a550c8eec88",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_sft_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-2025/config.toml",
+      "sha256": "169a4c6e55aa9a5516fd326f754eabbf2c3562d2989e1ba79e2a0a550c8eec88",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_dsprover_sft_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-2225/config.toml",
+      "sha256": "169a4c6e55aa9a5516fd326f754eabbf2c3562d2989e1ba79e2a0a550c8eec88",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_goedel_sft_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-0109/config.toml",
+      "sha256": "6081d3fb175da92bc0d5cf196302145fba893f38c995bd4d732c92ab94a628f9",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/goedel_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_internlm_stepprover_minif2f_test_pass64_gpu0_resume-minif2f_test-64-1024-0109/config.toml",
+      "sha256": "ce8464945002aeb974fbe28789ebe98ed0101089c656b5d9384c89830a68f31b",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/internlm_stepprover/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-14/formal_internlm_stepprover_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-2151/config.toml",
+      "sha256": "635e90c32c00705e5fdfd79d0153e9b5c6a6bf2eb7d1f799c85c5661cf8ba2b8",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/internlm_stepprover/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-15/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-0026/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-15/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-0227/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-15/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-0428/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-15/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-0630/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-15/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-0833/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-15/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-1034/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-15/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-1234/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-15/formal_dsprover_rl_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-1435/config.toml",
+      "sha256": "165e78b4630c39301872c64918a049793cae5202fc1b1656928b45a1355581d1",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_rl/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-15/formal_dsprover_sft_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-0026/config.toml",
+      "sha256": "169a4c6e55aa9a5516fd326f754eabbf2c3562d2989e1ba79e2a0a550c8eec88",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-15/formal_dsprover_sft_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-0227/config.toml",
+      "sha256": "169a4c6e55aa9a5516fd326f754eabbf2c3562d2989e1ba79e2a0a550c8eec88",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-15/formal_dsprover_sft_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-0428/config.toml",
+      "sha256": "169a4c6e55aa9a5516fd326f754eabbf2c3562d2989e1ba79e2a0a550c8eec88",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-15/formal_dsprover_sft_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-0630/config.toml",
+      "sha256": "169a4c6e55aa9a5516fd326f754eabbf2c3562d2989e1ba79e2a0a550c8eec88",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-15/formal_dsprover_sft_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-0833/config.toml",
+      "sha256": "169a4c6e55aa9a5516fd326f754eabbf2c3562d2989e1ba79e2a0a550c8eec88",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-15/formal_dsprover_sft_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-1034/config.toml",
+      "sha256": "169a4c6e55aa9a5516fd326f754eabbf2c3562d2989e1ba79e2a0a550c8eec88",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-15/formal_dsprover_sft_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-1234/config.toml",
+      "sha256": "169a4c6e55aa9a5516fd326f754eabbf2c3562d2989e1ba79e2a0a550c8eec88",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-15/formal_dsprover_sft_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-1435/config.toml",
+      "sha256": "169a4c6e55aa9a5516fd326f754eabbf2c3562d2989e1ba79e2a0a550c8eec88",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_dsprover_2gpu/dsprover_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-15/formal_goedel_sft_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-1312/config.toml",
+      "sha256": "6081d3fb175da92bc0d5cf196302145fba893f38c995bd4d732c92ab94a628f9",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/goedel_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-15/formal_internlm_stepprover_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-1312/config.toml",
+      "sha256": "635e90c32c00705e5fdfd79d0153e9b5c6a6bf2eb7d1f799c85c5661cf8ba2b8",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/internlm_stepprover/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-16/formal_goedel_sft_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-1330/config.toml",
+      "sha256": "6081d3fb175da92bc0d5cf196302145fba893f38c995bd4d732c92ab94a628f9",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/goedel_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-16/formal_internlm_stepprover_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-1330/config.toml",
+      "sha256": "635e90c32c00705e5fdfd79d0153e9b5c6a6bf2eb7d1f799c85c5661cf8ba2b8",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/internlm_stepprover/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-17/formal_goedel_sft_minif2f_test_pass64_gpu1_resume-minif2f_test-64-1024-1407/config.toml",
+      "sha256": "6081d3fb175da92bc0d5cf196302145fba893f38c995bd4d732c92ab94a628f9",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/goedel_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "result_exists": true,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-17/formal_internlm_stepprover_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-1407/config.toml",
+      "sha256": "635e90c32c00705e5fdfd79d0153e9b5c6a6bf2eb7d1f799c85c5661cf8ba2b8",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/internlm_stepprover/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-18/formal_goedel_sft_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-0733/config.toml",
+      "sha256": "6378e70c4df90638e45c669dabf0a577e18672097f0ffa10d05eb18e220cef2f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/goedel_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-18/formal_goedel_sft_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-2214/config.toml",
+      "sha256": "6378e70c4df90638e45c669dabf0a577e18672097f0ffa10d05eb18e220cef2f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/goedel_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-18/formal_internlm_stepprover_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-2214/config.toml",
+      "sha256": "635e90c32c00705e5fdfd79d0153e9b5c6a6bf2eb7d1f799c85c5661cf8ba2b8",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/internlm_stepprover/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-19/formal_goedel_sft_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-2201/config.toml",
+      "sha256": "6378e70c4df90638e45c669dabf0a577e18672097f0ffa10d05eb18e220cef2f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/goedel_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-19/formal_internlm_stepprover_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-2201/config.toml",
+      "sha256": "635e90c32c00705e5fdfd79d0153e9b5c6a6bf2eb7d1f799c85c5661cf8ba2b8",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/internlm_stepprover/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-20/formal_goedel_sft_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-2301/config.toml",
+      "sha256": "6378e70c4df90638e45c669dabf0a577e18672097f0ffa10d05eb18e220cef2f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/goedel_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-20/formal_internlm_stepprover_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-2301/config.toml",
+      "sha256": "635e90c32c00705e5fdfd79d0153e9b5c6a6bf2eb7d1f799c85c5661cf8ba2b8",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/internlm_stepprover/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-21/formal_goedel_sft_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-1420/config.toml",
+      "sha256": "6378e70c4df90638e45c669dabf0a577e18672097f0ffa10d05eb18e220cef2f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/goedel_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-21/formal_internlm_stepprover_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-1420/config.toml",
+      "sha256": "635e90c32c00705e5fdfd79d0153e9b5c6a6bf2eb7d1f799c85c5661cf8ba2b8",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/internlm_stepprover/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-22/formal_goedel_sft_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-0537/config.toml",
+      "sha256": "6378e70c4df90638e45c669dabf0a577e18672097f0ffa10d05eb18e220cef2f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/goedel_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-22/formal_goedel_sft_proofnet_test_pass64_gpu1_resume-proofnet_test-64-1024-2053/config.toml",
+      "sha256": "6378e70c4df90638e45c669dabf0a577e18672097f0ffa10d05eb18e220cef2f",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/goedel_sft/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-22/formal_internlm_stepprover_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-0537/config.toml",
+      "sha256": "635e90c32c00705e5fdfd79d0153e9b5c6a6bf2eb7d1f799c85c5661cf8ba2b8",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/internlm_stepprover/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    },
+    {
+      "config": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/experiment/logs/2026-08-22/formal_internlm_stepprover_proofnet_test_pass64_gpu0_resume-proofnet_test-64-1024-2053/config.toml",
+      "sha256": "635e90c32c00705e5fdfd79d0153e9b5c6a6bf2eb7d1f799c85c5661cf8ba2b8",
+      "model": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/output/formal_comp_2gpu/internlm_stepprover/merged",
+      "data": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "result_exists": false,
+      "generated_exists": true
+    }
+  ],
+  "datasets": [
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/fate_m.jsonl",
+      "count": 141,
+      "sha256": "5ea947f51460044ca557c65027f3533c771f1e37c5e6a2c403d7d2d95d62eeb7",
+      "unique_ids": true,
+      "has_required_fields": true
+    },
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/minif2f_test.jsonl",
+      "count": 244,
+      "sha256": "ff546d896fd3f635d32f5103e7bc20f1a52099c436911efe72920a5a1ef1ab38",
+      "unique_ids": true,
+      "has_required_fields": true
+    },
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_test.jsonl",
+      "count": 186,
+      "sha256": "bdf833d6ff3a2c89069bedc170fb882a20d1ccc43835cf00ec0777af7d4e15e2",
+      "unique_ids": true,
+      "has_required_fields": true
+    },
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/data/proofnet_valid.jsonl",
+      "count": 185,
+      "sha256": "b12fbe348a4bb76d5c2249eb107a5bb4be366ff66f8727d2e775d2dfe61d8519",
+      "unique_ids": true,
+      "has_required_fields": true
+    }
+  ],
+  "dependencies": {
+    "lean_test_v4160": {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/lean_test_v4160",
+      "resolved": "/HOME/sysu_qling/sysu_qling_3/project/lean_test_v4160",
+      "exists": false
+    },
+    "jixia": {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/jixia",
+      "resolved": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/lean_deps/jixia",
+      "exists": false
+    },
+    "interactive": {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver/interactive",
+      "resolved": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/lean_deps/interactive",
+      "exists": false
+    }
+  },
+  "models": [
+    "models/Qwen3-1.7B/README.md",
+    "models/Qwen3-1.7B/config.json",
+    "models/Qwen3-1.7B/generation_config.json",
+    "models/Qwen3-1.7B/merges.txt",
+    "models/Qwen3-1.7B/model-00001-of-00002.safetensors",
+    "models/Qwen3-1.7B/model-00002-of-00002.safetensors",
+    "models/Qwen3-1.7B/model.safetensors.index.json",
+    "models/Qwen3-1.7B/tokenizer.json",
+    "models/Qwen3-1.7B/tokenizer_config.json",
+    "models/Qwen3-1.7B/vocab.json"
+  ],
+  "datasets/manifests": [
+    "datasets/manifests/AI-MO__NuminaMath-CoT.files.json",
+    "datasets/manifests/HuggingFaceFW__fineweb-edu.files.json",
+    "datasets/manifests/Qwen__Qwen3-1.7B.files.json",
+    "datasets/manifests/benchmarks.json",
+    "datasets/manifests/block_calibration.json",
+    "datasets/manifests/modelscope-qwen-files.json",
+    "datasets/manifests/numinamath.json",
+    "datasets/manifests/open-thoughts__OpenThoughts3-1.2M.files.json",
+    "datasets/manifests/smoke_openthoughts.json",
+    "datasets/manifests/sources.json"
+  ],
+  "datasets/numinamath_128": [
+    "datasets/numinamath_128/calib.jsonl"
+  ],
+  "bf16_model_present": false
+}

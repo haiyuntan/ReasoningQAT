@@ -1,0 +1,27 @@
+{
+  "status": "DRAFT_REQUIRES_QWEN2_AND_DATA_VALIDATION",
+  "model": "FrenzyMath/REAL-Prover",
+  "weight_bits": 2,
+  "activation_bits": 16,
+  "group_size": 128,
+  "exclude_modules": ["embed_tokens", "norm", "lm_head"],
+  "seed": 2,
+  "formal_state_tactic_training_used": false,
+  "stage1": {
+    "sources": {"open-thoughts/OpenThoughts3-1.2M": 0.8, "HuggingFaceFW/fineweb-edu": 0.2},
+    "train_size": 4096, "val_size": 64, "sequence_length": 2048,
+    "epochs": 2, "batch_size": 2, "weight_lr": 0.00002, "quant_lr": 0.0001
+  },
+  "stage2": {
+    "source": "open-thoughts/OpenThoughts3-1.2M",
+    "selection": "global shuffle(seed=2), then select 32768; tokenize using REAL-Prover tokenizer",
+    "dataset_size": 32768, "epochs": 1, "max_length": 2048,
+    "micro_batch": 1, "gradient_accumulation": 64,
+    "learning_rate": 0.0001, "scheduler": "cosine",
+    "teacher_rr_alpha": 0.2, "kd_beta": 1.0, "teacher_top_k": 20,
+    "trainables": "quantization scales only",
+    "engineering_assumptions": ["max_length=2048", "learning_rate=1e-4", "single A800 80GB feasibility unverified"]
+  },
+  "ptq": {"source": "AI-MO/NuminaMath-CoT", "samples": 128, "same_samples_for_gptq_awq": true},
+  "eval": {"primary": "miniF2F-test", "denominator": 244, "metric": "fixed-budget theorem success rate"}
+}
