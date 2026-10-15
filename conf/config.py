@@ -7,6 +7,7 @@ This module provide configure for REAL-Prover evaluation.
 """
 
 import os
+import json
 from pathlib import Path
 
 # 支持的几个模型
@@ -43,10 +44,11 @@ C_SCORE = 1.0
 C_EXPANSION_FAIL_PENALTY = 30.0
 MAX_ROOT_EXPANSION = 5
 
-# GPU memory utilization for vLLM (0.0 ~ 1.0)
-# A800 80GB: retrieval uses ~14GB, so vLLM should use <= 0.5
-GPU_MEMORY_UTILIZATION = 0.75
-VLLM_MAX_MODEL_LEN = 8192
+# One fingerprinted engine profile for every P0-P6 method. Retrieval stays resident.
+VLLM_ENGINE_OPTIONS = json.loads(
+    (Path(__file__).resolve().parents[1] / 'configs/vllm_runtime.json').read_text())
+GPU_MEMORY_UTILIZATION = VLLM_ENGINE_OPTIONS['gpu_memory_utilization']
+VLLM_MAX_MODEL_LEN = VLLM_ENGINE_OPTIONS['max_model_len']
 
 # params for model other than n
 PROVER_MODEL_PARAMS = {

@@ -12,7 +12,7 @@
     {
       "path": "conf/config.py",
       "source_sha256": "5531feb1ac38d068d6f85c143e8149c94aa54b82e86939e678f84b337b1dd5e6",
-      "copied_sha256": "bd8238617433e84dad0df22e90104ea0371433e17e4b97352609725780cf8643",
+      "copied_sha256": "e75fcea7276d57922c7cda4e8c12f2501e095f23c9c53a7e6563b936041b07f5",
       "modified": true
     },
     {
@@ -168,7 +168,7 @@
     {
       "path": "manager/thirdparty/generator.py",
       "source_sha256": "9b5400890b49cd25d40a473cad03f4decd7306a1df5440a0171c2e5af4543f75",
-      "copied_sha256": "5aa037785d4963a0cd95505be65921a598c06b0ea738aa7a1f8b3b98cb264550",
+      "copied_sha256": "8f1fd398c7a046df0debaeb8216d7d8bb8c099abe49e432b5e8bde5752eebe95",
       "modified": true
     },
     {
