@@ -1,7 +1,9 @@
 import sys
 import datetime
 try: import tomllib
-except ModuleNotFoundError: import pip._vendor.tomli as tomllib
+except ModuleNotFoundError:
+    # Importing pip here disables setuptools' distutils finder before Triton loads.
+    import tomli as tomllib
 import torch
 from manager.service import BatchMainService
 from manager.manage import ProofParseManage
