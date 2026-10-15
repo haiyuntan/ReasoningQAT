@@ -1,0 +1,27 @@
+{
+  "status": "READY_FOR_SMOKE",
+  "full_smoke_pass": false,
+  "strategy": "Reuse unchanged QAT/PTQ/model/Lean component PASS evidence from v3; after the generator-only fix, revalidate its filtering contract and actual vLLM generation in v4. Original v3 overall failure is retained.",
+  "evidence": [
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_preparation_v4/preparation.json",
+      "sha256": "23bbc222945483824057020c1487896b7f2c973b35b78adda97efcf34fcbdab0"
+    },
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_preparation_v4/vllm_runtime.json",
+      "sha256": "90f77cb2a7fcd3c6369fecd65a012c2640fc5d40736dfe4ad778e1c056c8d375"
+    },
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_preparation_v3/full_model.json",
+      "sha256": "4fd4e0734251e7e1016a4e6c9fb21156d79aaa9b418b410dddbe4eddf7e07010"
+    },
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_preparation_v3/native_preflight/preflight.json",
+      "sha256": "0ab1c5617f751a196ec5159779e7d4f573c9430791013dda6cf70f3972be7df6"
+    },
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_preparation_v3/lean_runtime.json",
+      "sha256": "15e2c35b66f5154410f261a0cec8661e085775af93af70d5c330767a8c65e9ce"
+    }
+  ]
+}

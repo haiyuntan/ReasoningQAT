@@ -1,0 +1,42 @@
+{
+  "sources": [
+    {
+      "name": "lean_test_v4160",
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/REALPROVER/dependencies/source_cache/frenzymath--lean_test_v4160-faf496a4bc025db8f13170ab85b8bdd5a0737a36",
+      "revision": "faf496a4bc025db8f13170ab85b8bdd5a0737a36",
+      "toolchain": "leanprover/lean4:v4.16.0"
+    },
+    {
+      "name": "jixia",
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/REALPROVER/dependencies/source_cache/frenzymath--jixia-157c55dd5754db3795838e7c05104b91535ee5fc",
+      "revision": "157c55dd5754db3795838e7c05104b91535ee5fc",
+      "toolchain": "leanprover/lean4:v4.16.0"
+    },
+    {
+      "name": "interactive",
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/REALPROVER/dependencies/source_cache/frenzymath--interactive-9e7417953d80de8e4daff17c550ad872fde7f9bb",
+      "revision": "9e7417953d80de8e4daff17c550ad872fde7f9bb",
+      "toolchain": "leanprover/lean4:v4.16.0"
+    }
+  ],
+  "mathlib_revision": "a6276f4c6097675b1cf5ebd49b1146b735f38c02",
+  "mathlib_cache_files_downloaded": 6014,
+  "official_data_parity": [
+    {
+      "name": "minif2f_test.jsonl",
+      "official_equal": true,
+      "sha256": "ff546d896fd3f635d32f5103e7bc20f1a52099c436911efe72920a5a1ef1ab38"
+    },
+    {
+      "name": "proofnet_test.jsonl",
+      "official_equal": true,
+      "sha256": "bdf833d6ff3a2c89069bedc170fb882a20d1ccc43835cf00ec0777af7d4e15e2"
+    },
+    {
+      "name": "fate_m.jsonl",
+      "official_equal": true,
+      "sha256": "5ea947f51460044ca557c65027f3533c771f1e37c5e6a2c403d7d2d95d62eeb7"
+    }
+  ],
+  "workspace_adaptation": "Explicitly require the REPL already pinned in the upstream manifest; mathematical source and upstream lockfiles unchanged."
+}

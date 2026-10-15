@@ -115,9 +115,19 @@ def main():
     os.environ['REALPROVER_SEED'] = '2'
     from manager.thirdparty.lean_search import LeanSearch
     LeanSearch.get_related_theorem('n : ℕ\n⊢ n = n')
+    import urllib.request
+    endpoint = config.API_CONFIG['lean_search'].rsplit('/', 1)[0] + '/health'
+    with urllib.request.urlopen(endpoint, timeout=5) as response:
+        retrieval_identity = json.load(response)
+    assets = RESEARCH / 'manifests/retrieval_assets.json'
+    if (retrieval_identity.get('asset_manifest_sha256') != sha(assets)
+            or retrieval_identity.get('adapter_loaded') is not True
+            or retrieval_identity.get('source_revision') != load(assets)['service_source_revision']):
+        raise RuntimeError('Retrieval service identity differs from frozen local assets/source')
     if a.preflight:
         save(a.output / 'preflight.json', {'status': 'PASS', 'lean_version': version.strip(),
              'lean_workspace': str(Path(config.LEAN_TEST_PATH).resolve()),
+             'retrieval_identity': retrieval_identity,
              'jixia_sha256': sha(config.analyzer_path),
              'interactive_sha256': sha(config.interactive_path / '.lake/build/bin/interactive')})
         return
@@ -133,6 +143,7 @@ def main():
     stats = aggregate(dataset, a.output / 'native')
     events = [json.loads(s) for s in telemetry.read_text().splitlines()]
     stats.update(protocol_sha256=protocol_sha, dataset_sha256=sha(dataset), seed=2, native_exit_code=native_exit,
+                 retrieval_identity=retrieval_identity,
                  lean_version=version.strip(), retrieval_requests=len(events),
                  retrieval_ok=bool(events) and all(e['success'] for e in events))
     save(a.output / 'evaluation.json', stats)

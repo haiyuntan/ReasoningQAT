@@ -75,6 +75,7 @@ def verify_model():
 
 def data_environment(mode):
     env = dict(os.environ, HF_HUB_OFFLINE='1', HF_DATASETS_OFFLINE='1',
+               USE_TF='0', USE_FLAX='0',
                TOKENIZERS_PARALLELISM='false', RQ_RUN_MODE=mode,
                PYTHONPATH=str(VENDOR) + os.pathsep + str(VENDOR / 'repro_scripts'),
                RQ_DATA=str(ROOT / 'datasets'))

@@ -29,14 +29,17 @@ def main():
                        ('JIXIA_BINARY', jixia), ('INTERACTIVE_BINARY', interactive / '.lake/build/bin/interactive')]:
         if not path.is_file():
             issues.append(f'MISSING_{name}: {path}')
+    formal_issues = []
     if runtime['eval_protocol_status'] != 'FROZEN':
-        issues.append('FORMAL_EVAL_PROTOCOL_AND_OFFICIAL_DATA_PARITY_NOT_FROZEN')
+        formal_issues.append('FORMAL_EVAL_PROTOCOL_AND_OFFICIAL_DATA_PARITY_NOT_FROZEN')
     if not (ROOT / 'datasets/numinamath_128/calib.jsonl').is_file():
         issues.append('MISSING_NUMINAMATH128')
     print(json.dumps({'status': 'BLOCKED' if issues else 'REQUIRES_REAL_P0_P6_SMOKE',
         'download': {'status': download['status'], 'GB': received / 1e9, 'total_GB': total / 1e9,
                      'percent': min(100., received / total * 100)},
         'issues': issues,
+        'formal_issues': formal_issues,
+        'formal_status': 'BLOCKED' if issues or formal_issues else 'REQUIRES_ALL_P0_P6_SMOKE_PASS',
         'retrieval_status': 'NOT_PROBED_BY_READ_ONLY_INSPECTOR; execution preflight probes signed requests',
         'required_smoke': [f'P{i}' for i in range(7)]}, indent=2))
 

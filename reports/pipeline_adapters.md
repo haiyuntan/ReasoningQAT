@@ -70,11 +70,19 @@ REPL 非零退出、空/异常响应不能算验证成功。新汇总固定题�
 保留原量化器/MSE/参数分组/cosine，并统一可重载 fake-quant forward。
 Stage2 显式 torch 循环替代 TRL，优化器/warmup 是记录在训练证据中的迁移工程选择。
 
-## 当前阻塞
+## 环境恢复更新
 
-- 模型未下载完整，完整加载与7B显存可行性未验证。
-- 新可写 Lean4.16 工作区/Header/Jixia/Interactive 缺失，检索服务未验证。
+- 模型已下载并完成完整 BF16 加载、生成及重载一致性检查。
+- Lean4.16 工作区、Mathlib、Header、REPL、Jixia、Interactive 已恢复并编译。
+  已执行有效证明/sorry、Jixia 声明解析、Interactive 错误 tactic/目标关闭测试。
+- 检索服务已恢复，本地基座+LoRA、252444 条前提；启动校验资产哈希，评测核对服务身份。
+  最终准备验证以 runs/realprover_preparation_v4/preparation.json 为准（按影响范围重测，保留原失败报告）。
+  恢复过程和可重复命令见 [environment_restoration.md](environment_restoration.md)。
+
+## 正式实验前仍需完成
+
 - 官方源码/题集 parity 与正式协议未冻结；runtime.json 保留 CANDIDATE。
+  miniF2F/ProofNet/FATE-M 测试集已与官方提交逐字节核对，完整评测协议仍需冻结。
   将字段改成 FROZEN 不能代替实际审查，配置变更后必须重新冒烟。
 - 完整模型的 PTQ/QAT、导出 parity 与原生 Lean 端到端尚未执行。
 

@@ -1,7 +1,7 @@
 {
   "repo_id": "FrenzyMath/REAL-Prover",
   "revision": "fe76f68d9a88f342cb7b546307c20292fea9cced",
-  "status": "DOWNLOADED_REQUIRES_LOAD_CHECK",
+  "status": "VERIFIED",
   "download_endpoint": "https://hf-mirror.com",
   "download_mode": "serial_http_range",
   "max_concurrent_files": 1,
@@ -63,5 +63,9 @@
       "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
     }
   },
-  "model_type": "qwen2"
+  "model_type": "qwen2",
+  "load_validation": {
+    "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_preparation_v3/full_model.json",
+    "sha256": "4fd4e0734251e7e1016a4e6c9fb21156d79aaa9b418b410dddbe4eddf7e07010"
+  }
 }

@@ -6,6 +6,7 @@ implemented and reviewed before binding commands in pipeline.json.
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -21,6 +22,14 @@ def read(path):
     return json.loads(path.read_text())
 
 
+def file_digest(path):
+    digest = hashlib.sha256()
+    with path.open('rb') as stream:
+        for chunk in iter(lambda: stream.read(8 * 1024 * 1024), b''):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
 def fingerprint(root=ROOT):
     """Include local training/evaluation code, configs and asset manifests.
 
@@ -30,15 +39,21 @@ def fingerprint(root=ROOT):
     selected = []
     for folder in ('research', 'REALPROVER', 'ReasoningQAT', 'qat_baselines/EfficientQAT', 'ptq/llm-awq/awq', 'ptq/GPTQModel/gptqmodel'):
         base = root / folder
-        for p in base.rglob('*'):
-            if (not p.is_file() or any(x in p.parts for x in
-                    ('.git', '__pycache__', 'repro_results', 'logs', 'outputs'))):
-                continue
-            if p.suffix not in ('.py', '.sh', '.toml', '.json', '.lean'):
-                continue
-            if p == root / 'research/manifests/model_revision.json':
-                continue
-            selected.append(p)
+        for directory, folders, files in os.walk(base):
+            folders[:] = [name for name in folders if name not in
+                          ('.git', '.lake', '__pycache__', 'repro_results', 'logs', 'outputs', 'dependencies')]
+            for name in files:
+                p = Path(directory) / name
+                if p.suffix not in ('.py', '.sh', '.toml', '.json', '.lean'):
+                    continue
+                if p == root / 'research/manifests/model_revision.json':
+                    continue
+                selected.append(p)
+    # Compiled/cache output is excluded above; the pinned source inventory is
+    # stable and the actual Lean runtime binaries/header are hashed below.
+    inventory = root / 'REALPROVER/dependencies/source_restore.json'
+    if inventory.is_file():
+        selected.append(inventory)
     h = hashlib.sha256()
     for p in sorted(selected):
         h.update(str(p.relative_to(root)).encode() + b'\0')
@@ -125,7 +140,7 @@ def validate_receipt(receipt, run, mode, digest):
         p = Path(item['path'])
         if not p.is_absolute() or not p.is_file():
             raise ValueError(f'{run}: missing absolute evidence path: {p}')
-        if hashlib.sha256(p.read_bytes()).hexdigest() != item['sha256']:
+        if file_digest(p) != item['sha256']:
             raise ValueError(f'{run}: changed evidence: {p}')
 
 

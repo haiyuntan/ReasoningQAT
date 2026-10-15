@@ -4,6 +4,7 @@ import importlib.util
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 spec = importlib.util.spec_from_file_location('pipeline', Path(__file__).resolve().parents[1] / 'scripts/experiment_pipeline.py')
 p = importlib.util.module_from_spec(spec)
@@ -19,7 +20,8 @@ class GateTests(unittest.TestCase):
                        'status': 'PASS', 'checks': dict.fromkeys(p.requirements('P4'), True),
                        'expected_problems': 2, 'completed_problems': 2,
                        'evidence': [{'path': str(evidence), 'sha256': hashlib.sha256(evidence.read_bytes()).hexdigest()}]}
-            p.validate_receipt(receipt, 'P4', 'smoke', 'current')
+            with patch.object(Path, 'read_bytes', side_effect=AssertionError('Evidence must be streamed')):
+                p.validate_receipt(receipt, 'P4', 'smoke', 'current')
             with self.assertRaises(ValueError):
                 p.validate_receipt(receipt, 'P4', 'smoke', 'changed')
             receipt['completed_problems'] = 1
