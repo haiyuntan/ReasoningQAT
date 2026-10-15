@@ -1,0 +1,41 @@
+{
+  "status": "FROZEN",
+  "official_source_revision": "3e5987dc1009a7addc935bcd7b4ae777738a0848",
+  "official_default_sha256": "5fa203efc36e9110ee086a74c31b135dea2c9efdb5c3c5f7b1086f5bb69e4bd6",
+  "official_default_semantic_parity": true,
+  "allowed_differences": [
+    "info label",
+    "local model path",
+    "local dataset path"
+  ],
+  "dataset_problems": 244,
+  "pinned_files": [
+    {
+      "path": "REALPROVER/configs/p0_candidate.toml",
+      "sha256": "d72c863c6ca8fc3db9f34434f3181b5a38c79bdff873c440a8a4701f566176c3"
+    },
+    {
+      "path": "REALPROVER/configs/vllm_runtime.json",
+      "sha256": "2399b335908552050e09f6b6190e673d75166c7dde85ef62f0cff37f062f3912"
+    },
+    {
+      "path": "REALPROVER/data/minif2f_test.jsonl",
+      "sha256": "ff546d896fd3f635d32f5103e7bc20f1a52099c436911efe72920a5a1ef1ab38"
+    },
+    {
+      "path": "research/manifests/lean_dependencies.json",
+      "sha256": "ff036eb38606cc2bcd51dcaf9afc5d0513809f882525192b4273afcfddf0de1f"
+    },
+    {
+      "path": "research/manifests/retrieval_assets.json",
+      "sha256": "d233b0fda8ec11f034aab5a83f8f743c1a3fb2c8ef67cbc4d8ffb6348ab35da1"
+    }
+  ],
+  "native_bf16_validation": {
+    "path": "runs/realprover_campaign_v2/smoke/P0/receipt.json",
+    "sha256": "6d5c10c134dc02cfd4222e5fc14f42a29e8d155c859d99aec9ecef3e92955cd9",
+    "completed_problems": 2,
+    "successes": 1
+  },
+  "notes": "Freeze search/sampling protocol after native BF16 sanity, fixed denominator/verifier contract checks, official config/data parity and retrieval identity pinning. Engine scheduling profile differs from historical run and requires new P0-P6 smoke. All seven current-fingerprint smoke receipts remain mandatory; no claim of published-score reproduction or independently verified retrieval asset origin."
+}

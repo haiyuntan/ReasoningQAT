@@ -81,9 +81,13 @@ Stage2 显式 torch 循环替代 TRL，优化器/warmup 是记录在训练证据
 
 ## 正式实验前仍需完成
 
-- 官方源码/题集 parity 与正式协议未冻结；runtime.json 保留 CANDIDATE。
-  miniF2F/ProofNet/FATE-M 测试集已与官方提交逐字节核对，完整评测协议仍需冻结。
-  将字段改成 FROZEN 不能代替实际审查，配置变更后必须重新冒烟。
+- 协议已于 2026-10-15 审查并冻结：与固定官方 default.toml 语义一致（仅描述/本地路径不同），miniF2F 244 题逐字节一致且 ID 唯一；固定检索资产和 Lean 清单。证据见 manifests/evaluation_protocol.json，正式入口逐项校验冻结文件哈希。当前代码和调度配置仍须完整 P0–P6 冒烟通过。
 - 完整模型的 PTQ/QAT、导出 parity 与原生 Lean 端到端尚未执行。
 
 本地 Git 提交不代表远程推送成功；之前记录的 GitHub 网络问题仍是独立阻塞。
+
+## nohup 自动衔接
+
+使用 scripts/run_smoke_then_formal.py --results <新目录>，以 nohup 启动。控制器依次运行 smoke campaign、全七项回执门禁、formal campaign；任一步非零停止。控制状态在 <新目录>/control/status.json，分阶段日志 smoke.log/gate.log/formal.log。已有 partial 结果不会覆盖。控制器全局锁和每项 GPU 锁避免重复并发。协议及源码变化后重新冒烟，不修改运行中回执。
+
+自动衔接测试 3 项通过：正常阶段顺序、smoke/gate/formal 各阶段失败时停止、协议未冻结时不启动任何阶段。另通过门禁 4 项、固定分母 2 项和 verifier 契约检查。协议冻结不是宣称复现论文分数；完整正式运行仍待所有冒烟实际通过。

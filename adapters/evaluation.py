@@ -82,6 +82,13 @@ def main():
     a.output.mkdir(parents=True, exist_ok=True)
     if a.mode == 'formal' and load(RESEARCH / 'configs/runtime.json')['eval_protocol_status'] != 'FROZEN':
         raise RuntimeError('Formal evaluation protocol/dataset parity is not frozen')
+    if a.mode == 'formal':
+        protocol = load(RESEARCH / 'manifests/evaluation_protocol.json')
+        if protocol['status'] != 'FROZEN':
+            raise RuntimeError('Missing reviewed protocol freeze')
+        for item in protocol['pinned_files']:
+            if sha(ROOT / item['path']) != item['sha256']:
+                raise RuntimeError(f'Frozen evaluation asset changed: {item["path"]}')
     path = a.output / 'config.toml'
     dataset, protocol_sha = make_config(a.model, a.mode, path)
     # This script itself is launched using the existing PROVER interpreter.
