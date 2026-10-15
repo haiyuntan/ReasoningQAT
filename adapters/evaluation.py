@@ -49,7 +49,7 @@ def make_config(model, mode, destination):
     try:
         import tomllib
     except ModuleNotFoundError:
-        from pip._vendor import tomli as tomllib
+        import tomli as tomllib
     base = tomllib.loads(text)
     dataset = ROOT / ('datasets/eval/legacy_candidate/minif2f_smoke2.jsonl' if mode == 'smoke'
                       else 'REALPROVER/data/minif2f_test.jsonl')

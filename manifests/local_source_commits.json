@@ -3,6 +3,6 @@
   "qat_baselines/EfficientQAT": "39f37f3b6053681c9b1cd4c9dcaf692d8999459e",
   "realprover_evaluation_adapter": {
     "path": "REALPROVER",
-    "commit": "f232bfca6dd81ecdae71877da84b28f6abdd9d78"
+    "commit": "bd6abb07bbe416bb534a8630a74b8acd2fb94027"
   }
 }

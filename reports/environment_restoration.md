@@ -71,3 +71,7 @@ env/bootstrap/bin/python research/scripts/experiment_pipeline.py gate --results 
 
 正式实验还要求协议冻结。代码/配置/检索资产固定清单或实际 Lean 二进制改变后，旧冒烟失效。
 门禁对大 checkpoint 分块计算 SHA256；构建/cache 输出不混入源码指纹。
+
+### 2026-10-15 冒烟入口修复
+
+首次 P0 在 native 评测导入阶段因 pip._vendor.tomli 改变 distutils 导入机制，与 Triton/setuptools 冲突而停止。Python 3.10 入口改用现有独立 tomli，不升级环境。已以 PROVER 解释器执行 python -m experiment.run --help，完整导入通过（exit 0）。旧 campaign_v1 失败证据保留，修复后使用 campaign_v2 重新执行全部 P0–P6；正式门禁保持关闭。
