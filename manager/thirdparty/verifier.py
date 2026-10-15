@@ -53,7 +53,12 @@ def verify_proof(full_code: str,
                 timeout=timeout,
                 env=env,
             )
+        if outputs.returncode != 0:
+            return False
         result = json.loads(outputs.stdout)
+        if not isinstance(result, dict) or 'env' not in result:
+            # An empty or malformed REPL response is not a verified proof.
+            return False
         result = {
             "sorries": result.get("sorries", []),
             "errors": [m for m in result.get("messages", []) 

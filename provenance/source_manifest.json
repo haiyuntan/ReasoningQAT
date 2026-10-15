@@ -1,7 +1,7 @@
 {
   "source": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver",
   "source_git_sha": "c5dd5b75d5ec1e4a3a8b0fb2d1d2ca5246627703",
-  "status": "EXTRACTED_NOT_LEAN_RUNTIME_VALIDATED",
+  "status": "PIPELINE_ADAPTED_NOT_LEAN_E2E_VALIDATED",
   "files": [
     {
       "path": "conf/__init__.py",
@@ -126,8 +126,8 @@
     {
       "path": "manager/service/batch_main_service.py",
       "source_sha256": "25a0cb4307f1c2257b2b479eaa7b98f585f419968d4f5fa71d56a32110a9a79d",
-      "copied_sha256": "25a0cb4307f1c2257b2b479eaa7b98f585f419968d4f5fa71d56a32110a9a79d",
-      "modified": false
+      "copied_sha256": "3829a894a2bfb9176278852889173a44ec1685c1b14ee8af5adb3235f114a7fd",
+      "modified": true
     },
     {
       "path": "manager/service/pipeline_main_service.py",
@@ -168,8 +168,8 @@
     {
       "path": "manager/thirdparty/generator.py",
       "source_sha256": "9b5400890b49cd25d40a473cad03f4decd7306a1df5440a0171c2e5af4543f75",
-      "copied_sha256": "9b5400890b49cd25d40a473cad03f4decd7306a1df5440a0171c2e5af4543f75",
-      "modified": false
+      "copied_sha256": "4ca9144939a7f772395484be92b0afb556ffc135766363b09975447fce8c14f5",
+      "modified": true
     },
     {
       "path": "manager/thirdparty/interactive.py",
@@ -180,13 +180,13 @@
     {
       "path": "manager/thirdparty/lean_search.py",
       "source_sha256": "f4c9e5ef6d7f5a13a2bab7b047c128cc60c973316a0584b9e79801b92c4145f8",
-      "copied_sha256": "f4c9e5ef6d7f5a13a2bab7b047c128cc60c973316a0584b9e79801b92c4145f8",
-      "modified": false
+      "copied_sha256": "151adef89381ff9978e45ca7e5bf3f60f09be2e5ab7ae7789d7f2d06d5af6f40",
+      "modified": true
     },
     {
       "path": "manager/thirdparty/verifier.py",
       "source_sha256": "420db31f7359a3156df4e058a80a90bda4e7889711a92aa271093cfc7f79977b",
-      "copied_sha256": "84e8de1c031f5ec972d8b2ef06cc86444670551da2a1299eeb826aec77daa6eb",
+      "copied_sha256": "bbcbf67aa419c32004078b0b82820b82389f7d14fd9dba2acc1c6114fc2bf223",
       "modified": true
     },
     {

@@ -131,6 +131,7 @@ class TacticGenerator:
 
             self.llm = LLM(
                 model=self.model_path,
+                seed=int(os.environ.get('REALPROVER_SEED', '2')),
                 gpu_memory_utilization=conf.config.GPU_MEMORY_UTILIZATION,
                 max_model_len=conf.config.VLLM_MAX_MODEL_LEN,
                 trust_remote_code=True,  # InternLM2 merged 目录含 auto_map 自定义代码，需 trust_remote_code

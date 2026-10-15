@@ -1,4 +1,6 @@
 import time
+import os
+import json
 import conf.config
 from util import StringUtil, HttpUtil
 
@@ -10,8 +12,27 @@ class LeanSearch:
     @staticmethod
     def get_related_theorem(query: str):
         data = LeanSearch.get_param(query)
-        result = HttpUtil.post(url=REQUEST_URL, json=data)
-        return result['data'][0] # type: ignore
+        try:
+            result = HttpUtil.post(url=REQUEST_URL, json=data)
+            premises = result['data'][0]
+            if not isinstance(premises, list) or not premises:
+                raise RuntimeError('Retrieval returned invalid or empty premises')
+        except Exception:
+            LeanSearch._telemetry(False)
+            raise
+        LeanSearch._telemetry(True)
+        return premises
+
+    @staticmethod
+    def _telemetry(success):
+        path = os.environ.get('REALPROVER_RETRIEVAL_TELEMETRY')
+        if path:
+            # One atomic append per request across evaluator child processes.
+            fd = os.open(path, os.O_WRONLY | os.O_APPEND | os.O_CREAT, 0o600)
+            try:
+                os.write(fd, (json.dumps({'success': success, 'time': time.time()}) + '\n').encode())
+            finally:
+                os.close(fd)
 
     @staticmethod
     def get_param(query: str, num: int=conf.config.NUM_QUERYS):

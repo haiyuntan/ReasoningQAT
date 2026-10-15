@@ -13,7 +13,7 @@
 - `provenance/`：逐文件来源/目标 SHA256、来源 Git SHA、全部代码改动 diff。
 - `scripts/preflight.py`：只读 CPU 预检，不加载模型、不运行 Lean、不触发构建。
 
-只调整了三处集成代码：`conf/config.py` 将模型、Lean/Jixia/Interactive 路径改为环境变量及新工作区默认路径；`verifier.py` 共用同一个 Lean 路径；`claude.py` 延迟导入可选 SDK，避免本地评测必须安装 Anthropic。搜索、prompt、采样和评分逻辑未改动。
+最初整理时调整了三处集成代码：`conf/config.py` 将模型、Lean/Jixia/Interactive 路径改为环境变量及新工作区默认路径；`verifier.py` 共用同一个 Lean 路径；`claude.py` 延迟导入可选 SDK，避免本地评测必须安装 Anthropic。搜索、prompt、采样和评分逻辑未改动。
 
 没有复制联邦训练、state–tactic 训练数据、历史 checkpoint、旧输出日志或大检索索引。没有使用旧 `requirements.txt` 安装包：其中训练依赖和旧版本约束不适合直接用于现有评测环境。
 
@@ -35,3 +35,7 @@ CUDA_VISIBLE_DEVICES=0 python -m experiment.run configs/p0_smoke2_candidate.toml
 当前不能直接报告正式分数：Lean 依赖尚未恢复、模型正在下载、retrieval 未验证，候选配置也未完成历史/官方协议审查。旧评分器仍需核对失败样本和完整固定分母后才能用于正式结果。
 
 该副本不是官方干净 checkout：来源是带有本地修改的 FedProver 工作树。`provenance/source_manifest.json` 的逐文件 hash 才是本次代码快照的精确标识，Git SHA 仅标识来源仓库 HEAD。
+
+## 流水线适配更新
+
+评测现已增加显式 vLLM seed、检索成功/失败遥测、完整证明校验标记，以及对 REPL 非零退出和异常响应的拒绝。统一流水线使用 research/adapters/evaluation.py 按固定题集汇总，保留缺失题并对重试去重；旧 get_stats 输出不作为正式指标。运行入口和验证边界见 ../research/reports/pipeline_adapters.md。当前仍未完成真实模型 Lean 冒烟。

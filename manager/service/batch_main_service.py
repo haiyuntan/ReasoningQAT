@@ -182,6 +182,7 @@ class BatchMainService(BaseService):
                     logging.error([e,item['id'], "Non-Searching Error"] ,exc_info=True)
                 else:
                     save_data = self.parse_result(item["formal_statement"], results)
+                    save_data['pipeline_verifier'] = {'executed': False, 'success': False}
                     if 'formal_proof' in save_data:
                         try:
                             print(f"lake repl check:{item['id']}",flush=True)
@@ -191,6 +192,7 @@ class BatchMainService(BaseService):
                             save_data['collect_results'][0]['success'] = False
                         else:
                             save_data['collect_results'][0]['success'] = repl_res
+                            save_data['pipeline_verifier'] = {'executed': True, 'success': bool(repl_res)}
                     result_file = os.path.join(item_path,f"{item['id']}_{idx}.json")
                     CommonUtil.write_to_json_file(result_file, save_data)
                     print(f"finish_index_{item['id']}",flush=True)
