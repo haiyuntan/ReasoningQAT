@@ -1,0 +1,19 @@
+{
+  "status": "PREPARATION_ONLY_RUNTIME_ADAPTERS_PENDING",
+  "model": {"repo": "FrenzyMath/REAL-Prover", "revision": "fe76f68d9a88f342cb7b546307c20292fea9cced", "model_type": "qwen2"},
+  "required_smoke_runs": ["P0", "P1", "P2", "P3", "P4", "P5", "P6"],
+  "formal_requires_all_smoke": true,
+  "awq_blocked_policy": "Block formal campaign; do not silently waive required P2 smoke",
+  "methods": {
+    "P0": "Original REAL-Prover BF16; native Lean evaluator",
+    "P1": "GPTQ W2A16 g128; NuminaMath 128",
+    "P2": "AWQ scale search and clipping W2A16 g128; same NuminaMath 128",
+    "P3": "ReasoningQAT mixed-domain block reconstruction W2g128",
+    "P4": "Same P3 checkpoint + Teacher RR alpha=0.2 + top20 KL beta=1.0; scale only",
+    "P5": "Independent EfficientQAT Block-AP + E2E-QP; matched token budget",
+    "P6": "Same P3 checkpoint + ordinary CE only; same Stage2 tokens; scale only"
+  },
+  "smoke": {"eval_problems": 2, "training_steps_target": 2, "meaning": "execution correctness only; not formal accuracy"},
+  "formal": {"eval_dataset": "miniF2F-test", "eval_problems": 244, "training_config": "training_general_data.json"},
+  "commands": {"smoke": {}, "formal": {}}
+}
