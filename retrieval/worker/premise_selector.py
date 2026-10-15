@@ -5,6 +5,8 @@ from transformers import AutoTokenizer, AutoModel
 import faiss
 import numpy as np
 import json
+import hashlib
+from pathlib import Path
 import conf.config
 
 np.random.seed(42)  # make reproducible
@@ -12,6 +14,27 @@ np.random.seed(42)  # make reproducible
 class PremiseSelector(object):
     def __init__(self):
         self.device = 'cuda'
+        manifest = Path(conf.config.ASSET_MANIFEST)
+        content = manifest.read_bytes()
+        pinned = json.loads(content)
+        self.asset_manifest_sha256 = hashlib.sha256(content).hexdigest()
+        for item in pinned['files']:
+            path = Path(item['path'])
+            digest = hashlib.sha256()
+            if path.stat().st_size != item['size']:
+                raise ValueError(f'Retrieval asset size changed: {path.name}')
+            with path.open('rb') as stream:
+                for chunk in iter(lambda: stream.read(8 * 1024 * 1024), b''):
+                    digest.update(chunk)
+            if digest.hexdigest() != item['sha256']:
+                raise ValueError(f'Retrieval asset hash changed: {path.name}')
+        expected = {str(Path(item['path']).resolve()) for item in pinned['files']}
+        for path in [conf.config.INDEX_PATH, conf.config.ANSWER_PATH,
+                     Path(conf.config.MODEL_PATH) / 'config.json',
+                     Path(conf.config.TOKENIZER_PATH) / 'tokenizer.json',
+                     Path(conf.config.ADAPTER_PATH) / 'adapter_model.safetensors']:
+            if str(Path(path).resolve()) not in expected:
+                raise ValueError('Configured retrieval paths differ from pinned assets')
 
         self.index = faiss.read_index(conf.config.INDEX_PATH)
         self.answer_path = conf.config.ANSWER_PATH
@@ -21,6 +44,8 @@ class PremiseSelector(object):
 
         self.init_formals()
         self.init_data()
+        if self.index.ntotal != len(self.datas):
+            raise ValueError('FAISS index/answer count mismatch')
 
     def init_formals(self):
         formals = []
@@ -40,9 +65,12 @@ class PremiseSelector(object):
 
     def init_model(self):
         if self.model is None:
-            self.tokenizer = AutoTokenizer.from_pretrained(conf.config.TOKENIZER_PATH)
-            self.model = AutoModel.from_pretrained(conf.config.MODEL_PATH).half()
-            self.model.to(self.device)
+            from peft import PeftModel
+            self.tokenizer = AutoTokenizer.from_pretrained(conf.config.TOKENIZER_PATH, local_files_only=True)
+            base = AutoModel.from_pretrained(conf.config.MODEL_PATH, torch_dtype=torch.float16,
+                                            local_files_only=True)
+            self.model = PeftModel.from_pretrained(base, conf.config.ADAPTER_PATH,
+                                                   local_files_only=True).to(self.device).eval()
 
     def release_model(self):
         self.tokenizer = None
@@ -63,6 +91,8 @@ class PremiseSelector(object):
         for query_results in I:
             related_theorems = []
             for docid in query_results:
+                if docid < 0 or docid >= len(self.datas):
+                    raise ValueError('FAISS returned an invalid premise ID')
                 related_theorems.append(self.datas[docid])
             all_related_theorems.append(related_theorems[:num])
 

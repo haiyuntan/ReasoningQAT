@@ -32,7 +32,9 @@ CUDA_VISIBLE_DEVICES=0 python -m experiment.run configs/p0_smoke2_candidate.toml
   --result-dir ../runs/P0_smoke2
 ```
 
-当前不能直接报告正式分数：Lean 依赖尚未恢复、模型正在下载、retrieval 未验证，候选配置也未完成历史/官方协议审查。旧评分器仍需核对失败样本和完整固定分母后才能用于正式结果。
+当前不能直接报告正式分数：完整 P0–P6 冒烟和正式协议冻结尚未完成。
+2026-10-15 已完成模型下载和 Lean/检索服务恢复；环境准备验证与启动命令见
+`../research/reports/environment_restoration.md`。
 
 该副本不是官方干净 checkout：来源是带有本地修改的 FedProver 工作树。`provenance/source_manifest.json` 的逐文件 hash 才是本次代码快照的精确标识，Git SHA 仅标识来源仓库 HEAD。
 

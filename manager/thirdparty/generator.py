@@ -76,7 +76,7 @@ class TacticGenerator:
         else:
             related_theorems = []
         if incontext is None:
-            prompt = PromptManage.build_local_prompt_str(state, related_theorems)
+            prompt = PromptManage.build_local_prompt_str(state, related_theorems, template)
         else:
             prompt = PromptManage.build_local_incontext_prompt_str(incontext, state, related_theorems, template)
         responses = []
@@ -96,10 +96,12 @@ class TacticGenerator:
             outputs = self.llm.generate([prompt], sampling_params, use_tqdm=False)
             # lora = LoRARequest("new_data", self.gpu_id, "/AI4M/users/nhhuang/LLaMA-Factory/ds_stepprover_algebra_together")
             # outputs = self.llm.generate([prompt], sampling_params, use_tqdm=False, lora_request=lora)
-            local_responses = [output.text.strip() for output in outputs[0].outputs]
-            local_responses = [i for i in local_responses if not "sorry" in i]
+            # Apply the existing sorry policy to candidates and their scores
+            # together, so filtering cannot shift another tactic's ranking.
+            local_outputs = [output for output in outputs[0].outputs if 'sorry' not in output.text.strip()]
+            local_responses = [output.text.strip() for output in local_outputs]
             local_logprobs = [output.cumulative_logprob / max(len(output.token_ids), 1) # type: ignore
-                              for output in outputs[0].outputs]
+                              for output in local_outputs]
             responses.extend(local_responses)
             logprobs.extend(local_logprobs)
 

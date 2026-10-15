@@ -1,5 +1,10 @@
 # 外部依赖
 
+2026-10-15：已恢复到此持久目录，源码压缩包、SHA256 和固定提交见 `source_restore.json`；
+各默认路径现在指向 `source_cache/` 内的真实版本目录。旧 `~/project` 不再是运行依赖。
+Lean4.16、Mathlib、Jixia、Interactive、REPL 的恢复与检索服务说明见
+`../../research/reports/environment_restoration.md`。
+
 默认目录位于此处；也可通过环境变量显式设置已核实的新依赖路径：
 
 ```bash

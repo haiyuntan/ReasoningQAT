@@ -1,0 +1,68 @@
+{
+  "repository": "https://github.com/frenzymath/REAL-Prover",
+  "revision": "3e5987dc1009a7addc935bcd7b4ae777738a0848",
+  "baseline_commit": "bce428211d6b653d7cb1a684dcd6436107d1ee08",
+  "baseline_note": "Normalized whitespace only; runtime adaptations follow in subsequent commit.",
+  "files": [
+    {
+      "path": "LICENSE",
+      "upstream_sha256": "b6d57a76ad35bf6b9c537ddd67a761d5aa139b626ff352496396c90cd60c08c5",
+      "adapted_sha256": "b6d57a76ad35bf6b9c537ddd67a761d5aa139b626ff352496396c90cd60c08c5"
+    },
+    {
+      "path": "README.md",
+      "upstream_sha256": "86b5612f632620144333376dc34a72548ad2d66a2069f72ed723cc7966a02dbf",
+      "adapted_sha256": "e386aeabc27337109851731ba9bee87155b5c63d57dd3d4cfd4da7b68bce62d1"
+    },
+    {
+      "path": "conf/__init__.py",
+      "upstream_sha256": "cac94fb72f75bd7d115fa8a372ae34fc04b4dd67a0b73c202bb4de124a9a87b1",
+      "adapted_sha256": "97855f2f3e083decc299ea6e3f96228e6f559c520ec490d0ca2b9fae9d250955"
+    },
+    {
+      "path": "conf/config.py",
+      "upstream_sha256": "1e856550bcc28e7cecb51fd92606be882948b81015e4f56b665b1200b6e0931c",
+      "adapted_sha256": "0371440d0b7b406fae1bdbd1540a3beeda224acec24e978309a089654672eeaa"
+    },
+    {
+      "path": "server.py",
+      "upstream_sha256": "86ad6ea68e4ddf08822d00c837ce0058af2c058bfef1207b6935a2ca25804de0",
+      "adapted_sha256": "fa01107d2da0a7bcb85acccd7138ed37bc5f53559439a45e4d98ab6892eaf3e8"
+    },
+    {
+      "path": "tests/__init__.py",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "adapted_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/test_local_run.py",
+      "upstream_sha256": "e052b94b4efba318286af58077e2ff84ecbe39cc1b9a3ce7dbe0ad5c8f7e781c",
+      "adapted_sha256": "968cde751a3f9dfcd6b5a29d10a75b0d02d6308a1e3a5f46e4c166f9861d4ee7"
+    },
+    {
+      "path": "tests/test_request.py",
+      "upstream_sha256": "48e0ddb73390cfa71f62787c910af000652635bd20ac04b95f2666ef744e437a",
+      "adapted_sha256": "4d3f3c3f879ad10049eb368f30b29bcaff6b25568bd6e450ea04eb1416698a0d"
+    },
+    {
+      "path": "util/__init__.py",
+      "upstream_sha256": "c51e2d2008ee67418bf3923996bdfb335b53dfb6931e1deb95df9a43ac9aae28",
+      "adapted_sha256": "c51e2d2008ee67418bf3923996bdfb335b53dfb6931e1deb95df9a43ac9aae28"
+    },
+    {
+      "path": "util/request_util.py",
+      "upstream_sha256": "2979e725f2f262e9919ef5dce386963d2bd1a82416aa00d1aef775ad08d34951",
+      "adapted_sha256": "2979e725f2f262e9919ef5dce386963d2bd1a82416aa00d1aef775ad08d34951"
+    },
+    {
+      "path": "worker/__init__.py",
+      "upstream_sha256": "8d3149176d30e5cd876f39bdf8ed80f8f6f8b806cc158106e7f7937c90321ac4",
+      "adapted_sha256": "8d3149176d30e5cd876f39bdf8ed80f8f6f8b806cc158106e7f7937c90321ac4"
+    },
+    {
+      "path": "worker/premise_selector.py",
+      "upstream_sha256": "a766fe804c994f16dbb75d5c8bb62c29bed3bfcff0982d602c0190bd37b853a0",
+      "adapted_sha256": "da007a0ab3521e0e8d35f22a3e60d39d7bfe2fe78f783472c07a9beb10612671"
+    }
+  ]
+}

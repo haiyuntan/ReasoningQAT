@@ -4,6 +4,7 @@ import hashlib
 import importlib.metadata as metadata
 import importlib.util
 import json
+import os
 from pathlib import Path
 import sys
 
@@ -12,8 +13,12 @@ spec = importlib.util.spec_from_file_location('local_config', ROOT / 'conf/confi
 config = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(config)
 errors = []
-for p in ROOT.rglob('*.py'):
-    ast.parse(p.read_text())
+for directory, folders, files in os.walk(ROOT):
+    folders[:] = [name for name in folders if name not in
+                  ('dependencies', '.git', '.lake', '__pycache__', 'outputs', 'logs')]
+    for name in files:
+        if name.endswith('.py'):
+            ast.parse((Path(directory) / name).read_text())
 manifest = json.loads((ROOT / 'provenance/source_manifest.json').read_text())
 for row in manifest['files']:
     p = ROOT / row['path']

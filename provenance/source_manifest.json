@@ -1,7 +1,7 @@
 {
   "source": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/FedProver",
   "source_git_sha": "c5dd5b75d5ec1e4a3a8b0fb2d1d2ca5246627703",
-  "status": "PIPELINE_ADAPTED_NOT_LEAN_E2E_VALIDATED",
+  "status": "NATIVE_ENVIRONMENT_VALIDATED_P0_P6_SMOKE_PENDING",
   "files": [
     {
       "path": "conf/__init__.py",
@@ -150,8 +150,8 @@
     {
       "path": "manager/thirdparty/__init__.py",
       "source_sha256": "1548aa7163ed526badbc0a6507e03a5fa30cb475b9454dca683cb340dec88247",
-      "copied_sha256": "1548aa7163ed526badbc0a6507e03a5fa30cb475b9454dca683cb340dec88247",
-      "modified": false
+      "copied_sha256": "d5fd5ce609a5e5b40b3163f31b0228e955fb1e84099b3b159e64d6246761c7d5",
+      "modified": true
     },
     {
       "path": "manager/thirdparty/claude.py",
@@ -168,7 +168,7 @@
     {
       "path": "manager/thirdparty/generator.py",
       "source_sha256": "9b5400890b49cd25d40a473cad03f4decd7306a1df5440a0171c2e5af4543f75",
-      "copied_sha256": "4ca9144939a7f772395484be92b0afb556ffc135766363b09975447fce8c14f5",
+      "copied_sha256": "5aa037785d4963a0cd95505be65921a598c06b0ea738aa7a1f8b3b98cb264550",
       "modified": true
     },
     {
