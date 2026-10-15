@@ -60,7 +60,6 @@ def fingerprint(root=ROOT):
         h.update(p.read_bytes())
     # Runtime choices participate too: switching Python, Lean binaries or the
     # retrieval endpoint invalidates old smoke evidence.
-    import os
     runtime_path = root / 'research/configs/runtime.json'
     if runtime_path.exists():
         runtime = read(runtime_path)

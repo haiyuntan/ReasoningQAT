@@ -12,6 +12,24 @@ spec.loader.exec_module(p)
 
 
 class GateTests(unittest.TestCase):
+    def test_source_changes_and_build_output_fingerprint(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / 'research/adapter.py'
+            source.parent.mkdir()
+            source.write_text('version = 1\n')
+            initial = p.fingerprint(root)
+            source.write_text('version = 2\n')
+            changed = p.fingerprint(root)
+            self.assertNotEqual(initial, changed)
+            cache = root / 'REALPROVER/dependencies/cache/generated.json'
+            cache.parent.mkdir(parents=True)
+            cache.write_text('{}')
+            self.assertEqual(changed, p.fingerprint(root))
+            inventory = root / 'REALPROVER/dependencies/source_restore.json'
+            inventory.write_text('{"revision": "new"}')
+            self.assertNotEqual(changed, p.fingerprint(root))
+
     def test_receipt_and_failures(self):
         with tempfile.TemporaryDirectory() as d:
             evidence = Path(d) / 'per_problem.json'

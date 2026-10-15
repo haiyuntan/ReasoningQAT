@@ -5,7 +5,7 @@
   "evidence": [
     {
       "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_preparation_v4/preparation.json",
-      "sha256": "23bbc222945483824057020c1487896b7f2c973b35b78adda97efcf34fcbdab0"
+      "sha256": "7405904ee2ee1868873b450aa86f65b40070e478221365133238de429d42c9b0"
     },
     {
       "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_preparation_v4/vllm_runtime.json",
@@ -23,5 +23,11 @@
       "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_preparation_v3/lean_runtime.json",
       "sha256": "15e2c35b66f5154410f261a0cec8661e085775af93af70d5c330767a8c65e9ce"
     }
-  ]
+  ],
+  "pipeline_checks": {
+    "smoke_configured_jobs": 7,
+    "formal_configured_jobs": 7,
+    "formal_gate_blocks_all_missing_smoke": true,
+    "gate_regression_tests": 4
+  }
 }
