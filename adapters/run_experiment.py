@@ -24,6 +24,10 @@ def checks_for(run, out, model, evaluation, training=None):
         checks.update(numinamath_same_128=exported['samples'] == 128 and
                       exported['calibration_sha256'] == sha(ROOT / 'datasets/numinamath_128/calib.jsonl'),
                       algorithm_identity=(out / ('native' if run == 'P1' else 'awq_search.pt')).exists())
+        if run == 'P1':
+            checks['export_logits_parity'] = (checks['export_logits_parity'] and
+                exported['gptq_reference_validation']['exact_weight_checks'] ==
+                load(MODEL / 'config.json')['num_hidden_layers'] * 7)
     if training:
         updates = training['optimizer_audit']
         losses = training.get('stage2', {}).get('steps', training.get('block_ap', []))
@@ -74,8 +78,12 @@ def main():
     for key in ('REALPROVER_RUN', 'REALPROVER_MODE', 'REALPROVER_OUTPUT', 'REALPROVER_FINGERPRINT'):
         env[key] = os.environ[key]
     adapters = RESEARCH / 'adapters'
-    execute([python_for('eval'), adapters / 'evaluation.py', '--model', MODEL, '--mode', a.mode,
-             '--output', out / 'preflight', '--preflight'], env=env)
+    sys.path.insert(0, str(RESEARCH / 'scripts'))
+    import retrieval_service
+    # Never keep the 14GB retrieval model resident during quantization/training.
+    retrieval_service.stop()
+    save(out / 'resource_lifecycle.json', {'policy': 'retrieval only during Lean evaluation',
+         'retrieval_stopped_before_training_and_quantization': True, 'evaluation_finished': False})
     model = verify_model()
     save(out / 'model_identity.json', model)
     training = None
@@ -101,8 +109,17 @@ def main():
     execute(argv, env=env)
     # External Lean dependencies are checked by the evaluator before inference.
     eval_model = MODEL if a.run == 'P0' else out / 'eval_model'
-    execute([python_for('eval'), adapters / 'evaluation.py', '--model', eval_model, '--mode', a.mode,
-             '--output', out / 'eval'], env=env)
+    try:
+        retrieval_service.ready()
+        execute([python_for('eval'), adapters / 'evaluation.py', '--model', MODEL, '--mode', a.mode,
+                 '--output', out / 'preflight', '--preflight'], env=env)
+        execute([python_for('eval'), adapters / 'evaluation.py', '--model', eval_model, '--mode', a.mode,
+                 '--output', out / 'eval'], env=env)
+    finally:
+        retrieval_service.stop()
+    save(out / 'resource_lifecycle.json', {'policy': 'retrieval only during Lean evaluation',
+         'retrieval_stopped_before_training_and_quantization': True,
+         'retrieval_stopped_after_evaluation': True, 'evaluation_finished': True})
     evaluation = {'export': load(out / 'eval_model/export.json'), 'stats': load(out / 'eval/evaluation.json')}
     checks = checks_for(a.run, out, model, evaluation, training)
     sys.path.insert(0, str(RESEARCH / 'scripts'))
@@ -110,7 +127,7 @@ def main():
     if any(checks.get(k) is not True for k in requirements(a.run)):
         save(out / 'failed_checks.json', checks)
         raise RuntimeError('Method validation failed; no PASS receipt emitted')
-    files = [out / 'model_identity.json', out / 'preflight/preflight.json', out / 'eval_model/export.json', out / 'eval/evaluation.json', out / 'eval/config.toml', out / 'eval/retrieval.jsonl']
+    files = [out / 'model_identity.json', out / 'preflight/preflight.json', out / 'eval_model/export.json', out / 'eval/evaluation.json', out / 'eval/config.toml', out / 'eval/retrieval.jsonl', out / 'resource_lifecycle.json']
     if training:
         files += [out / 'train/training.json']
         files += [out.parent / f'shared_{s}.json' for s in ('stage1', 'stage2') if f'{s}_data' in training]

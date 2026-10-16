@@ -38,6 +38,33 @@ def export(model, tokenizer, out, method):
     from transformers import AutoModelForCausalLM
     from quantize.int_linear_fake import QuantLinear
     from quantize.utils import set_op_by_name
+    gptq_reference = None
+    fp32_buffers = {}
+    if method == 'P1':
+        from types import MethodType
+        # A packed TorchQuantLinear rounds matmul and bias addition separately;
+        # nn.Linear may fuse them. BF16 outputs therefore need not be bitwise
+        # equal even when every dequantized weight and bias is identical.
+        # Validate the conversion in FP64 using the EXACT original BF16
+        # dequantization result, not recomputed higher-precision scale arithmetic.
+        def reference_weight(module, num_itr=1):
+            if num_itr != 1:
+                raise ValueError('Unsupported GPTQ export grouping')
+            return module._export_reference_weight
+        # RoPE inv_freq is constructed in FP32 even in a BF16 model; a blanket
+        # dtype round trip must not quantize these nonpersistent buffers.
+        fp32_buffers = {name: value.detach().clone() for name, value in model.named_buffers()
+                        if value.dtype == torch.float32}
+        with torch.no_grad():
+            for module in model.modules():
+                if hasattr(module, 'qweight') and hasattr(module, 'scales'):
+                    module._export_reference_weight = module.dequantize_weight().detach().float()
+                    module.dequantize_weight = MethodType(reference_weight, module)
+        model.double()
+        model.config._attn_implementation = 'eager'
+        gptq_reference = {'arithmetic': 'FP64; exact native BF16 dequantized weights and biases',
+                          'deployment_dtype': 'bfloat16', 'exact_weight_checks': 0,
+                          'preserved_fp32_buffers': sorted(fp32_buffers)}
     model.config.use_cache = True
     before, generation = probe(model, tokenizer)
     tolerance = load(RESEARCH / 'configs/runtime.json')['export']
@@ -77,8 +104,17 @@ def export(model, tokenizer, out, method):
             layer = torch.nn.Linear(in_features, out_features, module.bias is not None,
                                     device=weight.device, dtype=next(model.parameters()).dtype)
             layer.weight.copy_(weight)
+            if method == 'P1':
+                if not torch.equal(layer.weight, module._export_reference_weight.t()):
+                    raise ValueError('GPTQ materialization changed a dequantized weight')
+                gptq_reference['exact_weight_checks'] += 1
+                # Do not retain both cached native and dense weights for the
+                # entire model: FP64 validation must fit the single 80GB GPU.
+                del module._export_reference_weight
             if module.bias is not None:
                 layer.bias.copy_(module.bias)
+                if method == 'P1' and not torch.equal(layer.bias, module.bias):
+                    raise ValueError('GPTQ materialization changed a bias')
             set_op_by_name(model, name, layer)
             count += 1
             quantized_names.append(name)
@@ -89,13 +125,24 @@ def export(model, tokenizer, out, method):
     model.config.use_cache = True
     materialized, generated = probe(model, tokenizer)
     tolerance = load(RESEARCH / 'configs/runtime.json')['export']
-    def compare(other):
+    def compare(other, stage):
         if not all(torch.allclose(a, b, atol=tolerance['atol'], rtol=tolerance['rtol']) for a, b in zip(before, other)):
+            save(out / 'parity_failure.json', {
+                'method': method, 'stage': stage, 'tolerance': tolerance,
+                'max_abs_errors': [float((a-b).abs().max()) for a, b in zip(before, other)],
+                'gptq_reference_validation': gptq_reference})
             raise ValueError('Export logits parity failed')
         return max(float((a - b).abs().max()) for a, b in zip(before, other))
-    materialized_error = compare(materialized)
+    materialized_error = compare(materialized, 'native_to_dense_reference')
     if generated != generation:
         raise ValueError('Export greedy-generation parity failed')
+    if method == 'P1':
+        # The deployment remains BF16 for every method. Reload parity is checked
+        # separately against this canonical dense BF16 model, at unchanged tolerances.
+        model.bfloat16()
+        for name, value in fp32_buffers.items():
+            set_op_by_name(model, name, value)
+        before, generation = probe(model, tokenizer)
     out.mkdir(parents=True, exist_ok=True)
     if method != 'P0':
         model.save_pretrained(out, safe_serialization=True)
@@ -108,7 +155,7 @@ def export(model, tokenizer, out, method):
     reloaded = AutoModelForCausalLM.from_pretrained(MODEL if method == 'P0' else out, torch_dtype=dtype,
         attn_implementation='eager', local_files_only=True).cuda().eval()
     after, regenerated = probe(reloaded, tokenizer)
-    error = compare(after)
+    error = compare(after, 'deployment_save_reload')
     if regenerated != generation:
         raise ValueError('Reload generation parity failed')
     base_tokenizer_files = ['tokenizer.json', 'tokenizer_config.json', 'vocab.json', 'merges.txt']
@@ -127,6 +174,7 @@ def export(model, tokenizer, out, method):
             'model_type': 'qwen2', 'replaced_modules': quantized_names,
             'materialized_logits_max_error': materialized_error, 'reload_logits_max_error': error,
             'native_reload_logits_max_error': native_error,
+            'gptq_reference_validation': gptq_reference,
             'prompts': len(PROMPTS), 'greedy_generation_parity': True,
             'tokenizer_parity': True, 'saved_reload': True}
     save(out / 'export.json', meta)

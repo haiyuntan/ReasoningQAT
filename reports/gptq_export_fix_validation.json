@@ -1,0 +1,23 @@
+{
+  "status": "EXPORT_AND_RETRIEVAL_LIFECYCLE_VALIDATED",
+  "source_native_checkpoint": "runs/realprover_autorun_v1/smoke/P1/native",
+  "evidence": {
+    "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_gptq_export_fix_v3/eval_model/export.json",
+    "sha256": "9bc25dfb764d83495724430bc0d6f48561a36adf5d86e885954e46ce6a8d847d"
+  },
+  "materialized_logits_max_error": 0.0,
+  "reload_logits_max_error": 0.0,
+  "greedy_generation_parity": true,
+  "gptq_reference_validation": {
+    "arithmetic": "FP64; exact native BF16 dequantized weights and biases",
+    "deployment_dtype": "bfloat16",
+    "exact_weight_checks": 196
+  },
+  "prompts": 16,
+  "note": "Conversion validated in FP64 with exact native dequantized BF16 weights, then independent BF16 save/reload parity; not bitwise packed-BF16/dense-BF16 equivalence or full P1 smoke.",
+  "retrieval_lifecycle_evidence": {
+    "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_retrieval_lifecycle_v1/result.json",
+    "sha256": "42a0dafc23d6ef4670fd833142be40a31f146e70aabc104bba3024acfd75611d"
+  },
+  "gpu_memory_after_stop_mib": 0
+}
