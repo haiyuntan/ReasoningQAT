@@ -50,6 +50,49 @@ class LossTests(unittest.TestCase):
 
 
 class Qwen2Tests(unittest.TestCase):
+    def test_bf16_cast_and_reload_preserve_quantizers_and_rope(self):
+        from transformers import Qwen2Config, Qwen2ForCausalLM, AutoTokenizer
+        from quantize.int_linear_fake import QuantLinear, cast_qat_dtype, load_quantized_model
+        from quantize.utils import set_op_by_name, set_quant_state
+        from common import MODEL
+        config = Qwen2Config(vocab_size=64, hidden_size=128, intermediate_size=256,
+                            num_hidden_layers=1, num_attention_heads=2, num_key_value_heads=2)
+        config._attn_implementation = 'eager'
+        model = Qwen2ForCausalLM(config).eval()
+        for name, module in list(model.named_modules()):
+            if isinstance(module, torch.nn.Linear) and name.startswith('model.layers.'):
+                set_op_by_name(model, name, QuantLinear(module, 2, 128))
+        with torch.no_grad():
+            for name, p in model.named_parameters():
+                if name.endswith('.weight_quantizer.scale'):
+                    p.add_(1.234e-7)
+                elif name.endswith('.weight_quantizer.zero_point'):
+                    p.add_(0.1234567)
+        original = {n: p.clone() for n, p in model.named_parameters() if '.weight_quantizer.' in n}
+        frequencies = model.model.rotary_emb.inv_freq.clone()
+        cast_qat_dtype(model, torch.bfloat16)
+        for name, expected in original.items():
+            self.assertEqual(model.get_parameter(name).dtype, torch.float32)
+            torch.testing.assert_close(model.get_parameter(name), expected, atol=0, rtol=0)
+        self.assertEqual(model.model.rotary_emb.inv_freq.dtype, torch.float32)
+        torch.testing.assert_close(model.model.rotary_emb.inv_freq, frequencies, atol=0, rtol=0)
+        set_quant_state(model, True)
+        ids = torch.ones(1, 8, dtype=torch.long)
+        with torch.no_grad():
+            before = model(ids).logits
+        self.assertTrue(torch.isfinite(before).all())
+        with tempfile.TemporaryDirectory() as directory:
+            model.save_pretrained(directory)
+            AutoTokenizer.from_pretrained(MODEL, local_files_only=True).save_pretrained(directory)
+            restored, _ = load_quantized_model(directory, 2, 128, replace=True, strict=True,
+                                              use_flash_attn=False, device='cpu')
+            set_quant_state(restored, True)
+            restored.eval()
+            for name, expected in original.items():
+                torch.testing.assert_close(restored.get_parameter(name), expected, atol=0, rtol=0)
+            with torch.no_grad():
+                torch.testing.assert_close(before, restored(ids).logits, atol=0, rtol=0)
+
     def test_qwen2_forward_scale_gradient_and_materialization(self):
         from transformers import Qwen2Config, Qwen2ForCausalLM
         from quantize.int_linear_fake import QuantLinear

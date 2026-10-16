@@ -120,6 +120,21 @@ def load_quantized_model_init(model_path, wbits, group_size, quantizer_class, us
     return model, tokenizer
 
 
+def cast_qat_dtype(model, dtype):
+    """Cast compute weights without rounding learned quantizers or RoPE frequencies."""
+    parameters = {name: p.detach().float().clone() for name, p in model.named_parameters()
+                  if name.endswith(('.weight_quantizer.scale', '.weight_quantizer.zero_point'))}
+    frequencies = {name: value.detach().clone() for name, value in model.named_buffers()
+                   if name.endswith('inv_freq') and value.dtype == torch.float32}
+    model.to(dtype=dtype)
+    for name, parameter in model.named_parameters():
+        if name in parameters:
+            parameter.data = parameters[name].to(parameter.device)
+    for name, value in frequencies.items():
+        set_op_by_name(model, name, value)
+    return model
+
+
 def load_quantized_model(model_path, wbits, group_size, replace=False, strict=False, quantizer_class="UniformAffineQuantizer", scale=1.0, grad_scale=False, use_flash_attn=True, device=None):
     print(f"Loading quantized model from {model_path}")
     if not os.path.exists(model_path):
@@ -147,6 +162,7 @@ def load_quantized_model(model_path, wbits, group_size, replace=False, strict=Fa
         for module in model.modules():
             if isinstance(module, QuantLinear):
                 module.weight_quantizer.scale = nn.Parameter(module.weight_quantizer.scale.float())
+                module.weight_quantizer.zero_point = nn.Parameter(module.weight_quantizer.zero_point.float())
     else:
         pass
     torch.cuda.empty_cache()

@@ -10,6 +10,7 @@ import torch
 from transformers import Qwen2Config, Qwen2ForCausalLM
 from training import reasoning_block_ap, OptimizerAudit, e2e
 from baseline_training import efficient_block_ap
+from quantize.int_linear_fake import cast_qat_dtype
 
 
 def main():
@@ -20,7 +21,7 @@ def main():
     config = Qwen2Config(vocab_size=64, hidden_size=128, intermediate_size=256,
                         num_hidden_layers=1, num_attention_heads=2, num_key_value_heads=2,
                         use_cache=False)
-    model = Qwen2ForCausalLM(config).half().cuda().eval()
+    model = Qwen2ForCausalLM(config).bfloat16().cuda().eval()
     train = [(torch.randint(0, 64, (1, 16)), None) for _ in range(2)]
     val = [(torch.randint(0, 64, (1, 16)), None)]
     cfg = load(RESEARCH / 'configs/training_general_data.json')['stage1']
@@ -31,7 +32,7 @@ def main():
     batches = [{'input_ids': x[0], 'attention_mask': torch.ones_like(x[0]),
                 'labels': torch.cat([torch.full((1, 4), -100), x[0][:, 4:]], dim=1)} for x in train]
     for run in ('P4', 'P6'):
-        student = copy.deepcopy(p3).bfloat16()
+        student = cast_qat_dtype(copy.deepcopy(p3), torch.bfloat16)
         teacher = Qwen2ForCausalLM(config).bfloat16().cuda().eval() if run == 'P4' else None
         with OptimizerAudit() as audit:
             report = e2e(student, teacher, batches, run, 'smoke')

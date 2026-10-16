@@ -38,7 +38,7 @@
     "source": "ReasoningQAT/quantize/int_linear_fake.py",
     "path": "vendor/reasoningqat/quantize/int_linear_fake.py",
     "source_sha256": "5befa02dc1dcc7faef4e22f70fa76b11158f3c59e861ffcdbf4600583869a563",
-    "adapted_sha256": "8f9e1a678746ed8cd0fbf81793f6ae159f7b4e006a22590789f42ca08749ebc7",
+    "adapted_sha256": "d5a5ef68f005fce39b1d6cc5beab822f317c2bcd92612c49f65024c632e6f78b",
     "modified": true
   },
   {

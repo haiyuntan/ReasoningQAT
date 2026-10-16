@@ -1,0 +1,80 @@
+{
+  "status": "PASS_COMPONENT_VALIDATION_NOT_LEAN_SMOKE",
+  "blocks": 28,
+  "optimizer_updates": 280,
+  "probe_prompts": 16,
+  "compute_dtype": "bfloat16",
+  "quantizer_parameter_dtype": "float32",
+  "native_reload_error": 0.0,
+  "materialized_error": 0.0,
+  "saved_reload_error": 0.0,
+  "greedy_generation_parity": true,
+  "cpu_tests": 5,
+  "gpu_contracts": [
+    "P3",
+    "P4",
+    "P5",
+    "P6"
+  ],
+  "evidence": [
+    {
+      "path": "runs/realprover_p3_bf16_validation_v1/train/training.json",
+      "sha256": "ef2ec5ee8e5b7262d4654984283feee90eefa2a23e545e71134d02674388462b"
+    },
+    {
+      "path": "runs/realprover_p3_bf16_validation_v1/eval_model/export.json",
+      "sha256": "d42c03c6db2d852a153b501ba5189c892614a18ddb2f0cd08a905e88dc210849"
+    },
+    {
+      "path": "runs/realprover_p3_bf16_validation_v1/training.log",
+      "sha256": "c42593e7be9b735c55caf3f7ad53be3fefd72df33a0719d0ce5ea64f6a25b3bc"
+    },
+    {
+      "path": "runs/realprover_p3_bf16_validation_v1/export.log",
+      "sha256": "fcd8ce7353d53a039c91044d9f9ab1de39597159a890e3647078faf462daec95"
+    },
+    {
+      "path": "runs/realprover_p3_bf16_validation_v1/adapters.log",
+      "sha256": "8839d1fa370d4972b4ccc4fb2c819afca97382c57c05dd0c86e31f5a724004cf"
+    },
+    {
+      "path": "runs/realprover_p3_bf16_validation_v1/gpu_contracts.log",
+      "sha256": "d1c26e61bf5bf56b647663f1bb1f0bfed2d415f0ba08d1d1c69f84134a1c2ea6"
+    }
+  ],
+  "existing_checkpoint_dedup_released_bytes": 31552827392,
+  "temporary_validation_tensors_pruned": [
+    {
+      "path": "runs/realprover_p3_bf16_validation_v1/train/native/model-00004-of-00004.safetensors",
+      "bytes": 1089994880
+    },
+    {
+      "path": "runs/realprover_p3_bf16_validation_v1/train/native/model-00001-of-00004.safetensors",
+      "bytes": 4996034176
+    },
+    {
+      "path": "runs/realprover_p3_bf16_validation_v1/train/native/model-00003-of-00004.safetensors",
+      "bytes": 4606248000
+    },
+    {
+      "path": "runs/realprover_p3_bf16_validation_v1/train/native/model-00002-of-00004.safetensors",
+      "bytes": 4946875896
+    },
+    {
+      "path": "runs/realprover_p3_bf16_validation_v1/eval_model/model-00004-of-00004.safetensors",
+      "bytes": 1089994880
+    },
+    {
+      "path": "runs/realprover_p3_bf16_validation_v1/eval_model/model-00001-of-00004.safetensors",
+      "bytes": 4877660776
+    },
+    {
+      "path": "runs/realprover_p3_bf16_validation_v1/eval_model/model-00003-of-00004.safetensors",
+      "bytes": 4330865200
+    },
+    {
+      "path": "runs/realprover_p3_bf16_validation_v1/eval_model/model-00002-of-00004.safetensors",
+      "bytes": 4932751008
+    }
+  ]
+}

@@ -119,7 +119,7 @@ def reasoning_block_ap(model, train, validation, config, epochs, batch_size):
     import copy
     import torch
     from baseline_training import capture_inputs, DiskSamples, to_device_kwargs, layer_output
-    from quantize.int_linear_fake import QuantLinear
+    from quantize.int_linear_fake import QuantLinear, cast_qat_dtype
     from quantize.utils import set_op_by_name, set_quant_state, quant_inplace
     from quantize.utils import set_quant_parameters, set_weight_parameters, quant_parameters, weight_parameters
     device = torch.device('cuda')
@@ -170,7 +170,7 @@ def reasoning_block_ap(model, train, validation, config, epochs, batch_size):
             history.append({'block': index, 'epoch': epoch, 'mse': sum(losses) / len(losses), 'val_mse': val_loss})
             print(history[-1], flush=True)
         del optimizer
-        layer.half()
+        cast_qat_dtype(layer, torch.bfloat16)
         quant_inplace(layer)
         # Canonical saved/reloaded fake-quant forward also used by Stage2.
         set_quant_state(layer, True)
@@ -263,7 +263,7 @@ def main():
             train, val, data = calibration(tokenizer, a.mode)
             cfg = load(RESEARCH / 'configs/training_general_data.json')['stage1']
             tiny = load(RESEARCH / 'configs/runtime.json')['smoke']
-            model = AutoModelForCausalLM.from_pretrained(MODEL, torch_dtype=torch.float16,
+            model = AutoModelForCausalLM.from_pretrained(MODEL, torch_dtype=torch.bfloat16,
                     attn_implementation='eager', local_files_only=True).cuda()
             model.config.use_cache = False
             evidence['block_ap'] = reasoning_block_ap(model, train, val, cfg,
@@ -295,13 +295,13 @@ def main():
             else:
                 if a.p3 is None:
                     raise ValueError('P4/P6 require the same P3 native checkpoint')
-                from quantize.int_linear_fake import load_quantized_model
+                from quantize.int_linear_fake import load_quantized_model, cast_qat_dtype
                 from quantize.utils import set_quant_state
                 evidence['p3_signature'] = model_signature(a.p3)
                 model, _ = load_quantized_model(str(a.p3), 2, 128, replace=True, strict=True,
                                                use_flash_attn=False, device='cpu')
                 set_quant_state(model, True)
-                model = model.bfloat16().cuda()
+                model = cast_qat_dtype(model, torch.bfloat16).cuda()
             batches, data = stage2_data(tokenizer, a.mode)
             teacher = (AutoModelForCausalLM.from_pretrained(MODEL, torch_dtype=torch.bfloat16,
                        attn_implementation='eager', local_files_only=True).cuda() if a.run == 'P4' else None)
