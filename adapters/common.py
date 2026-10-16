@@ -74,7 +74,11 @@ def verify_model():
 
 
 def data_environment(mode):
+    cache = ROOT / 'cache/realprover/huggingface'
+    cache.mkdir(parents=True, exist_ok=True)
     env = dict(os.environ, HF_HUB_OFFLINE='1', HF_DATASETS_OFFLINE='1',
+               HF_HOME=str(cache), HF_DATASETS_CACHE=str(cache / 'datasets'),
+               HF_HUB_CACHE=str(cache / 'hub'),
                USE_TF='0', USE_FLAX='0',
                TOKENIZERS_PARALLELISM='false', RQ_RUN_MODE=mode,
                PYTHONPATH=str(VENDOR) + os.pathsep + str(VENDOR / 'repro_scripts'),

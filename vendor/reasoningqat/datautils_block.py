@@ -72,7 +72,9 @@ def get_openthoughts_shuffled(tokenizer, train_size, val_size, seed, seqlen, tes
     
     target_seqlen = seqlen  # Fixed sequence length for all samples
     
-    for i, sample in enumerate(traindata):
+    samples = (traindata.iter_rows(batch_size=max(1, train_size+val_size))
+               if hasattr(traindata, 'iter_rows') else traindata)
+    for i, sample in enumerate(samples):
         if len(trainloader) >= train_size and len(valloader) >= val_size:
             break
         
@@ -95,6 +97,8 @@ def get_openthoughts_shuffled(tokenizer, train_size, val_size, seed, seqlen, tes
         except Exception as e:
             # Skip samples that cause tokenization errors
             continue
+        if len(trainloader) >= train_size and len(valloader) >= val_size:
+            break
     
     assert len(trainloader) == train_size and len(valloader) == val_size, 'Incomplete reasoning calibration'
     print(f"OpenThoughts: collected {len(trainloader)} train samples and {len(valloader)} val samples")

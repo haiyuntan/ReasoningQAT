@@ -16,10 +16,8 @@ def load_local_or_hf_openthoughts():
     parts = sorted(glob.glob(pattern, recursive=True))
     if not parts:
         raise FileNotFoundError(pattern)
-    ds = load_dataset('parquet', data_files={'train': parts}, split='train')
-    if len(ds) != 1200000:
-        raise ValueError(f'Expected full OpenThoughts 1.2M, found {len(ds)}')
-    return ds
+    from repro_scripts.parquet_rows import ParquetRows
+    return ParquetRows(parts, expected_rows=1200000)
 
 
 def load_local_or_hf_fineweb():

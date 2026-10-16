@@ -80,8 +80,8 @@
     "source": "ReasoningQAT/datautils_block.py",
     "path": "vendor/reasoningqat/datautils_block.py",
     "source_sha256": "9062f815f8e67027c33153f9f263365e988754b209d55f04fcc1b1595a2b6051",
-    "adapted_sha256": "9062f815f8e67027c33153f9f263365e988754b209d55f04fcc1b1595a2b6051",
-    "modified": false
+    "adapted_sha256": "342d231dddc77903c9b35042f0f3b48abba523be7c328bdc85d3805dda650a36",
+    "modified": true
   },
   {
     "source": "ReasoningQAT/utils.py",
@@ -101,8 +101,8 @@
     "source": "ReasoningQAT/repro_scripts/local_datasets.py",
     "path": "vendor/reasoningqat/repro_scripts/local_datasets.py",
     "source_sha256": "a8b15fd0e9b21ef7e1765378b29c10912a41094ad3017e1c6ee4f2c1550c074c",
-    "adapted_sha256": "a8b15fd0e9b21ef7e1765378b29c10912a41094ad3017e1c6ee4f2c1550c074c",
-    "modified": false
+    "adapted_sha256": "c0ff9a59ed4973cc8693f75cb61b03ddf13577bfe1d38ca7a907cef4217cc912",
+    "modified": true
   },
   {
     "source": "ReasoningQAT/repro_scripts/runtime_compat.py",
@@ -208,5 +208,12 @@
     "source_sha256": "fa7c31d97bc23ffcca0afde556f3d8af2275ff33d5d8d87b32c714f577a59bf0",
     "adapted_sha256": "fa7c31d97bc23ffcca0afde556f3d8af2275ff33d5d8d87b32c714f577a59bf0",
     "modified": false
+  },
+  {
+    "source": "LOCAL_ADAPTER",
+    "path": "vendor/reasoningqat/repro_scripts/parquet_rows.py",
+    "source_sha256": null,
+    "adapted_sha256": "eab9b5b0773291cac6c02ca7dce1ad97ba1fff7f52e7e85f9628ac9e9368292e",
+    "modified": true
   }
 ]

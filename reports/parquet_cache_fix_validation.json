@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "global_shuffle_rows": 1200000,
+  "compared_actual_rows": 16,
+  "stage1": {
+    "train": 10,
+    "val": 5,
+    "length": 256,
+    "token_sha256": "b2489219b8ba08312cdd3230263d99d4487e7845c2b300584a8b2b89b8c639e1",
+    "seed": 2,
+    "reasoning_ratio": 0.8,
+    "sources": [
+      "OpenThoughts3-1.2M",
+      "FineWeb-Edu"
+    ],
+    "tokenizer": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/models/REAL-Prover-v1-bf16"
+  },
+  "stage2": {
+    "samples": 2,
+    "dataset_fingerprint": "2a30d7cb3ed123e1ba8c26a4e0658ac0b241fce555aaef78095045fbb66d6b14",
+    "tensor_sha256": "d5b0cf796760c2c15e34a7b844d7fcbd4d2be7989bbafefccba13b39ccfc1e73",
+    "causal_tokens": 196,
+    "max_length": 256,
+    "truncation": "right; zero-target sample is fatal",
+    "mask": "final assistant completion only; same as pinned ChatML",
+    "seed": 2
+  },
+  "arrow_expansion_required": false,
+  "cleanup_bytes": 98099032912,
+  "cleanup_evidence": [
+    "runs/project_cleanup_20261016/completed.json",
+    "runs/project_cleanup_20261016/arrow_cache_cleanup.json"
+  ],
+  "old_pass_evidence_intact": [
+    "P0",
+    "P1",
+    "P2"
+  ]
+}
