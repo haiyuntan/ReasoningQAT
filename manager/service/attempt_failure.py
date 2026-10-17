@@ -12,3 +12,16 @@ def timeout_result(statement, generator, error):
                              'operation': error.operation, 'timeout_seconds': error.seconds,
                              'error': str(error)},
     }
+
+
+def session_failure_result(statement, generator, error):
+    return {
+        'formal_statement': statement,
+        'collect_results': [{'declaration': None, 'success': False,
+                             'calls': list(generator.calls), 'nodes': [],
+                             'stop_cause': {'lean_session_error': True}}],
+        'pipeline_verifier': {'executed': False, 'success': False},
+        'pipeline_attempt': {'status': 'lean_error', 'consumes_attempt': True,
+                             'operation': error.operation, 'returncode': error.returncode,
+                             'error': str(error)},
+    }

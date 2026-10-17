@@ -9,8 +9,8 @@ import conf.config
 from manager.search.exception import SearchError, error_logging
 import logging
 from manager.thirdparty.verifier import verify_proof
-from manager.thirdparty.interactive import InteractiveResponseTimeout
-from manager.service.attempt_failure import timeout_result
+from manager.thirdparty.interactive import InteractiveResponseTimeout, InteractiveSessionError
+from manager.service.attempt_failure import timeout_result, session_failure_result
 import json
 
 def search_check(path, max_retries):
@@ -175,6 +175,8 @@ class BatchMainService(BaseService):
                 except SearchError as e:
                     if isinstance(e.error_type, InteractiveResponseTimeout):
                         save_data = timeout_result(item['formal_statement'], this_generator, e.error_type)
+                    elif isinstance(e.error_type, InteractiveSessionError):
+                        save_data = session_failure_result(item['formal_statement'], this_generator, e.error_type)
                     else:
                         raise
                     error_log_path = f"{self.result_dir+'/error'}/{item['id']}.json"
@@ -183,6 +185,8 @@ class BatchMainService(BaseService):
                     logging.error([e.error_type,item['id'], "Searching Error"] ,exc_info=True)
                 except InteractiveResponseTimeout as e:
                     save_data = timeout_result(item['formal_statement'], this_generator, e)
+                except InteractiveSessionError as e:
+                    save_data = session_failure_result(item['formal_statement'], this_generator, e)
                 except Exception as e:
                     print(traceback.format_exc())
                     print(f"Error occurred: {e}")
@@ -204,9 +208,9 @@ class BatchMainService(BaseService):
                             save_data['pipeline_verifier'] = {'executed': True, 'success': bool(repl_res)}
                 result_file = os.path.join(item_path,f"{item['id']}_{idx}.json")
                 CommonUtil.write_to_json_file(result_file, save_data)
-                if save_data.get('pipeline_attempt', {}).get('status') == 'timeout':
+                if save_data.get('pipeline_attempt', {}).get('consumes_attempt'):
                     profiler.stop(f"run_index_{item['id']}")
-                    print(f"TIMEOUT: theorem={item['id']} attempt={idx+1}/{self.max_retries}; counted as failure; continuing", flush=True)
+                    print(f"{save_data['pipeline_attempt']['status'].upper()}: theorem={item['id']} attempt={idx+1}/{self.max_retries}; counted as failure; continuing", flush=True)
                 print(f"finish_index_{item['id']}",flush=True)
                 if save_data['collect_results'] and save_data['collect_results'][0]['success']:
                     break
@@ -218,21 +222,33 @@ class BatchMainService(BaseService):
 
         """
         process_list = []
-        self._init_source_list()
-        self._int_generator()
-        self._int_queue()
-        for i in self.gpus_list:
-            # 创建trans进程
-            process = mp.Process(target=self._process_run, args=(i,))
-            process.start()
-            process_list.append(process)
+        try:
+            self._init_source_list()
+            self._int_generator()
+            self._int_queue()
+            for i in self.gpus_list:
+                process = mp.Process(target=self._process_run, args=(i,))
+                process.start()
+                process_list.append(process)
+            for process in process_list:
+                process.join()
+            if any(process.exitcode != 0 for process in process_list):
+                raise RuntimeError("Evaluation worker failed; refusing to treat infrastructure failure as model error")
+            print("All data processed.")
+        finally:
+            for process in process_list:
+                if process.is_alive():
+                    process.terminate()
+                    process.join(timeout=5)
+                    if process.is_alive():
+                        process.kill()
+                        process.join(timeout=5)
+            # With a dead consumer, the feeder cannot flush the remaining
+            # theorem queue. Never join that feeder during interpreter exit.
+            self.queue.cancel_join_thread()
+            self.queue.close()
+            self.manager.shutdown()
 
-        for j in range(len(process_list)):
-            process_list[j].join()
-        if any(process.exitcode != 0 for process in process_list):
-            raise RuntimeError('Evaluation worker failed; refusing to treat infrastructure failure as model error')
-        print("All data processed.")
-    
     def get_info(self):
         return dict(
             max_retries=self.max_retries,

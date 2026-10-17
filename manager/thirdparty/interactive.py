@@ -23,6 +23,14 @@ class InteractiveResponseTimeout(TimeoutError):
         self.operation = operation
         super().__init__(f'Lean Interactive {operation} response exceeded {seconds}s; session terminated')
 
+
+class InteractiveSessionError(Exception):
+    """A failed Lean session, distinct from an ordinary invalid tactic."""
+    def __init__(self, message, operation, returncode=None):
+        self.operation = operation
+        self.returncode = returncode
+        super().__init__(message)
+
 def get_project_toolchain(root: Path) -> str:
     with (root / "lean-toolchain").open() as fp:
         return fp.read()
@@ -84,19 +92,30 @@ class Interactive:
                 if not chunk:
                     code = self.proc.poll()
                     self.close()
-                    raise RuntimeError(f'Lean Interactive stdout closed before a complete response (exit={code}); see stderr in execution log')
+                    raise InteractiveSessionError(
+                        f'Lean Interactive stdout closed before a complete response (exit={code}); see stderr in execution log',
+                        self.operation, code)
                 self._response_buffer.extend(chunk)
         line, _, rest = self._response_buffer.partition(b'\n')
         self._response_buffer = bytearray(rest)
         line = line.strip()
         logger.debug("<-" + repr(line))
-        return json.loads(line)
+        try:
+            return json.loads(line)
+        except (ValueError, UnicodeDecodeError) as exc:
+            self.close()
+            raise InteractiveSessionError(f'Invalid Lean response: {exc}', self.operation, self.proc.returncode) from exc
 
     def write(self, data: dict):
         self.operation = data.get('method', 'openFile')
         data = json.dumps(data, separators=(',', ':'), ensure_ascii=False)
         logger.debug("->" + data)
-        print(data, file=self.write_to)
+        try:
+            print(data, file=self.write_to)
+        except (BrokenPipeError, OSError, ValueError) as exc:
+            code = self.proc.poll()
+            self.close()
+            raise InteractiveSessionError(f'Lean session write failed: {exc}', self.operation, code) from exc
 
     def open_file(self, path: Path, selectors: list[str | int | None]):
         assert not self.tactic_mode
