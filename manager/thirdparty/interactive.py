@@ -2,6 +2,9 @@ import dataclasses
 import json
 import logging
 import subprocess
+import selectors
+import signal
+import time
 from io import TextIOWrapper
 from pathlib import Path
 
@@ -45,16 +48,38 @@ class Interactive:
             args,
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
+            # Inherit the campaign log: an unread stderr PIPE can fill and
+            # deadlock Lean while Python waits for a stdout response.
+            stderr=None,
             cwd=root,
+            start_new_session=True,
         )
         self.read_from = self.proc.stdout
         self.write_to = TextIOWrapper(self.proc.stdin, line_buffering=True)
         self.id = 0
         self.tactic_mode = False
+        self.response_timeout = 1200.0
+        self._response_buffer = bytearray()
+        os.set_blocking(self.read_from.fileno(), False)
 
     def read(self) -> dict:
-        line = self.read_from.readline().strip()
+        deadline = time.monotonic() + self.response_timeout
+        with selectors.DefaultSelector() as selector:
+            selector.register(self.read_from, selectors.EVENT_READ)
+            while b'\n' not in self._response_buffer:
+                remaining = deadline - time.monotonic()
+                if remaining <= 0 or not selector.select(remaining):
+                    self.close()
+                    raise TimeoutError(f'Lean Interactive response exceeded {self.response_timeout}s; session terminated')
+                chunk = os.read(self.read_from.fileno(), 65536)
+                if not chunk:
+                    code = self.proc.poll()
+                    self.close()
+                    raise RuntimeError(f'Lean Interactive stdout closed before a complete response (exit={code}); see stderr in execution log')
+                self._response_buffer.extend(chunk)
+        line, _, rest = self._response_buffer.partition(b'\n')
+        self._response_buffer = bytearray(rest)
+        line = line.strip()
         logger.debug("<-" + repr(line))
         return json.loads(line)
 
@@ -116,14 +141,26 @@ class Interactive:
         self.tactic_mode = False
 
     def close(self):
-        """Clean up the interactive subprocess."""
+        """Reap lake and its Lean child, including timeout/error paths."""
         try:
-            self.proc.stdin.close()
-            self.proc.terminate()
+            os.killpg(self.proc.pid, signal.SIGTERM)
+        except ProcessLookupError:
+            pass
+        try:
             self.proc.wait(timeout=5)
-        except Exception:
-            self.proc.kill()
-            self.proc.wait()
+        except subprocess.TimeoutExpired:
+            pass
+        # A lake launcher may exit before its child. Always clean the group.
+        try:
+            os.killpg(self.proc.pid, signal.SIGKILL)
+        except ProcessLookupError:
+            pass
+        self.proc.wait(timeout=5)
+        for stream in (self.write_to, self.read_from):
+            try:
+                stream.close()
+            except (OSError, ValueError):
+                pass
 
 
 if __name__ == '__main__':
