@@ -76,54 +76,55 @@ class BaseService(object):
         
         
         test_file = self.root / f"TestOne_{platform.node()}_{os.getpid()}.lean"  # 添加节点id和进程Id，防止多进程操作同一个文件引起的error
-        with test_file.open("w") as fp:
-            fp.write(source)
-        interactive.open_file(test_file, [None])
+        try:
+            with test_file.open("w") as fp:
+                fp.write(source)
+            interactive.open_file(test_file, [None])
         
-        results = []
-        while True:
-            generator.reset_calls(source)
-            decl = interactive.get_next_problem()
-            if decl is None:
-                break
-            if self.use_beam_search:
-                search = BeamSearch(max_nodes=self.max_nodes,
-                                    max_depth=self.max_depth,
-                                    beam_width=self.beam_width,
-                                    num_samples=self.num_samples,
-                                    abandon_if_contain = self.abandon_if_contain)
-            elif self.use_mcts_search:
-                search = MCTSSearch(max_nodes=self.max_nodes,
-                                    max_depth=self.max_depth,
-                                    num_samples=self.num_samples,
-                                    simulation_depth=self.simulation_depth,
-                                    c_puct=self.c_puct,
-                                    c_score=self.c_score,
-                                    c_expansion_fail_penalty=self.c_expansion_fail_penalty,
-                                    max_root_expansion=self.max_root_expansion,
-                                    max_calls=self.max_calls,
-                                    abandon_if_contain = self.abandon_if_contain)
-            else:
-                search = BestFirstSearch(max_nodes=self.max_nodes,
+            results = []
+            while True:
+                generator.reset_calls(source)
+                decl = interactive.get_next_problem()
+                if decl is None:
+                    break
+                if self.use_beam_search:
+                    search = BeamSearch(max_nodes=self.max_nodes,
+                                        max_depth=self.max_depth,
+                                        beam_width=self.beam_width,
+                                        num_samples=self.num_samples,
+                                        abandon_if_contain = self.abandon_if_contain)
+                elif self.use_mcts_search:
+                    search = MCTSSearch(max_nodes=self.max_nodes,
                                         max_depth=self.max_depth,
                                         num_samples=self.num_samples,
-                                        abandon_if_contain = self.abandon_if_contain,
-                                        is_incontext=self.is_incontext,
-                                        template=self.template,
-                                        use_retrieval=self.use_retrieval)
-            if self.info == {}:
-                self.info.update(generator.info)
-                self.info.update(search.info)
+                                        simulation_depth=self.simulation_depth,
+                                        c_puct=self.c_puct,
+                                        c_score=self.c_score,
+                                        c_expansion_fail_penalty=self.c_expansion_fail_penalty,
+                                        max_root_expansion=self.max_root_expansion,
+                                        max_calls=self.max_calls,
+                                        abandon_if_contain = self.abandon_if_contain)
+                else:
+                    search = BestFirstSearch(max_nodes=self.max_nodes,
+                                            max_depth=self.max_depth,
+                                            num_samples=self.num_samples,
+                                            abandon_if_contain = self.abandon_if_contain,
+                                            is_incontext=self.is_incontext,
+                                            template=self.template,
+                                            use_retrieval=self.use_retrieval)
+                if self.info == {}:
+                    self.info.update(generator.info)
+                    self.info.update(search.info)
                 
-            state = interactive.get_state(0)
-            search.insert(Node(0, 0, "", state)) # type: ignore
-            search.search_proof(generator, interactive)
-            results.append((decl, search, copy.copy(generator)))
+                state = interactive.get_state(0)
+                search.insert(Node(0, 0, "", state)) # type: ignore
+                search.search_proof(generator, interactive)
+                results.append((decl, search, copy.copy(generator)))
 
-        interactive.close()
-        test_file.unlink()
+        finally:
+            interactive.close()
+            test_file.unlink(missing_ok=True)
         return results
-    
     @staticmethod
     def collect_info(decl: str, search, generator) -> dict:
         """ This function collects info for final results

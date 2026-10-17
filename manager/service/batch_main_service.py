@@ -9,6 +9,8 @@ import conf.config
 from manager.search.exception import SearchError, error_logging
 import logging
 from manager.thirdparty.verifier import verify_proof
+from manager.thirdparty.interactive import InteractiveResponseTimeout
+from manager.service.attempt_failure import timeout_result
 import json
 
 def search_check(path, max_retries):
@@ -24,7 +26,7 @@ def search_check(path, max_retries):
                         for res in file_json["collect_results"]:
                             if res['success']:
                                 return True
-                            if len(res['calls'])==0:
+                            if len(res['calls'])==0 and not file_json.get('pipeline_attempt', {}).get('consumes_attempt'):
                                 connect_error=True
                     except:
                         return False
@@ -171,15 +173,22 @@ class BatchMainService(BaseService):
                     results = self.process_one(source=item["formal_statement"], generator=this_generator)
                     profiler.stop(f"run_index_{item['id']}")
                 except SearchError as e:
+                    if isinstance(e.error_type, InteractiveResponseTimeout):
+                        save_data = timeout_result(item['formal_statement'], this_generator, e.error_type)
+                    else:
+                        raise
                     error_log_path = f"{self.result_dir+'/error'}/{item['id']}.json"
                     error_logging(error_log_path, item["id"], item["formal_statement"], e.error_data)
                     # CommonUtil.write_to_json_file(error_log_path, e.error_data)
                     logging.error([e.error_type,item['id'], "Searching Error"] ,exc_info=True)
+                except InteractiveResponseTimeout as e:
+                    save_data = timeout_result(item['formal_statement'], this_generator, e)
                 except Exception as e:
                     print(traceback.format_exc())
                     print(f"Error occurred: {e}")
                     print(f"run_error_index = {item['id']}")
                     logging.error([e,item['id'], "Non-Searching Error"] ,exc_info=True)
+                    raise
                 else:
                     save_data = self.parse_result(item["formal_statement"], results)
                     save_data['pipeline_verifier'] = {'executed': False, 'success': False}
@@ -193,13 +202,14 @@ class BatchMainService(BaseService):
                         else:
                             save_data['collect_results'][0]['success'] = repl_res
                             save_data['pipeline_verifier'] = {'executed': True, 'success': bool(repl_res)}
-                    result_file = os.path.join(item_path,f"{item['id']}_{idx}.json")
-                    CommonUtil.write_to_json_file(result_file, save_data)
-                    print(f"finish_index_{item['id']}",flush=True)
-                    if save_data['collect_results'] and save_data['collect_results'][0]['success']:
-                        break
-                    else:
-                        continue
+                result_file = os.path.join(item_path,f"{item['id']}_{idx}.json")
+                CommonUtil.write_to_json_file(result_file, save_data)
+                if save_data.get('pipeline_attempt', {}).get('status') == 'timeout':
+                    profiler.stop(f"run_index_{item['id']}")
+                    print(f"TIMEOUT: theorem={item['id']} attempt={idx+1}/{self.max_retries}; counted as failure; continuing", flush=True)
+                print(f"finish_index_{item['id']}",flush=True)
+                if save_data['collect_results'] and save_data['collect_results'][0]['success']:
+                    break
             self.info.update(self.get_info())
         print(self.info)
     
@@ -219,6 +229,8 @@ class BatchMainService(BaseService):
 
         for j in range(len(process_list)):
             process_list[j].join()
+        if any(process.exitcode != 0 for process in process_list):
+            raise RuntimeError('Evaluation worker failed; refusing to treat infrastructure failure as model error')
         print("All data processed.")
     
     def get_info(self):

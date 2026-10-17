@@ -15,6 +15,14 @@ logging.basicConfig(level=logging.INFO, format='%(levelname)s %(asctime)s [%(nam
 logger = logging.getLogger(os.path.basename(__file__))
 IS_BUILD = False
 
+
+class InteractiveResponseTimeout(TimeoutError):
+    """A bounded Lean response failure; consumes one search attempt."""
+    def __init__(self, seconds, operation):
+        self.seconds = seconds
+        self.operation = operation
+        super().__init__(f'Lean Interactive {operation} response exceeded {seconds}s; session terminated')
+
 def get_project_toolchain(root: Path) -> str:
     with (root / "lean-toolchain").open() as fp:
         return fp.read()
@@ -60,6 +68,7 @@ class Interactive:
         self.tactic_mode = False
         self.response_timeout = 1200.0
         self._response_buffer = bytearray()
+        self.operation = 'startup'
         os.set_blocking(self.read_from.fileno(), False)
 
     def read(self) -> dict:
@@ -70,7 +79,7 @@ class Interactive:
                 remaining = deadline - time.monotonic()
                 if remaining <= 0 or not selector.select(remaining):
                     self.close()
-                    raise TimeoutError(f'Lean Interactive response exceeded {self.response_timeout}s; session terminated')
+                    raise InteractiveResponseTimeout(self.response_timeout, self.operation)
                 chunk = os.read(self.read_from.fileno(), 65536)
                 if not chunk:
                     code = self.proc.poll()
@@ -84,6 +93,7 @@ class Interactive:
         return json.loads(line)
 
     def write(self, data: dict):
+        self.operation = data.get('method', 'openFile')
         data = json.dumps(data, separators=(',', ':'), ensure_ascii=False)
         logger.debug("->" + data)
         print(data, file=self.write_to)
