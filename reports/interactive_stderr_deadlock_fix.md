@@ -37,3 +37,25 @@ nohup env/bootstrap/bin/python -u research/scripts/run_smoke_then_formal.py \
 
 新正式批次从 P0 开始，随后按 P1–P6 顺序，后台持续运行。具体启动状态以新批次
 `control/status.json` 为准。
+
+## 后续：超时消耗一次搜索尝试，而非终止整批
+
+用户进一步要求：出现 Lean 等待超时时，本次按错误计算并继续 pass@64 的剩余尝试。
+据此增加独立 `InteractiveResponseTimeout`，并在批量搜索边界识别直接抛出及
+`SearchError.error_type` 包装的这类超时。保存 `success=false`、超时操作和1200秒阈值，
+标记 `pipeline_attempt.status=timeout` 与 `consumes_attempt=true`；即使模型调用列表为空，
+也消耗一次预算。下次尝试使用新的 Lean 会话，不增加额外重试。若剩余尝试成功，
+该题仍算成功；64次都失败才计该题错误。报告新增 `lean_timeout_attempts`。
+
+任意退出路径均关闭 Lean 进程组并删除临时输入。其他搜索/通信/环境异常重新抛出，
+worker 非零退出由主进程上报，不混入模型错误率。原先批量循环实际会捕获异常继续，
+但没有保存对应失败尝试；本次补全计数和证据，避免该统计缺口。
+
+新策略验证20项：真实批量循环的超时后成功、64次超时耗尽、包装超时、基础设施
+错误传播，汇总去重与超时次数，以及原管道/授权/门禁/控制器检查全部通过。
+`runs/project_cleanup_20261017/timeout_attempt_tests.json` 保存完整测试输出。
+上一轮真实 Lean 合法/错误 tactic、目标关闭与 commit 验证保持适用。
+
+v5 已标记 `INTERRUPTED_FOR_TIMEOUT_ACCOUNTING`。最终批次改用
+`runs/realprover_formal_restart_v6`，使用新指纹绑定的用户授权直接正式启动；
+不把v5或历史冒烟回执改成新代码的 PASS，不混合旧分数。

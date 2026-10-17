@@ -36,6 +36,25 @@ class AggregateTests(unittest.TestCase):
             self.assertTrue(dataset.is_file())
             self.assertEqual(len(digest), 64)
 
+    def test_timeout_attempt_is_failure_but_later_success_counts_once(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            dataset = root/'data.jsonl'
+            statement = 'theorem a : True := by sorry'
+            dataset.write_text(json.dumps({'id': 'a', 'formal_statement': statement}))
+            output = root/'generated/a'
+            output.mkdir(parents=True)
+            failed = {'formal_statement': statement, 'collect_results': [{'success': False}],
+                      'pipeline_attempt': {'status': 'timeout', 'consumes_attempt': True}}
+            (output/'a_0.json').write_text(json.dumps(failed))
+            stats = aggregate(dataset, root)
+            self.assertEqual(stats['successes'], 0)
+            self.assertEqual(stats['lean_timeout_attempts'], 1)
+            successful = {'formal_statement': statement, 'collect_results': [{'success': True}],
+                          'pipeline_verifier': {'executed': True, 'success': True}}
+            (output/'a_1.json').write_text(json.dumps(successful))
+            self.assertEqual(aggregate(dataset, root)['successes'], 1)
+
 
 if __name__ == '__main__':
     unittest.main()
