@@ -59,3 +59,28 @@ worker 非零退出由主进程上报，不混入模型错误率。原先批量�
 v5 已标记 `INTERRUPTED_FOR_TIMEOUT_ACCOUNTING`。最终批次改用
 `runs/realprover_formal_restart_v6`，使用新指纹绑定的用户授权直接正式启动；
 不把v5或历史冒烟回执改成新代码的 PASS，不混合旧分数。
+
+## Lean 递归崩溃恢复与队列退出修复
+
+v6 在 2026-10-17 09:54 左右因题目247一次 `native_decide` 相关计算引发
+`Nat.factorial` 深递归，Lean stderr 记录 `deep recursion was detected at interpreter`。
+stdout EOF 原本抛 `RuntimeError`，被搜索器当作普通无效 tactic 吞掉，随后继续访问
+已关闭会话，引发 closed-file 错误。worker退出后，主进程的 multiprocessing.Queue
+还有未消费题目，解释器等待队列 feeder 冲刷，导致控制状态仍停在运行中。
+
+新增 `InteractiveSessionError(Exception)`，明确区别于无效 tactic 的 RuntimeError。
+Lean EOF/崩溃、关闭会话写入及非法JSON均结束会话并抛出此类型。批量边界识别直接或
+SearchError 包装的会话错误，保存 `status=lean_error`、操作、退出码（可获得时）和
+失败结果，消耗一次尝试，再用全新会话执行下一次。超时仍按原独立类型计数。
+汇总增加 `lean_error_attempts`；最终每题最多64次、成功按题去重、分母244不变。
+
+批量运行通过 finally 终止遗留worker、取消队列feeder退出等待、关闭队列并shutdown
+manager。仍然无法恢复的模型/服务故障显式失败退出，不再因无人消费任务队列而挂住。
+
+25项针对性验证覆盖真实管道子进程异常退出、异常不被误当无效tactic、非法JSON、
+直接/包装Lean崩溃后下一次成功、64次崩溃耗尽预算、超时保留、汇总及原门禁。
+另用真实multiprocessing子进程模拟worker失败和10MB未消费任务队列，确认进程在
+15秒测试期限内退出。证据：`runs/project_cleanup_20261017/lean_crash_tests.json`。
+
+v6 已停止且保留原始结果；新批次 `runs/realprover_formal_restart_v7` 继续用户授权的
+直接正式启动策略，不重跑完整冒烟，不把旧回执冒充当前代码的PASS。

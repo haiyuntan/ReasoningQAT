@@ -54,6 +54,11 @@ class AggregateTests(unittest.TestCase):
                           'pipeline_verifier': {'executed': True, 'success': True}}
             (output/'a_1.json').write_text(json.dumps(successful))
             self.assertEqual(aggregate(dataset, root)['successes'], 1)
+            failed['pipeline_attempt']['status'] = 'lean_error'
+            (output/'a_2.json').write_text(json.dumps(failed))
+            stats = aggregate(dataset, root)
+            self.assertEqual(stats['lean_error_attempts'], 1)
+            self.assertEqual(stats['successes'], 1)
 
 
 if __name__ == '__main__':

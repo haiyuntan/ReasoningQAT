@@ -16,6 +16,7 @@ def aggregate(dataset, directory):
     states = []
     evidence = []
     timeout_attempts = 0
+    lean_error_attempts = 0
     for row in rows:
         identifier = str(row['id'])
         if Path(identifier).name != identifier or identifier in ('.', '..'):
@@ -26,6 +27,8 @@ def aggregate(dataset, directory):
             d = load(path)
             if d.get('pipeline_attempt', {}).get('status') == 'timeout':
                 timeout_attempts += 1
+            if d.get('pipeline_attempt', {}).get('status') == 'lean_error':
+                lean_error_attempts += 1
             if d.get('formal_statement') != row['formal_statement']:
                 raise ValueError(f'Result theorem mismatch: {identifier}')
             if not isinstance(d.get('collect_results'), list):
@@ -41,6 +44,7 @@ def aggregate(dataset, directory):
                        'failure_type': None if success else ('search_exhausted' if valid else 'missing_or_runtime_failure')})
     return {'expected_problems': len(rows), 'completed_problems': sum(p['completed'] for p in states),
             'lean_timeout_attempts': timeout_attempts,
+            'lean_error_attempts': lean_error_attempts,
             'successes': sum(p['success'] for p in states),
             'success_rate': sum(p['success'] for p in states) / len(rows),
             'problems': states, 'raw_evidence': evidence}

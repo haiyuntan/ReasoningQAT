@@ -68,7 +68,23 @@ class TransportTest(unittest.TestCase):
     def test_eof_is_error(self):
         with tempfile.TemporaryFile() as log:
             session = self.session('print("partial",end="",flush=True)', log)
-            with self.assertRaisesRegex(RuntimeError, 'stdout closed'):
+            with self.assertRaisesRegex(transport.InteractiveSessionError, 'stdout closed'):
+                session.read()
+
+    def test_lean_abort_is_not_swallowed_as_invalid_tactic(self):
+        with tempfile.TemporaryFile() as log:
+            session = self.session('import os,sys; print(\'{"declName":"test"}\',flush=True); sys.stdin.readline(); os._exit(134)', log)
+            self.assertEqual(session.get_next_problem(), 'test')
+            with self.assertRaises(transport.InteractiveSessionError) as caught:
+                session.run_tactic(0, 'native_decide')
+            self.assertNotIsInstance(caught.exception, RuntimeError)
+            self.assertEqual(caught.exception.operation, 'runTactic')
+            self.assertIsNotNone(session.proc.poll())
+
+    def test_invalid_json_closes_session(self):
+        with tempfile.TemporaryFile() as log:
+            session = self.session('print("invalid-json",flush=True)', log)
+            with self.assertRaises(transport.InteractiveSessionError):
                 session.read()
 
 
