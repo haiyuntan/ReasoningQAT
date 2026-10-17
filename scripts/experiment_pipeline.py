@@ -154,6 +154,22 @@ def gate(directory, mode, runs, digest):
         raise ValueError('\n'.join(errors))
 
 
+def formal_smoke_gate(directory, digest, waiver=None):
+    if waiver is None:
+        return gate(directory, 'smoke', ORDER, digest)
+    authorization = read(waiver)
+    if (authorization.get('fingerprint') != digest
+            or authorization.get('results') != str(directory.resolve())
+            or authorization.get('scope') != 'skip_smoke_for_direct_formal_restart'
+            or not authorization.get('user_instruction')
+            or not authorization.get('validation_report')):
+        raise ValueError('Smoke waiver must bind user authorization and validation to this exact code and batch')
+    report = read(Path(authorization['validation_report']))
+    if report.get('status') != 'PASS':
+        raise ValueError('Targeted repair validation must pass before direct restart')
+    print('AUTHORIZED SMOKE WAIVER: direct formal restart; no new smoke PASS claimed', flush=True)
+
+
 def plan(config, mode):
     for run in ORDER:
         yield {'run': run, 'mode': mode, 'depends_on': DEPENDENCIES[run],
@@ -168,6 +184,7 @@ def main():
     ap.add_argument('--mode', choices=('smoke', 'formal'), default='smoke')
     ap.add_argument('--run', choices=ORDER)
     ap.add_argument('--results', type=Path, default=ROOT / 'runs/realprover_pipeline')
+    ap.add_argument('--smoke-waiver', type=Path)
     args = ap.parse_args()
     config = read(RESEARCH / 'configs/pipeline.json')
     digest = fingerprint()
@@ -180,14 +197,17 @@ def main():
         return
     if args.action == 'campaign':
         if args.mode == 'formal':
-            gate(args.results, 'smoke', ORDER, digest)
+            formal_smoke_gate(args.results, digest, args.smoke_waiver)
         for run in ORDER:
             if (args.results / args.mode / run / 'receipt.json').exists():
                 gate(args.results, args.mode, [run], digest)
                 print(f'SKIP validated {args.mode} {run}', flush=True)
                 continue
-            subprocess.run([sys.executable, str(Path(__file__).resolve()), 'run', '--mode', args.mode,
-                            '--run', run, '--results', str(args.results.resolve())], check=True)
+            child = [sys.executable, str(Path(__file__).resolve()), 'run', '--mode', args.mode,
+                     '--run', run, '--results', str(args.results.resolve())]
+            if args.smoke_waiver:
+                child += ['--smoke-waiver', str(args.smoke_waiver.resolve())]
+            subprocess.run(child, check=True)
         return
     if not args.run:
         ap.error('run requires --run')
@@ -200,7 +220,7 @@ def main():
     except BlockingIOError:
         raise ValueError('Another REAL-Prover pipeline run holds the single-GPU lock')
     if args.mode == 'formal':
-        gate(args.results, 'smoke', ORDER, digest)
+        formal_smoke_gate(args.results, digest, args.smoke_waiver)
     gate(args.results, args.mode, DEPENDENCIES[args.run], digest)
     command = config['commands'][args.mode].get(args.run)
     if not command or not isinstance(command, list) or not all(isinstance(x, str) for x in command):

@@ -14,7 +14,7 @@ spec.loader.exec_module(autorun)
 
 
 class AutorunTests(unittest.TestCase):
-    def run_case(self, failure, frozen=True):
+    def run_case(self, failure, frozen=True, formal_only=False):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             (root/'runs').mkdir()
@@ -28,6 +28,8 @@ class AutorunTests(unittest.TestCase):
                 'with pathlib.Path("calls").open("a") as stream: stream.write(stage+"\\n")\n'
                 f'sys.exit(9 if stage == {failure!r} else 0)\n')
             args = ['autorun', '--results', str(root/'runs/result')]
+            if formal_only:
+                args += ['--formal-only', '--smoke-waiver', str(root/'authorization.json')]
             with patch.object(autorun, 'ROOT', root), patch.object(sys, 'argv', args), \
                     patch.object(autorun.subprocess, 'check_output', return_value='testcommit\n'):
                 if frozen:
@@ -51,6 +53,10 @@ class AutorunTests(unittest.TestCase):
 
     def test_unfrozen_protocol_starts_nothing(self):
         self.assertEqual(self.run_case(None, frozen=False), (1, [], 'FAILED'))
+
+    def test_explicit_direct_formal_restart(self):
+        self.assertEqual(self.run_case(None, formal_only=True), (0, ['formal'], 'COMPLETE'))
+        self.assertEqual(self.run_case('formal', formal_only=True), (9, ['formal'], 'FORMAL_FAILED'))
 
 
 if __name__ == '__main__':

@@ -14,7 +14,11 @@ ROOT = Path(__file__).resolve().parents[2]
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--results', type=Path, required=True)
+    ap.add_argument('--formal-only', action='store_true')
+    ap.add_argument('--smoke-waiver', type=Path)
     a = ap.parse_args()
+    if a.formal_only != bool(a.smoke_waiver):
+        ap.error('--formal-only requires an explicit --smoke-waiver, and vice versa')
     results = a.results.resolve()
     results.mkdir(parents=True, exist_ok=True)
     lock = (ROOT / 'runs/realprover_autorun.lock').open('a')
@@ -23,6 +27,8 @@ def main():
     control.mkdir(exist_ok=False)
     state = {'pid': os.getpid(), 'results': str(results), 'status': 'STARTING',
              'started_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+             'formal_only': a.formal_only,
+             'smoke_waiver': str(a.smoke_waiver.resolve()) if a.smoke_waiver else None,
              'commits': {repo: subprocess.check_output(['git', '-C', str(ROOT/repo), 'rev-parse', 'HEAD'],
                                                       text=True).strip() for repo in ('research', 'REALPROVER')}}
     def save(**updates):
@@ -38,9 +44,12 @@ def main():
         runtime = json.loads((ROOT/'research/configs/runtime.json').read_text())
         if runtime['eval_protocol_status'] != 'FROZEN':
             raise RuntimeError('Freeze and review evaluation protocol before scheduling automatic formal execution')
-        for stage, arguments in [('SMOKE', ['campaign', '--mode', 'smoke']),
+        stages = [('SMOKE', ['campaign', '--mode', 'smoke']),
                                  ('GATE', ['gate']),
-                                 ('FORMAL', ['campaign', '--mode', 'formal'])]:
+                                 ('FORMAL', ['campaign', '--mode', 'formal'])]
+        if a.formal_only:
+            stages = [('FORMAL', ['campaign', '--mode', 'formal', '--smoke-waiver', str(a.smoke_waiver.resolve())])]
+        for stage, arguments in stages:
             command = [sys.executable, str(pipeline), *arguments, '--results', str(results)]
             with (control / (stage.lower()+'.log')).open('w') as log:
                 child = subprocess.Popen(command, cwd=ROOT, env=environment, stdout=log, stderr=subprocess.STDOUT)
