@@ -22,8 +22,7 @@ DEFAULT_MODEL_LIST = [MODEL_TYPE_LOCAL]
 PROVER_MODEL_ID = 'realprover'
 PROVER_MODEL_PATH = os.environ.get('REALPROVER_MODEL_PATH', str(Path(__file__).resolve().parents[2] / 'models/REAL-Prover-v1-bf16'))
 LEAN_TEST_PATH = os.environ.get('REALPROVER_LEAN_WORKSPACE', str(Path(__file__).resolve().parents[1] / 'dependencies/lean_test_v4160'))
-LEAN_ENV_PATH = os.path.expanduser("~/.elan/bin")
-LEAN_ENV_PATH = os.path.expanduser("~/.elan/bin")
+LEAN_ENV_PATH = os.environ.get('REALPROVER_LEAN_BIN', os.path.expanduser("~/.elan/bin"))
 
 # Search parameters - aligned with paper for pass@64
 NUM_SAMPLES = 64
