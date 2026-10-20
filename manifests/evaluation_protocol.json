@@ -16,7 +16,7 @@
     },
     {
       "path": "REALPROVER/configs/vllm_runtime.json",
-      "sha256": "2399b335908552050e09f6b6190e673d75166c7dde85ef62f0cff37f062f3912"
+      "sha256": "362a4c934c90110126aad5e6af1219e8c7be478819828bd775293669bb0db03f"
     },
     {
       "path": "REALPROVER/data/minif2f_test.jsonl",
@@ -37,5 +37,5 @@
     "completed_problems": 2,
     "successes": 1
   },
-  "notes": "Freeze search/sampling protocol after native BF16 sanity, fixed denominator/verifier contract checks, official config/data parity and retrieval identity pinning. Engine scheduling profile differs from historical run and requires new P0-P6 smoke. All seven current-fingerprint smoke receipts remain mandatory; no claim of published-score reproduction or independently verified retrieval asset origin."
+  "notes": "Freeze search/sampling protocol after native BF16 sanity, fixed denominator/verifier contract checks, official config/data parity and retrieval identity pinning. Engine scheduling profile differs from historical run and requires new P0-P6 smoke. All seven current-fingerprint smoke receipts remain mandatory; no claim of published-score reproduction or independently verified retrieval asset origin. 2026-10-20: user authorizes P1-P6 four-GPU phased formal campaign, P0 excluded, dedicated shared retrieval and vLLM utilization 0.85; frozen miniF2F/search/training unchanged. Explicit batch-bound smoke waiver applies to this launch."
 }

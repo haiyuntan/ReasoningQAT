@@ -58,7 +58,9 @@ def stop():
 
 
 def ready(timeout=1800):
-    start()
+    shared = os.environ.get('REALPROVER_SHARED_RETRIEVAL') == '1'
+    if not shared:
+        start()
     deadline = time.monotonic() + timeout
     port = int(os.environ.get('LEANSEARCH_PORT', '8080'))
     expected = sha(RESEARCH / 'manifests/retrieval_assets.json')
@@ -73,6 +75,8 @@ def ready(timeout=1800):
             print('RETRIEVAL ready with pinned asset identity', flush=True)
             return health
         except urllib.error.URLError:
+            if shared:
+                raise RuntimeError('Shared retrieval is unavailable; clients must not start or stop it')
             if PROCESS.exists() and not alive(load(PROCESS)['pid']):
                 raise RuntimeError('Retrieval exited during startup; inspect runs/realprover_retrieval/server.log')
             time.sleep(2)

@@ -75,7 +75,7 @@ def fingerprint(root=ROOT):
             for metadata in sorted(executable.parent.parent.glob('lib/python*/site-packages/*.dist-info/METADATA')):
                 if metadata.parent.name.lower().startswith(('torch-', 'transformers-', 'accelerate-', 'vllm-', 'gptqmodel-', 'trl-')):
                     h.update(metadata.read_bytes())
-    for key in ('REALPROVER_LEAN_WORKSPACE', 'REALPROVER_JIXIA_BIN', 'REALPROVER_INTERACTIVE_ROOT', 'LEANSEARCH_PORT'):
+    for key in ('REALPROVER_LEAN_WORKSPACE', 'REALPROVER_JIXIA_BIN', 'REALPROVER_INTERACTIVE_ROOT', 'REALPROVER_LEAN_BIN', 'LEANSEARCH_PORT'):
         h.update((key + '=' + os.environ.get(key, '')).encode())
     lean = Path(os.environ.get('REALPROVER_LEAN_WORKSPACE', str(root / 'REALPROVER/dependencies/lean_test_v4160')))
     jixia = Path(os.environ.get('REALPROVER_JIXIA_BIN', str(root / 'REALPROVER/dependencies/jixia/.lake/build/bin/jixia')))
@@ -86,6 +86,9 @@ def fingerprint(root=ROOT):
             with path.open('rb') as stream:
                 for chunk in iter(lambda: stream.read(8 * 1024 * 1024), b''):
                     h.update(chunk)
+    if os.environ.get('REALPROVER_LEAN_BIN'):
+        for name in ('lean', 'lake'):
+            h.update(file_digest(Path(os.environ['REALPROVER_LEAN_BIN']) / name).encode())
     for pattern in ('datasets/manifests/*.json', 'datasets/numinamath_128/calib.jsonl',
                     'datasets/eval/legacy_candidate/*.jsonl', 'REALPROVER/data/*.jsonl'):
         for path in sorted(root.glob(pattern)):

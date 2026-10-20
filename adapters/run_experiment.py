@@ -69,6 +69,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--run', required=True, choices=[f'P{i}' for i in range(7)])
     ap.add_argument('--mode', required=True, choices=['smoke', 'formal'])
+    ap.add_argument('--phase', choices=['all', 'prepare', 'evaluate'], default='all')
     a = ap.parse_args()
     if os.environ.get('REALPROVER_RUN') != a.run or os.environ.get('REALPROVER_MODE') != a.mode:
         raise RuntimeError('Use experiment_pipeline.py; direct execution lacks campaign gate context')
@@ -81,7 +82,45 @@ def main():
     sys.path.insert(0, str(RESEARCH / 'scripts'))
     import retrieval_service
     # Never keep the 14GB retrieval model resident during quantization/training.
-    retrieval_service.stop()
+    shared_retrieval = os.environ.get('REALPROVER_SHARED_RETRIEVAL') == '1'
+    if not shared_retrieval:
+        retrieval_service.stop()
+    if a.phase != 'evaluate':
+        prepare(a, out, env)
+    else:
+        prepared = load(out / 'prepared.json')
+        if any(prepared.get(k) != v for k, v in
+               {'run': a.run, 'mode': a.mode, 'fingerprint': os.environ['REALPROVER_FINGERPRINT']}.items()):
+            raise RuntimeError('Preparation identity/fingerprint mismatch')
+        if not prepared.get('evidence'):
+            raise RuntimeError('Preparation artifact hashes missing')
+        for item in prepared['evidence']:
+            if sha(Path(item['path'])) != item['sha256']:
+                raise RuntimeError(f'Prepared artifact changed: {item["path"]}')
+    if a.phase == 'prepare':
+        return
+    model = load(out / 'model_identity.json')
+    training = load(out / 'train/training.json') if a.run in ('P3', 'P4', 'P5', 'P6') else None
+    adapters = RESEARCH / 'adapters'
+    # External Lean dependencies are checked by the evaluator before inference.
+    eval_model = MODEL if a.run == 'P0' else out / 'eval_model'
+    try:
+        retrieval_service.ready()
+        execute([python_for('eval'), adapters / 'evaluation.py', '--model', MODEL, '--mode', a.mode,
+                 '--output', out / 'preflight', '--preflight'], env=env)
+        execute([python_for('eval'), adapters / 'evaluation.py', '--model', eval_model, '--mode', a.mode,
+                 '--output', out / 'eval'], env=env)
+    finally:
+        if not shared_retrieval:
+            retrieval_service.stop()
+    save(out / 'resource_lifecycle.json', {'policy': 'dedicated shared retrieval GPU' if shared_retrieval else 'retrieval only during Lean evaluation',
+         'retrieval_stopped_before_training_and_quantization': not shared_retrieval,
+         'retrieval_stopped_after_evaluation': not shared_retrieval, 'evaluation_finished': True})
+    finish(a, out, model, training)
+
+
+def prepare(a, out, env):
+    adapters = RESEARCH / 'adapters'
     save(out / 'resource_lifecycle.json', {'policy': 'retrieval only during Lean evaluation',
          'retrieval_stopped_before_training_and_quantization': True, 'evaluation_finished': False})
     model = verify_model()
@@ -97,29 +136,29 @@ def main():
             if field not in training:
                 continue
             shared = out.parent / f'shared_{key}.json'
-            if shared.exists() and load(shared) != training[field]:
-                raise RuntimeError(f'{key} token/mask budget differs between methods')
-            if not shared.exists():
-                save(shared, training[field])
+            import fcntl
+            with (out.parent / 'shared_data.lock').open('a') as lock:
+                fcntl.flock(lock, fcntl.LOCK_EX)
+                if shared.exists() and load(shared) != training[field]:
+                    raise RuntimeError(f'{key} token/mask budget differs between methods')
+                if not shared.exists():
+                    save(shared, training[field])
     export_role = 'gptq' if a.run == 'P1' else 'train'
     argv = [python_for(export_role), adapters / 'quantization.py', '--run', a.run, '--mode', a.mode,
             '--output', out / 'eval_model']
     if training:
         argv += ['--input', out / 'train/native']
     execute(argv, env=env)
-    # External Lean dependencies are checked by the evaluator before inference.
-    eval_model = MODEL if a.run == 'P0' else out / 'eval_model'
-    try:
-        retrieval_service.ready()
-        execute([python_for('eval'), adapters / 'evaluation.py', '--model', MODEL, '--mode', a.mode,
-                 '--output', out / 'preflight', '--preflight'], env=env)
-        execute([python_for('eval'), adapters / 'evaluation.py', '--model', eval_model, '--mode', a.mode,
-                 '--output', out / 'eval'], env=env)
-    finally:
-        retrieval_service.stop()
-    save(out / 'resource_lifecycle.json', {'policy': 'retrieval only during Lean evaluation',
-         'retrieval_stopped_before_training_and_quantization': True,
-         'retrieval_stopped_after_evaluation': True, 'evaluation_finished': True})
+    artifacts = [out / 'model_identity.json']
+    for folder in ('train', 'eval_model'):
+        artifacts += [p for p in (out / folder).rglob('*') if p.is_file()
+                      and p.suffix in ('.json', '.pt', '.safetensors')]
+    save(out / 'prepared.json', {'run': a.run, 'mode': a.mode,
+         'fingerprint': os.environ['REALPROVER_FINGERPRINT'],
+         'evidence': [{'path': str(p.resolve()), 'sha256': sha(p)} for p in artifacts]})
+
+
+def finish(a, out, model, training):
     evaluation = {'export': load(out / 'eval_model/export.json'), 'stats': load(out / 'eval/evaluation.json')}
     checks = checks_for(a.run, out, model, evaluation, training)
     sys.path.insert(0, str(RESEARCH / 'scripts'))
