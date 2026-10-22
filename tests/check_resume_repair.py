@@ -80,7 +80,7 @@ class RepairTests(unittest.TestCase):
 
     def test_mixed_schedule_uses_three_task_gpus_and_shared_retrieval(self):
         with tempfile.TemporaryDirectory() as temporary:
-            campaign = scheduler.Adaptive(Path(temporary), 'digest')
+            campaign = scheduler.Adaptive(Path(temporary), 'digest', training_first=False)
             campaign.state['data_preflight'] = 'DONE'
             campaign.retrieval_gpu = 3
             for run in ('P1', 'P2', 'P3'):
@@ -94,12 +94,12 @@ class RepairTests(unittest.TestCase):
                 campaign.jobs[run][phase] = 'RUNNING'
             with patch.object(campaign, 'start_job', side_effect=start):
                 campaign.schedule()
-            self.assertEqual(launches, [('P1', 'evaluate', 0), ('P5', 'prepare', 1), ('P4', 'prepare', 2)])
-            self.assertEqual(campaign.jobs['P6']['prepare'], 'PENDING')
+            self.assertEqual(launches, [('P1', 'evaluate', 0), ('P4', 'prepare', 1), ('P6', 'prepare', 2)])
+            self.assertEqual(campaign.jobs['P5']['prepare'], 'PENDING')
 
     def test_failed_preparation_slot_is_reused_without_touching_survivors(self):
         with tempfile.TemporaryDirectory() as temporary:
-            campaign = scheduler.Adaptive(Path(temporary), 'digest')
+            campaign = scheduler.Adaptive(Path(temporary), 'digest', training_first=False)
             campaign.state['data_preflight'] = 'DONE'
             campaign.retrieval_gpu = 3
             for run in ('P1', 'P2', 'P3', 'P5'):
@@ -113,6 +113,29 @@ class RepairTests(unittest.TestCase):
                 campaign.schedule()
             start.assert_called_once_with('P6', 'prepare', 2)
             self.assertEqual(set(campaign.active), {0, 1})
+
+    def test_training_first_blocks_evaluation_until_all_train_jobs_end(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            campaign = scheduler.Adaptive(Path(temporary), 'digest')
+            campaign.state['data_preflight'] = 'DONE'
+            for run in ('P1', 'P2', 'P3'):
+                campaign.jobs[run]['prepare'] = 'DONE'
+            self.assertEqual(campaign.pending_evaluations(), [])
+            launches = []
+            def start(run, phase, gpu):
+                launches.append((run, phase, gpu))
+                campaign.active[gpu] = (run, phase, None, None)
+                campaign.jobs[run][phase] = 'RUNNING'
+            with patch.object(campaign, 'start_job', side_effect=start), \
+                 patch.object(scheduler.retrieval_service, 'ready') as ready:
+                campaign.schedule()
+                ready.assert_not_called()
+            self.assertEqual(launches, [('P4', 'prepare', 0), ('P6', 'prepare', 1), ('P5', 'prepare', 2)])
+            campaign.jobs['P4']['prepare'] = 'DONE'
+            campaign.jobs['P6']['prepare'] = 'DONE'
+            self.assertEqual(campaign.pending_evaluations(), [])
+            campaign.fail('P5', 'prepare', 'single task failure')
+            self.assertEqual(campaign.pending_evaluations(), ['P1', 'P2', 'P3', 'P4', 'P6'])
 
 
 if __name__ == '__main__':

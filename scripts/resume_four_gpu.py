@@ -29,12 +29,13 @@ def prepared(out, run, digest):
 
 
 class Adaptive(Campaign):
-    def __init__(self, results, digest):
+    def __init__(self, results, digest, training_first=True):
         super().__init__(results, digest)
+        self.training_first = training_first
         self.retrieval_gpu = None
         self.cpu = None
         self.jobs = {run: {'prepare': 'PENDING', 'evaluate': 'PENDING'} for run in RUNS}
-        self.state.update(status='RUNNING', policy='independent failures; mixed training/evaluation',
+        self.state.update(status='RUNNING', policy='independent failures; training first' if training_first else 'independent failures; mixed training/evaluation',
                           methods=self.jobs, retrieval_gpu=None, data_preflight='PENDING')
 
     def fail(self, run, phase, error):
@@ -128,12 +129,14 @@ class Adaptive(Campaign):
                     self.fail(run, 'prepare', f'Stage2 data preflight failed (exit={code}); see control/stage2_data.log')
 
     def pending_evaluations(self):
+        if self.training_first and any(v['prepare'] in ('PENDING', 'RUNNING') for v in self.jobs.values()):
+            return []
         return [r for r in RUNS if self.jobs[r]['prepare'] == 'DONE' and self.jobs[r]['evaluate'] == 'PENDING']
 
     def pending_preparations(self):
         if self.state['data_preflight'] != 'DONE':
             return []
-        return [r for r in ('P5', 'P4', 'P6') if self.jobs[r]['prepare'] == 'PENDING'
+        return [r for r in ('P4', 'P6', 'P5') if self.jobs[r]['prepare'] == 'PENDING'
                 and (r == 'P5' or self.jobs['P3']['prepare'] == 'DONE')]
 
     def schedule(self):
@@ -212,6 +215,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--results', type=Path, required=True)
     ap.add_argument('--smoke-waiver', type=Path, required=True)
+    ap.add_argument('--schedule', choices=('training-first', 'mixed'), default='training-first')
     args = ap.parse_args()
     results = args.results.resolve()
     digest = fingerprint()
@@ -221,7 +225,7 @@ def main():
         lock = (ROOT / 'runs' / name).open('a')
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         locks.append(lock)
-    campaign = Adaptive(results, digest)
+    campaign = Adaptive(results, digest, training_first=args.schedule == 'training-first')
     def interrupted(signum, frame):
         raise RuntimeError(f'Controller signal {signum}')
     signal.signal(signal.SIGINT, interrupted)
