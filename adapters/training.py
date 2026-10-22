@@ -59,6 +59,11 @@ class OptimizerAudit:
 
 def stage2_data(tokenizer, mode):
     import torch
+    from completion_tokens import completion_window
+    cache = os.environ.get('REALPROVER_STAGE2_CACHE')
+    if cache and (Path(cache) / 'manifest.json').exists():
+        from stage2_cache import cached_batches
+        return cached_batches(Path(cache), mode)
     from repro_scripts.local_datasets import load_local_or_hf_openthoughts
     config = load(RESEARCH / 'configs/training_general_data.json')['stage2']
     tiny = load(RESEARCH / 'configs/runtime.json')['smoke']
@@ -67,6 +72,9 @@ def stage2_data(tokenizer, mode):
     ds = load_local_or_hf_openthoughts().shuffle(seed=2).select(range(count))
 
     class Batches:
+        def __init__(self):
+            self.adjusted_indices = set()
+
         def __len__(self):
             return len(ds)
 
@@ -84,13 +92,11 @@ def stage2_data(tokenizer, mode):
                 raise ValueError('Expected final assistant completion')
             prompt = tokenizer.apply_chat_template(messages[:-1], tokenize=False, add_generation_prompt=True)
             full = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=False)
-            ids = tokenizer.encode(full, add_special_tokens=False)[:maximum]
+            full_ids = tokenizer.encode(full, add_special_tokens=False)
             prefix = tokenizer.encode(prompt, add_special_tokens=False)
-            if ids[:min(len(ids), len(prefix))] != prefix[:len(ids)]:
-                raise ValueError('Chat template prompt is not a token prefix')
-            labels = [-100] * min(len(prefix), len(ids)) + ids[len(prefix):]
-            if all(x == -100 for x in labels[1:]):
-                raise ValueError(f'OpenThoughts sample {index} has no completion after right truncation; do not silently drop it')
+            ids, labels, adjusted = completion_window(full_ids, prefix, maximum)
+            if adjusted:
+                self.adjusted_indices.add(index)
             return {'input_ids': torch.tensor([ids]), 'attention_mask': torch.ones(1, len(ids), dtype=torch.long),
                     'labels': torch.tensor([labels])}
 
@@ -99,14 +105,24 @@ def stage2_data(tokenizer, mode):
     # this function and must produce identical fingerprints/counts per mode.
     digest = hashlib.sha256()
     tokens = 0
+    destination = os.environ.get('REALPROVER_BUILD_STAGE2_CACHE')
+    if destination:
+        from stage2_cache import Writer
+        writer = Writer(destination, count, maximum, mode)
     for batch in batches:
         tokens += int((batch['labels'][:, 1:] != -100).sum())
         for key in ('input_ids', 'attention_mask', 'labels'):
             digest.update(batch[key].numpy().tobytes())
-    return batches, {'samples': count, 'dataset_fingerprint': ds._fingerprint,
+        if destination:
+            writer.append(batch)
+    evidence = {'samples': count, 'dataset_fingerprint': ds._fingerprint,
                      'tensor_sha256': digest.hexdigest(), 'causal_tokens': tokens,
-                     'max_length': maximum, 'truncation': 'right; zero-target sample is fatal',
-                     'mask': 'final assistant completion only; same as pinned ChatML', 'seed': 2}
+                     'max_length': maximum, 'truncation': 'right normally; long prompt tail plus answer head, up to half length reserved for answer; no samples dropped',
+                     'mask': 'final assistant completion only; same as pinned ChatML', 'seed': 2,
+                     'long_prompt_samples': len(batches.adjusted_indices)}
+    if destination:
+        writer.finish(evidence)
+    return batches, evidence
 
 
 def reasoning_block_ap(model, train, validation, config, epochs, batch_size):
@@ -183,7 +199,7 @@ def reasoning_block_ap(model, train, validation, config, epochs, batch_size):
     return history
 
 
-def e2e(model, teacher, batches, run, mode):
+def e2e(model, teacher, batches, run, mode, checkpoint=None, audit_steps=None, data_signature=None):
     import torch
     from losses import objective
     config = load(RESEARCH / 'configs/training_general_data.json')['stage2']
@@ -214,8 +230,31 @@ def e2e(model, teacher, batches, run, mode):
         (step + 1) / max(1, warmup) if step < warmup else
         .5 * (1 + math.cos(math.pi * (step - warmup) / max(1, steps - warmup))))
     history = []
+    resume_epoch, resume_sample = 0, 0
+    audit_start = len(audit_steps) if audit_steps is not None else 0
+    identity = {'run': run, 'mode': mode, 'config': config, 'data': data_signature, 'names': names}
+    if checkpoint is not None and checkpoint.exists():
+        state = torch.load(checkpoint, map_location='cpu', weights_only=False)
+        if state['identity'] != identity:
+            raise RuntimeError('Stage2 resume contract changed')
+        with torch.no_grad():
+            for name, p in model.named_parameters():
+                if p.requires_grad:
+                    p.copy_(state['scales'][name].to(p.device))
+        optimizer.load_state_dict(state['optimizer'])
+        scheduler.load_state_dict(state['scheduler'])
+        history = state['history']
+        resume_epoch, resume_sample = state['epoch'], state['next_sample']
+        if audit_steps is not None:
+            audit_steps.extend(state['audit'])
+        random.setstate(state['random'])
+        torch.set_rng_state(state['torch_rng'])
+        torch.cuda.set_rng_state_all(state['cuda_rng'])
+        print(f'RESUME {run} epoch={resume_epoch} sample={resume_sample}', flush=True)
     for epoch in range(epochs):
         for start in range(0, len(batches), accumulation):
+            if epoch < resume_epoch or (epoch == resume_epoch and start < resume_sample):
+                continue
             optimizer.zero_grad(set_to_none=True)
             end = min(start + accumulation, len(batches))
             for i in range(start, end):
@@ -235,6 +274,17 @@ def e2e(model, teacher, batches, run, mode):
             torch.nn.utils.clip_grad_norm_(parameters, .5, error_if_nonfinite=True)
             optimizer.step()
             scheduler.step()
+            print({'run': run, 'epoch': epoch, 'next_sample': end, 'samples': len(batches),
+                   'last_loss': history[-1]['loss']}, flush=True)
+            if checkpoint is not None:
+                temporary = checkpoint.with_suffix('.tmp')
+                torch.save({'identity': identity, 'scales': {n: p.detach().cpu() for n, p in model.named_parameters() if p.requires_grad},
+                            'optimizer': optimizer.state_dict(), 'scheduler': scheduler.state_dict(),
+                            'history': history, 'epoch': epoch, 'next_sample': end,
+                            'audit': audit_steps[audit_start:] if audit_steps is not None else [],
+                            'random': random.getstate(), 'torch_rng': torch.get_rng_state(),
+                            'cuda_rng': torch.cuda.get_rng_state_all()}, temporary)
+                temporary.replace(checkpoint)
     return {'trainable_names': names, 'steps': history, 'optimizer_steps': steps,
             'causal_tokens_processed': sum(s['tokens'] for s in history), 'epochs': epochs,
             'teacher_used': teacher is not None, 'objective': 'Teacher-RR+top20 KL' if run == 'P4' else 'ordinary CE',
@@ -290,7 +340,7 @@ def main():
                     'block_batch_size': 1 if a.mode == 'smoke' else cfg['batch_size'],
                     'block_weight_lr': cfg['weight_lr'], 'block_quant_lr': cfg['quant_lr']}
                 evidence['block_ap'] = efficient_block_ap(model, [x[0] for x in train], [x[0] for x in val],
-                                                          torch.device('cuda'), block_config)
+                    torch.device('cuda'), block_config)
                 evidence['stage1_data'] = data
             else:
                 if a.p3 is None:
@@ -305,7 +355,8 @@ def main():
             batches, data = stage2_data(tokenizer, a.mode)
             teacher = (AutoModelForCausalLM.from_pretrained(MODEL, torch_dtype=torch.bfloat16,
                        attn_implementation='eager', local_files_only=True).cuda() if a.run == 'P4' else None)
-            evidence['stage2'] = e2e(model, teacher, batches, a.run, a.mode)
+            evidence['stage2'] = e2e(model, teacher, batches, a.run, a.mode,
+                checkpoint=out / 'stage2_resume.pt', audit_steps=audit.steps, data_signature=data)
             evidence['stage2_data'] = data
             if teacher is not None:
                 del teacher

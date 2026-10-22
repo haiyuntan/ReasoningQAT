@@ -149,6 +149,17 @@ def prepare(a, out, env):
     if training:
         argv += ['--input', out / 'train/native']
     execute(argv, env=env)
+    if training:
+        exported = load(out / 'eval_model/export.json')
+        if exported['saved_reload'] and exported['greedy_generation_parity']:
+            # A verified final checkpoint supersedes the rolling optimizer file.
+            removed = []
+            for name in ('stage2_resume.pt', 'stage2_resume.tmp'):
+                recovery = out / 'train' / name
+                if recovery.exists():
+                    recovery.unlink()
+                    removed.append(str(recovery))
+            save(out / 'artifact_cleanup.json', {'removed_superseded_recovery_files': removed})
     artifacts = [out / 'model_identity.json']
     for folder in ('train', 'eval_model'):
         artifacts += [p for p in (out / folder).rglob('*') if p.is_file()
@@ -167,6 +178,7 @@ def finish(a, out, model, training):
         save(out / 'failed_checks.json', checks)
         raise RuntimeError('Method validation failed; no PASS receipt emitted')
     files = [out / 'model_identity.json', out / 'preflight/preflight.json', out / 'eval_model/export.json', out / 'eval/evaluation.json', out / 'eval/config.toml', out / 'eval/retrieval.jsonl', out / 'resource_lifecycle.json']
+    files += [p for p in (out / 'prepared.json', out / 'reuse_manifest.json') if p.exists()]
     if training:
         files += [out / 'train/training.json']
         files += [out.parent / f'shared_{s}.json' for s in ('stage1', 'stage2') if f'{s}_data' in training]
