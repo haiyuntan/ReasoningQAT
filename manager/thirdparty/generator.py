@@ -7,6 +7,7 @@ from vllm.lora.request import LoRARequest
 from manager.manage import ModelManage, PromptManage
 from manager.struct import Goal, state_repr
 from manager.thirdparty import LeanSearch, Claude
+from manager.thirdparty.generation_memory import generate_with_cleanup
 import conf.config
 
 logger = logging.getLogger(__name__)
@@ -55,7 +56,7 @@ class TacticGenerator:
         self._init_model()  # 懒加载，用到时才加载模型
         assert self.llm is not None
         sampling_params = SamplingParams(n=num_samples, **self.sampling_params)
-        outputs = self.llm.generate(prompts, sampling_params)
+        outputs = generate_with_cleanup(self.llm, prompts, sampling_params)
         results = []
         
         for state, prompt, output in zip(states, prompts, outputs):
@@ -93,7 +94,7 @@ class TacticGenerator:
             self._init_model()  # 懒加载，用到时才加载模型
             assert self.llm is not None
             sampling_params = SamplingParams(n=num_samples, **self.sampling_params)
-            outputs = self.llm.generate([prompt], sampling_params, use_tqdm=False)
+            outputs = generate_with_cleanup(self.llm, [prompt], sampling_params, use_tqdm=False)
             # lora = LoRARequest("new_data", self.gpu_id, "/AI4M/users/nhhuang/LLaMA-Factory/ds_stepprover_algebra_together")
             # outputs = self.llm.generate([prompt], sampling_params, use_tqdm=False, lora_request=lora)
             # Apply the existing sorry policy to candidates and their scores
