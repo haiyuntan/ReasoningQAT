@@ -12,30 +12,11 @@ from manager.thirdparty.verifier import verify_proof
 from manager.thirdparty.interactive import InteractiveResponseTimeout, InteractiveSessionError
 from manager.service.attempt_failure import timeout_result, session_failure_result
 import json
+from attempt_resume import read_attempts, write_attempt
 
 def search_check(path, max_retries):
-    cnt = 0
-    for root, dir, files in os.walk(path):
-        for file in files:
-            connect_error = False
-            if '.json' in file and os.path.samefile(path,root):
-                file_path = os.path.join(root, file)
-                with open(file_path,'r') as f:
-                    try:
-                        file_json = json.load(f)
-                        for res in file_json["collect_results"]:
-                            if res['success']:
-                                return True
-                            if len(res['calls'])==0 and not file_json.get('pipeline_attempt', {}).get('consumes_attempt'):
-                                connect_error=True
-                    except:
-                        return False
-                if not connect_error:
-                    cnt += 1
-    if cnt == max_retries:
-        return True
-    else:
-        return False
+    records, success = read_attempts(path, max_retries)
+    return success or len(records) == max_retries
 
 class BatchMainService(BaseService):
     """
@@ -164,9 +145,12 @@ class BatchMainService(BaseService):
             item_path = os.path.join(self.result_dir,'generated',f"{item['id']}")
             if not os.path.exists(item_path):
                 os.makedirs(item_path)
-            if search_check(item_path, self.max_retries):
+            previous, success = read_attempts(item_path, self.max_retries, item['formal_statement'])
+            if success or len(previous) == self.max_retries:
                 continue
             for idx in range(self.max_retries):
+                if idx in previous:
+                    continue
                 try:
                     print(f"processing {item['id']}")
                     profiler.start(f"run_index_{item['id']}")
@@ -207,7 +191,7 @@ class BatchMainService(BaseService):
                             save_data['collect_results'][0]['success'] = repl_res
                             save_data['pipeline_verifier'] = {'executed': True, 'success': bool(repl_res)}
                 result_file = os.path.join(item_path,f"{item['id']}_{idx}.json")
-                CommonUtil.write_to_json_file(result_file, save_data)
+                write_attempt(result_file, save_data)
                 if save_data.get('pipeline_attempt', {}).get('consumes_attempt'):
                     profiler.stop(f"run_index_{item['id']}")
                     print(f"{save_data['pipeline_attempt']['status'].upper()}: theorem={item['id']} attempt={idx+1}/{self.max_retries}; counted as failure; continuing", flush=True)
