@@ -1,3 +1,5 @@
+跨服务器部署与复现请优先阅读 [完整复现手册](reports/REPRODUCTION.md)（2026-10-26，含固定资产附件、真实环境版本和迁移边界）。以下保留早期准备记录。
+
 # REAL-Prover × ReasoningQAT 实验准备
 
 当前处于准备阶段。审计结论和阻塞见 [legacy_selection.md](reports/legacy_selection.md)，机器可读证据见 [preparation_audit.json](manifests/preparation_audit.json)。
