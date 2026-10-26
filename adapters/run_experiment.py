@@ -179,6 +179,7 @@ def finish(a, out, model, training):
         raise RuntimeError('Method validation failed; no PASS receipt emitted')
     files = [out / 'model_identity.json', out / 'preflight/preflight.json', out / 'eval_model/export.json', out / 'eval/evaluation.json', out / 'eval/config.toml', out / 'eval/retrieval.jsonl', out / 'resource_lifecycle.json']
     files += [p for p in (out / 'prepared.json', out / 'reuse_manifest.json') if p.exists()]
+    files += [p for p in (out / 'eval/evaluation_resume.json',) if p.exists()]
     if training:
         files += [out / 'train/training.json']
         files += [out.parent / f'shared_{s}.json' for s in ('stage1', 'stage2') if f'{s}_data' in training]

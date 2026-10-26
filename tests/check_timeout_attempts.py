@@ -16,6 +16,9 @@ ROOT = Path(__file__).resolve().parents[2]
 spec = importlib.util.spec_from_file_location('attempt_failure', ROOT/'REALPROVER/manager/service/attempt_failure.py')
 failure = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(failure)
+spec_resume = importlib.util.spec_from_file_location('attempt_resume', ROOT/'REALPROVER/attempt_resume.py')
+resume = importlib.util.module_from_spec(spec_resume)
+spec_resume.loader.exec_module(resume)
 
 
 class LeanTimeout(TimeoutError):
@@ -38,6 +41,7 @@ source = ROOT/'REALPROVER/manager/service/batch_main_service.py'
 tree = ast.parse(source.read_text())
 nodes = [n for n in ast.walk(tree) if isinstance(n, ast.FunctionDef) and n.name in ('_process_run', 'search_check', 'batch_run')]
 namespace = {'os': os, 'json': json, 'traceback': traceback,
+             'read_attempts': resume.read_attempts, 'write_attempt': resume.write_attempt,
              'InteractiveResponseTimeout': LeanTimeout, 'SearchError': SearchError,
              'InteractiveSessionError': LeanSessionError, 'mp': mp,
              'timeout_result': failure.timeout_result,
@@ -112,6 +116,41 @@ class AttemptTests(unittest.TestCase):
     def test_failed_worker_does_not_hang_on_unconsumed_queue(self):
         subprocess.run([sys.executable, __file__, '--queue-exit-probe'], check=True,
                        stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=15)
+
+    def test_partial_theorem_resumes_missing_slots_without_overwrite(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            folder = root/'generated/x'
+            folder.mkdir(parents=True)
+            failed = failure.timeout_result('theorem x : True := by sorry', SimpleNamespace(calls=[]), LeanTimeout('old'))
+            (folder/'x_0.json').write_text(json.dumps(failed))
+            (folder/'x_2.json').write_text(json.dumps(failed))
+            before = {p.name: p.read_bytes() for p in folder.glob('*.json')}
+            self.run_attempts(root, [LeanTimeout('new'), LeanTimeout('new')], limit=4)
+            self.assertEqual(len(list(folder.glob('*.json'))), 4)
+            self.assertEqual({n: (folder/n).read_bytes() for n in before}, before)
+
+    def test_successful_theorem_skipped_on_resume(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            self.run_attempts(root, ['success'])
+            before = (root/'generated/x/x_0.json').read_bytes()
+            self.run_attempts(root, [])
+            self.assertEqual((root/'generated/x/x_0.json').read_bytes(), before)
+
+    def test_atomic_writer_refuses_overwrite_and_bad_attempt_refused(self):
+        with tempfile.TemporaryDirectory() as d:
+            folder = Path(d)/'x'
+            folder.mkdir()
+            path = folder/'x_0.json'
+            resume.write_attempt(path, {'old': True})
+            before = path.read_bytes()
+            with self.assertRaises(FileExistsError):
+                resume.write_attempt(path, {'new': True})
+            self.assertEqual(path.read_bytes(), before)
+            self.assertFalse(list(folder.glob('*.tmp')))
+            with self.assertRaises(ValueError):
+                resume.read_attempts(folder, 64)
 
 
 if __name__ == '__main__':

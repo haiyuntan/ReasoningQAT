@@ -50,6 +50,8 @@ class AggregateTests(unittest.TestCase):
             stats = aggregate(dataset, root)
             self.assertEqual(stats['successes'], 0)
             self.assertEqual(stats['lean_timeout_attempts'], 1)
+            self.assertEqual(stats['completed_problems'], 0)
+            self.assertEqual(aggregate(dataset, root, max_retries=1)['completed_problems'], 1)
             successful = {'formal_statement': statement, 'collect_results': [{'success': True}],
                           'pipeline_verifier': {'executed': True, 'success': True}}
             (output/'a_1.json').write_text(json.dumps(successful))

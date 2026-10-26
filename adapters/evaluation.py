@@ -6,9 +6,11 @@ from pathlib import Path
 import sys
 
 from common import ROOT, RESEARCH, load, save, sha
+sys.path.insert(0, str(ROOT / 'REALPROVER'))
+from attempt_resume import read_attempts
 
 
-def aggregate(dataset, directory):
+def aggregate(dataset, directory, max_retries=64):
     rows = [json.loads(s) for s in Path(dataset).read_text().splitlines() if s.strip()]
     ids = [str(r['id']) for r in rows]
     if len(ids) != len(set(ids)):
@@ -22,6 +24,7 @@ def aggregate(dataset, directory):
         if Path(identifier).name != identifier or identifier in ('.', '..'):
             raise ValueError('Unsafe theorem ID')
         files = sorted((directory / 'generated' / identifier).glob('*.json'))
+        records, verified_success = read_attempts(directory / 'generated' / identifier, max_retries, row['formal_statement'])
         success, valid = False, False
         for path in files:
             d = load(path)
@@ -40,8 +43,10 @@ def aggregate(dataset, directory):
                 raise ValueError(f'Success lacks full Lean verification: {identifier}')
             success = success or claimed
             evidence.append({'path': str(path.resolve()), 'sha256': sha(path)})
-        states.append({'id': identifier, 'success': success, 'completed': valid,
-                       'failure_type': None if success else ('search_exhausted' if valid else 'missing_or_runtime_failure')})
+        completed = verified_success or len(records) == max_retries
+        states.append({'id': identifier, 'success': success, 'completed': completed,
+                       'attempts': len(records),
+                       'failure_type': None if success else ('search_exhausted' if completed else 'missing_or_runtime_failure')})
     return {'expected_problems': len(rows), 'completed_problems': sum(p['completed'] for p in states),
             'lean_timeout_attempts': timeout_attempts,
             'lean_error_attempts': lean_error_attempts,
@@ -156,7 +161,20 @@ def main():
                 cwd=ROOT / 'REALPROVER', env=env)
     except subprocess.CalledProcessError as exc:
         native_exit = exc.returncode
-    stats = aggregate(dataset, a.output / 'native')
+    try:
+        import tomllib
+    except ModuleNotFoundError:
+        import tomli as tomllib
+    stats = aggregate(dataset, a.output / 'native', tomllib.loads(path.read_text())['search']['max_retries'])
+    lineage = a.output / 'evaluation_resume.json'
+    if lineage.exists():
+        inherited = load(lineage)
+        for item in inherited['evidence']:
+            if sha(Path(item['path'])) != item['sha256']:
+                raise RuntimeError('Inherited evaluation attempt was modified')
+        stats.update(resumed_attempts=inherited['summary']['attempts'],
+                     source_fingerprint=inherited['source_fingerprint'],
+                     evaluation_resume_sha256=sha(lineage))
     events = [json.loads(s) for s in telemetry.read_text().splitlines()]
     stats.update(protocol_sha256=protocol_sha, dataset_sha256=sha(dataset), seed=2, native_exit_code=native_exit,
                  engine_options=dict(config.VLLM_ENGINE_OPTIONS),
