@@ -17,6 +17,7 @@ class GeneratorTests(unittest.TestCase):
             return 'prompt'
 
         namespace = {'SamplingParams': lambda **kwargs: kwargs,
+            'generate_with_cleanup': lambda llm, *args, **kwargs: llm.generate(*args, **kwargs),
             'ModelManage': SimpleNamespace(contain_gemini=lambda x: False, contain_local=lambda x: True),
             'LeanSearch': SimpleNamespace(get_related_theorem=lambda x: []),
             'PromptManage': SimpleNamespace(build_local_prompt_str=prompt)}
