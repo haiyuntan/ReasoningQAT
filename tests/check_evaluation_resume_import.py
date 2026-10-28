@@ -11,6 +11,21 @@ import launch_evaluation_resume as launcher
 
 
 class ImportTests(unittest.TestCase):
+    def test_frozen_assets_match_migrated_runtime(self):
+        protocol = launcher.load(launcher.RESEARCH/'manifests/evaluation_protocol.json')
+        for item in protocol['pinned_files']:
+            self.assertEqual(launcher.sha(launcher.ROOT/item['path']), item['sha256'], item['path'])
+
+    def test_retrieval_content_change_is_rejected(self):
+        original = launcher.load(launcher.RESEARCH/'manifests/retrieval_assets.json')
+        state = {'commits': {'research': 'source'}}
+        with patch.object(launcher.subprocess, 'check_output', return_value=json.dumps(original).encode()):
+            self.assertTrue(launcher.audit_retrieval_identity(state)['content_identical'])
+        original['files'][0]['sha256'] = 'changed-content'
+        with patch.object(launcher.subprocess, 'check_output', return_value=json.dumps(original).encode()):
+            with self.assertRaisesRegex(RuntimeError, 'Retrieval content changed'):
+                launcher.audit_retrieval_identity(state)
+
     def test_stopped_state_rejects_running_source(self):
         with tempfile.TemporaryDirectory() as folder:
             with self.assertRaisesRegex(RuntimeError, 'Stop source'):

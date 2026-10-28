@@ -28,7 +28,7 @@
     },
     {
       "path": "research/manifests/retrieval_assets.json",
-      "sha256": "d233b0fda8ec11f034aab5a83f8f743c1a3fb2c8ef67cbc4d8ffb6348ab35da1"
+      "sha256": "bafb0adc6daecdaa9c710f1bfcc270ec5c80eed163dc78c68b1c84d9206a3a32"
     }
   ],
   "native_bf16_validation": {
@@ -37,5 +37,12 @@
     "completed_problems": 2,
     "successes": 1
   },
-  "notes": "Freeze search/sampling protocol after native BF16 sanity, fixed denominator/verifier contract checks, official config/data parity and retrieval identity pinning. Engine scheduling profile differs from historical run and requires new P0-P6 smoke. All seven current-fingerprint smoke receipts remain mandatory; no claim of published-score reproduction or independently verified retrieval asset origin. 2026-10-20: user authorizes P1-P6 four-GPU phased formal campaign, P0 excluded, dedicated shared retrieval and vLLM utilization 0.85; frozen miniF2F/search/training unchanged. Explicit batch-bound smoke waiver applies to this launch."
+  "notes": "Freeze search/sampling protocol after native BF16 sanity, fixed denominator/verifier contract checks, official config/data parity and retrieval identity pinning. Engine scheduling profile differs from historical run and requires new P0-P6 smoke. All seven current-fingerprint smoke receipts remain mandatory; no claim of published-score reproduction or independently verified retrieval asset origin. 2026-10-20: user authorizes P1-P6 four-GPU phased formal campaign, P0 excluded, dedicated shared retrieval and vLLM utilization 0.85; frozen miniF2F/search/training unchanged. Explicit batch-bound smoke waiver applies to this launch.",
+  "retrieval_path_migration": {
+    "previous_manifest_sha256": "d233b0fda8ec11f034aab5a83f8f743c1a3fb2c8ef67cbc4d8ffb6348ab35da1",
+    "current_manifest_sha256": "bafb0adc6daecdaa9c710f1bfcc270ec5c80eed163dc78c68b1c84d9206a3a32",
+    "content_size_sha256_multiset_unchanged": true,
+    "validation": "runs/project_cleanup_20261028/retrieval_migration.json",
+    "health_validation": "runs/project_cleanup_20261028/retrieval_health.json"
+  }
 }
