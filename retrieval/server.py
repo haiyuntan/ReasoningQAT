@@ -2,11 +2,13 @@ from flask import Flask, request, jsonify
 from worker import PremiseSelector
 from util import RequestUtil
 import os
+import threading
 
 app = Flask(__name__)
 
 premise_selector = PremiseSelector()
 premise_selector.init_model()
+retrieval_lock = threading.Lock()
 
 @app.route('/health', methods=['GET'])
 def health():
@@ -21,11 +23,14 @@ def to_formal_statement():
     if not data or 'query' not in data:
         return jsonify(RequestUtil.gen_fail_data('Missing param \'query\'')), 400
     num = data.get('num', 5)
-    related_theorems = premise_selector.retrieve(data['query'], num=num)
+    # Keep model/FAISS requests serialized while allowing cheap health requests
+    # to respond independently of a long embedding/search request.
+    with retrieval_lock:
+        related_theorems = premise_selector.retrieve(data['query'], num=num)
     return jsonify(RequestUtil.gen_success_data(related_theorems)), 200
 
 # Start http server
 if __name__ == '__main__':
     port = int(os.environ.get('LEANSEARCH_PORT', '8080'))
     print(f'start server on {port}')
-    app.run(host='127.0.0.1', port=port, debug=False, use_reloader=False, threaded=False)
+    app.run(host='127.0.0.1', port=port, debug=False, use_reloader=False, threaded=True)
