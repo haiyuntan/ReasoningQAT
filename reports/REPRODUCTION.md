@@ -1,6 +1,6 @@
 # REAL-Prover × ReasoningQAT 跨服务器复现手册
 
-审计日期：2026-10-26。本文描述当前已经运行的实现；早期 README 中“准备阶段”等状态是历史记录。本文及附件只改变文档，不改变正在运行的实验指纹。
+审计日期：2026-10-26；2026-10-28更新：检索资产已迁移至工作区models/retrieval，FedProver不再是当前训练/评估的运行依赖。历史审计/首次抽取脚本仍保留来源路径，不需要重新执行。本文描述当前已经运行的实现；早期 README 中“准备阶段”等状态是历史记录。本文及附件只改变文档，不改变正在运行的实验指纹。
 
 ## 1. 仓库状态和复现范围
 
@@ -167,7 +167,7 @@ export REALPROVER_RETRIEVAL_ANSWERS="$ROOT/assets/retrieval/index/answers.json"
 export LEANSEARCH_PORT=8080
 ```
 
-新机必须把 retrieval_assets.json 中旧绝对路径改为对应的新绝对路径，**保留每条size/sha256不变，并逐文件重新计算验证**；answers改名不影响内容SHA。pin_retrieval_assets.py 默认仍使用旧FedProver目录，不能直接在新目录上执行来解决身份差异。路径重绑改变manifest哈希，健康检查必须使用新manifest，旧服务不能混用。此操作在启动新机实验之前完成并commit。
+新机必须把 retrieval_assets.json 中旧绝对路径改为对应的新绝对路径，**保留每条size/sha256不变，并逐文件重新计算验证**；answers改名不影响内容SHA。pin_retrieval_assets.py现默认使用models/retrieval，并支持上述环境变量；重新pin仅记录当前内容身份，不能代替与原清单逐项比对。路径重绑改变manifest哈希，健康检查必须使用新manifest，旧服务不能混用。此操作在启动新机实验之前完成并commit。
 
 ## 7. 需要下载哪些数据
 
