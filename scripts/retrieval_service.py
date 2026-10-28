@@ -74,10 +74,10 @@ def ready(timeout=1800):
                 raise RuntimeError('Retrieval identity mismatch')
             print('RETRIEVAL ready with pinned asset identity', flush=True)
             return health
-        except urllib.error.URLError:
-            if shared:
-                raise RuntimeError('Shared retrieval is unavailable; clients must not start or stop it')
+        except (urllib.error.URLError, TimeoutError):
             if PROCESS.exists() and not alive(load(PROCESS)['pid']):
                 raise RuntimeError('Retrieval exited during startup; inspect runs/realprover_retrieval/server.log')
+            # Shared clients may wait through a transient connection/health
+            # timeout, but never start or stop the controller-owned service.
             time.sleep(2)
     raise TimeoutError('Retrieval readiness timeout')

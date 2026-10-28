@@ -1,6 +1,6 @@
 # 配额清理后的正式评估续跑
 
-从已停止的v10创建v11，保持v10模型、原始attempt、遥测与回执不可变。允许源状态STOPPED_DISK_QUOTA，并检查源控制器和评估进程确实不再运行。恢复既有本地Lean路径、同一miniF2F244题与pass64搜索预算、vLLM0.85；不训练、不重新量化。
+从已停止的v10创建v12，保持v10模型、原始attempt、遥测与回执不可变。允许源状态STOPPED_DISK_QUOTA，并检查源控制器和评估进程确实不再运行。恢复既有本地Lean路径、同一miniF2F244题与pass64搜索预算、vLLM0.85；不训练、不重新量化。
 
 检索资产路径已经迁移。本次先比较旧Git提交中的检索清单和当前清单，要求service source revision以及全部(size,SHA256)多重集合相同；路径变化本身不改变模型/索引内容身份。模型复用仍要求全部准备产物哈希及训练/量化代码不变。
 
@@ -12,11 +12,13 @@ P1/P2若已有完整244题结果，本次额外审计原PASS回执及每个证�
 
 GPU3共享检索，GPU0/1/2先续跑P3/P4/P5，任一卡结束后领取P6。保持单方法失败隔离。当前授权沿用不重复全套smoke的正式续跑流程，绑定本次针对性测试报告，不生成新的全套smoke PASS。
 
+v11首次启动暴露了共享服务健康检查饥饿：单线程Flask在处理慢检索时，其他客户端的/health超过5秒并直接退出。P3/P4失败不影响P5/P6，但修复前受控停止了全批次；没有新增已提交attempt，因此v12仍可直接从不可变v10导入同一起点。修复采用threaded HTTP服务，仅在实际model/FAISS retrieve周围持互斥锁，health不需要GPU锁；仍禁止并发GPU检索，检索数学/返回值和正式采样预算不变。shared ready允许临时连接/健康检查超时重试至总deadline，客户端不会接管服务生命周期。真实HTTP回归执行生产server.__main__，慢检索6秒时health仍在2秒内返回，两个检索严格按start/end/start/end执行。
+
 ```bash
 env/bootstrap/bin/python research/scripts/launch_evaluation_resume.py \
   --source runs/realprover_formal_four_gpu_v10 \
-  --results runs/realprover_formal_four_gpu_v11 \
+  --results runs/realprover_formal_four_gpu_v12 \
   --validation-report runs/evaluation_resume_20261028/validation.json
 ```
 
-初始化先审计大模型和原始结果，再nohup控制器。初始化日志位于`runs/evaluation_resume_20261028/initializer.nohup.log`；正式控制器日志为`runs/realprover_formal_four_gpu_v11.nohup.log`。启动前完整进度保存到新批次`control/previous_progress.json`；已完成继承的审计记录位于`control/completed_inheritance.json`。
+初始化先审计大模型和原始结果，再nohup控制器。v12初始化日志位于`runs/evaluation_resume_20261028/initializer_v12.nohup.log`；正式控制器日志为`runs/realprover_formal_four_gpu_v12.nohup.log`。启动前完整进度保存到新批次`control/previous_progress.json`；已完成继承的审计记录位于`control/completed_inheritance.json`。v11日志和失败状态保留以供审计。
