@@ -9,12 +9,44 @@ import shutil
 import subprocess
 import sys
 
-from experiment_pipeline import ROOT, RESEARCH, fingerprint
+from experiment_pipeline import ROOT, RESEARCH, fingerprint, validate_receipt
 sys.path.insert(0, str(RESEARCH / 'adapters'))
 sys.path.insert(0, str(ROOT / 'REALPROVER'))
 from common import load, save, sha
 from attempt_resume import read_attempts
 from reuse_prepared import audit_source
+
+
+def require_stopped(source, state):
+    if state['status'] not in ('STOPPED_BY_USER', 'STOPPED_DISK_QUOTA'):
+        raise RuntimeError('Stop source campaign before inheriting attempts')
+    for command in Path('/proc').glob('[0-9]*/cmdline'):
+        if command.parent.name == str(os.getpid()):
+            continue
+        try:
+            argv = command.read_bytes().split(b'\0')
+        except OSError:
+            continue
+        # Evaluator workers inherit their experiment.run argv. Do not mistake
+        # this initializer's --source argument for a running evaluation.
+        if (any(str(source).encode() in arg for arg in argv)
+                and (b'experiment.run' in argv or any(b'run_experiment.py' in arg for arg in argv))):
+            raise RuntimeError(f'Source evaluation is still running: PID {command.parent.name}')
+    pid = state.get('pid')
+    path = Path(f'/proc/{pid}/cmdline')
+    if path.exists() and b'resume_four_gpu.py' in path.read_bytes():
+        raise RuntimeError('Source controller is still running')
+
+
+def audit_retrieval_identity(state):
+    old = json.loads(subprocess.check_output(['git', '-C', str(RESEARCH), 'show',
+                     f'{state["commits"]["research"]}:manifests/retrieval_assets.json']))
+    new = load(RESEARCH / 'manifests/retrieval_assets.json')
+    identity = lambda record: sorted((item['size'], item['sha256']) for item in record['files'])
+    if old['service_source_revision'] != new['service_source_revision'] or identity(old) != identity(new):
+        raise RuntimeError('Retrieval content changed; cannot merge old evaluations')
+    return {'content_identical': True, 'source_manifest': old,
+            'current_manifest_sha256': sha(RESEARCH / 'manifests/retrieval_assets.json')}
 
 
 def import_prepared(source, results, digest):
@@ -123,6 +155,7 @@ def import_attempts(source, results, digest):
              'fingerprint': digest, 'dataset_sha256': sha(dataset), 'max_retries': limit,
              'summary': summary, 'problems': problems, 'evidence': evidence,
              'source_retrieval': {'path': str(telemetry), 'sha256': sha(telemetry)},
+             'unpublished_temporary_files': [str(p) for p in (src / 'native/generated').rglob('*.tmp')],
              'rng_note': 'New evaluator starts with seed 2; previous in-memory RNG state was not checkpointed. Slot budget is preserved; bitwise uninterrupted equivalence is not claimed.'})
         summaries[run] = summary
         print(f'RESUME {run}: {summary}', flush=True)
@@ -130,15 +163,69 @@ def import_attempts(source, results, digest):
     return summaries
 
 
+def inherit_completed(source, results, digest, summaries):
+    """Audit completed receipts and rebind their evidence without new inference."""
+    from types import SimpleNamespace
+    from run_experiment import finish
+    state = load(source / 'control/status.json')
+    completed = []
+    for run, progress in summaries.items():
+        if progress['completed'] != 244:
+            continue
+        src, dst = source / 'formal' / run, results / 'formal' / run
+        original = load(src / 'receipt.json')
+        validate_receipt(original, run, 'formal', state['fingerprint'])
+        stats = load(src / 'eval/evaluation.json')
+        if (stats['expected_problems'] != 244 or stats['completed_problems'] != 244
+                or stats['successes'] != progress['successes'] or not stats['retrieval_ok']):
+            raise RuntimeError(f'Completed receipt/attempt summary mismatch: {run}')
+        lineage = load(dst / 'eval/evaluation_resume.json')
+        original_raw = {item['path']: item['sha256'] for item in stats['raw_evidence']}
+        inherited_raw = {item['source_path']: item['sha256'] for item in lineage['evidence']}
+        if original_raw != inherited_raw:
+            raise RuntimeError(f'Completed evaluation evidence differs: {run}')
+        shutil.copytree(src / 'preflight', dst / 'preflight')
+        for name in ('config.toml', 'retrieval.jsonl'):
+            shutil.copy2(src / 'eval' / name, dst / 'eval' / name)
+        shutil.copy2(src / 'resource_lifecycle.json', dst / 'resource_lifecycle.json')
+        stats.update(raw_evidence=[{'path': e['path'], 'sha256': e['sha256']} for e in lineage['evidence']],
+                     evaluation_origin='inherited_completed_no_new_inference',
+                     source_receipt_sha256=sha(src / 'receipt.json'),
+                     source_fingerprint=state['fingerprint'], resumed_attempts=progress['attempts'],
+                     evaluation_resume_sha256=sha(dst / 'eval/evaluation_resume.json'))
+        save(dst / 'eval/evaluation.json', stats)
+        # Use the normal method checks and receipt writer, not copied PASS flags.
+        previous = {k: os.environ.get(k) for k in ('REALPROVER_MODE', 'REALPROVER_FINGERPRINT')}
+        os.environ.update(REALPROVER_MODE='formal', REALPROVER_FINGERPRINT=digest)
+        try:
+            training = load(dst / 'train/training.json') if run in ('P3', 'P4', 'P5', 'P6') else None
+            finish(SimpleNamespace(run=run, mode='formal'), dst, load(dst / 'model_identity.json'), training)
+            receipt = load(dst / 'receipt.json')
+            receipt.update(evaluation_origin=stats['evaluation_origin'],
+                           source_receipt_sha256=stats['source_receipt_sha256'])
+            save(dst / 'receipt.json', receipt)
+            validate_receipt(receipt, run, 'formal', digest)
+        finally:
+            for key, value in previous.items():
+                if value is None:
+                    os.environ.pop(key, None)
+                else:
+                    os.environ[key] = value
+        completed.append(run)
+        print(f'COMPLETE {run}: audited inherited 244/244; no GPU inference scheduled', flush=True)
+    return completed
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--source', type=Path, required=True)
     ap.add_argument('--results', type=Path, required=True)
+    ap.add_argument('--validation-report', type=Path, default=ROOT / 'runs/evaluation_resume_20261026/validation.json')
     args = ap.parse_args()
     source, results = args.source.resolve(), args.results.resolve()
     state = load(source / 'control/status.json')
-    if state['status'] != 'STOPPED_BY_USER':
-        raise RuntimeError('Stop source campaign before inheriting attempts')
+    require_stopped(source, state)
+    retrieval_audit = audit_retrieval_identity(state)
     for key, value in state['lean_environment'].items():
         if not value or not Path(value).exists():
             raise RuntimeError(f'Missing audited Lean environment: {key}')
@@ -151,7 +238,7 @@ def main():
     for repo in ('research', 'REALPROVER'):
         if subprocess.check_output(['git', '-C', str(ROOT / repo), 'status', '--porcelain'], text=True):
             raise RuntimeError(f'Commit reviewed changes first: {repo}')
-    validation = ROOT / 'runs/evaluation_resume_20261026/validation.json'
+    validation = args.validation_report.resolve()
     if load(validation)['status'] != 'PASS' or load(ROOT / 'runs/memory_repair_20261026/live_gpu.json')['status'] != 'PASS':
         raise RuntimeError('Resume and real GPU memory regressions must pass')
     digest = fingerprint()
@@ -161,6 +248,7 @@ def main():
          'source': str(source), 'pid': os.getpid()})
     import_prepared(source, results, digest)
     summaries = import_attempts(source, results, digest)
+    completed = inherit_completed(source, results, digest, summaries)
     (results / 'stage2_cache').symlink_to((source / 'stage2_cache').resolve(), target_is_directory=True)
     waiver = results / 'smoke_waiver.json'
     save(waiver, {'fingerprint': digest, 'results': str(results),
@@ -171,6 +259,8 @@ def main():
          'schedule': 'evaluation-only', 'retrieval_gpu': 3, 'evaluation_gpus': [0, 1, 2],
          'method_failures_isolated': True, 'previous_progress': summaries,
          'models_retrained': False, 'old_timeouts_preserved_as_failed_attempts': True})
+    save(results / 'control/completed_inheritance.json', {'methods': completed,
+         'retrieval_identity': retrieval_audit, 'no_new_inference_for_completed_methods': True})
     log = results.with_name(results.name + '.nohup.log')
     command = ['nohup', sys.executable, '-u', str(RESEARCH / 'scripts/resume_four_gpu.py'),
                '--results', str(results), '--smoke-waiver', str(waiver), '--schedule', 'mixed']

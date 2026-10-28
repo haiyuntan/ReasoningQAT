@@ -11,6 +11,56 @@ import launch_evaluation_resume as launcher
 
 
 class ImportTests(unittest.TestCase):
+    def test_stopped_state_rejects_running_source(self):
+        with tempfile.TemporaryDirectory() as folder:
+            with self.assertRaisesRegex(RuntimeError, 'Stop source'):
+                launcher.require_stopped(Path(folder), {'status': 'RUNNING'})
+            launcher.require_stopped(Path(folder), {'status': 'STOPPED_DISK_QUOTA'})
+
+    def test_completed_inheritance_checks_receipt_and_skips_inference(self):
+        with tempfile.TemporaryDirectory() as folder:
+            source, target = Path(folder)/'source', Path(folder)/'target'
+            src, dst = source/'formal/P1', target/'formal/P1'
+            launcher.save(source/'control/status.json', {'fingerprint': 'old'})
+            rows = [json.loads(s) for s in (launcher.ROOT/'REALPROVER/data/minif2f_test.jsonl').read_text().splitlines()]
+            evidence, imported = [], []
+            for row in rows:
+                relative = Path('eval/native/generated')/str(row['id'])/f'{row["id"]}_0.json'
+                launcher.save(src/relative, {'formal_statement': row['formal_statement'],
+                    'collect_results': [{'success': True}], 'pipeline_verifier': {'executed': True, 'success': True}})
+                (dst/relative).parent.mkdir(parents=True, exist_ok=True)
+                (dst/relative).write_bytes((src/relative).read_bytes())
+                evidence.append({'path': str(src/relative), 'sha256': launcher.sha(src/relative)})
+                imported.append({'path': str(dst/relative), 'source_path': str(src/relative), 'sha256': launcher.sha(src/relative)})
+            launcher.save(dst/'eval/evaluation_resume.json', {'evidence': imported})
+            for base in (src, dst):
+                launcher.save(base/'model_identity.json', {'model_type': 'qwen2'})
+                launcher.save(base/'eval_model/export.json', {'tokenizer_parity': True, 'saved_reload': True,
+                    'bits': 2, 'group_size': 128, 'greedy_generation_parity': True, 'samples': 128,
+                    'calibration_sha256': launcher.sha(launcher.ROOT/'datasets/numinamath_128/calib.jsonl'),
+                    'gptq_reference_validation': {'exact_weight_checks': launcher.load(launcher.ROOT/'models/REAL-Prover-v1-bf16/config.json')['num_hidden_layers'] * 7}})
+                (base/'native').mkdir()
+            launcher.save(src/'preflight/preflight.json', {'status': 'PASS'})
+            launcher.save(src/'resource_lifecycle.json', {'evaluation_finished': True})
+            (src/'eval/config.toml').write_text('historical config')
+            (src/'eval/retrieval.jsonl').write_text('{"success":true}\n')
+            launcher.save(src/'eval/evaluation.json', {'expected_problems': 244, 'completed_problems': 244,
+                'successes': 244, 'retrieval_ok': True, 'raw_evidence': evidence,
+                'protocol_sha256': launcher.sha(launcher.ROOT/'REALPROVER/configs/p0_candidate.toml')})
+            from experiment_pipeline import requirements
+            launcher.save(src/'receipt.json', {'run': 'P1', 'mode': 'formal', 'fingerprint': 'old', 'status': 'PASS',
+                'checks': {k: True for k in requirements('P1')}, 'expected_problems': 244,
+                'completed_problems': 244, 'evidence': evidence})
+            summary = {'P1': {'completed': 244, 'successes': 244, 'attempts': 244}}
+            self.assertEqual(launcher.inherit_completed(source, target, 'new', summary), ['P1'])
+            receipt = launcher.load(dst/'receipt.json')
+            self.assertEqual(receipt['evaluation_origin'], 'inherited_completed_no_new_inference')
+            launcher.validate_receipt(receipt, 'P1', 'formal', 'new')
+            # Evidence mutation must fail closed rather than granting DONE.
+            (src/'eval/native/generated'/str(rows[0]['id'])/f'{rows[0]["id"]}_0.json').write_text('{}')
+            with self.assertRaises(ValueError):
+                launcher.inherit_completed(source, target, 'new', summary)
+
     def test_attempt_import_preserves_bytes_and_partial_budget(self):
         with tempfile.TemporaryDirectory() as folder:
             source, target = Path(folder)/'source', Path(folder)/'target'
