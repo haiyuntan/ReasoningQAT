@@ -5,12 +5,12 @@ import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-LEGACY_MODEL = ROOT.parent / 'FedProver/model'
-INDEX_PATH = os.environ.get('REALPROVER_RETRIEVAL_INDEX', str(LEGACY_MODEL / 'LeanSearch-PS-faiss.index'))
-TOKENIZER_PATH = os.environ.get('REALPROVER_RETRIEVAL_BASE', str(LEGACY_MODEL / 'e5-mistral-7b-instruct'))
+RETRIEVAL_ASSETS = ROOT / 'models/retrieval'
+INDEX_PATH = os.environ.get('REALPROVER_RETRIEVAL_INDEX', str(RETRIEVAL_ASSETS / 'LeanSearch-PS-faiss.index'))
+TOKENIZER_PATH = os.environ.get('REALPROVER_RETRIEVAL_BASE', str(RETRIEVAL_ASSETS / 'e5-mistral-7b-instruct'))
 MODEL_PATH = TOKENIZER_PATH
-ADAPTER_PATH = os.environ.get('REALPROVER_RETRIEVAL_ADAPTER', str(LEGACY_MODEL / 'LeanSearch-PS'))
-ANSWER_PATH = os.environ.get('REALPROVER_RETRIEVAL_ANSWERS', str(Path.home() / 'LeanSearch-PS-faiss/answers.json'))
+ADAPTER_PATH = os.environ.get('REALPROVER_RETRIEVAL_ADAPTER', str(RETRIEVAL_ASSETS / 'LeanSearch-PS'))
+ANSWER_PATH = os.environ.get('REALPROVER_RETRIEVAL_ANSWERS', str(RETRIEVAL_ASSETS / 'answers.json'))
 ASSET_MANIFEST = ROOT / 'research/manifests/retrieval_assets.json'
 
 
