@@ -10,8 +10,10 @@ import shutil
 
 DEFAULT_LAKE_PATH = os.path.expanduser("~/.elan/bin/lake")
 from conf import config
+from manager.thirdparty.performance import timed
 DEFAULT_LEAN_WORKSPACE = config.LEAN_TEST_PATH
 
+@timed('lean_verifier')
 def verify_proof(full_code: str, 
                 lake_path: str = DEFAULT_LAKE_PATH,
                 lean_workspace: str = DEFAULT_LEAN_WORKSPACE,

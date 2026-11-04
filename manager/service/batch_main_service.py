@@ -13,6 +13,7 @@ from manager.thirdparty.interactive import InteractiveResponseTimeout, Interacti
 from manager.service.attempt_failure import timeout_result, session_failure_result
 import json
 from attempt_resume import read_attempts, write_attempt
+from manager.thirdparty import performance
 
 def search_check(path, max_retries):
     records, success = read_attempts(path, max_retries)
@@ -152,6 +153,7 @@ class BatchMainService(BaseService):
                 if idx in previous:
                     continue
                 try:
+                    performance.reset()
                     print(f"processing {item['id']}")
                     profiler.start(f"run_index_{item['id']}")
                     results = self.process_one(source=item["formal_statement"], generator=this_generator)
@@ -191,6 +193,8 @@ class BatchMainService(BaseService):
                             save_data['collect_results'][0]['success'] = repl_res
                             save_data['pipeline_verifier'] = {'executed': True, 'success': bool(repl_res)}
                 result_file = os.path.join(item_path,f"{item['id']}_{idx}.json")
+                save_data['pipeline_timing'] = performance.snapshot()
+                performance.emit()
                 write_attempt(result_file, save_data)
                 if save_data.get('pipeline_attempt', {}).get('consumes_attempt'):
                     profiler.stop(f"run_index_{item['id']}")

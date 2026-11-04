@@ -11,6 +11,7 @@ from pathlib import Path
 import conf.config as config
 from manager.struct.structs import from_json, Goal, ProofGoal, ProofVariable
 import os
+from manager.thirdparty.performance import timed
 logging.basicConfig(level=logging.INFO, format='%(levelname)s %(asctime)s [%(name)s] %(message)s')
 logger = logging.getLogger(os.path.basename(__file__))
 IS_BUILD = False
@@ -139,9 +140,11 @@ class Interactive:
         except KeyError:
             raise RuntimeError(response['error'])
 
+    @timed('lean_tactic')
     def run_tactic(self, sid: int, tactic: str, heartbeats: int = 200000000) -> int:
         return self.request('runTactic', {'sid': sid, 'tactic': tactic, 'heartbeats': heartbeats})
 
+    @timed('lean_state')
     def get_state(self, sid: int) -> list[Goal]:
         res = self.request('getState', {'sid': sid})
         return from_json(list[Goal], res)

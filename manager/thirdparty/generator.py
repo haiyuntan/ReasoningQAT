@@ -9,6 +9,7 @@ from manager.struct import Goal, state_repr
 from manager.thirdparty import LeanSearch, Claude
 from manager.thirdparty.generation_memory import generate_with_cleanup
 import conf.config
+from manager.thirdparty.performance import measure
 
 logger = logging.getLogger(__name__)
 
@@ -73,7 +74,8 @@ class TacticGenerator:
     def get_lean_tactics(self, state: str, num_samples: int, incontext: str=None, template: str = 'deepseek', use_retrieval: bool=True) -> tuple[list[str], list[float], str]:
         # 获取相关定理
         if use_retrieval:
-            related_theorems = LeanSearch.get_related_theorem(state)
+            with measure('retrieval'):
+                related_theorems = LeanSearch.get_related_theorem(state)
         else:
             related_theorems = []
         if incontext is None:
@@ -91,10 +93,12 @@ class TacticGenerator:
 
         # Get tactics from local model if requested
         if ModelManage.contain_local(self.model_list):
-            self._init_model()  # 懒加载，用到时才加载模型
+            with measure('model_initialization'):
+                self._init_model()  # 懒加载，用到时才加载模型
             assert self.llm is not None
             sampling_params = SamplingParams(n=num_samples, **self.sampling_params)
-            outputs = generate_with_cleanup(self.llm, [prompt], sampling_params, use_tqdm=False)
+            with measure('generation'):
+                outputs = generate_with_cleanup(self.llm, [prompt], sampling_params, use_tqdm=False)
             # lora = LoRARequest("new_data", self.gpu_id, "/AI4M/users/nhhuang/LLaMA-Factory/ds_stepprover_algebra_together")
             # outputs = self.llm.generate([prompt], sampling_params, use_tqdm=False, lora_request=lora)
             # Apply the existing sorry policy to candidates and their scores

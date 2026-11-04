@@ -6,8 +6,10 @@ import faiss
 import numpy as np
 import json
 import hashlib
+import time
 from pathlib import Path
 import conf.config
+from .exact_search import ExactSearch, QueryCache
 
 np.random.seed(42)  # make reproducible
 
@@ -46,6 +48,16 @@ class PremiseSelector(object):
         self.init_data()
         if self.index.ntotal != len(self.datas):
             raise ValueError('FAISS index/answer count mismatch')
+        runtime_path = Path(__file__).resolve().parents[2] / 'configs/retrieval_runtime.json'
+        runtime_bytes = runtime_path.read_bytes()
+        self.runtime_sha256 = hashlib.sha256(runtime_bytes).hexdigest()
+        self.runtime = json.loads(runtime_bytes)
+        if self.runtime['search_backend'] not in ('cpu', 'cpu_sharded'):
+            raise ValueError('Unsupported unvalidated retrieval backend')
+        self.searcher = ExactSearch(self.index, self.runtime['cpu_shards']
+                                   if self.runtime['search_backend'] == 'cpu_sharded' else 1)
+        self.cache = QueryCache(self.runtime['cache_entries'], self.runtime['cache_bytes'])
+        self.last_metrics = {}
 
     def init_formals(self):
         formals = []
@@ -77,15 +89,25 @@ class PremiseSelector(object):
         self.model = None
 
     def retrieve(self, queries, num=10):
-        self.init_model()
         task = "Given a lean4 context, retrieve Lean4 theorems useful to solve it: "
         if isinstance(queries, str):
             queries = [queries]
 
-        query_vecs = self.get_embeddings(task, queries).cpu().numpy().astype(np.float32)
-
-        # faiss for searching
-        D, I = self.index.search(query_vecs, num)
+        key = tuple(queries), num
+        cached = self.cache.get(key)
+        self.last_metrics = {'cache_hit': cached is not None, 'encoding_seconds': 0.0,
+                             'search_seconds': 0.0, 'backend': self.runtime['search_backend']}
+        if cached is None:
+            self.init_model()
+            started = time.perf_counter()
+            query_vecs = self.get_embeddings(task, queries).cpu().numpy().astype(np.float32)
+            self.last_metrics['encoding_seconds'] = time.perf_counter()-started
+            started = time.perf_counter()
+            D, I = self.searcher.search(query_vecs, num)
+            self.last_metrics['search_seconds'] = time.perf_counter()-started
+            self.cache.put(key, I)
+        else:
+            I = cached
 
         all_related_theorems = []
         for query_results in I:
