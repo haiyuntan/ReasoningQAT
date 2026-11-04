@@ -191,6 +191,11 @@ def import_attempts(source, results, digest, exclusions=None):
                    'attempts': sum(p['attempts'] for p in problems),
                    'timeouts': sum(p['timeouts'] for p in problems)}
         telemetry = src / 'retrieval.jsonl'
+        if not telemetry.exists():
+            inherited_telemetry = load(src / 'evaluation_resume.json')['source_retrieval']
+            telemetry = Path(inherited_telemetry['path'])
+            if sha(telemetry) != inherited_telemetry['sha256']:
+                raise RuntimeError('Pending evaluation retrieval telemetry changed')
         save(dst / 'evaluation_resume.json', {'source': str(src), 'source_fingerprint': state['fingerprint'],
              'fingerprint': digest, 'dataset_sha256': sha(dataset), 'max_retries': limit,
              'summary': summary, 'problems': problems, 'evidence': evidence,

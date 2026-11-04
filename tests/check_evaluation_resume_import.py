@@ -116,6 +116,16 @@ class ImportTests(unittest.TestCase):
             lineage = launcher.load(target/'formal/P1/eval/evaluation_resume.json')
             self.assertIn(1, lineage['problems'][1]['missing_slots'])
             self.assertNotIn(2, lineage['problems'][1]['missing_slots'])
+            # Pending evaluators have no new retrieval log. Older importers
+            # also omitted config.toml; exercise a full second continuation.
+            launcher.save(target/'control/status.json', {'fingerprint': 'new'})
+            (target/'formal/P1/eval/config.toml').unlink()
+            third = Path(folder)/'third'
+            resumed = launcher.import_attempts(target, third, 'newer')
+            self.assertEqual(resumed['P1'], summaries['P1'])
+            self.assertTrue((third/'formal/P1/eval/config.toml').exists())
+            for relative, data in original.items():
+                self.assertEqual((third/'formal/P1/eval'/relative).read_bytes(), data)
 
     def test_prepared_import_rebinds_previous_lineage_without_conflicting_hash(self):
         with tempfile.TemporaryDirectory() as folder:
