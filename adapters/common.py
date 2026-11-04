@@ -5,6 +5,8 @@ import os
 from pathlib import Path
 import subprocess
 import sys
+import signal
+import time
 
 RESEARCH = Path(__file__).resolve().parents[1]
 ROOT = RESEARCH.parent
@@ -45,8 +47,45 @@ def python_for(role):
 
 def execute(argv, cwd=ROOT, env=None):
     print('EXECUTE', json.dumps([str(x) for x in argv]), flush=True)
-    subprocess.run([str(x) for x in argv], cwd=cwd, env=env, check=True,
-                   timeout=int(os.environ.get('REALPROVER_STAGE_TIMEOUT', '604800')))
+    value = (os.environ if env is None else env).get('REALPROVER_STAGE_TIMEOUT', '0')
+    seconds = int(value)
+    if seconds < 0:
+        raise ValueError('REALPROVER_STAGE_TIMEOUT must be nonnegative (0 disables the deadline)')
+    process = subprocess.Popen([str(x) for x in argv], cwd=cwd, env=env,
+                               start_new_session=True)
+    try:
+        code = process.wait(timeout=seconds or None)
+        if code:
+            raise subprocess.CalledProcessError(code, argv)
+    finally:
+        # Also clean descendants when the immediate child already exited.
+        terminate_job(process.pid)
+        process.wait()
+
+
+def terminate_job(pid):
+    """Cancel this owned session and descendants, including separate Lean sessions."""
+    table = {}
+    for path in Path('/proc').glob('[0-9]*/stat'):
+        try:
+            fields = path.read_text().rsplit(') ', 1)[1].split()
+            table[int(path.parent.name)] = (int(fields[1]), int(fields[2]))
+        except (OSError, ValueError, IndexError):
+            continue
+    owned = {pid} | {p for p, (_, group) in table.items() if group == pid}
+    while True:
+        expanded = owned | {p for p, (parent, _) in table.items() if parent in owned}
+        if expanded == owned:
+            break
+        owned = expanded
+    for sig in (signal.SIGTERM, signal.SIGKILL):
+        for child in sorted(owned, reverse=True):
+            try:
+                os.kill(child, sig)
+            except ProcessLookupError:
+                pass
+        if sig == signal.SIGTERM and any(p != pid for p in owned):
+            time.sleep(1)
 
 
 def verify_model():

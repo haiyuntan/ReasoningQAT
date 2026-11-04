@@ -99,7 +99,8 @@ def import_prepared(source, results, digest):
         shutil.copy2(source / 'formal' / name, results / 'formal' / name)
 
 
-def import_attempts(source, results, digest):
+def import_attempts(source, results, digest, exclusions=None):
+    exclusions = exclusions or {}
     dataset = ROOT / 'REALPROVER/data/minif2f_test.jsonl'
     rows = [json.loads(s) for s in dataset.read_text().splitlines() if s.strip()]
     summaries = {}
@@ -127,6 +128,19 @@ def import_attempts(source, results, digest):
         def copy_row(row):
             old_dir = src / 'native/generated' / str(row['id'])
             records, success = read_attempts(old_dir, limit, row['formal_statement'])
+            for index, data in list(records.items()):
+                old = old_dir / f'{row["id"]}_{index}.json'
+                expected_hash = exclusions.get(str(old))
+                if expected_hash is None:
+                    continue
+                if (sha(old) != expected_hash
+                        or data.get('pipeline_verifier', {}).get('executed')
+                        or any(result.get('success') or result.get('calls')
+                               for result in data['collect_results'])):
+                    raise RuntimeError(f'Excluded infrastructure attempt differs: {old}')
+                del records[index]
+            success = any(result['success'] for data in records.values()
+                          for result in data['collect_results'])
             items = []
             for index in records:
                 old = old_dir / f'{row["id"]}_{index}.json'
@@ -221,6 +235,7 @@ def main():
     ap.add_argument('--source', type=Path, required=True)
     ap.add_argument('--results', type=Path, required=True)
     ap.add_argument('--validation-report', type=Path, default=ROOT / 'runs/evaluation_resume_20261026/validation.json')
+    ap.add_argument('--infrastructure-exclusions', type=Path)
     args = ap.parse_args()
     source, results = args.source.resolve(), args.results.resolve()
     state = load(source / 'control/status.json')
@@ -247,7 +262,17 @@ def main():
     save(results / 'control/initialization.json', {'status': 'IMPORTING', 'fingerprint': digest,
          'source': str(source), 'pid': os.getpid()})
     import_prepared(source, results, digest)
-    summaries = import_attempts(source, results, digest)
+    exclusions = {}
+    if args.infrastructure_exclusions:
+        manifest = load(args.infrastructure_exclusions)
+        if manifest['source'] != str(source) or manifest['reason'] != 'P6_MODEL_LOAD_OOM_GPU_COLLISION':
+            raise RuntimeError('Infrastructure exclusion scope mismatch')
+        exclusions = manifest['files']
+        allowed = source / 'formal/P6/eval/native/generated'
+        for path in exclusions:
+            Path(path).relative_to(allowed)
+        shutil.copy2(args.infrastructure_exclusions, results / 'control/infrastructure_exclusions.json')
+    summaries = import_attempts(source, results, digest, exclusions)
     completed = inherit_completed(source, results, digest, summaries)
     (results / 'stage2_cache').symlink_to((source / 'stage2_cache').resolve(), target_is_directory=True)
     waiver = results / 'smoke_waiver.json'

@@ -11,7 +11,7 @@ import time
 
 from run_four_gpu import Campaign, terminate_tree
 from experiment_pipeline import ROOT, RESEARCH, fingerprint, formal_smoke_gate, validate_receipt
-from common import load, save, sha, data_environment, python_for
+from common import load, save, sha, data_environment, python_for, terminate_job
 import retrieval_service
 
 RUNS = ['P1', 'P2', 'P3', 'P4', 'P5', 'P6']
@@ -26,6 +26,20 @@ def prepared(out, run, digest):
     for item in record['evidence']:
         if sha(Path(item['path'])) != item['sha256']:
             raise RuntimeError(f'{run}: prepared artifact changed: {item["path"]}')
+
+
+def occupied_gpus():
+    """Fail closed if NVIDIA occupancy cannot be established."""
+    inventory = subprocess.check_output(
+        ['nvidia-smi', '--query-gpu=index,uuid', '--format=csv,noheader,nounits'],
+        text=True, timeout=15)
+    indexes = {uuid.strip(): int(index) for index, uuid in
+               (line.split(',') for line in inventory.splitlines() if line.strip())}
+    processes = subprocess.check_output(
+        ['nvidia-smi', '--query-compute-apps=gpu_uuid,pid', '--format=csv,noheader,nounits'],
+        text=True, timeout=15)
+    return {indexes[line.split(',')[0].strip()] for line in processes.splitlines()
+            if line.strip()}
 
 
 class Adaptive(Campaign):
@@ -51,6 +65,7 @@ class Adaptive(Campaign):
             code = process.poll()
             if code is None:
                 continue
+            terminate_job(process.pid)
             stream.close()
             del self.active[gpu]
             try:
@@ -140,13 +155,21 @@ class Adaptive(Campaign):
                 and (r == 'P5' or self.jobs['P3']['prepare'] == 'DONE')]
 
     def schedule(self):
-        free = [g for g in range(4) if g not in self.active and g != self.retrieval_gpu]
+        try:
+            occupied = occupied_gpus()
+        except (subprocess.SubprocessError, ValueError, KeyError, OSError) as error:
+            self.state['gpu_occupancy_error'] = str(error)
+            print(f'GPU occupancy unavailable; deferring scheduling: {error}', flush=True)
+            return
+        self.state.pop('gpu_occupancy_error', None)
+        self.state['occupied_gpus'] = sorted(occupied)
+        free = [g for g in range(4) if g not in self.active and g != self.retrieval_gpu and g not in occupied]
         evaluations = self.pending_evaluations()
         evaluating = any(job[1] == 'evaluate' for job in self.active.values())
         if self.retrieval_gpu is not None and not evaluations and not evaluating:
             retrieval_service.stop()
-            free.append(self.retrieval_gpu)
             self.retrieval_gpu = None
+            # Recheck on the next cycle after CUDA teardown releases memory.
         if self.retrieval_gpu is None and evaluations and len(free) >= 2:
             gpu = max(free)
             os.environ['CUDA_VISIBLE_DEVICES'] = str(gpu)
@@ -240,7 +263,7 @@ def main():
         # Only global interruption/termination reaches cancellation. A method
         # failure is handled by poll_jobs and never enters this cleanup path.
         for run, phase, process, stream in campaign.active.values():
-            terminate_tree(process.pid)
+            terminate_job(process.pid)
             process.wait()
             stream.close()
         if campaign.cpu:

@@ -13,6 +13,11 @@ import resume_four_gpu as scheduler
 
 
 class RepairTests(unittest.TestCase):
+    def setUp(self):
+        mock = patch.object(scheduler, "occupied_gpus", return_value=set())
+        mock.start()
+        self.addCleanup(mock.stop)
+
     def test_normal_tokens_and_masks_unchanged(self):
         ids, labels, adjusted = completion_window([1, 2, 3, 4, 5], [1, 2], 4)
         self.assertEqual(ids, [1, 2, 3, 4])
