@@ -11,6 +11,19 @@ import launch_evaluation_resume as launcher
 
 
 class ImportTests(unittest.TestCase):
+    def test_pending_method_uses_verified_ancestor_config(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            ancestor, pending = root/'old/formal/P6/eval', root/'pending/formal/P6/eval'
+            ancestor.mkdir(parents=True)
+            (ancestor/'config.toml').write_text('verified historical config')
+            launcher.save(root/'old/control/status.json', {'fingerprint': 'ancestor'})
+            launcher.save(pending/'evaluation_resume.json', {'fingerprint': 'pending',
+                'dataset_sha256': 'dataset', 'source': str(ancestor), 'source_fingerprint': 'ancestor'})
+            self.assertEqual(launcher.resolve_evaluation_config(pending, 'pending', 'dataset'), ancestor/'config.toml')
+            with self.assertRaisesRegex(RuntimeError, 'lineage mismatch'):
+                launcher.resolve_evaluation_config(pending, 'wrong', 'dataset')
+
     def test_frozen_assets_match_migrated_runtime(self):
         protocol = launcher.load(launcher.RESEARCH/'manifests/evaluation_protocol.json')
         for item in protocol['pinned_files']:

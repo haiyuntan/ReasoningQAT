@@ -102,6 +102,26 @@ def import_prepared(source, results, digest):
         shutil.copy2(source / 'formal' / name, results / 'formal' / name)
 
 
+def resolve_evaluation_config(directory, source_fingerprint, dataset_digest):
+    """Pending evaluators may only have an audited inherited attempt ledger."""
+    directory = Path(directory)
+    visited = set()
+    while not (directory / 'config.toml').exists():
+        if directory in visited:
+            raise RuntimeError('Cyclic evaluation configuration lineage')
+        visited.add(directory)
+        ledger = load(directory / 'evaluation_resume.json')
+        if (ledger['fingerprint'] != source_fingerprint
+                or ledger['dataset_sha256'] != dataset_digest):
+            raise RuntimeError('Pending evaluation configuration lineage mismatch')
+        directory = Path(ledger['source'])
+        state = load(directory.parents[2] / 'control/status.json')
+        if state['fingerprint'] != ledger['source_fingerprint']:
+            raise RuntimeError('Pending evaluation source fingerprint mismatch')
+        source_fingerprint = ledger['source_fingerprint']
+    return directory / 'config.toml'
+
+
 def import_attempts(source, results, digest, exclusions=None):
     exclusions = exclusions or {}
     dataset = ROOT / 'REALPROVER/data/minif2f_test.jsonl'
@@ -117,7 +137,8 @@ def import_attempts(source, results, digest, exclusions=None):
             import tomllib
         except ModuleNotFoundError:
             import tomli as tomllib
-        actual = tomllib.loads((src / 'config.toml').read_text())
+        config_path = resolve_evaluation_config(src, state['fingerprint'], sha(dataset))
+        actual = tomllib.loads(config_path.read_text())
         expected = tomllib.loads((ROOT / 'REALPROVER/configs/p0_candidate.toml').read_text())
         for config in (actual, expected):
             config.pop('info', None)
@@ -127,6 +148,8 @@ def import_attempts(source, results, digest, exclusions=None):
             raise RuntimeError(f'Old evaluation protocol differs: {run}')
         limit = actual['search']['max_retries']
         dst = results / 'formal' / run / 'eval'
+        dst.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(config_path, dst / 'config.toml')
         evidence = []
         def copy_row(row):
             old_dir = src / 'native/generated' / str(row['id'])
@@ -171,6 +194,7 @@ def import_attempts(source, results, digest, exclusions=None):
         save(dst / 'evaluation_resume.json', {'source': str(src), 'source_fingerprint': state['fingerprint'],
              'fingerprint': digest, 'dataset_sha256': sha(dataset), 'max_retries': limit,
              'summary': summary, 'problems': problems, 'evidence': evidence,
+             'source_protocol': {'path': str(config_path), 'sha256': sha(config_path)},
              'source_retrieval': {'path': str(telemetry), 'sha256': sha(telemetry)},
              'unpublished_temporary_files': [str(p) for p in (src / 'native/generated').rglob('*.tmp')],
              'rng_note': 'New evaluator starts with seed 2; previous in-memory RNG state was not checkpointed. Slot budget is preserved; bitwise uninterrupted equivalence is not claimed.'})
