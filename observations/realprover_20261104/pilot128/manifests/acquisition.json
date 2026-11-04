@@ -1,0 +1,174 @@
+{
+  "source:User-ReasoningQAT": {
+    "status": "DONE",
+    "result": {
+      "name": "User-ReasoningQAT",
+      "commit": "e827bff062ddf432215759b0f24717b7dd635913",
+      "remote": "https://github.com/haiyuntan/ReasoningQAT",
+      "source": "research"
+    }
+  },
+  "source:User-REALPROVER": {
+    "status": "DONE",
+    "result": {
+      "name": "User-REALPROVER",
+      "commit": "0905a8a3f751e50e110a3bc83998c723c8803070",
+      "remote": "https://github.com/haiyuntan/ReasoningQAT",
+      "source": "REALPROVER"
+    }
+  },
+  "source:ReasoningQAT": {
+    "status": "DONE",
+    "result": {
+      "name": "ReasoningQAT",
+      "commit": "75d2a38c743c22dcaefd0740fdd4ff79f25b2eb7",
+      "remote": "https://github.com/yasu0001/ReasoningQAT",
+      "source": "ReasoningQAT"
+    }
+  },
+  "source:EfficientQAT": {
+    "status": "DONE",
+    "result": {
+      "name": "EfficientQAT",
+      "commit": "39f37f3b6053681c9b1cd4c9dcaf692d8999459e",
+      "remote": "https://github.com/OpenGVLab/EfficientQAT",
+      "source": "qat_baselines/EfficientQAT"
+    }
+  },
+  "source:ReQAT": {
+    "status": "DONE",
+    "result": {
+      "name": "ReQAT",
+      "commit": "55038ae6ac807a33f9192a25a03f54a03789d21e",
+      "remote": "https://github.com/aiha-lab/ReQAT",
+      "source": "remote"
+    }
+  },
+  "source:REAL-Prover": {
+    "status": "DONE",
+    "result": {
+      "name": "REAL-Prover",
+      "commit": "3e5987dc1009a7addc935bcd7b4ae777738a0848",
+      "remote": "https://github.com/frenzymath/REAL-Prover",
+      "source": "upstream/REAL-Prover"
+    }
+  },
+  "paper:REAL-Prover": {
+    "status": "DONE",
+    "result": {
+      "name": "REAL-Prover",
+      "url": "https://arxiv.org/pdf/2505.20613",
+      "sha256": "9285cb016a33d06fa74db8c946f958126b4533f3c05a729ebbd2ed77932f25ff",
+      "pdfinfo": {
+        "pages": 22,
+        "metadata": {
+          "format": "PDF 1.7",
+          "title": "REAL-Prover: Retrieval Augmented Lean Prover for Mathematical Reasoning",
+          "author": "Ziju Shen; Naohao Huang; Fanyi Yang; Yutong Wang; Guoxiong Gao; Tianyi Xu; Jiedong Jiang; Wanyi He; Pu Yang; Mengzhou Sun; Haocheng Ju; Peihao Wu; Bryan Dai; Bin Dong",
+          "subject": "",
+          "keywords": "",
+          "creator": "arXiv GenPDF (tex2pdf:4177c2c)",
+          "producer": "pikepdf 8.15.1",
+          "creationDate": "",
+          "modDate": "",
+          "trapped": "",
+          "encryption": null
+        },
+        "validation": "PyMuPDF parser; pdfinfo unavailable"
+      }
+    }
+  },
+  "paper:ReasoningQAT": {
+    "status": "DONE",
+    "result": {
+      "name": "ReasoningQAT",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/209423f076b6479ab3a4f45886e30306-Paper-Conference.pdf",
+      "sha256": "6e21c1699259420b49238ab39ca2f1d42ec6991b4b77d674f78a814f0f799a5d",
+      "pdfinfo": {
+        "pages": 19,
+        "metadata": {
+          "format": "PDF 1.5",
+          "title": "",
+          "author": "",
+          "subject": "",
+          "keywords": "",
+          "creator": "LaTeX with hyperref",
+          "producer": "pdfTeX-1.40.26",
+          "creationDate": "D:20260302001615Z",
+          "modDate": "D:20260302001615Z",
+          "trapped": "",
+          "encryption": null
+        },
+        "validation": "PyMuPDF parser; pdfinfo unavailable"
+      }
+    }
+  },
+  "paper:EfficientQAT": {
+    "status": "DONE",
+    "result": {
+      "name": "EfficientQAT",
+      "url": "https://aclanthology.org/2025.acl-long.498.pdf",
+      "sha256": "70192d1dcb69efc0cf9b37c50f08ddcc829e3514b9832f3d2067ffee3633c244",
+      "pdfinfo": {
+        "pages": 20,
+        "metadata": {
+          "format": "PDF 1.5",
+          "title": "",
+          "author": "",
+          "subject": "",
+          "keywords": "",
+          "creator": "LaTeX with hyperref",
+          "producer": "pdfTeX-1.40.25",
+          "creationDate": "D:20250710131034Z",
+          "modDate": "D:20250710131034Z",
+          "trapped": "",
+          "encryption": null
+        },
+        "validation": "PyMuPDF parser; pdfinfo unavailable"
+      }
+    }
+  },
+  "paper:ReQAT": {
+    "status": "DONE",
+    "result": {
+      "name": "ReQAT",
+      "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/lee26an/lee26an.pdf",
+      "sha256": "ad3574202b6318b08709c85c1f6cffd88a4d01a7cdc5925b2edfb4fa8c807d5f",
+      "pdfinfo": {
+        "pages": 22,
+        "metadata": {
+          "format": "PDF 1.5",
+          "title": "ReQAT: Achieving Full-Precision Reasoning Accuracy with  4-bit Floating-Point Quantization-Aware Training",
+          "author": "Janghwan Lee, Sihwa Lee, Jinseok Kim, Yongjik Kim, Jieun Lim, Jinwook Oh, Jungwook Choi",
+          "subject": "Proceedings of the International Conference on Machine Learning 2026",
+          "keywords": "Quantization-aware training, Floating-point, Large language models, Reasoning",
+          "creator": "LaTeX with hyperref",
+          "producer": "pdfTeX-1.40.27",
+          "creationDate": "D:20260528154342Z",
+          "modDate": "D:20260528154342Z",
+          "trapped": "",
+          "encryption": null
+        },
+        "validation": "PyMuPDF parser; pdfinfo unavailable"
+      }
+    }
+  },
+  "dataset": {
+    "status": "DONE",
+    "result": {
+      "revision": "91bb339e61ff045d3ebf97cd94d1df1d755dd745",
+      "files": [
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261102/assets/state_tactic_pairs/README.md",
+          "sha256": "6590e96073346586b5378fbf2e86a24b148709dc07b10e27cc63d8c811cd1c73",
+          "bytes": 463
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261102/assets/state_tactic_pairs/data/train-00000-of-00001.parquet",
+          "sha256": "5d3239af61185af7d4ab882f38e8c3dc443881616ce1b1e5003f58867fef8c5f",
+          "bytes": 57196590
+        }
+      ]
+    }
+  }
+}

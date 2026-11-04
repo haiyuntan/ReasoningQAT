@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "entropy_samples": 507,
+  "domain_samples": 1024,
+  "prompt_mapping_sha256": "ad3db378b1a0d166575e3caae79c543bf10e0c5ec32fee7410a83fb863c59c57",
+  "leakage_status": "EXACT_SCREEN_PASS_PROVENANCE_UNKNOWN"
+}

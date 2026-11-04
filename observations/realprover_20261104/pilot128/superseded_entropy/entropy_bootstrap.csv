@@ -1,0 +1,5 @@
+method,state_pairs,low_minus_high_log_rho,ci_low,ci_high,population,estimand
+P3,275,1.3683548666096546,1.0961777397346768,1.6523612203013829,in_training_distribution,equal-weight states having both Low and High eligible positions
+P4,275,1.7037669820414687,1.440355313353812,1.9464509856026109,in_training_distribution,equal-weight states having both Low and High eligible positions
+P5,275,2.2586855610066348,1.9399350523657315,2.5620575677385045,in_training_distribution,equal-weight states having both Low and High eligible positions
+P6,275,1.9330678376182915,1.657329088029621,2.2252163951379162,in_training_distribution,equal-weight states having both Low and High eligible positions

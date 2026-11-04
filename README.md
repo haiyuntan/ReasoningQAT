@@ -29,3 +29,7 @@ env/bootstrap/bin/python research/scripts/download_realprover.py
 ## P0–P6 流水线
 
 方法适配与 campaign/smoke/formal 门禁现已实现；详细运行方法和验证边界见 [pipeline_adapters.md](reports/pipeline_adapters.md)。小型 Qwen2 算子/GPU 检查通过，真实模型端到端冒烟仍等待模型及 Lean/检索依赖；不能启动正式实验。
+
+## REAL-Prover observation results
+
+See [REAL-Prover observation results and reproduction](reports/REALPROVER_OBSERVATIONS.md) for the 28-layer analysis, representative t-SNE figures and numerically corrected entropy diagnostics.

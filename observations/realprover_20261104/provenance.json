@@ -1,0 +1,293 @@
+{
+  "pilot128": {
+    "source_directory": "observation_20261102",
+    "source_commit": "0577d9361e5200948a320745223eb6751655850d",
+    "execution": {
+      "status": "COMPLETED_WITH_LIMITATIONS",
+      "pid": 2084669,
+      "started": "2026-11-02T07:47:54.917866+00:00",
+      "tasks": [
+        {
+          "run_id": "P0_smoke",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 24.604281425476074,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261102/logs/P0_smoke.log"
+        },
+        {
+          "run_id": "P0_domains",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 114.68499541282654,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261102/logs/P0_domains.log"
+        },
+        {
+          "run_id": "P0_entropy",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 144.72083687782288,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261102/logs/P0_entropy.log"
+        },
+        {
+          "run_id": "P3_domains",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 125.51544070243835,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261102/logs/P3_domains.log"
+        },
+        {
+          "run_id": "P3_entropy",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 158.54536962509155,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261102/logs/P3_entropy.log"
+        },
+        {
+          "run_id": "P4_domains",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 132.52567982673645,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261102/logs/P4_domains.log"
+        },
+        {
+          "run_id": "P4_entropy",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 147.86853170394897,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261102/logs/P4_entropy.log"
+        },
+        {
+          "run_id": "P6_domains",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 127.04596996307373,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261102/logs/P6_domains.log"
+        },
+        {
+          "run_id": "P6_entropy",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 150.00680661201477,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261102/logs/P6_entropy.log"
+        },
+        {
+          "run_id": "P5_domains",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 122.88173913955688,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261102/logs/P5_domains.log"
+        },
+        {
+          "run_id": "P5_entropy",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 151.5849165916443,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261102/logs/P5_entropy.log"
+        },
+        {
+          "run_id": "P1_domains",
+          "status": "FAILED",
+          "reason": null,
+          "returncode": 1,
+          "elapsed_s": 24.783875703811646,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261102/logs/P1_domains.log"
+        },
+        {
+          "run_id": "P2_domains",
+          "status": "FAILED",
+          "reason": null,
+          "returncode": 1,
+          "elapsed_s": 22.908908128738403,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261102/logs/P2_domains.log"
+        }
+      ],
+      "git_commit": "0577d9361e5200948a320745223eb6751655850d",
+      "protocol_sha256": "e321df0f9aae8c238b8cc03ce67a833af9c4d43a95f6edde3f94328faced1232",
+      "final_retrieval_health": {
+        "adapter_loaded": true,
+        "asset_manifest_sha256": "bafb0adc6daecdaa9c710f1bfcc270ec5c80eed163dc78c68b1c84d9206a3a32",
+        "premises": 252444,
+        "source_revision": "3e5987dc1009a7addc935bcd7b4ae777738a0848",
+        "status": "ready"
+      },
+      "health_latency_s": 0.004029884934425354,
+      "production_status": "RUNNING"
+    }
+  },
+  "scale256": {
+    "source_directory": "observation_20261102_scale256",
+    "source_commit": "4d4ffc90d416930d3c8ed1d43f857af1eddc2acf",
+    "execution": {
+      "status": "COMPLETED",
+      "pid": 2090215,
+      "started": "2026-11-02T08:43:28.698182+00:00",
+      "tasks": [
+        {
+          "run_id": "P0_domains",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 224.5914487838745,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261102_scale256/logs/P0_domains.log"
+        },
+        {
+          "run_id": "P3_domains",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 228.68491411209106,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261102_scale256/logs/P3_domains.log"
+        },
+        {
+          "run_id": "P4_domains",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 202.66745257377625,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261102_scale256/logs/P4_domains.log"
+        },
+        {
+          "run_id": "P6_domains",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 615.1805503368378,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261102_scale256/logs/P6_domains.log"
+        },
+        {
+          "run_id": "P5_domains",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 245.36208295822144,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261102_scale256/logs/P5_domains.log"
+        }
+      ],
+      "git_commit": "4d4ffc90d416930d3c8ed1d43f857af1eddc2acf",
+      "protocol_sha256": "508c073535f8fc578cd753afde722b467917c029ae9e230761122a6b9397d7cf",
+      "inputs_sha256": "bdd393bf5f10b6bc3cc73520e8598331f9001e4644b6a7631b6b95fe0138ab67",
+      "updated_at": "2026-11-02T09:11:36.416156+00:00",
+      "retrieval_health": {
+        "adapter_loaded": true,
+        "asset_manifest_sha256": "bafb0adc6daecdaa9c710f1bfcc270ec5c80eed163dc78c68b1c84d9206a3a32",
+        "premises": 252444,
+        "source_revision": "3e5987dc1009a7addc935bcd7b4ae777738a0848",
+        "status": "ready"
+      }
+    }
+  },
+  "all_layers_corrected": {
+    "source_directory": "observation_20261104_all_layers",
+    "source_commit": "b8c96d21df75100da97472ec839b73251942cc5f",
+    "execution": {
+      "status": "COMPLETED",
+      "pid": 2253266,
+      "started_at": "2026-11-04T04:21:49.628952+00:00",
+      "tasks": [
+        {
+          "run_id": "P0_domains",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 358.8396646976471,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261104_all_layers/logs/P0_domains.log"
+        },
+        {
+          "run_id": "P0_entropy",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 160.75656938552856,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261104_all_layers/logs/P0_entropy.log"
+        },
+        {
+          "run_id": "P3_domains",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 196.1974663734436,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261104_all_layers/logs/P3_domains.log"
+        },
+        {
+          "run_id": "P3_entropy",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 150.40628290176392,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261104_all_layers/logs/P3_entropy.log"
+        },
+        {
+          "run_id": "P4_domains",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 189.28398203849792,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261104_all_layers/logs/P4_domains.log"
+        },
+        {
+          "run_id": "P4_entropy",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 151.7335910797119,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261104_all_layers/logs/P4_entropy.log"
+        },
+        {
+          "run_id": "P6_domains",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 186.92465615272522,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261104_all_layers/logs/P6_domains.log"
+        },
+        {
+          "run_id": "P6_entropy",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 149.09347438812256,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261104_all_layers/logs/P6_entropy.log"
+        },
+        {
+          "run_id": "P5_domains",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 179.4154806137085,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261104_all_layers/logs/P5_domains.log"
+        },
+        {
+          "run_id": "P5_entropy",
+          "status": "DONE",
+          "reason": null,
+          "returncode": 0,
+          "elapsed_s": 151.53429102897644,
+          "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261104_all_layers/logs/P5_entropy.log"
+        }
+      ],
+      "git_commit": "b8c96d21df75100da97472ec839b73251942cc5f",
+      "protocol_sha256": "2695e40661bda59fddef8a72a39cc971868bff41ba358a2744cd91fa206d2001",
+      "domain_inputs_sha256": "bdd393bf5f10b6bc3cc73520e8598331f9001e4644b6a7631b6b95fe0138ab67",
+      "entropy_inputs_sha256": "1a48ad529a5d000fc139b0db5f69349b6466e2171d55a4900c03f74d003ab635",
+      "updated_at": "2026-11-04T04:59:29.507100+00:00",
+      "retrieval_health": {
+        "adapter_loaded": true,
+        "asset_manifest_sha256": "bafb0adc6daecdaa9c710f1bfcc270ec5c80eed163dc78c68b1c84d9206a3a32",
+        "premises": 252444,
+        "source_revision": "3e5987dc1009a7addc935bcd7b4ae777738a0848",
+        "status": "ready"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "status": "EXACT_SCREEN_PASS_PROVENANCE_UNKNOWN",
+  "matched_rows": [],
+  "test_sources": [
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/REALPROVER/data/minif2f_test.jsonl",
+      "sha256": "ff546d896fd3f635d32f5103e7bc20f1a52099c436911efe72920a5a1ef1ab38",
+      "text_fields": 244
+    },
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/REALPROVER/dependencies/source_cache/frenzymath--REAL-Prover-3e5987dc1009a7addc935bcd7b4ae777738a0848/Realprover/data/minif2f_test.jsonl",
+      "sha256": "ff546d896fd3f635d32f5103e7bc20f1a52099c436911efe72920a5a1ef1ab38",
+      "text_fields": 244
+    },
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/datasets/eval/legacy_candidate/minif2f_test.jsonl",
+      "sha256": "ff546d896fd3f635d32f5103e7bc20f1a52099c436911efe72920a5a1ef1ab38",
+      "text_fields": 244
+    }
+  ],
+  "limitations": "No source-theorem IDs in parquet: absence of exact overlap does not establish semantic disjointness. Train-distribution diagnostic only."
+}

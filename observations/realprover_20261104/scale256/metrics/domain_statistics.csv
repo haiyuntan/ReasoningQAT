@@ -1,0 +1,11 @@
+metric,seed,value
+tsne_silhouette,2,0.49221569299697876
+tsne_silhouette,3,0.49269434809684753
+high_dim_cosine_silhouette,2,0.2033061683177948
+domain_probe_cv_accuracy,2,0.9462840746054519
+biased_rbf_mmd2_Code_General,2,0.07612836360931396
+biased_rbf_mmd2_Code_Lean,2,0.27704453468322754
+biased_rbf_mmd2_Code_Math,2,0.08950424194335938
+biased_rbf_mmd2_General_Lean,2,0.4480811357498169
+biased_rbf_mmd2_General_Math,2,0.21091890335083008
+biased_rbf_mmd2_Lean_Math,2,0.14521491527557373

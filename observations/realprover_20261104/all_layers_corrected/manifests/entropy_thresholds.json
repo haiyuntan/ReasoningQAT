@@ -1,0 +1,8 @@
+{
+  "q25": 1.6350728868071198e-06,
+  "q75": 0.003933347832413723,
+  "calibration_tokens": 1946,
+  "input_sha256": "1a48ad529a5d000fc139b0db5f69349b6466e2171d55a4900c03f74d003ab635",
+  "source": "P0 threshold-only states",
+  "units": "nats/token"
+}

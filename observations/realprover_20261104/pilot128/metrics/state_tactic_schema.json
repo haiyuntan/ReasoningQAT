@@ -1,0 +1,22 @@
+{
+  "rows": 56407,
+  "schemas": [
+    "tactic: string\ninput: string\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 485"
+  ],
+  "nulls": {
+    "state": 0,
+    "tactic": 0
+  },
+  "unique_states": 55585,
+  "duplicate_pairs": 22,
+  "multi_tactic_states": 324,
+  "revision": "91bb339e61ff045d3ebf97cd94d1df1d755dd745",
+  "tokenizer_sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+  "input_template_counts": {
+    "STATE:": 56407,
+    "TACTIC:": 10099,
+    "<|im_start|>": 0,
+    "Here is the current STATE:": 46308,
+    "⊢": 56407
+  }
+}

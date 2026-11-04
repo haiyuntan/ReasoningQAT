@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "prefixes": 16,
+  "native_probe_sha256": "c187af67ced022eb9b105beca1da9feb400f2286a3948263c4080384864fab83",
+  "max_abs": 0.0,
+  "mean_abs": 0.0,
+  "top1_agreement": 1.0,
+  "limitation": "Frozen native reference from original export; independent runtime dense validation, not a new native forward in this environment."
+}

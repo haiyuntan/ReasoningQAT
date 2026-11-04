@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "samples": 1024,
+  "counts": {
+    "Lean": 256,
+    "General": 256,
+    "Math": 256,
+    "Code": 256
+  },
+  "pilot_samples_retained_identically": 512,
+  "duplicate_effective_windows": 0,
+  "leakage": "Official Lean corpus exact screen passed previously; semantic theorem overlap remains unknown. No test outcome read.",
+  "inputs_sha256": "bdd393bf5f10b6bc3cc73520e8598331f9001e4644b6a7631b6b95fe0138ab67"
+}

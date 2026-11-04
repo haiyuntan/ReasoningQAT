@@ -1,0 +1,41 @@
+{
+  "selected": 507,
+  "rejected": [
+    {
+      "row": 52631,
+      "reason": "length",
+      "tokens": 1085,
+      "subset": "analysis"
+    },
+    {
+      "row": 40304,
+      "reason": "length",
+      "tokens": 2212,
+      "subset": "analysis"
+    },
+    {
+      "row": 10669,
+      "reason": "length",
+      "tokens": 1803,
+      "subset": "analysis"
+    },
+    {
+      "row": 49539,
+      "reason": "length",
+      "tokens": 2088,
+      "subset": "analysis"
+    },
+    {
+      "row": 52402,
+      "reason": "length",
+      "tokens": 2162,
+      "subset": "analysis"
+    }
+  ],
+  "variants": {
+    "native_incontext": 408,
+    "deepseek_wrapped": 99
+  },
+  "prompt_source_sha256": "00d152f0d1e89c8b1db213ca8692b05722cdbcc037cf4b9f4d2f6011431cb038",
+  "source": "Full provided input, preserving proof and retrieval; normalize legacy User:/Assistant: wrapper to frozen formal qwen wrapper. No extra retrieval or tactic leakage."
+}

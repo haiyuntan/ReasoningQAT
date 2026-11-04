@@ -1,0 +1,111 @@
+{
+  "version": "20261102-v2-clean-restart",
+  "status": "PREREGISTERED_BEFORE_FORWARD",
+  "seed": 2,
+  "production_read_only": true,
+  "gpu": 3,
+  "resource_exception": "User explicitly authorizes GPU3 sharing with retrieval; supersedes exclusive-GPU condition only. Retrieval priority remains mandatory.",
+  "resource_policy": {
+    "batch": 1,
+    "max_sequence_length": 2048,
+    "max_completion_tokens": 128,
+    "process_allocator_limit_gib": 32,
+    "min_free_gpu_mib": 16384,
+    "duty_cycle": 0.5,
+    "health_interval_seconds": 2,
+    "retrieval_probe_interval_seconds": 30,
+    "retrieval_latency_limit": "3 consecutive probes above min(15s,max(10s,3*baseline)); any probe >=20s stops immediately",
+    "on_regression": "Terminate observation process group only; no automatic retry",
+    "strict_gpu_qos": false,
+    "min_available_host_gib": 64,
+    "latency_floor_s": 10.0,
+    "latency_baseline_multiplier": 3.0,
+    "latency_soft_cap_s": 15.0,
+    "latency_hard_limit_s": 20.0,
+    "latency_consecutive_limit": 3,
+    "health_limit_s": 2.0,
+    "health_consecutive_limit": 3
+  },
+  "models": [
+    "P0",
+    "P3",
+    "P4",
+    "P6",
+    "P5",
+    "P1",
+    "P2"
+  ],
+  "precision": "BF16 dense; W2 numerical weights, no INT2 kernel performance claim",
+  "attention": "eager; matches original native export probe reference",
+  "training": false,
+  "figure2": {
+    "only_right_panel": true,
+    "block_one_based": 14,
+    "block_zero_based": 13,
+    "hook": "decoder block output before final model norm",
+    "pooling": "Mean over identical 128-token raw text windows + identical qwen chat wrapper; raw/no-wrapper and last-token sensitivity tables",
+    "domains": [
+      "General",
+      "Math",
+      "Code",
+      "Lean"
+    ],
+    "pilot_samples_per_domain": 128,
+    "main_samples_per_domain": 256,
+    "pca_components": 50,
+    "perplexity": 30,
+    "tsne_seeds": [
+      2,
+      3
+    ],
+    "author_exact_replication": false,
+    "native_template_control": true,
+    "sequence_length": 128,
+    "scope": "pilot128 per domain; main256 not claimed"
+  },
+  "entropy": {
+    "population": "state_tactic_pairs, in_training_distribution",
+    "state_groups": 512,
+    "threshold_state_groups": 128,
+    "analysis_state_groups": 384,
+    "eligible": "completion tokens only, shifted next-token targets; no EOS, no prompt or padding",
+    "bins": [
+      0.25,
+      0.75
+    ],
+    "threshold_model": "P0",
+    "threshold_freeze_before_W2": true,
+    "full_vocabulary": true,
+    "logit_chunk_tokens": 16,
+    "epsilon": 1e-08,
+    "sampler": {
+      "temperature": 1.5,
+      "top_p": 0.9
+    },
+    "primary": "Low minus High state-cluster-bootstrap mean log own-tail mass ratio",
+    "bootstrap_replicates": 2000,
+    "confidence": 0.95,
+    "secondary": [
+      "fixed_teacher_top1_tail",
+      "delta_nll",
+      "top1_flip",
+      "teacher_gold_top1_correct",
+      "raw_rr",
+      "top20_unrenormalized_KD"
+    ],
+    "truncation": "Reject whole overlength pairs; never splice or truncate completion. Report eligible population and length confounding.",
+    "prompt": "Pinned PromptManage.chat_template_to_prompt([user=input], qwen), preserving full provided proof/state/retrieval; no new retrieval queries for samples"
+  },
+  "parity": {
+    "prefixes": 16,
+    "requires_existing_export_evidence": true,
+    "new_runtime_native_parity_required": false,
+    "max_abs_tolerance": 0.125,
+    "mean_abs_tolerance": 0.01,
+    "top1_agreement_min": 1.0,
+    "independent_frozen_native_reference_required": true,
+    "reason": "Validate dense runtime against SHA-verified original native probe on exact original 16 prefixes; no self-parity or new native package install"
+  },
+  "formal_results": "WAITING_FINAL_EVAL; never select observations or thresholds from theorem outcomes",
+  "rr_scale_gradient_diagnostic": "Only on a separate in-memory native model; never save weights or call optimizer.step"
+}

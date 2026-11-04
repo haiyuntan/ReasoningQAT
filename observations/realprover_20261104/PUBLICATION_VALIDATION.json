@@ -1,0 +1,12 @@
+{
+  "files_verified": 161,
+  "published_bytes": 13653076,
+  "compressed_source_checksums": "PASS",
+  "all_28_layers": "PASS",
+  "representative_layer": 3,
+  "all_methods_completed": "PASS",
+  "fixed_inputs": "PASS",
+  "python_syntax": "PASS",
+  "credential_scan": "PASS",
+  "excluded": "weights, activation/logit tensors, environments, caches, credentials"
+}

@@ -1,0 +1,51 @@
+{
+  "name": "obs-data",
+  "channels": [
+    "https://repo.anaconda.com/pkgs/main"
+  ],
+  "dependencies": [
+    "python=3.11.18",
+    "pip",
+    {
+      "pip": [
+        "certifi==2026.10.23",
+        "charset-normalizer==3.5.2",
+        "cloudpickle==3.1.2",
+        "contourpy==1.3.3",
+        "cycler==0.12.1",
+        "filelock==4.2.6",
+        "fonttools==4.68.0",
+        "fsspec==2026.9.0",
+        "huggingface-hub==0.30.2",
+        "idna==3.20",
+        "iniconfig==2.3.1",
+        "joblib==1.6.0",
+        "kiwisolver==1.5.1",
+        "matplotlib==3.9.2",
+        "numpy==1.26.4",
+        "packaging==26.3",
+        "pandas==2.2.3",
+        "pillow==13.0.0",
+        "pluggy==1.7.0",
+        "pyarrow==19.0.1",
+        "PyMuPDF==1.25.5",
+        "pyparsing==3.3.3",
+        "pytest==8.3.5",
+        "python-dateutil==4.0.0",
+        "pytz==2026.6",
+        "PyYAML==6.0.2",
+        "requests==2.34.2",
+        "scikit-learn==1.6.1",
+        "scipy==1.15.3",
+        "threadpoolctl==3.7.0",
+        "tokenizers==0.21.4",
+        "tqdm==4.70.1",
+        "typing_extensions==4.16.0",
+        "tzdata==2026.6",
+        "urllib3==2.8.0"
+      ]
+    }
+  ],
+  "rebuild_note": "Install conda explicit file, then exact wheel URLs/hashes in manifests/data-wheel-origins.json. Freeze contains transitive versions. No production prefix reused.",
+  "pip_check": "No broken requirements found."
+}

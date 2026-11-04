@@ -1,0 +1,13 @@
+{
+  "counts": {
+    "Lean": 256,
+    "General": 256,
+    "Math": 256,
+    "Code": 256
+  },
+  "source_groups": "SHA256 exact raw text/state, no shared group",
+  "selection": "Deterministic expanded selection; first eligible sequential stream for non-Lean, seed2 shuffle for Lean. Selection-order limitation must be reported.",
+  "raw_token_window": 128,
+  "shared_wrapper": "qwen",
+  "main_256_per_domain": "NOT_RUN_PILOT_ONLY"
+}

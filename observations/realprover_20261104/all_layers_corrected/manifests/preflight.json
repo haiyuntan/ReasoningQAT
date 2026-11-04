@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "domain_samples": 1024,
+  "entropy_samples": 507,
+  "w2_modules_per_model": 196,
+  "group_size": 128,
+  "weight_bits": 2,
+  "layer_count": 28,
+  "formal_code_unchanged": true,
+  "runtime_tests": "Required separately before GPU launch"
+}
