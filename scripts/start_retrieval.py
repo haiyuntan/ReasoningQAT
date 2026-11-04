@@ -14,7 +14,25 @@ sys.path.insert(0, str(RESEARCH / 'adapters'))
 from common import python_for, save
 
 
+def validate_acceleration():
+    evidence = json.loads((RESEARCH / 'manifests/retrieval_acceleration.json').read_text())
+    expected_sources = {'REALPROVER/retrieval/server.py',
+                        'REALPROVER/retrieval/worker/premise_selector.py',
+                        'REALPROVER/retrieval/worker/exact_search.py',
+                        'REALPROVER/configs/retrieval_runtime.json'}
+    if (evidence['status'] != 'PASS' or evidence['parity_queries'] < 128
+            or not evidence['ids_scores_and_http_results_identical']
+            or set(evidence['validated_sources']) != expected_sources):
+        raise RuntimeError('Retrieval acceleration has not passed its parity gate')
+    for name, expected in evidence['validated_sources'].items():
+        if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected:
+            raise RuntimeError(f'Retrieval changed after acceleration validation: {name}')
+    return evidence
+
+
 def main():
+    validate_acceleration()
+    runtime_sha = hashlib.sha256((ROOT / 'REALPROVER/configs/retrieval_runtime.json').read_bytes()).hexdigest()
     port = int(os.environ.get('LEANSEARCH_PORT', '8080'))
     try:
         with urllib.request.urlopen(f'http://127.0.0.1:{port}/health', timeout=5) as response:
@@ -22,6 +40,7 @@ def main():
         expected = hashlib.sha256((RESEARCH / 'manifests/retrieval_assets.json').read_bytes()).hexdigest()
         if (not health.get('adapter_loaded')
                 or health.get('source_revision') != '3e5987dc1009a7addc935bcd7b4ae777738a0848'
+                or health.get('runtime_sha256') != runtime_sha
                 or health.get('asset_manifest_sha256') != expected):
             raise RuntimeError('Port belongs to an unexpected service')
         print(json.dumps({'status': 'ALREADY_READY', 'health': health}))
@@ -39,6 +58,7 @@ def main():
     env = dict(os.environ, HF_HUB_OFFLINE='1', HF_DATASETS_OFFLINE='1',
                USE_TF='0', USE_FLAX='0',
                TOKENIZERS_PARALLELISM='false', PYTHONUNBUFFERED='1')
+    env['REALPROVER_RETRIEVAL_PROFILE'] = str(output / 'requests.jsonl')
     env.pop('PYTHONPATH', None)
     server = ROOT / 'REALPROVER/retrieval/server.py'
     with (output / 'server.log').open('a') as stream:

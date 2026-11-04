@@ -30,7 +30,7 @@ def file_digest(path):
     return digest.hexdigest()
 
 
-def fingerprint(root=ROOT):
+def fingerprint(root=ROOT, details=None):
     """Include local training/evaluation code, configs and asset manifests.
 
     Download progress is deliberately excluded: immutable model identity belongs
@@ -55,9 +55,13 @@ def fingerprint(root=ROOT):
     if inventory.is_file():
         selected.append(inventory)
     h = hashlib.sha256()
+    def feed(key, data):
+        h.update(data)
+        if details is not None:
+            details[key] = hashlib.sha256(data).hexdigest()
     for p in sorted(selected):
-        h.update(str(p.relative_to(root)).encode() + b'\0')
-        h.update(p.read_bytes())
+        feed('source/' + str(p.relative_to(root)),
+             str(p.relative_to(root)).encode() + b'\0' + p.read_bytes())
     # Runtime choices participate too: switching Python, Lean binaries or the
     # retrieval endpoint invalidates old smoke evidence.
     runtime_path = root / 'research/configs/runtime.json'
@@ -68,37 +72,43 @@ def fingerprint(root=ROOT):
             executable = Path(value)
             if not executable.is_absolute():
                 executable = root / executable
-            h.update(str(executable.resolve()).encode())
+            feed('python/' + role + '/path', str(executable.resolve()).encode())
             if executable.exists():
                 stat = executable.stat()
-                h.update(str((stat.st_size, stat.st_mtime_ns)).encode())
+                feed('python/' + role + '/stat', str((stat.st_size, stat.st_mtime_ns)).encode())
             for metadata in sorted(executable.parent.parent.glob('lib/python*/site-packages/*.dist-info/METADATA')):
                 if metadata.parent.name.lower().startswith(('torch-', 'transformers-', 'accelerate-', 'vllm-', 'gptqmodel-', 'trl-')):
-                    h.update(metadata.read_bytes())
+                    feed('python/' + role + '/' + metadata.parent.name, metadata.read_bytes())
     for key in ('REALPROVER_LEAN_WORKSPACE', 'REALPROVER_JIXIA_BIN', 'REALPROVER_INTERACTIVE_ROOT', 'REALPROVER_LEAN_BIN', 'LEANSEARCH_PORT'):
-        h.update((key + '=' + os.environ.get(key, '')).encode())
+        feed('environment/' + key, (key + '=' + os.environ.get(key, '')).encode())
     lean = Path(os.environ.get('REALPROVER_LEAN_WORKSPACE', str(root / 'REALPROVER/dependencies/lean_test_v4160')))
     jixia = Path(os.environ.get('REALPROVER_JIXIA_BIN', str(root / 'REALPROVER/dependencies/jixia/.lake/build/bin/jixia')))
     interactive = Path(os.environ.get('REALPROVER_INTERACTIVE_ROOT', str(root / 'REALPROVER/dependencies/interactive')))
     for path in (lean / 'lean-toolchain', lean / 'Header.lean', lean / 'lake-manifest.json', jixia,
                  interactive / '.lake/build/bin/interactive', interactive / 'lake-manifest.json'):
         if path.is_file():
+            component = hashlib.sha256()
             with path.open('rb') as stream:
                 for chunk in iter(lambda: stream.read(8 * 1024 * 1024), b''):
                     h.update(chunk)
+                    component.update(chunk)
+            if details is not None:
+                details['lean/' + str(path)] = component.hexdigest()
     if os.environ.get('REALPROVER_LEAN_BIN'):
         for name in ('lean', 'lake'):
-            h.update(file_digest(Path(os.environ['REALPROVER_LEAN_BIN']) / name).encode())
+            feed('lean_bin/' + name, file_digest(Path(os.environ['REALPROVER_LEAN_BIN']) / name).encode())
     for pattern in ('datasets/manifests/*.json', 'datasets/numinamath_128/calib.jsonl',
                     'datasets/eval/legacy_candidate/*.jsonl', 'REALPROVER/data/*.jsonl'):
         for path in sorted(root.glob(pattern)):
-            h.update(str(path.relative_to(root)).encode() + b'\0' + path.read_bytes())
+            feed('dataset/' + str(path.relative_to(root)),
+                 str(path.relative_to(root)).encode() + b'\0' + path.read_bytes())
     # Large raw datasets: detect replacement without hashing 28GB on each
     # command. Actual selected token/mask hashes are saved by training adapters.
     for folder in ('datasets/openthoughts3', 'datasets/fineweb-edu'):
         for path in sorted((root / folder).rglob('*.parquet')):
             stat = path.stat()
-            h.update(str((str(path.relative_to(root)), stat.st_size, stat.st_mtime_ns)).encode())
+            feed('raw_dataset/' + str(path.relative_to(root)),
+                 str((str(path.relative_to(root)), stat.st_size, stat.st_mtime_ns)).encode())
     return h.hexdigest()
 
 

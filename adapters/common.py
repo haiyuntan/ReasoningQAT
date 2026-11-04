@@ -63,8 +63,8 @@ def execute(argv, cwd=ROOT, env=None):
         process.wait()
 
 
-def terminate_job(pid):
-    """Cancel this owned session and descendants, including separate Lean sessions."""
+def job_processes(pid):
+    """Find this owned session and descendants, including separate Lean sessions."""
     table = {}
     for path in Path('/proc').glob('[0-9]*/stat'):
         try:
@@ -78,6 +78,12 @@ def terminate_job(pid):
         if expanded == owned:
             break
         owned = expanded
+    return owned
+
+
+def terminate_job(pid):
+    """Cancel this owned session and descendants, including separate Lean sessions."""
+    owned = job_processes(pid)
     for sig in (signal.SIGTERM, signal.SIGKILL):
         for child in sorted(owned, reverse=True):
             try:

@@ -39,6 +39,8 @@ def require_stopped(source, state):
 
 
 def audit_retrieval_identity(state):
+    from start_retrieval import validate_acceleration
+    acceleration = validate_acceleration()
     old = json.loads(subprocess.check_output(['git', '-C', str(RESEARCH), 'show',
                      f'{state["commits"]["research"]}:manifests/retrieval_assets.json']))
     new = load(RESEARCH / 'manifests/retrieval_assets.json')
@@ -46,6 +48,7 @@ def audit_retrieval_identity(state):
     if old['service_source_revision'] != new['service_source_revision'] or identity(old) != identity(new):
         raise RuntimeError('Retrieval content changed; cannot merge old evaluations')
     return {'content_identical': True, 'source_manifest': old,
+            'acceleration_validation': acceleration,
             'current_manifest_sha256': sha(RESEARCH / 'manifests/retrieval_assets.json')}
 
 

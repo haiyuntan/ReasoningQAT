@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "parity_queries": 128,
+  "ids_scores_and_http_results_identical": true,
+  "validated_sources": {
+    "REALPROVER/retrieval/server.py": "0d8487bc6f8017fdf5d3c06f29f849259187027e119c0950fa9a5a13c0b9c660",
+    "REALPROVER/retrieval/worker/premise_selector.py": "f3fdc166244f92964f7865a6ad312c05cef39d9fe30505452feee50d36d06f4b",
+    "REALPROVER/retrieval/worker/exact_search.py": "fc75eee9d55a313906975793968345a84506e9d789630da54abb1b9d4efa327f",
+    "REALPROVER/configs/retrieval_runtime.json": "fcb60604f57bbe9b69934decbb8e9fd58d637721c59c0e757d6248e8168c5d69"
+  },
+  "backend": "cpu_sharded_8",
+  "validation_evidence": "runs/retrieval_repair_20261104",
+  "http_mean_seconds": {
+    "cold_serial": 0.2247592144024869,
+    "cold_three_clients": 0.6946511526281635,
+    "cache_hit_three_clients": 0.0029141498419145745
+  },
+  "cpu_search_mean_seconds": 0.17059865943156183,
+  "gpu_backend": "UNVALIDATED_NOT_ENABLED",
+  "cache_rss_before_kib": 10042004,
+  "cache_rss_after_kib": 10042004
+}

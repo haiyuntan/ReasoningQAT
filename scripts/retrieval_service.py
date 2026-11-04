@@ -8,7 +8,7 @@ import time
 import urllib.error
 import urllib.request
 
-from start_retrieval import ROOT, RESEARCH, main as start
+from start_retrieval import ROOT, RESEARCH, main as start, validate_acceleration
 from common import load, sha, save
 
 PROCESS = ROOT / 'runs/realprover_retrieval/process.json'
@@ -58,6 +58,7 @@ def stop():
 
 
 def ready(timeout=1800):
+    validate_acceleration()
     shared = os.environ.get('REALPROVER_SHARED_RETRIEVAL') == '1'
     if not shared:
         start()
@@ -69,6 +70,7 @@ def ready(timeout=1800):
             with urllib.request.urlopen(f'http://127.0.0.1:{port}/health', timeout=5) as response:
                 health = json.load(response)
             if (health.get('status') != 'ready' or health.get('adapter_loaded') is not True
+                    or health.get('runtime_sha256') != sha(ROOT / 'REALPROVER/configs/retrieval_runtime.json')
                     or health.get('asset_manifest_sha256') != expected
                     or health.get('source_revision') != load(RESEARCH / 'manifests/retrieval_assets.json')['service_source_revision']):
                 raise RuntimeError('Retrieval identity mismatch')

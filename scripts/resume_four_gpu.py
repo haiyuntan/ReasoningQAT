@@ -13,6 +13,7 @@ from run_four_gpu import Campaign, terminate_tree
 from experiment_pipeline import ROOT, RESEARCH, fingerprint, formal_smoke_gate, validate_receipt
 from common import load, save, sha, data_environment, python_for, terminate_job
 import retrieval_service
+from fingerprint_guard import FingerprintGuard
 
 RUNS = ['P1', 'P2', 'P3', 'P4', 'P5', 'P6']
 
@@ -48,6 +49,7 @@ class Adaptive(Campaign):
         self.training_first = training_first
         self.retrieval_gpu = None
         self.cpu = None
+        self.fingerprint_guard = None
         self.jobs = {run: {'prepare': 'PENDING', 'evaluate': 'PENDING'} for run in RUNS}
         self.state.update(status='RUNNING', policy='independent failures; training first' if training_first else 'independent failures; mixed training/evaluation',
                           methods=self.jobs, retrieval_gpu=None, data_preflight='PENDING')
@@ -204,6 +206,9 @@ class Adaptive(Campaign):
         self.state['retrieval_gpu'] = self.retrieval_gpu
 
     def run(self):
+        self.fingerprint_guard = FingerprintGuard(self.digest, self.results / 'control')
+        self.state['status'] = 'VALIDATING_ARTIFACTS'
+        self.record()
         for run in RUNS:
             out = self.results / 'formal' / run
             if (out / 'prepared.json').exists():
@@ -212,12 +217,13 @@ class Adaptive(Campaign):
             if (out / 'receipt.json').exists():
                 validate_receipt(load(out / 'receipt.json'), run, 'formal', self.digest)
                 self.jobs[run]['evaluate'] = 'DONE'
+            self.record()
         if any(self.jobs[run]['prepare'] != 'DONE' for run in ('P1', 'P2', 'P3')):
             raise RuntimeError('Audited P1/P2/P3 preparation imports required before this continuation')
+        self.state['status'] = 'RUNNING'
         self.start_data()
         while True:
-            if fingerprint() != self.digest:
-                raise RuntimeError('Global code/config fingerprint changed; refusing mixed results')
+            self.fingerprint_guard.check([job[2] for job in self.active.values()])
             self.poll_jobs()
             self.poll_data()
             self.schedule()
