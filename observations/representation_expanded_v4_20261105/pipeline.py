@@ -17,7 +17,7 @@ def prepare_qwen():
     dest=OUT/'qwen'
     if (dest/'prepared.json').exists():return
     from transformers import AutoTokenizer
-    source=load_module(ROOT/'fig2b_qwen3_v2_20261105/run.py','qwen_original')
+    source=load_module(OUT/'selection_source.py','qwen_original')
     source.OUT=dest;source.N=512
     tok=AutoTokenizer.from_pretrained(ROOT/'models/Qwen3-1.7B',local_files_only=True)
     candidates=source.select(tok)
@@ -30,7 +30,7 @@ def prepare_qwen():
         selected.extend(base+extra)
     selected.sort(key=lambda r:(source.DOMAINS.index(r['domain']),r['sha256']))
     (dest/'inputs.jsonl').write_text('\n'.join(json.dumps(r) for r in selected)+'\n')
-    write(dest/'prepared.json',{'groups_per_domain':512,'original_groups_retained':512,'total_groups':2048,'selection':'Original128/domain retained; add384/domain from seed2 sampler, cap32/shard/domain. FineWeb source-order buffering bias retained.'})
+    write(dest/'prepared.json',{'groups_per_domain':512,'original_groups_retained':512,'total_groups':2048,'selection':'Original128/domain retained; add384/domain from seed2 sampler, cap32/shard for Code/Math, cap64/shard for Science (only10 source shards). FineWeb source-order buffering bias retained.'})
 
 def qwen_forward():
     import torch

@@ -27,3 +27,7 @@ The paper does not publish exact Fig2b sampling/plotting parameters. This is a r
 `pipeline.py` runs under the existing read-only forward environment. Qwen and REAL GPU stages run sequentially on GPU3, with batch1, 50% duty, 12GiB/32GiB allocator caps respectively, reserve16GiB free GPU and64GiB available host memory. Health/probe/fingerprint/new-error checks reuse the existing guard. Only the observation child process group may be stopped. No automatic retry after guard failure. CPU t-SNE begins after GPU extraction children exit and uses2 threads. All old outputs remain intact.
 
 Status: `status.json`; controller log: `nohup.log`; GPU logs: `{qwen,real}/logs/`; figures: `{qwen,real}/plots/`. Completed marker is written only after all27 panels finish. Existing per-panel completion files allow CPU plotting resume; finished feature caches avoid repeated extraction.
+
+## Sampling correction
+
+Initial attempt stopped before GPU extraction: Science has10 source shards, so cap32/shard yields at most320 groups. Expanded sampler now caps Science at64/shard, Code/Math remain32/shard. Eligibility, seed and original128 retained groups are unchanged. No retry was caused by a retrieval regression. `selection_source.py` freezes the sampler instead of modifying the original v2 script.
