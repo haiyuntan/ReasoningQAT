@@ -6,5 +6,6 @@
   "svgs": 18,
   "transform_preserves_pair_distances_up_to_one_scale": true,
   "no_display_point_clipping": true,
-  "base_weights_and_tokenizer_match_official": true
+  "base_weights_and_tokenizer_match_official": true,
+  "svg_whitespace_and_xml_validation": "PASS: whitespace tokens preserved and18SVGs parsed"
 }

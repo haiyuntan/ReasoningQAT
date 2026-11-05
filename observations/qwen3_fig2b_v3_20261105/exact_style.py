@@ -70,7 +70,15 @@ def main():
         for d in lines:
             r=d['rect'];left=(r.x0-rect[0])*ratio;top=(r.y0-rect[1])*ratio+50
             fig.add_artist(plt.Rectangle((left/488,1-(top+r.height*ratio)/407),r.width*ratio/488,r.height*ratio/407,color=d['fill'],linewidth=0,transform=fig.transFigure))
-        for ext in ['png','pdf','svg']:fig.savefig(out/(name+'.'+ext),dpi=200)
+        for ext in ['png','pdf','svg']:
+            destination=out/(name+'.'+ext)
+            fig.savefig(destination,dpi=200)
+            if ext=='svg':
+                # Matplotlib path attributes include trailing spaces by default.
+                original=destination.read_text()
+                normalized='\n'.join(line.rstrip() for line in original.splitlines())+'\n'
+                assert original.split()==normalized.split()
+                destination.write_text(normalized)
         transformed=metadata['points_outside_display_axes'] is not None
         annotation='Global orientation + uniform display scaling; native coordinates retained' if transformed and metadata['angle_radians'] else ('Uniform display scaling only; native coordinates retained' if transformed else 'Native t-SNE coordinates; no display transform')
         fig.text(.5,.008,annotation,ha='center',va='bottom',fontsize=4.5,color='#444444')
