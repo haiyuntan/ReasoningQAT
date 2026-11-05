@@ -1,0 +1,35 @@
+{
+  "model": "Qwen3-1.7B BF16",
+  "block_one_based": 14,
+  "hook": "decoder block output before final model norm",
+  "counts": {
+    "Pre-training": 256,
+    "Code": 256,
+    "Math": 256,
+    "Science": 256
+  },
+  "input_sha256": "55c9bf3788f2ac1473008174facb1a25e35fa472524029ad19d1821f5643e2c3",
+  "selection": "first eligible unique human prompt, deterministic shard order; not random corpus sample",
+  "contexts": [
+    128,
+    512
+  ],
+  "pooling": [
+    "mean",
+    "last",
+    "token"
+  ],
+  "normalizations": [
+    "none",
+    "l2"
+  ],
+  "seeds": [
+    2,
+    3,
+    42
+  ],
+  "perplexity": 30,
+  "pca": 50,
+  "iterations": 1500,
+  "caveat": "Author pooling, sampling and t-SNE settings unavailable; sensitivity study, not exact numerical reproduction. Prompt-only assumption; no chat wrapper or generated answers."
+}

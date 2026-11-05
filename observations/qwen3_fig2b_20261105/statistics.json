@@ -1,0 +1,90 @@
+[
+  {
+    "feature": "mean_128",
+    "norm": "none",
+    "silhouette": 0.08761871606111526,
+    "dispersion": {
+      "Pre-training": 1712.4884033203125,
+      "Code": 1275.365478515625,
+      "Math": 1212.159912109375,
+      "Science": 1555.640625
+    }
+  },
+  {
+    "feature": "mean_128",
+    "norm": "l2",
+    "silhouette": 0.09248903393745422,
+    "dispersion": {
+      "Pre-training": 0.05407680198550224,
+      "Code": 0.04225989431142807,
+      "Math": 0.04122202843427658,
+      "Science": 0.04947252571582794
+    }
+  },
+  {
+    "feature": "last_128",
+    "norm": "none",
+    "silhouette": -0.006187966093420982,
+    "dispersion": {
+      "Pre-training": 16116.416015625,
+      "Code": 13473.080078125,
+      "Math": 12142.171875,
+      "Science": 13971.576171875
+    }
+  },
+  {
+    "feature": "last_128",
+    "norm": "l2",
+    "silhouette": 0.00969129428267479,
+    "dispersion": {
+      "Pre-training": 0.5686991214752197,
+      "Code": 0.5700409412384033,
+      "Math": 0.5416742563247681,
+      "Science": 0.5565871000289917
+    }
+  },
+  {
+    "feature": "mean_512",
+    "norm": "none",
+    "silhouette": 0.12030636519193649,
+    "dispersion": {
+      "Pre-training": 1688.9560546875,
+      "Code": 965.3016357421875,
+      "Math": 1698.09423828125,
+      "Science": 1998.7568359375
+    }
+  },
+  {
+    "feature": "mean_512",
+    "norm": "l2",
+    "silhouette": 0.14203524589538574,
+    "dispersion": {
+      "Pre-training": 0.09285411238670349,
+      "Code": 0.06470829248428345,
+      "Math": 0.06673349440097809,
+      "Science": 0.09184432029724121
+    }
+  },
+  {
+    "feature": "last_512",
+    "norm": "none",
+    "silhouette": -0.003602921962738037,
+    "dispersion": {
+      "Pre-training": 13240.599609375,
+      "Code": 10608.17578125,
+      "Math": 5766.47998046875,
+      "Science": 8388.52734375
+    }
+  },
+  {
+    "feature": "last_512",
+    "norm": "l2",
+    "silhouette": 0.014902129769325256,
+    "dispersion": {
+      "Pre-training": 0.5222631692886353,
+      "Code": 0.5040838718414307,
+      "Math": 0.296034038066864,
+      "Science": 0.40686219930648804
+    }
+  }
+]

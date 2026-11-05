@@ -1,0 +1,5 @@
+{
+  "status": "DONE",
+  "main_figure": "mean_512_none_seed2.png",
+  "warning": "Do not choose seeds to match paper; compare high-dimensional statistics and all controls."
+}

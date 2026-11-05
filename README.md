@@ -33,3 +33,7 @@ env/bootstrap/bin/python research/scripts/download_realprover.py
 ## REAL-Prover observation results
 
 See [REAL-Prover observation results and reproduction](reports/REALPROVER_OBSERVATIONS.md) for the 28-layer analysis, representative t-SNE figures and numerically corrected entropy diagnostics.
+
+## Qwen3-1.7B Fig. 2(b) reconstruction (2026-11-05)
+
+[图片画廊、对照和统计](observations/qwen3_fig2b_20261105/README.md)。流程完成，论文核心几何现象尚未确认复现；包含全部28张图片，避免挑图。
