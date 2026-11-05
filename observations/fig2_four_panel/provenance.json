@@ -1,0 +1,79 @@
+{
+  "layout": "top: paper Fig2a, paper Fig2b; bottom: Qwen v3 noPCA seed42, REAL-Prover five-domain raw128 seed42",
+  "sample_scope": "Lower panels use completed128 groups/domain \u00d74token results; expanded512-group results still running at composition time.",
+  "operation": "Aspect-preserving resize, white padding; no added text; no cropped plot content",
+  "panels": [
+    {
+      "panel": 0,
+      "source": "figures/fig2_four_panel/paper_fig2a.png",
+      "sha256": "61f549faa4da52fd272974caabea88e74bd775ba60f7764b93ddd7b31291bb49",
+      "source_size": [
+        590,
+        462
+      ],
+      "display_size": [
+        1440,
+        1128
+      ],
+      "paste_xy": [
+        0,
+        38
+      ]
+    },
+    {
+      "panel": 1,
+      "source": "fig2b_qwen3_v3_20261105/paper_reference_with_heading.png",
+      "sha256": "c383c865a822d0cc329ce80effb7fd85221ab47e9a22f659ebc03fde2b6dc623",
+      "source_size": [
+        977,
+        815
+      ],
+      "display_size": [
+        1440,
+        1201
+      ],
+      "paste_xy": [
+        1472,
+        1
+      ]
+    },
+    {
+      "panel": 2,
+      "source": "fig2b_qwen3_v3_20261105/paper_style/pcaNone_initrandom_lr200_perp30.png",
+      "sha256": "684e720601568851515c0060948ad1b6eb521b0a0ad868b53882649e1442a964",
+      "source_size": [
+        976,
+        814
+      ],
+      "display_size": [
+        1440,
+        1201
+      ],
+      "paste_xy": [
+        0,
+        1237
+      ]
+    },
+    {
+      "panel": 3,
+      "source": "realprover_five_domain_v3_20261105/plots/realprover_five_domain_raw128_seed42.png",
+      "sha256": "0d92c77f9ced653c270136e80a9c848e12658092c562b7ec82e5fee014dc949c",
+      "source_size": [
+        1440,
+        1200
+      ],
+      "display_size": [
+        1440,
+        1200
+      ],
+      "paste_xy": [
+        1472,
+        1238
+      ]
+    }
+  ],
+  "size": [
+    2912,
+    2440
+  ]
+}
