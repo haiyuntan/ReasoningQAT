@@ -1,0 +1,9 @@
+{
+  "left": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/fig2b_qwen3_v3_20261105/paper_reference_with_heading.png",
+  "right": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/fig2b_qwen3_v3_20261105/paper_style/pcaNone_initrandom_lr200_perp30.png",
+  "left_sha256": "c383c865a822d0cc329ce80effb7fd85221ab47e9a22f659ebc03fde2b6dc623",
+  "right_sha256": "684e720601568851515c0060948ad1b6eb521b0a0ad868b53882649e1442a964",
+  "gap_pixels": 32,
+  "operation": "Lossless side-by-side paste on white canvas; no added titles, captions, panel letters, arrows or footnotes; existing axes/domain headings/colorbars retained.",
+  "pixel_identity_check": "PASS"
+}

@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "counts": {
+    "Pre-training": 128,
+    "Code": 128,
+    "Math": 128,
+    "Science": 128,
+    "Formal Proof": 128
+  },
+  "input_sha256": "021a77cd279b2af0d7c4b00e3b8e28542de3907017b87ca4f5ccfd4f185527d0",
+  "nonproof_groups": "Same512 source groups as Qwen v2/v3; retokenized using REAL-Prover tokenizer, no reuse of Qwen3 token IDs",
+  "proof_source_revision": "91bb339e61ff045d3ebf97cd94d1df1d755dd745",
+  "proof_parquet_sha256": "5d3239af61185af7d4ab882f38e8c3dc443881616ce1b1e5003f58867fef8c5f",
+  "leakage_screen_sha256": "e30c2611e318201a795c974a28e0f758aad07906e690a797a6c58fd1043fda4a",
+  "leakage_status": "Reused exact-match screen; source-theorem identity/semantic overlap unknown. Training-distribution observation.",
+  "proof_selection": "Seed2 shuffled rows, unique raw-state hashes, raw state+newline+tactic >=128 tokens, tactic2..48tokens; longer-state selection bias",
+  "raw128": "All domains last128 raw content tokens; no domain-specific instructions or chat wrapper; sample4 uniform positions16..127",
+  "native_context": "Native-format context, keep last2048 tokens; sample corresponding4 relative positions from last128 eligible content tokens. Proof restricts to actual current state and gold tactic, excluding instructions/examples/retrieval token positions.",
+  "native_context_length": {
+    "Pre-training": {
+      "min": 2048,
+      "median": 2048.0,
+      "max": 2048
+    },
+    "Code": {
+      "min": 2048,
+      "median": 2048.0,
+      "max": 2048
+    },
+    "Math": {
+      "min": 2048,
+      "median": 2048.0,
+      "max": 2048
+    },
+    "Science": {
+      "min": 2048,
+      "median": 2048.0,
+      "max": 2048
+    },
+    "Formal Proof": {
+      "min": 693,
+      "median": 1116.5,
+      "max": 2048
+    }
+  },
+  "raw_sampled_proof_token_roles": {
+    "state": 437,
+    "tactic": 72,
+    "boundary": 3
+  },
+  "no_test_outcome_or_model_success_used": true
+}
