@@ -1,0 +1,704 @@
+[
+  {
+    "name": "real_raw128_baseline128x4_seed42",
+    "points": 2560,
+    "groups_per_domain": 128,
+    "tokens_per_group": 4,
+    "seed": 42,
+    "high_dimensional_within_domain_dispersion": {
+      "Pre-training": 87559.015625,
+      "Code": 44133.46875,
+      "Math": 52500.4765625,
+      "Science": 105680.046875,
+      "Formal Proof": 52020.1953125
+    },
+    "kl": 2.2585291862487793,
+    "elapsed_s": 9.572602272033691,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": -1.6863153330906644,
+      "reflected": true,
+      "orthogonal_matrix": [
+        [
+          0.11526225106324313,
+          -0.9933350962690455
+        ],
+        [
+          -0.9933350962690455,
+          -0.11526225106324313
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        0.7513537230578038,
+        -0.5571835082019447
+      ],
+      "uniform_scale": 0.6310704306505563,
+      "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  },
+  {
+    "name": "real_raw128_baseline128x4_seed2",
+    "points": 2560,
+    "groups_per_domain": 128,
+    "tokens_per_group": 4,
+    "seed": 2,
+    "high_dimensional_within_domain_dispersion": {
+      "Pre-training": 87559.015625,
+      "Code": 44133.46875,
+      "Math": 52500.4765625,
+      "Science": 105680.046875,
+      "Formal Proof": 52020.1953125
+    },
+    "kl": 2.285116672515869,
+    "elapsed_s": 10.94017243385315,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": -2.061752429713469,
+      "reflected": true,
+      "orthogonal_matrix": [
+        [
+          0.4714692739566384,
+          -0.8818824886087716
+        ],
+        [
+          -0.8818824886087716,
+          -0.4714692739566384
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        0.12189514960678238,
+        1.1034655531962336
+      ],
+      "uniform_scale": 0.6001443441871431,
+      "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  },
+  {
+    "name": "real_raw128_baseline128x4_seed3",
+    "points": 2560,
+    "groups_per_domain": 128,
+    "tokens_per_group": 4,
+    "seed": 3,
+    "high_dimensional_within_domain_dispersion": {
+      "Pre-training": 87559.015625,
+      "Code": 44133.46875,
+      "Math": 52500.4765625,
+      "Science": 105680.046875,
+      "Formal Proof": 52020.1953125
+    },
+    "kl": 2.2878589630126953,
+    "elapsed_s": 9.785041093826294,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": 0.6536442072096844,
+      "reflected": false,
+      "orthogonal_matrix": [
+        [
+          0.7938730926789316,
+          -0.6080834751252401
+        ],
+        [
+          0.6080834751252401,
+          0.7938730926789316
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        -1.300234046911676,
+        3.9457627799403667
+      ],
+      "uniform_scale": 0.6154599744888859,
+      "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  },
+  {
+    "name": "real_raw128_density128x16_seed42",
+    "points": 10240,
+    "groups_per_domain": 128,
+    "tokens_per_group": 16,
+    "seed": 42,
+    "high_dimensional_within_domain_dispersion": {
+      "Pre-training": 70240.578125,
+      "Code": 62818.5234375,
+      "Math": 66273.6328125,
+      "Science": 89964.0390625,
+      "Formal Proof": 51313.546875
+    },
+    "kl": 2.6042966842651367,
+    "elapsed_s": 52.6272714138031,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": 0.5159213017199837,
+      "reflected": true,
+      "orthogonal_matrix": [
+        [
+          -0.8698385798078516,
+          0.49333644207362165
+        ],
+        [
+          0.49333644207362165,
+          0.8698385798078516
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        0.7487706156079454,
+        -2.459351510306533
+      ],
+      "uniform_scale": 0.4191944849405393,
+      "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  },
+  {
+    "name": "real_raw128_density128x16_seed2",
+    "points": 10240,
+    "groups_per_domain": 128,
+    "tokens_per_group": 16,
+    "seed": 2,
+    "high_dimensional_within_domain_dispersion": {
+      "Pre-training": 70240.578125,
+      "Code": 62818.5234375,
+      "Math": 66273.6328125,
+      "Science": 89964.0390625,
+      "Formal Proof": 51313.546875
+    },
+    "kl": 2.592618942260742,
+    "elapsed_s": 50.820881366729736,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": -4.48211381238856,
+      "reflected": true,
+      "orthogonal_matrix": [
+        [
+          0.22824543673168438,
+          0.9736036260260963
+        ],
+        [
+          0.9736036260260963,
+          -0.22824543673168438
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        0.700348651571808,
+        -5.851425744253213
+      ],
+      "uniform_scale": 0.41745149229189943,
+      "random_pair_distance_max_abs_error": 2.1316282072803006e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  },
+  {
+    "name": "real_raw128_density128x16_seed3",
+    "points": 10240,
+    "groups_per_domain": 128,
+    "tokens_per_group": 16,
+    "seed": 3,
+    "high_dimensional_within_domain_dispersion": {
+      "Pre-training": 70240.578125,
+      "Code": 62818.5234375,
+      "Math": 66273.6328125,
+      "Science": 89964.0390625,
+      "Formal Proof": 51313.546875
+    },
+    "kl": 2.574598789215088,
+    "elapsed_s": 52.70419478416443,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": -4.1607513821934425,
+      "reflected": true,
+      "orthogonal_matrix": [
+        [
+          0.5240826200696987,
+          0.851667427662277
+        ],
+        [
+          0.851667427662277,
+          -0.5240826200696987
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        -2.382210245284746,
+        -0.831978930182224
+      ],
+      "uniform_scale": 0.4001325517748026,
+      "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  },
+  {
+    "name": "real_raw128_expanded512x4_seed42",
+    "points": 10240,
+    "groups_per_domain": 512,
+    "tokens_per_group": 4,
+    "seed": 42,
+    "high_dimensional_within_domain_dispersion": {
+      "Pre-training": 78083.1328125,
+      "Code": 65679.2109375,
+      "Math": 56309.33203125,
+      "Science": 70110.75,
+      "Formal Proof": 52342.609375
+    },
+    "kl": 2.5707919597625732,
+    "elapsed_s": 51.14943027496338,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": -2.8639350070116185,
+      "reflected": true,
+      "orthogonal_matrix": [
+        [
+          0.9617001238463164,
+          -0.2741037609993333
+        ],
+        [
+          -0.2741037609993333,
+          -0.9617001238463164
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        -2.5753094328530537,
+        -5.490496824731245
+      ],
+      "uniform_scale": 0.4103475396975295,
+      "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  },
+  {
+    "name": "real_raw128_expanded512x4_seed2",
+    "points": 10240,
+    "groups_per_domain": 512,
+    "tokens_per_group": 4,
+    "seed": 2,
+    "high_dimensional_within_domain_dispersion": {
+      "Pre-training": 78083.1328125,
+      "Code": 65679.2109375,
+      "Math": 56309.33203125,
+      "Science": 70110.75,
+      "Formal Proof": 52342.609375
+    },
+    "kl": 2.585841417312622,
+    "elapsed_s": 53.712119817733765,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": 1.409942287583657,
+      "reflected": true,
+      "orthogonal_matrix": [
+        [
+          -0.16016127922017,
+          0.9870908593632902
+        ],
+        [
+          0.9870908593632902,
+          0.16016127922017
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        -1.2345086270083527,
+        -1.6427737737204708
+      ],
+      "uniform_scale": 0.4275580140956938,
+      "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  },
+  {
+    "name": "real_raw128_expanded512x4_seed3",
+    "points": 10240,
+    "groups_per_domain": 512,
+    "tokens_per_group": 4,
+    "seed": 3,
+    "high_dimensional_within_domain_dispersion": {
+      "Pre-training": 78083.1328125,
+      "Code": 65679.2109375,
+      "Math": 56309.33203125,
+      "Science": 70110.75,
+      "Formal Proof": 52342.609375
+    },
+    "kl": 2.5801949501037598,
+    "elapsed_s": 50.32624840736389,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": -3.5012131300052616,
+      "reflected": true,
+      "orthogonal_matrix": [
+        [
+          0.9360304526520528,
+          0.3519190129958785
+        ],
+        [
+          0.3519190129958785,
+          -0.9360304526520528
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        2.850342353519018,
+        -1.3478149690009502
+      ],
+      "uniform_scale": 0.45068303283873695,
+      "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  },
+  {
+    "name": "real_native_context_baseline128x4_seed42",
+    "points": 2560,
+    "groups_per_domain": 128,
+    "tokens_per_group": 4,
+    "seed": 42,
+    "high_dimensional_within_domain_dispersion": {
+      "Pre-training": 56482.6484375,
+      "Code": 34000.40234375,
+      "Math": 33931.9375,
+      "Science": 44204.9609375,
+      "Formal Proof": 49323.80078125
+    },
+    "kl": 2.1652960777282715,
+    "elapsed_s": 9.83678150177002,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": -4.143656800189186,
+      "reflected": false,
+      "orthogonal_matrix": [
+        [
+          -0.5385642365968479,
+          -0.8425844545556572
+        ],
+        [
+          0.8425844545556572,
+          -0.5385642365968479
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        -3.105885511768573,
+        3.248041974885851
+      ],
+      "uniform_scale": 0.5602429283711992,
+      "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  },
+  {
+    "name": "real_native_context_baseline128x4_seed2",
+    "points": 2560,
+    "groups_per_domain": 128,
+    "tokens_per_group": 4,
+    "seed": 2,
+    "high_dimensional_within_domain_dispersion": {
+      "Pre-training": 56482.6484375,
+      "Code": 34000.40234375,
+      "Math": 33931.9375,
+      "Science": 44204.9609375,
+      "Formal Proof": 49323.80078125
+    },
+    "kl": 2.1707329750061035,
+    "elapsed_s": 10.382047653198242,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": -4.574893493017995,
+      "reflected": false,
+      "orthogonal_matrix": [
+        [
+          -0.13706267111700465,
+          -0.9905623777361382
+        ],
+        [
+          0.9905623777361382,
+          -0.13706267111700465
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        0.07201953114058313,
+        4.340988856736814
+      ],
+      "uniform_scale": 0.5358013269912539,
+      "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  },
+  {
+    "name": "real_native_context_baseline128x4_seed3",
+    "points": 2560,
+    "groups_per_domain": 128,
+    "tokens_per_group": 4,
+    "seed": 3,
+    "high_dimensional_within_domain_dispersion": {
+      "Pre-training": 56482.6484375,
+      "Code": 34000.40234375,
+      "Math": 33931.9375,
+      "Science": 44204.9609375,
+      "Formal Proof": 49323.80078125
+    },
+    "kl": 2.130767822265625,
+    "elapsed_s": 9.925848007202148,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": -0.8193714902498278,
+      "reflected": true,
+      "orthogonal_matrix": [
+        [
+          -0.682680604793097,
+          -0.730716902664316
+        ],
+        [
+          -0.730716902664316,
+          0.682680604793097
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        0.7744741984012293,
+        2.1690476475011735
+      ],
+      "uniform_scale": 0.5855099466069307,
+      "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  },
+  {
+    "name": "real_native_context_density128x16_seed42",
+    "points": 10240,
+    "groups_per_domain": 128,
+    "tokens_per_group": 16,
+    "seed": 42,
+    "high_dimensional_within_domain_dispersion": {
+      "Pre-training": 43561.12109375,
+      "Code": 39438.9609375,
+      "Math": 37802.92578125,
+      "Science": 35263.6953125,
+      "Formal Proof": 51920.20703125
+    },
+    "kl": 2.4659361839294434,
+    "elapsed_s": 50.229461431503296,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": -3.3909565889475557,
+      "reflected": false,
+      "orthogonal_matrix": [
+        [
+          -0.9690695906104358,
+          -0.24678761831607818
+        ],
+        [
+          0.24678761831607818,
+          -0.9690695906104358
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        -0.8569243955910295,
+        6.886733895428343
+      ],
+      "uniform_scale": 0.39043683931667156,
+      "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  },
+  {
+    "name": "real_native_context_density128x16_seed2",
+    "points": 10240,
+    "groups_per_domain": 128,
+    "tokens_per_group": 16,
+    "seed": 2,
+    "high_dimensional_within_domain_dispersion": {
+      "Pre-training": 43561.12109375,
+      "Code": 39438.9609375,
+      "Math": 37802.92578125,
+      "Science": 35263.6953125,
+      "Formal Proof": 51920.20703125
+    },
+    "kl": 2.463623285293579,
+    "elapsed_s": 49.187981367111206,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": -3.53795627358695,
+      "reflected": true,
+      "orthogonal_matrix": [
+        [
+          0.9224709742471778,
+          0.38606644722309463
+        ],
+        [
+          0.38606644722309463,
+          -0.9224709742471778
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        -1.065925469088853,
+        4.76873745982423
+      ],
+      "uniform_scale": 0.4018588387856873,
+      "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  },
+  {
+    "name": "real_native_context_density128x16_seed3",
+    "points": 10240,
+    "groups_per_domain": 128,
+    "tokens_per_group": 16,
+    "seed": 3,
+    "high_dimensional_within_domain_dispersion": {
+      "Pre-training": 43561.12109375,
+      "Code": 39438.9609375,
+      "Math": 37802.92578125,
+      "Science": 35263.6953125,
+      "Formal Proof": 51920.20703125
+    },
+    "kl": 2.4641380310058594,
+    "elapsed_s": 49.27857184410095,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": -4.3136580655883,
+      "reflected": true,
+      "orthogonal_matrix": [
+        [
+          0.3882491241491871,
+          0.9215544572066205
+        ],
+        [
+          0.9215544572066205,
+          -0.3882491241491871
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        -1.5194904387227908,
+        6.1228438237475515
+      ],
+      "uniform_scale": 0.408098362024079,
+      "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  },
+  {
+    "name": "real_native_context_expanded512x4_seed42",
+    "points": 10240,
+    "groups_per_domain": 512,
+    "tokens_per_group": 4,
+    "seed": 42,
+    "high_dimensional_within_domain_dispersion": {
+      "Pre-training": 67222.0625,
+      "Code": 33018.83984375,
+      "Math": 34177.66015625,
+      "Science": 34239.6875,
+      "Formal Proof": 52473.21484375
+    },
+    "kl": 2.4418587684631348,
+    "elapsed_s": 53.374820947647095,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": 0.23852509736190441,
+      "reflected": true,
+      "orthogonal_matrix": [
+        [
+          -0.9716875064618101,
+          0.23626973946324512
+        ],
+        [
+          0.23626973946324512,
+          0.9716875064618101
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        -1.6845019825383503,
+        -4.171411835465435
+      ],
+      "uniform_scale": 0.4220355816697602,
+      "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  },
+  {
+    "name": "real_native_context_expanded512x4_seed2",
+    "points": 10240,
+    "groups_per_domain": 512,
+    "tokens_per_group": 4,
+    "seed": 2,
+    "high_dimensional_within_domain_dispersion": {
+      "Pre-training": 67222.0625,
+      "Code": 33018.83984375,
+      "Math": 34177.66015625,
+      "Science": 34239.6875,
+      "Formal Proof": 52473.21484375
+    },
+    "kl": 2.448199987411499,
+    "elapsed_s": 51.47923827171326,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": 0.036469615691653745,
+      "reflected": false,
+      "orthogonal_matrix": [
+        [
+          0.9993350572701934,
+          -0.03646153193132604
+        ],
+        [
+          0.03646153193132604,
+          0.9993350572701934
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        -2.095064667515949,
+        -1.588395922450168
+      ],
+      "uniform_scale": 0.40881789465339974,
+      "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  },
+  {
+    "name": "real_native_context_expanded512x4_seed3",
+    "points": 10240,
+    "groups_per_domain": 512,
+    "tokens_per_group": 4,
+    "seed": 3,
+    "high_dimensional_within_domain_dispersion": {
+      "Pre-training": 67222.0625,
+      "Code": 33018.83984375,
+      "Math": 34177.66015625,
+      "Science": 34239.6875,
+      "Formal Proof": 52473.21484375
+    },
+    "kl": 2.474897861480713,
+    "elapsed_s": 51.402947664260864,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": -2.140639485685274,
+      "reflected": false,
+      "orthogonal_matrix": [
+        [
+          -0.5394999974141333,
+          0.8419856012962158
+        ],
+        [
+          -0.8419856012962158,
+          -0.5394999974141333
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        -1.328593704257976,
+        -1.272850381037678
+      ],
+      "uniform_scale": 0.43611698557231005,
+      "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "name": "real_raw128_expanded512x4_seed42",
+  "points": 10240,
+  "groups_per_domain": 512,
+  "tokens_per_group": 4,
+  "seed": 42,
+  "high_dimensional_within_domain_dispersion": {
+    "Pre-training": 78083.1328125,
+    "Code": 65679.2109375,
+    "Math": 56309.33203125,
+    "Science": 70110.75,
+    "Formal Proof": 52342.609375
+  },
+  "kl": 2.5707919597625732,
+  "elapsed_s": 51.14943027496338,
+  "display_transform": {
+    "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+    "angle_radians": -2.8639350070116185,
+    "reflected": true,
+    "orthogonal_matrix": [
+      [
+        0.9617001238463164,
+        -0.2741037609993333
+      ],
+      [
+        -0.2741037609993333,
+        -0.9617001238463164
+      ]
+    ],
+    "subtract_center_after_rotation": [
+      -2.5753094328530537,
+      -5.490496824731245
+    ],
+    "uniform_scale": 0.4103475396975295,
+    "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+    "points_outside_display_axes": 0,
+    "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "qwen_calibration_chat_expanded512x4_seed42",
+  "points": 8192,
+  "groups_per_domain": 512,
+  "tokens_per_group": 4,
+  "seed": 42,
+  "high_dimensional_within_domain_dispersion": {
+    "Pre-training": 15144.1962890625,
+    "Code": 9914.62890625,
+    "Math": 9195.041015625,
+    "Science": 10590.5390625
+  },
+  "kl": 2.479886531829834,
+  "elapsed_s": 39.34376811981201,
+  "display_transform": {
+    "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+    "angle_radians": -4.339265198165524,
+    "reflected": true,
+    "orthogonal_matrix": [
+      [
+        0.36452605049005615,
+        0.9311931907580301
+      ],
+      [
+        0.9311931907580301,
+        -0.36452605049005615
+      ]
+    ],
+    "subtract_center_after_rotation": [
+      -2.212276774496516,
+      -1.3999551405653392
+    ],
+    "uniform_scale": 0.4429635495197716,
+    "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+    "points_outside_display_axes": 0,
+    "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+  }
+}

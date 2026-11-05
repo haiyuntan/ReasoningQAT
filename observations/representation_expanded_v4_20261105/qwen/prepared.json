@@ -1,0 +1,6 @@
+{
+  "groups_per_domain": 512,
+  "original_groups_retained": 512,
+  "total_groups": 2048,
+  "selection": "Original128/domain retained; add384/domain from seed2 sampler, cap32/shard for Code/Math, cap64/shard for Science (only10 source shards). FineWeb source-order buffering bias retained."
+}

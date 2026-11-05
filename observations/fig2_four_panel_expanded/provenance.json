@@ -1,0 +1,79 @@
+{
+  "layout": "top: paper Fig2a, paper Fig2b; bottom: Qwen expanded512x4 noPCA seed42, REAL-Prover five-domain expanded512x4 raw128 seed42",
+  "sample_scope": "Lower panels use512 groups/domain \u00d74tokens: Qwen8192points and REAL10240points. All27 expanded-study plots complete.",
+  "operation": "Aspect-preserving resize, white padding; no added text; no cropped plot content",
+  "panels": [
+    {
+      "panel": 0,
+      "source": "figures/fig2_four_panel_expanded/paper_fig2a.png",
+      "sha256": "61f549faa4da52fd272974caabea88e74bd775ba60f7764b93ddd7b31291bb49",
+      "source_size": [
+        590,
+        462
+      ],
+      "display_size": [
+        1440,
+        1128
+      ],
+      "paste_xy": [
+        0,
+        38
+      ]
+    },
+    {
+      "panel": 1,
+      "source": "fig2b_qwen3_v3_20261105/paper_reference_with_heading.png",
+      "sha256": "c383c865a822d0cc329ce80effb7fd85221ab47e9a22f659ebc03fde2b6dc623",
+      "source_size": [
+        977,
+        815
+      ],
+      "display_size": [
+        1440,
+        1201
+      ],
+      "paste_xy": [
+        1472,
+        1
+      ]
+    },
+    {
+      "panel": 2,
+      "source": "representation_expanded_v4_20261105/qwen/plots/qwen_calibration_chat_expanded512x4_seed42.png",
+      "sha256": "123a02d63ec5a3806e1696714cb63de5b4654014ec3e69b23e9fbcd16b4ddfe3",
+      "source_size": [
+        1440,
+        1200
+      ],
+      "display_size": [
+        1440,
+        1200
+      ],
+      "paste_xy": [
+        0,
+        1238
+      ]
+    },
+    {
+      "panel": 3,
+      "source": "representation_expanded_v4_20261105/real/plots/real_raw128_expanded512x4_seed42.png",
+      "sha256": "b155c792cc1c8e8d522d42fcff99ba82554437d095fbfe2a97cd1bc97fc37058",
+      "source_size": [
+        1440,
+        1200
+      ],
+      "display_size": [
+        1440,
+        1200
+      ],
+      "paste_xy": [
+        1472,
+        1238
+      ]
+    }
+  ],
+  "size": [
+    2912,
+    2440
+  ]
+}

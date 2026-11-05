@@ -1,0 +1,22 @@
+{
+  "model": "REAL-Prover-v1 BF16 (Qwen2ForCausalLM)",
+  "block_one_based": 14,
+  "views": [
+    "raw128",
+    "native_context"
+  ],
+  "primary": "raw128, joint five-domain no-PCA t-SNE, random init, LR200, perplexity30,1000iterations,seed42",
+  "seeds": [
+    42,
+    2,
+    3
+  ],
+  "groups_per_domain": 512,
+  "tokens_per_group": 16,
+  "fit_points": 40960,
+  "comparison_to_qwen_v3": "Same no-PCA t-SNE/hook method; primary context deliberately128 rather than2048 because raw state/tactic pairs are short. Not an exact Fig2b experiment.",
+  "knowledge_limit": "Distributional observation, not proof of possession of a knowledge module or theorem-solving ability.",
+  "tokenizer_sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+  "input_sha256": "69e6fe2d46f05d291faa7653854354de297e5c077225eba4506f437cf9079b26",
+  "script_sha256": "98e229528dd61499b1af7d57305b48b262aac46f3f05578955e93a83ea359605"
+}
