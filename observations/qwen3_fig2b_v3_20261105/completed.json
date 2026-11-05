@@ -1,0 +1,7 @@
+{
+  "status": "DONE",
+  "tsne_controls": 10,
+  "primary": "panels/v2_primary_paper_style_annotated.png",
+  "exact_replication": false,
+  "reason": "Author figure script, selected samples, activation definition and seed remain unknown."
+}

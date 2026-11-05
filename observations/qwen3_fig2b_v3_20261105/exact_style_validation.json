@@ -1,0 +1,105 @@
+{
+  "status": "PASS",
+  "font": {
+    "source": "Embedded font subset from original PDF; ToUnicode CMap remapped to Unicode for local rendering",
+    "original_font": "AAAAAC+YuGothic-Bold",
+    "required_characters_present": true,
+    "binary_published": false
+  },
+  "pdf_based_heading_spans": 5,
+  "pdf_based_underlines": 5,
+  "rendered_panels": 18,
+  "checks": [
+    {
+      "file": "nopca_legacy_native_coordinates",
+      "points": 2048,
+      "display_axis_clipped_points": null
+    },
+    {
+      "file": "nopca_legacy_unoriented",
+      "points": 2048,
+      "display_axis_clipped_points": 0
+    },
+    {
+      "file": "nopca_random_lr200_seed2_iter1000",
+      "points": 2048,
+      "display_axis_clipped_points": 0
+    },
+    {
+      "file": "nopca_random_lr200_seed3_iter1000",
+      "points": 2048,
+      "display_axis_clipped_points": 0
+    },
+    {
+      "file": "nopca_random_lr200_seed42_iter3000",
+      "points": 2048,
+      "display_axis_clipped_points": 0
+    },
+    {
+      "file": "pca50_initpca_lr200_perp30",
+      "points": 2048,
+      "display_axis_clipped_points": 0
+    },
+    {
+      "file": "pca50_initpca_lrauto_perp100",
+      "points": 2048,
+      "display_axis_clipped_points": 0
+    },
+    {
+      "file": "pca50_initpca_lrauto_perp30",
+      "points": 2048,
+      "display_axis_clipped_points": 0
+    },
+    {
+      "file": "pca50_initrandom_lr200_perp30",
+      "points": 2048,
+      "display_axis_clipped_points": 0
+    },
+    {
+      "file": "pca50_initrandom_lrauto_perp30",
+      "points": 2048,
+      "display_axis_clipped_points": 0
+    },
+    {
+      "file": "pcaNone_initpca_lr200_perp30",
+      "points": 2048,
+      "display_axis_clipped_points": 0
+    },
+    {
+      "file": "pcaNone_initpca_lrauto_perp30",
+      "points": 2048,
+      "display_axis_clipped_points": 0
+    },
+    {
+      "file": "pcaNone_initrandom_lr200_perp100",
+      "points": 2048,
+      "display_axis_clipped_points": 0
+    },
+    {
+      "file": "pcaNone_initrandom_lr200_perp30",
+      "points": 2048,
+      "display_axis_clipped_points": 0
+    },
+    {
+      "file": "pcaNone_initrandom_lrauto_perp30",
+      "points": 2048,
+      "display_axis_clipped_points": 0
+    },
+    {
+      "file": "v2_primary_native_coordinates",
+      "points": 8192,
+      "display_axis_clipped_points": null
+    },
+    {
+      "file": "v2_primary_paper_style",
+      "points": 8192,
+      "display_axis_clipped_points": 0
+    },
+    {
+      "file": "v2_primary_unoriented",
+      "points": 8192,
+      "display_axis_clipped_points": 0
+    }
+  ],
+  "limits": "Underlying scatter marker size/order/alpha and categorical ID meanings remain hypotheses, not recovered author code."
+}

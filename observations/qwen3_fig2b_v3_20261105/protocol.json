@@ -1,0 +1,46 @@
+{
+  "inputs": "v2 calibration_chat block_out_token, first4 of16 uniformly sampled tokens per source; same128 groups/domain",
+  "point_count": 2048,
+  "feature_normalization": "none",
+  "seed": 42,
+  "iterations": 1000,
+  "factorial": {
+    "pca_components": [
+      null,
+      50
+    ],
+    "init": [
+      "pca",
+      "random"
+    ],
+    "learning_rate": [
+      "auto",
+      200
+    ],
+    "perplexity": [
+      30
+    ]
+  },
+  "extra_perplexity_controls": [
+    {
+      "pca": null,
+      "init": "random",
+      "learning_rate": 200,
+      "perplexity": 100
+    },
+    {
+      "pca": 50,
+      "init": "pca",
+      "learning_rate": "auto",
+      "perplexity": 100
+    }
+  ],
+  "frozen_primary": "Existing v2 seed2 primary stays primary; no score-based winner selected",
+  "presentation": "Measured header/axes/bar geometry; explicit orthogonal orientation + one common scale for all points; native-coordinate controls retained.",
+  "versions": {
+    "sklearn": "1.6.1",
+    "numpy": "1.26.4",
+    "matplotlib": "3.9.2"
+  },
+  "script_sha256": "7ddcb47961d65af6ebd2494b417f9d69472a599db610ab66da61533a212415f8"
+}

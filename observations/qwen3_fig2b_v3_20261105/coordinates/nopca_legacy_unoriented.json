@@ -1,0 +1,23 @@
+{
+  "orientation": "native t-SNE orientation",
+  "angle_radians": 0.0,
+  "reflected": false,
+  "orthogonal_matrix": [
+    [
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0
+    ]
+  ],
+  "subtract_center_after_rotation": [
+    -1.480966567993164,
+    -2.2611865997314453
+  ],
+  "uniform_scale": 0.7463227775857096,
+  "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+  "points_outside_display_axes": 0,
+  "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+}

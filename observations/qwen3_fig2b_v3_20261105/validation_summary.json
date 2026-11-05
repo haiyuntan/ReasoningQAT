@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "exact_style_panels": 18,
+  "pngs": 36,
+  "pdfs": 18,
+  "svgs": 18,
+  "transform_preserves_pair_distances_up_to_one_scale": true,
+  "no_display_point_clipping": true,
+  "base_weights_and_tokenizer_match_official": true
+}

@@ -1,0 +1,17 @@
+{
+  "source": "same2048 token vectors as v3 factorial",
+  "no_pca_seed_controls": [
+    2,
+    3
+  ],
+  "initialization": "random",
+  "learning_rate": 200,
+  "perplexity": 30,
+  "seed_check_iterations": 1000,
+  "longer_run": {
+    "seed": 42,
+    "iterations": 3000
+  },
+  "neighborhood_audit_k": 15,
+  "warning": "Exploratory method diagnosis, not original-author configuration discovery."
+}

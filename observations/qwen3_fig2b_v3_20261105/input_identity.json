@@ -1,0 +1,7 @@
+{
+  "v2_inputs_sha256": "a3980aedbd5cf0fb36f91c88765e4766f2d37ba8261823485beb14930c2e1508",
+  "groups": 512,
+  "tokens_per_group": 4,
+  "group_order": "same as sample_groups.json",
+  "token_selection": "first4 of16 previously uniformly sampled positions; all four domains128 groups each"
+}

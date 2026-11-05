@@ -41,3 +41,7 @@ See [REAL-Prover observation results and reproduction](reports/REALPROVER_OBSERV
 ## Qwen3 Fig. 2(b) corrected reconstruction (2026-11-05)
 
 [修正版图集、原图对照及验证报告](observations/qwen3_fig2b_v2_20261105/README.md)。60张实验图片，完整问答/固定2048token；二维定性更接近，但高维排序仍未复现。
+
+## Qwen3 Fig.2(b): no-PCA controls and original figure styling
+
+[新一版比较图与完整报告](observations/qwen3_fig2b_v3_20261105/README.md)：原字体、标题位置、坐标轴和0..5色条；相同点比较PCA/无PCA，原始坐标及全局展示变换均公开。

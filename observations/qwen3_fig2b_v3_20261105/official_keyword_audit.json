@@ -1,0 +1,92 @@
+{
+  "commit": "c36060fefb05aa8c29dcad47b52feacf95201d37",
+  "files_checked": 17,
+  "results": [
+    {
+      "path": "datautils_block.py",
+      "sha256": "61885f12ca3283da445c11b1eab9eed7cce09c44c11102a1ecd8aaedd9ad1b6f",
+      "matches": []
+    },
+    {
+      "path": "main_block_qat.py",
+      "sha256": "3ea48dff7271a19d1c537d9f27d3fa1ad0ac18ff04e82f1658563dd3da43de20",
+      "matches": []
+    },
+    {
+      "path": "main_e2e_distill.py",
+      "sha256": "d44b6fadb7e3b2867fe2dba3385b3396e8b82e63fc291d39b1e44549e68410a6",
+      "matches": []
+    },
+    {
+      "path": "quantize/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matches": []
+    },
+    {
+      "path": "quantize/block_qat.py",
+      "sha256": "5750d73ede1201d8f3cd7ce097990f60753ad6778e5fd4a1291094a81b0cca3f",
+      "matches": []
+    },
+    {
+      "path": "quantize/int_linear_fake.py",
+      "sha256": "5befa02dc1dcc7faef4e22f70fa76b11158f3c59e861ffcdbf4600583869a563",
+      "matches": []
+    },
+    {
+      "path": "quantize/int_linear_real.py",
+      "sha256": "5bee7901e143473fa49d2f0ed450cd582870519333ea9ce4c2b4f8dcd04d6346",
+      "matches": []
+    },
+    {
+      "path": "quantize/quantizer.py",
+      "sha256": "2156c43cd7d503ce742a6946792f5f937ade53b55eec04242837fe78c41c7704",
+      "matches": []
+    },
+    {
+      "path": "quantize/triton_utils/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matches": []
+    },
+    {
+      "path": "quantize/triton_utils/custom_autotune.py",
+      "sha256": "a54245ed93567474ba4aa307f881ca76ab253143c8a19c1450cbc79dfaa618da",
+      "matches": []
+    },
+    {
+      "path": "quantize/triton_utils/kernels.py",
+      "sha256": "a24be63f515044ae292757aaf2685debeab6c71bf73385fa7dbe6c1ab4cafa29",
+      "matches": []
+    },
+    {
+      "path": "quantize/triton_utils/mixin.py",
+      "sha256": "7a585ce965629aafb9e09556f80c30b0b654722954839c0730f0a6b22de3bd90",
+      "matches": []
+    },
+    {
+      "path": "quantize/utils.py",
+      "sha256": "1e9ca3dcd32d2d971bbad33920ba2dd755a8e3eac046a8c975529bbe63e6d609",
+      "matches": []
+    },
+    {
+      "path": "scripts/convert_to_hf_vllm_compatible_model.py",
+      "sha256": "07c104a242227f3c9594dd8ff0edb0adf8493d36efe42eadf7b4eaec1c542396",
+      "matches": []
+    },
+    {
+      "path": "scripts/generate_tsubame_distill_scripts.py",
+      "sha256": "ab30611929b5251add09f351985e7294892c0a20bda77feacccf70e3abced773",
+      "matches": []
+    },
+    {
+      "path": "scripts/generate_vllm_eval_tsubame_scripts.py",
+      "sha256": "f5c3de8b926199f9256c70208c8d68669736deb8475495ad485cc52f835ea049",
+      "matches": []
+    },
+    {
+      "path": "utils.py",
+      "sha256": "befb7b966b58ba3e2d61d5a0014bc9d452f5aa88a34169c98733635d53040887",
+      "matches": []
+    }
+  ],
+  "limitation": "Public official main Python files and visible history path audit; not private author scripts or inaccessible OpenReview attachments."
+}

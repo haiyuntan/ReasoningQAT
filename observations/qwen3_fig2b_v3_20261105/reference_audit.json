@@ -1,0 +1,117 @@
+{
+  "embedded_image_size": [
+    488,
+    357
+  ],
+  "embedded_image_pdf_rect": [
+    325.26104736328125,
+    97.04075622558594,
+    486.520263671875,
+    215.047607421875
+  ],
+  "pdf_sha256": "6e21c1699259420b49238ab39ca2f1d42ec6991b4b77d674f78a814f0f799a5d",
+  "label_spans": [
+    {
+      "text": "Pre-training",
+      "bbox": [
+        341.6714172363281,
+        93.67981719970703,
+        376.4501647949219,
+        100.27334594726562
+      ],
+      "font": "YuGothic-Bold",
+      "size": 5.983242511749268,
+      "color": 13811487
+    },
+    {
+      "text": "Code",
+      "bbox": [
+        388.3908386230469,
+        93.67981719970703,
+        403.30706787109375,
+        100.27334594726562
+      ],
+      "font": "YuGothic-Bold",
+      "size": 5.983242511749268,
+      "color": 4456532
+    },
+    {
+      "text": "Math",
+      "bbox": [
+        415.0509948730469,
+        93.67981719970703,
+        430.1473083496094,
+        100.27334594726562
+      ],
+      "font": "YuGothic-Bold",
+      "size": 5.983242511749268,
+      "color": 4277383
+    },
+    {
+      "text": "Science",
+      "bbox": [
+        441.87799072265625,
+        93.67981719970703,
+        464.7292175292969,
+        100.27334594726562
+      ],
+      "font": "YuGothic-Bold",
+      "size": 5.983242511749268,
+      "color": 2783374
+    },
+    {
+      "text": "Dataset Domain",
+      "bbox": [
+        341.6714172363281,
+        84.09220123291016,
+        388.4878845214844,
+        90.68572998046875
+      ],
+      "font": "YuGothic-Bold",
+      "size": 5.983242511749268,
+      "color": 0
+    }
+  ],
+  "axes": {
+    "x_limits": [
+      -40,
+      40
+    ],
+    "x_tick_step": 20,
+    "y_limits": [
+      -40,
+      40
+    ],
+    "y_tick_step": 10
+  },
+  "colorbar": {
+    "ticks": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "cmap": "viridis",
+    "estimated_alpha": 0.20084679654824483,
+    "fit_rgb_rmse": 0.9877315580452574,
+    "interpretation": "Domain-color encoding inferred from caption and matching hues; numeric semantics not explained by authors. Not entropy or activation magnitude.",
+    "inferred_reproduction_ids": {
+      "Pre-training": 5,
+      "Code": 0,
+      "Math": 1,
+      "Science": 2
+    },
+    "ids_3_and_4": "Unused in our four-domain data; retained only to match the visible original 0..5 bar."
+  },
+  "font": "Original headings use YuGothic-Bold. Local export uses DejaVu Sans; font glyphs are not exact.",
+  "scatter_alpha": {
+    "value": 0.2,
+    "status": "Hypothesis from common scatter-colorbar alpha linkage; only bar alpha is measured."
+  },
+  "marker_size": {
+    "value": 36,
+    "status": "Matplotlib default-sized marker hypothesis; original value unavailable."
+  }
+}

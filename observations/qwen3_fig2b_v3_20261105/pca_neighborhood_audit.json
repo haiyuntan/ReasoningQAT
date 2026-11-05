@@ -1,0 +1,7 @@
+{
+  "pca50_explained_variance_fraction": 0.36465349793434143,
+  "mean_original_vs_pca50_15nn_overlap": 0.3541341145833333,
+  "original_high_dimensional_reasoning_to_pretraining_dispersion": 0.6728441221586547,
+  "pca50_reasoning_to_pretraining_dispersion": 0.7563889421409326,
+  "warning": "KL values from t-SNE before and after PCA optimize different neighborhood graphs; do not compare them as a common accuracy score."
+}

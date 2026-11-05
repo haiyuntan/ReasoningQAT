@@ -1,0 +1,92 @@
+[
+  {
+    "tag": "nopca_random_lr200_seed2_iter1000",
+    "seed": 2,
+    "iterations": 1000,
+    "kl_divergence": 2.1379647254943848,
+    "two_dimensional_reasoning_to_pretraining_dispersion": 1.3454217761423861,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": 0.7820438639138025,
+      "reflected": true,
+      "orthogonal_matrix": [
+        [
+          -0.709474646709446,
+          0.7047309597828854
+        ],
+        [
+          0.7047309597828854,
+          0.709474646709446
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        -0.20866794582203596,
+        -2.507593652701811
+      ],
+      "uniform_scale": 0.6867304509023666,
+      "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  },
+  {
+    "tag": "nopca_random_lr200_seed3_iter1000",
+    "seed": 3,
+    "iterations": 1000,
+    "kl_divergence": 2.125627040863037,
+    "two_dimensional_reasoning_to_pretraining_dispersion": 1.2409582769522327,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": -1.0677274482473231,
+      "reflected": true,
+      "orthogonal_matrix": [
+        [
+          -0.48211647105787614,
+          -0.8761071329093835
+        ],
+        [
+          -0.8761071329093835,
+          0.48211647105787614
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        -0.09529807661527201,
+        2.922856967039092
+      ],
+      "uniform_scale": 0.6876237637448467,
+      "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  },
+  {
+    "tag": "nopca_random_lr200_seed42_iter3000",
+    "seed": 42,
+    "iterations": 3000,
+    "kl_divergence": 2.125352382659912,
+    "two_dimensional_reasoning_to_pretraining_dispersion": 1.3964045520657469,
+    "display_transform": {
+      "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+      "angle_radians": -3.172660669911682,
+      "reflected": false,
+      "orthogonal_matrix": [
+        [
+          -0.9995174279985296,
+          -0.031063018642820232
+        ],
+        [
+          0.031063018642820232,
+          -0.9995174279985296
+        ]
+      ],
+      "subtract_center_after_rotation": [
+        0.3086018892982736,
+        0.21935123729872785
+      ],
+      "uniform_scale": 0.595105266293756,
+      "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+      "points_outside_display_axes": 0,
+      "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+    }
+  }
+]

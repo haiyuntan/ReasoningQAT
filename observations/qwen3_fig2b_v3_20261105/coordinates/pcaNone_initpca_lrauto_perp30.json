@@ -1,0 +1,23 @@
+{
+  "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+  "angle_radians": -0.29644750350871174,
+  "reflected": true,
+  "orthogonal_matrix": [
+    [
+      -0.9563802931372832,
+      -0.2921245195094795
+    ],
+    [
+      -0.2921245195094795,
+      0.9563802931372832
+    ]
+  ],
+  "subtract_center_after_rotation": [
+    -0.3855646081715456,
+    2.016579201778004
+  ],
+  "uniform_scale": 0.7861620208309568,
+  "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+  "points_outside_display_axes": 0,
+  "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+}

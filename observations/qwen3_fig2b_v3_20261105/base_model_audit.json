@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "official_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "source": "https://huggingface.co/api/models/Qwen/Qwen3-1.7B?blobs=true",
+  "weights": [
+    {
+      "file": "model-00001-of-00002.safetensors",
+      "bytes": 3441185608,
+      "sha256": "169ad53ec313c3a34b06c0809216e4fc072cce444a5d4ff2b59690d064130ed5",
+      "official_sha256": "169ad53ec313c3a34b06c0809216e4fc072cce444a5d4ff2b59690d064130ed5",
+      "matches": true
+    },
+    {
+      "file": "model-00002-of-00002.safetensors",
+      "bytes": 622329984,
+      "sha256": "912becff8d60672aa8628ef08c05898d9adf17c2ad4ae3caf99b065622fdeff9",
+      "official_sha256": "912becff8d60672aa8628ef08c05898d9adf17c2ad4ae3caf99b065622fdeff9",
+      "matches": true
+    }
+  ],
+  "configuration_and_tokenizer_status": "PASS",
+  "superseded_git_blob_pointer_check": [
+    {
+      "file": "config.json",
+      "git_blob_sha1": "044a86ecf7cb32238f3fae4184e55d354787edec",
+      "official_git_blob_sha1": "044a86ecf7cb32238f3fae4184e55d354787edec",
+      "matches": true
+    },
+    {
+      "file": "generation_config.json",
+      "git_blob_sha1": "20a8a9156fc8c3f25295ca067f61fdf120d517c5",
+      "official_git_blob_sha1": "20a8a9156fc8c3f25295ca067f61fdf120d517c5",
+      "matches": true
+    },
+    {
+      "file": "tokenizer.json",
+      "git_blob_sha1": "949e1ec83f61520a25c75426edc4a43acc36f29a",
+      "official_git_blob_sha1": "cd71f61a15a522601badb3dc960d800d9cb3766c",
+      "matches": false
+    },
+    {
+      "file": "tokenizer_config.json",
+      "git_blob_sha1": "417d038a63fa3de29cfde265caedae14d1a58d92",
+      "official_git_blob_sha1": "417d038a63fa3de29cfde265caedae14d1a58d92",
+      "matches": true
+    }
+  ],
+  "superseded_check_explanation": "For LFS tokenizer.json, Git blobId hashes the pointer, not content. Correct verification below uses LFS SHA256.",
+  "configuration_and_tokenizer": [
+    {
+      "file": "config.json",
+      "method": "Git blob SHA1",
+      "actual": "044a86ecf7cb32238f3fae4184e55d354787edec",
+      "official": "044a86ecf7cb32238f3fae4184e55d354787edec",
+      "matches": true
+    },
+    {
+      "file": "generation_config.json",
+      "method": "Git blob SHA1",
+      "actual": "20a8a9156fc8c3f25295ca067f61fdf120d517c5",
+      "official": "20a8a9156fc8c3f25295ca067f61fdf120d517c5",
+      "matches": true
+    },
+    {
+      "file": "tokenizer.json",
+      "method": "LFS content SHA256",
+      "actual": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "official": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "matches": true
+    },
+    {
+      "file": "tokenizer_config.json",
+      "method": "Git blob SHA1",
+      "actual": "417d038a63fa3de29cfde265caedae14d1a58d92",
+      "official": "417d038a63fa3de29cfde265caedae14d1a58d92",
+      "matches": true
+    }
+  ]
+}

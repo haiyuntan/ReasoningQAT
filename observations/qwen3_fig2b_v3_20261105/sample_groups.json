@@ -1,0 +1,3074 @@
+[
+  {
+    "domain": "Pre-training",
+    "sha256": "000d474dbaf5261b705258c5c85d8acdd0eb8f2f5c7ea45bd1ded17e481e5404",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "0036e15976dfc01d5bf2dbe09fb42759c2ac0d93e6e865ebcb0b0c1b912a464f",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "03139bd2a02921d53f60fbb505fdfd36542fdc948e2a5faf15c9dfde3b54dd47",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "04381123c8378619429bd9f7b020870104ad3e30c78419892fb78788518a2c66",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "083271564399a192047c466939a50ea002e41d026e4b9cf8705a4e20efbe4ff1",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "0a73fa9ef21a95a1642c53c691ba76fba9bc9870f6c0eca5118c77d2b7373bea",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "0b7173a930a193e81a58ad0dd6d94ab320c5234ad9569b8b425ab93dd72d6c7e",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "0ea0e43e132fb073fbf5a06b033be6352b8361552986dda9a50dff7192f40b42",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "113ce5694818def30dde42ffd91aff9d4b581fd150e7afac17d7c0263fedc732",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "14fd8162e2c8cf5a26e2c59cff5a31fca2845c0f848c17c31b98cf9a6c8f41a9",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "17de1a5ee04fc0c22fe2c2967c238e15418a1ad231c66dfd4c4e0f101187dab0",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "18b2dd317c8a5981b7194147b951885c4870c699dfa055bcf50c572dc917b4cc",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "1fcb8d80338787aba2995814a0c28946981aede17749a6971df5804032b11a51",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "2122e298c2731d0edef0936473f227309a935123db61e87140f824c57fd2beaa",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "234467d27c8796e4cdfd676918a26ee99294542f70cb04979698f7c6833a9c31",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "23e8efb74120f58e9bb195277dec8f003a7743fe8b83cc0169cb4e32cf9bb993",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "25b2a65170de2829afce76f9d8fe2d067b3d94d39ddcd82b9e3972d93930f527",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "271d3cce3a26989a1eb61037844c61c5f9cd30909dd890a1570623531042d3d6",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "2776d9339c051b70da010eebefeecdaf6272b3c71255af261de54e1384e0c82c",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "29f8b4c122d9f5ac2adbee7d4b4f7e2edca7dff0e2da38fc65d0abce7325aeff",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "29fe56966e379df3678a67605477be715b35204a43e622ca4297fb1eb2b337ca",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "2a2eaa30c72857a64f34ff4f964c525352cef809544a61497e6527cb8dc5de99",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "2c3a8549a66af0b3704bf59899e7f28e09015e932e55f8554f46cb684676b008",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "31a306beddea4058ca97facc124770ea1f7685047fd0d69bcc4716baec1fbc40",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "32c858e2f98205cdd994e0dc3b263c94731fe0081fcea66b523d82a21d244599",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "37bcd1dec56b26b5dc881e9289f45717edcb4989c80c4276ed50ce14e0a20dda",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "39947bdb8e032ddb19713197041833876bf77b3ba403909341b7577f88c2dea3",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "3cb34c454055addab9e3fa8ab348f67787a836694a1479a7265d92bbdcbe58db",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "3d71c45b0012a28cdc64f653b78bc1365b612e6fbbedc2d4c8496be1abd02245",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "3ffb6cee62323af4db4445d09eec72028abfe1a5ff9a30a1988a7bb1942be2ac",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "411bbd91fedda5db785ebbe6d26014be5a7687467ea21ec95fd70440789b0e9a",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "468f3702f37ccf3b0f0d2ce5ec2eda8d57f8b549aa38d712ec4bb18be5467f8d",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "4a60b18364d14fa72963bfa7479ecd87977d4cb7977b255190f99005c326f34f",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "4acc59e297e35e81a59d7aba7fb3aa2244e20acf89791245d2b0df1752496778",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "4b055215c24c8cef6f9102e0ea1d64bfe73c8e9a6532ecc1e763311fb208bb52",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "4d9cfd1f6f566867aee9afbb034b247b8135df8f2972371b823f782c53f2774d",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "527ab55b45286b4b7d007f3de096259883777fedfbf707adce98363ebce12b63",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "55011584e2aa50f763f02747a537377d0c55c9ad8fd0ccc7982ad460c2f562ca",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "5689ed3fa0bac2067f03169d2cff77b95930a228a5ec55d5f4fb23684b1a03c9",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "58cba051d0019b7e7d4b7a3b6ecf7633e6ad5ecfa25c88c7932b580afc8232e5",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "5a042ad9682df15c251151efdc884e2d7bbb43fc11f81d76e7947c71b2b8a169",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "5b694e3ccece99374a4d5dfb9f61ce4af95af0acad1358e667d1dbe4ed2e1eb3",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "5c56bad1e44b3961b0b3d53436a854505a305b7868116304b5f19cc07929fbc2",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "5cad0d8e8f84f08cc433fa5c8948ea60f6bd0b04b6bb4d6cb8f2645295ae66ed",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "5f92fe1e2f3a709080f5683aa6d3343a1c513b4d9b8f2760595593d483d3df34",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "639b4167666987ac0e038783fc2628c905135bfa237761155649f660ca92dfff",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "63ac8679889a2dcb677a6b3e5d75c1154a51aa2cb8cab5add34443bc186dc047",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "63dfd278437406336ef6eea979a147cbd7cfd487b7f2050714f7b45e269795c3",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "68290a55c671bf9899c654c64a7f5037e1f0ba60e7746ce4e3e16c64cae93d9c",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "6906e09fa174866e64d8969046f3555b52889bedb4adb554a7d72a29b89b52bd",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "6e64e69c773495eca86687608cde2ee1b9c5a3cd42ae6d8df2fb1830eaadf9f5",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "6ff29ece4d27a443edd7c2872c43cdf2cb22ffd35a5c4fc55316907d8d577401",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "70c2656408896364e3c7bc0c6e04f6e32bf538bfba94f4743d9820d134244079",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "734627d41757cc9e7bd16075f8df1851354843b02a8adeea3c7b28fb3132b3c9",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "743e8be649f8be7c6d67f7ecfdd4a99dcc0b20d95a7178309bdde68144be319d",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "77c9dbbc386c73491e8f28e10845b25711840491fa1c4297a7fe2ffadbc195f4",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "783dcfcc889dfc616e8db8f7fde8cfa9f07b5ff90090834523a0f88441c02112",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "78f010a25b2bafbd5bfc0c30c4d3bf6513b8ed29b438983402d132d96508113e",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "790713ca3bbe0987c6a8e36a52db75539813ae2c3ee124720568854300d4e2f1",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "7b3c343a142a955e15913ffa00fd7530fb384bdc4165874be6064ef6ff6d3076",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "7b4d691f6dd79a1efc0254357ee0a9aa0759cc5fb964a5bcc0aa468877aeb32b",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "7e62a8f725b7c112f966de04f5ed2c7a842ff5c2886e0ddf717449b1314f6754",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "7f47d7ac849f5e2434bfd048e4aa5c937c668af9b003ce980234f9041d9d188b",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "808d5764fed168571c7c41d7426db3197222c8756097fed4e81c0d3678f22726",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "86e5784f6b86fd8e7fd9ae5f6a1de58d4fa22d591c81971c542ee8dd8fb39801",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "875ace02d31ecd79fb6a0325631e8794bc023975bb50cfe4ba4c04b7b44b2ebc",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "8808be9edf54eaac093006f289216f9464858f66af464ffc4780f798fbf3c26b",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "884a8dc8202e3e5b5b631ad5f0e1606dc141d305877d0195989bfc0027a7b042",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "88adb781fa21d225129a87d88f8fc4a1574e915bd1124e1046366d40db01f39c",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "8a1b4076fcc3af219248d974c170dbc14cb5c9ae5719399d33cb1a58273af0e1",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "8a1d86e871a96b64a9fdf2909f63b1dc331b13e486ffdbf21e5c9a27c4c11adb",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "8b09972fb864a67a68e1f48a6614c0414d54423d9d9150c285a6730af799a143",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "8b6099dbc5afee7b820c6cea8758baa37e60c476e27f0310d04cae9017ec1c98",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "8c4cc37dd017d17203bdd48089bc524cbac22c23973a45d4f047b101c49d7340",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "8d82b04328638f0b17c8b1d3a383991410ad4a45441fe8b744cce3f04966255d",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "9117ab654c6c27698a62a87b9fa654cf477432bbd38a413cbe466857c17c831d",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "934f6f11469230fc4a112682fc90c93214cb600c1367153b8772bf517d5bb1c4",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "9452e5600f71c5829f375c1ce381df447a13e9a21d1aa9c5f9ac6cd39238798d",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "954231f68e3c4b0035ff427d7dc2342f380b8dbf8318b518535c47bef3dc6fd9",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "95b9049a8aceaa493caca6245ef2e3201c8b4a4e17826bb5d6a11a562196784a",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "962719a4411624fffa8f667cf1f37ea8d31d95a0157441135059a4f64bcaab5d",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "a00651ddd1ac5103fb6cd5028b70c74f67bfeb6ab5a4b4f6e6698bfcded06b92",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "a2d0e4a9f3dbfbfd442a54f77a4e7884a79b27117269f520be64d4e56caa1100",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "a469bf152941d9e193c3b20bb99743000d5a4961059e1ca93f325f5dfebc9cc1",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "a4d3494e23648174c7da0c6370f9d62be4f442d53d6d24a59ade495e5e0d3372",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "a59e3bcf665ff1a71317c13d8b87427e27ffe5585bc94b2a0e97255653524e54",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "a7b217f7ea79c730bd3e6b80247edb683c152f70a24fce54076ec30c54c430d2",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "a89aa179f13df1df74bd154a58f07793096ae391185c129f38b73e03ac6a9df8",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "aa3530a6a8b519b15be16d81143e6c04561082eb5a64eb35ba6a63ebf3c617bd",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "aacaf7b1d873d346b55d4380da50b92a65a4345ab84c868cf7d1f61a08d531f8",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "ac7e43664e66e92c86b8bc735c58213ee8c7093f644c17bd1fa76815dc31af16",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "aec0ea52e94dcf75b111d99196e6fe4ae9c4ccdee8b6c66d6afae8635a391de9",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "af9562ea311201c5d93f95776603bdbfe78cc9c21a4bbadedaef85fce7ba8a02",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "b12f2b9745aca1741756cce26d3626b76f5d8ef87d7bd9c6ed81231d087d8d89",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "b217f543695ebd3d606df6077975ef26f911124ea3c178fcaeea50d2566bc6a8",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "b56f0e6afc6888c9d79b71040947e7128e249093cf2da4a113236e8253560232",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "b79d39f5d3d28030431f4c4b2a9990e0af4ae37bada3076a7ecd6c1df0b3633f",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "b833d29a15d2effc9fa21f307a62cbdd1c239a4c983ac24e3464956338240c99",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "b971240e9056146c1d3e2a5d46b7b4f39fe6221ac9054c7a5d30b6bc1dfe2bbd",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "bdfa9ed9490442326e299c7d8e451740f42689e65f2e4f88097a7dc4172ea881",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "c3b9f0a41354deab2ce54c7dd777796aee186b43dc8262e864d9fc32ccaa6107",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "c4cd34a22b9612c2d1db5ce0feeb9c9d5da00e29c3b5b756628e1809e621d333",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "c6e334af6522f34c0e0a8ec81461efadf7fe722aa387bc743aa0c10ace2fa15e",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "c6e443cc1ee5f2a8449a243dbb968dc643c3e8da07361b616a4ccdce8ce6499e",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "c8d7808bc8c8434a119d464e67349c05e364dc9c639b67a6b46f0443c7304a9a",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "c9af697b7149a7d63198ce54d2f358b27925ee362923aa94e2caf4675ed7e352",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "cb43adf36b6864f10b828edf4aa06396de3555d314677985de61731796ab9686",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "ce92cfe70131c1bfb7bc7abbb311fa883ab4980de3a50588105724e4bee7c5e4",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "d121027d32051f0481a51544c315727480afb688b0b8d71569c70c5bf9d9eb92",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "d3efc9fb7e3985ab74ad193719fbb7e3b77fd8836e3a077b035d9cf6f0d1b1d0",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "d964df86fba8c1d2908ca27fb105e816b55b433d3ab894af5b9ba810b8a20bd7",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "da08de65df88fabbb37ba9d174dc8373b549dea5e89ec5df4bead2b29d03aad6",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "da39e25867535846f129bb804689c5779c356425f8cb139793a936f978e05995",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "dac9a17cc0dab8f53d8802d5320923db0d2b261524bad2c8a1ccba1800ba03bd",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "dd617bdbfe4a6da7848be61b4b02276aa7cda62f3637464d8cf9af00239a4bdd",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "e1a23c845a18d9febb462d26728d96c201f0f0f626eca2f7f20cc7e6d59d11f2",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "e1b83213c9e9bd4a256aaff57ef58c9ca996be67d36f42f449510e1e52979776",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "e21f2d8ad5a6f75e7bc71a8866361e768686c44b065ecbac238d6b895ad93578",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "e751bead7aaa3505e2f0397579badcf7e012f7937f0c6b35c945006dc7778f76",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "e80878ab11a4e1b815b1d0e139c1d4d268fdffebff62a3fbda5be20cee4b1322",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "e8b49e9e8d8666b9a7fccb6095716f0722f5339c15b1c04e2b8de171df498b02",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "ee5100b39f8876a58e68b6c58b2b079aacd4becf3e71f46a7bfce6f41a683ab5",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "f06bdc78a55fa9cdc96dc62e7aa6c2768f585764337999fe45f867366bf865fa",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "f313c7a2b1093e0a0b3c9da1a73e0b76f027dea6285a0b3c50cf6300e5435e99",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "f817c0ab885af7db3fc023c25dd7f8d89e9a7586ae3935aef97fca4f66551017",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "fbfe0c961e50afa384d951fb02ebdf16a9802a0aaa0fb10d98200f96b1a41d34",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "fc41cc24cb2e133eeec2cfed0dfd00ac280da79f642490ac5dfa626b899b786b",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Pre-training",
+    "sha256": "fce83a77821e66b85af1c993f4665074842461790dc22c5d51a2080a5e8b0953",
+    "source": "FineWeb-Edu sample10BT",
+    "shard": "000_00000.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "0047454a75bdee1c852664a0b9dd137451e631f75d68c23c93e6ee958460c10d",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "013c24c33c049eef63694a768075d5df51db67b1768ddcb891270eaf5ca265af",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "02e8f3cd9c4e8d2ad778ef92e0573ec781b2ee59f33a5a649396b37e8880d677",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "095a92b8c49e51abe415dc806f53d5603fffecaec8f6d876b980ba9296624cb2",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "0bdf3f2e2a9ab77e0ab41f03f1f277c441ae232fc57868566fdd36f8f4af36c5",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "0e684e884d499d5655985d17d2f18896d190582430db5273467d4dbdb23cb40d",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "0f15b54618a3cf4aba34b88fc4e1111d609f2a7e93971be1f715d908e3ed6cad",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "117b8079d00f7d0be68264918093e43ebc53e27e04aa7c328ee7731eed733a33",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "123e1713d31204508db433ca1395c2bda8deb2565171fcbc6d1b4dd6c95c7621",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "12dedbfe957c79c1e0ac8da9ec51ef22c739701a23ccc47fc422ca3644da4fdb",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "1dab4f4de5ed28479352e373655fa4572d777c4a36f1148fc62f4888fa752950",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "1f56ebcb527e0d3c88c2fbaf51e94b5665fe24b6039f7646bbfed210339cec81",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "1fe5576490638f87d417a2a784685755b1373a7e176ed733461663c33e787b9f",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "20d27e71292a5caf5fae00665f32052ae57b0007c2bb875592ac8b6c3178917d",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "226afa488b6ec0968bc8bc361bb779bac3efe4fd302755e2cbfe955522c8dc53",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "2326ee6344e52717b2f4e1c0e38f39881c0d1e3b1e5f2339c821bd60748435b2",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "26c580bca8a6e8f831aec47f9ee65d779bf0614a34e834e68c6b0fc184817a21",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "2722306eb0168c7bd60065636842df11c32a4e60b0668148bad29f5e6c050e93",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "28984e9e4bea9b45128867cde3e8176dcabf0c249172386da589d990e5b07751",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "2cd1fbb76847eb251d30e9560cb39201c00b74fce246a3d2861ec8bf63ad9357",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "306683afd633a4ec0c548fd8b3133412ceb4effe4b029ac96231c1c20c5bb7fb",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "32d7ab5de72498fddf2627c8872d22ce7aea6db3101f7f247f31e386abc1b325",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "343b58edad7b2d331638168d4f6296a7987b5b12c0d060acca05d0359b360f74",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "346b49f6c7949f83cd57b23fda5cf4ed3f7b6c2cd7ccc067ca8e14802d075573",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "35090c57c8650b6ca2dd1eabe621fb24d2ed4274ea0fe44729e96eca616d8f5e",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "36aaa8c84d02f281e9fc3bb836e8d5ed95c3535527b4b45740b0becc2a4908b5",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "3783c2745ee9fa671c7f013d2d41a88a3002d1f226a30b8297fb730f4acb6f03",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "37e11a76d4893acd005cda861eb2eea9328add179118dbfea186d46d005df3cb",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "397284a7a9e0e5581427edfd0a23393e6f5168ad2dffe5778014a5bb7ea40053",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "3c77f6abd88f4a9e7b416edbe8049ce426a90726bb32e6f259dab1e10a1671b3",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "3ce0625da53be52229b258f836f061884b834ab3915b3f74a36a99b0e12bf8d5",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "3ec00b7e087d4f6647c6cb7b769f5f42fe7be105c38e2c6836d3e9a496025a34",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "450077cd9065ae6a38a10393fb19ca9b03d30b4e60c5fd92c4387c1fb233fcc2",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "4669a7a33b2ff75162d5bdc05d0a92ecb7c312f69e04ea8d774d6c3d4cdee5b4",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "488283f66fdba0636b333b4e1eac29553bbae267d9ee25c8e8f3b3f6ff3196e4",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "492a3216f68258bfca1bc5f75cd26afe711d1580ba6e8238f37a797e5d46a2bb",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "4bcca513df752ca69047e79211a1a9128e5017c3fe4fe177f0cc4de2eb8cc530",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "4ca47b011aa334a85b8484157cdc51287372c7aec2e7b6afd5b7fc1e6b814fb5",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "4ebe653ad3323f8f15850564d17d03dac449bbdff3acde023f1d20046b2566b3",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "4f6d109a8e2657409edb2656afee5e4d884e91c310f1ca1f3916b1bf8dfca4d9",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "52c35c036020376d3b08a51662b1f994753c68e5ace36d5dc48bcad33b458399",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "5a7714baebd07aaa26c1a73fb629b93a0cc2355f7669829cdbf9bea6dbe7a84b",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "5b4971bd5aa337caf7dedf71207543e657ca51da9df4e70ba1f7914ca6491eb2",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "5c2e3f8e559689055256706c3b147aa915feff5cbede2d59843de8c31e90dfbc",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "5ed3bfe309df7f5d5181d5df6edfdfca5d81f785661fe2f41cb58fd0a94c2293",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "5efcc940b4aca5a993a8209f26086353e811380a82912f91a637352af3d2626c",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "5f15817b2fd93b53721bf58b291f5a22719bf3d01d118b73d534bd307e86d7f4",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "5f7fb8b0ef9f003ab6ecb64d6b83ae49452d8539a798a0645d5b668a7932c5f3",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "5fab0e9b1206a96c7bba90079ea77c90c354250c68cabf0860c9a1edc2a37871",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "60a2f1ef2683d481ec9c432b3a4920a2f12ce445fe98261b7c6b888dad0cbc7a",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "6225a5d6210d3499673e2bb057d98873ac84c38fbac6be222cec68987e650e5b",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "6265e44942548cbede2a55c4f094efc758bf48be14b9567008d817311b607b63",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "6404369a1c6e5615065398db9e843a6ce5beed1dce7085d459a1f285d241e9bb",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "64f719d2eb1c98339045c9a21e2808c4b63c9da71e8e9bcf9866d884b4ba6774",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "676e96eb546566fe6aa61a972880e0c65db198c4d493693b418924d9ce7174b8",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "68e653724ca69d131847bc4c193329f11950cb852ec9b0f94af2675bb788ad4f",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "6a6e1f5c1b407e098d9696e30bdb6a01d611f84ec56e2a0e5114a31da941d527",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "6b9de8855b1de411b30a80ec5056a441305ebb5fca6064554bc1f97e5a42fb7f",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "76c871d0bc189124238a2cd05054b3d7453fde812b018bb44256ed87213facbc",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "772daaf0d946128d656017d46572746b45cd455b98f67fdf5c3a1b94eae39b3e",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "77e87660e744ad45dc143173bf628163a654f1794c94cb41e0a75444bbb540c3",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "77edc38eb1ea5e3d3e00a24d0ef2b94ba5387c35d97738940a3937b31a80d4f2",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "7a6f8ee314adcdfb50b52ff2c29c84e202d2f9a6ed2cc70a8ec3cb098722c20b",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "7ab1ab252ee1f0af955ded532d696bf6fd0742757ab6a1670d1fba577a069276",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "7ae6ca5d7910e8386d1b07ef6190be3f18e4c3a479919c6111d47b99937cb64a",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "7b2e3552a933035a31d2b17268ccfab374f6c60700ce07979f33fd84b0a37da3",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "7b9a5a23f373ae7737be481705395e74f33643d79500437c7abb5b6be62beb5f",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "7c1b1654e44118172a49be7d3311c15457d0889668aeb6c494cc3ef494cf4a65",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "7cff65d66af792b282e751c645c7251f1ecb83535306abb790492e83776dc8c3",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "7f354f78ca5a11ac42e5a9ed473f9e235429da6644100af0666952f045596843",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "831d7b35c78d7cb29dc8efc038a034e07a6bb93f517481aa6fb991d2d2359e98",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "836d884b789dea7080d6b67d01e53d62d9730da1837f9588ad3681abb5a6f677",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "837ac66205e383faeef9dda23a6cbebe2fd94d8147509e9467dcc3d052ba3edd",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "8650691cf92a8cbc6dfed4baf5ac5f510e15f20a2940939f25f127bade6408b5",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "889b6b66420ae66daa9d2ee8ff1c7dfad92ea5b4de683cb54de68afb0078f23e",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "8ee185d4f1e4f18e3889a1e947a78c459e831a2818811e7af87a74b2afa0e274",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "914a7aabe4e44aba87fb699b4b8b1a9260d272c677a195e17da468e33d3390ad",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "93b812d7ea3d26b61e9dddcdb8109f51381d6a0e66fe750973bfc03ac37db51b",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "971294433287249678dd2006f7337d96e550bbd32ed6a787e38f90d7992095c7",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "99d1370430eeb5b067463b94c35fedf42606d33e589971d6fcd62c31d23bd477",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "9a04ce8dc6421069fe603940881f2050b9ccb4a1a36b78e74a94ff2445153498",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "9fcc9d872de7c34aaff99e4610e5fae0dd20ebb6d151e423feca3a72592f8a6e",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "a3e037564fa4d8a54d70530f9e0614b9a45ebc34c9c900f7e9a12608996628b9",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "a54e8c4036360746c75b67076f576d327bb162af89b94b695c8bd1857b288ff9",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "a966d2f4a1977b08527396de17486d3c1d61978b17a489d7ffedc52410a13061",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "adf5f71a71fb7c5dd26280f20394353d0aa47b00c657799eda4b20a41edfc9e8",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "b9fd1c882da2adb1579678b8a91efc8a35b571b16d228d4c840be0d1acc749c1",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "ba7ab8aae95d9d13e9868a207525419185ab241134b963d217262dbf98183f27",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "bc7e2c522f9aa14ba3b263dfc7da8db73a79316f36cf7ebf2723cf0c27c84e99",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "bd53643936c304dc8ff0a0cebf1f50e75111aace4c5e7351012d824bc1e96ed8",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "c09e2f58f77e6bb3daa3a0d9278129f17d2e21ec6fdad44d4dfde748e7818276",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "c0b9d2602bec61aaaf4bcb5fdedad3f84e1d1f87ce746a6fb4bea7a4b8546da7",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "c0d17543f58c9744c163b5049314dc5992efe7ccbf8dfafbe519c46bd2a0126f",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "c0fd74c8415a5ab3537377ce37a760d48f91a7d34586639f1a4ce2d159031d97",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "c225b9886c3be451e8c3fa14ae95f0f3054bd1913576fc32202ca369dd096a8e",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "c66480cc03c052f0cfab314c557f97d04719ac2a94f02aa531088e0ab07b21fc",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "c7d0d3c2d46b16e9adb83f0a27ba38ac59affee2f0365be7aec35bed0dad9c82",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "cfe1a6ecc4ec26bf833ec7490de74e977ea392531e0412587aa46c0615f9df64",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "d356b160df55622c0fb52e571140bc97c485540759b2049f06becd62dc746310",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "d426595be76b9e342862b754dca02a9fc152635490c5c4fcb7d33df6ee7b06c9",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "d565e6c2c74968b64ead8a7a9e2fda0f9162f4cc60192f53ac46f0d7657681a6",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "d5d62a0022cbbc3ae4939a7880469e5920a799c6160e4af90560c4841b318085",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "d8442ae488c474d6e12d2851178c38e0519aafadef8c8ee5c6ee1aa3bb30dc4e",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "d99e542c63b628b75f086202e9f49e7ceec9a50d3bd71c3ba5bd39273541a06e",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "db3dff65f1575b99e49c534e33224edf64e26fb3532b8b0b4fbcdb293bb0a3eb",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "dc197e6e014d57213b79cc296a9a23cd2611b6cbf0585ae7886b2c5ed4761d39",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "de812ba855d15da57cd3ace323f01492236d57698391b4c11f8c1cfe989fe359",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "e118bd3373aa61be1da903545cf3608af109a31b6c57aac16116a0ac8c88cf19",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "e1810842e7b6b122458f32989c95589d9a54a8023931a54b3f49dc9ec8341f42",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "e3b3647a1c68ac67af495c79755610e0818fe0294033f391d1ff514de1e1c980",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "e3bec0f54962198b9c4d577ccad9b661ed91cf0f25415e72c237ce4615f1b8e3",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "e3e4dd1e42defb210cd54510e2923c1e6ab1f9e46fb3a598ba865aea13f95167",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "e66ea84441cc5db9377519090329ccba6e6345986b98719ef638ddd291e439e9",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "e7252474d7e1b539da83449d33ce08262f7bededcb7951b2b2ffb0addd978ac1",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "e8644e9e7687040502e888cd503aba1f406db4959bce771f2114ae7d6093a050",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "e891d4c6386525b863743d4c3c6a4cf6180703dc1fb308fd70d2286821899893",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "eae192bc7e65b3aec5380e3c15c5743b392826ae80584cb3784fca42403fe737",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "edd0ac0ad611474ea607a960cd0086902810984e2659e185bba244a874a3bc00",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "ee46a681d0cac9b216291091555ed5340fe2c0fcd1a8b67eeb64663cdd140b33",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00014-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "f2a6e6bc31678f780be298715b5daffd7fbf8d86d92b7dcf64ab30f2bb52ecdf",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "f316dea724dc96a77a8aacdf1c90ece19d58e2f1c93c2a04e1498f3ea2bc85ff",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "f3526a4a48a1e2930dd3078a5a21958fc08bf7d76ccc8d819e5e482a8e62c1d2",
+    "source": "stackexchange_codegolf",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "f41705931bf070d9e19a3a589a97fb82856d3a7c8bb47a7dc3d1f0607e3c4691",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "f466db10f1bf40f12c719ac0c4187c0ed9c641547a99cc7fe5a66b86ebfc528c",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "f88b3a4cf56bc60452ea43e7837321cfae3214c2e766bccb1d98385324fe204f",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00023-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "fbfc53826a63b030c09af81e7e9a1a495e34de0d0648f9315083e347a4553e2b",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "fe36d8566fb6cc8438e61c7a5baf88104826f4420b4a07d3d1cdc437c6b616d6",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00004-of-00120.parquet"
+  },
+  {
+    "domain": "Code",
+    "sha256": "ff5cf4cca8385ad76c3a09d55cb914503d69bea8c04bfa67b720ed13465d8796",
+    "source": "nvidia/OpenCodeReasoning",
+    "shard": "train-00007-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "0157964fad6878c0db009a2eba917f47f999746fd8df59eb3f2ff389a5e85549",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "036ba1081a09dc0463396e3b8583b5c0867662d609deffa34157ca16196d26d6",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "03b74228197ce219b9e10f5e42b56c4091f77a866f84c401b1ff73298d6dcc9d",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "05d8abfb482ebe5b45d7611147e7369b90c3f5c544dc4590c18acb093a1162b2",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "08763e314e8fca3739ac58d81c7841d2e70a38321c197d2a77334218f0c6b44c",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "08ed9eb108e32e057bbb8e26b6d043d121b3fc550e24b5b14907a2c4ea18a922",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "091d3da0a5696da7cd1d359dc31a6157bbe68a38f9309dee90d179540665a02d",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "0cdbd961b15032a52391ecf85ef79f9a932ec3c98ed23dacee1dd0569a476a1b",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "0e1df62c55f2b94b120e26e73b9dffd1afc410ffc8ea0a99a210f5034bb2af23",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "12ec8bc7c19c0310d89eccb73a3b77df9e9ae905ba8fb54512427a743ae23f15",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "1382dc3db65b3e435aa2875f308c23c26f0397705d0ef4ca82ac121665f5a6f8",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "138813bf9b3f74a3c5e3fd1c177962efd496d90d60e4afe5fcf54aa3a8878852",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "14877d279c25f5d9692b03e9eb0ae2e6cc258bdef28f76442a82e7228f9f57ef",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "197bd7c0fe39b12f0efd108aeb60433889c0e04bfe0b1cd5846c132cb3063475",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "19f6bd7366981da55ab1028b8703473a115fbbf6e9eef300103897233b67b139",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "1f7d7c2a3675e7034a3d2132035f311b67293af8eee0c7830572e0a026a9cdd2",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "22c519ee4bea7c18df2bec87a894ca1d406b25cfed8812fbeb75578fe97e5002",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "24a17d3abd53bd34a48bbe3c13f0b4a9df152f43ae81515e8a162e81080b955c",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "255937a05e4c98572d9d6c67745fadce8474b0aeed9f521a8c8bbe71714e0cfd",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "25ae6c7e2b286a5551b52c0075fb016333b9e960729accf769eea6e940b70347",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "260fbe021110f9f37ab9b8e9cabe39a6b8d444be2d6383e72286ffe505a82a4f",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "268956caf0ecbe7db317ba24c0946a69f339e8b20bce03b17b19c9dbc7560e88",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "26f387a8e250f1d1e56f0a0c784a6383484d0cee1e0958f6e6dca7f80587071c",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "2929931b6a88d815d4cb1173f2354680f41ef143e7dc3f09733295d975fb4ef9",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "29dea9334e3e0c7f8cc0a619a85e298b03977a7ac6f23d1b0978e49358310e4b",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "2b60381936c4caa4dd02b94db079aa71b815e94366c206d16a02ce1969220dd7",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "3061895e959c909d9cedaff55d9fbe942aac8c7e12bb8169cb725a27c4463369",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "32496e4ccb0f6b2d36c38599582668d3ad00abaa1df8bdd0af9dbd1e842d8cca",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "3684b4e7ab9d9ade7cc0bb3a537b7ad5e6c32ed2b842e63759ff0e6582122b47",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "38448fc2dee38442f67830c60e641acf6bcdcf5eff1b5151dd33982804ba58a1",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "3a04fb5dbb89f458f0ad2f5c89e7035de989a5efca2f4c5b64271290d13be20b",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "3aa873df1bb2a79dd493f011361925b2800d873a15a1725f7d8ce63a7f929d48",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "3c441b28df06e33623cdc306ff5eae49e0dfcb6c2433e719b93842f1779b6e8e",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "3d444ea39a9af59eb7d808270d838bb4d02589fad38c664e41c4e351854b8c6b",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "41d82694abf850d66e688d3de58c73a2770939659a4dca298d81db76d8a08d70",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "4304c9d40b1b47572ecb745d86a959b2ccf3eda97725bb625a40e8ea734a0afb",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "43ba709b594b32b9a3369b793da0cd59c72cb19a8666ef6d78a690ca9546a790",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "4a654b89ce731a8987113b4cab8b404030b6d7c899ba543b85d390b938e913ea",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "4bbf1899fd4c35e8c9288360590678e4fdd90d71f019f472962d0550054ccc2c",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "4ca25a0c0bac8c6b98910a16c88fc7f76ec763fdc9bd8a2c9c8cb186c0db4b0d",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "4dae68fd514bccb6743fc1a246d48efa5094fabd8aa57e419a44200bc2ab4b36",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "4dc9c85b98774aeb5a533011ea359b4a981e203d388af34f576f65fe23b300fb",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "4ef1017776876669a903ce301df325cc55af7e6c24a3a44337d6367c1b404c29",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "50d8728d590a072a66385d13900cea225d2e7f369eebd63066ded0365c6958c1",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "52fdc40c41b8547c8fe0f621e6c46b5386c4cd9444f3b5688ef3ea44fa06c0c4",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "5387f63d79927786ad8fd86ab61c9dd21d1ddd1e14a2749f27c05c2b783f852c",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "53db5025607929f3d0882a7425995591ebcb6b92436965eb6ec9c034fbc35267",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "542f6b1579e4d5e75ba4ed03510b1d5158348397814d8fdf97f1331ee9c80ca3",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "5435c1fc71abdb707a4f99bed79f11bda7dfd5367c41fbaf5d3f0c0b739b3369",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "549e93d21e3007a7f59c1a93c3094b7252d03e16d043501a4e20342ac45d683d",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "5811580370331add334030ebae1a161195c3afe25c1e0008d99d9757cb31fc2e",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "60f89f7f3c4031f83c60a1c0a89d3c5a92cc527c07c4439f58e78691707b7790",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "6494909364ddc6b1c14c245178cdb7cc4e474f0b193895af839a702b6264ef95",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "653d0e55e641b23f3a1da596dacd8d7ec4c853bfa670aafa5c135ed8c0b0a179",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "67d3bc6c18720cbb1311686ea76b3bbcec04dd8fbae914fcbacb4d49dc6c7765",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "686c818dc993b60b073d479d20228ca0b9b4743decf467dfc91e566686928c9f",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "690fe390b196de4c26c367a68edc407bb02aa2c8cc5915f6c3400fbaf81055b3",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "69b4612c7e4ce97808e5f22601045030c4331655a4bef1dcf5a565aa2bd927bb",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "6e316eaab9c998f35bbb2249d322086dd92a339fc101ab8bab4adaedd653a8c7",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "70b83ba1cbde1219e828e46f252931fdef6d89d1e726cc180d4826e6fa8a5bd9",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "7254d1fcd555c69be401cb08581e672b3f3c720f7a01f7bd2168e931584facb4",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "77a35b4fd40506f6234a66d4fd2245a8f9d4efc9ddcc4f7aea4c27fe267552cf",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "78179a332c458c1dbd57e3ff928f574eea4259fb9f932e248cd856d0b10c0b3d",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "78581d9b48763b964840ea64f3c86587c545e6ae042fbd3484f74e6407c9ea3e",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "7930545d9a5861be7c82300a5985f800a72c58521bddf318dab4d3ba89761ae4",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "7cf044d3a30593a636d4cf387a8fb52293134249fb16f7bcf40a7b2c69d66788",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "7e38a04e08f5679240e8938f91969ce6d6d9fa3c3e73091e53d58147e2a706a7",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "7f75608b5c7b4eef6d7c4733f62a14a1fff1157aa8871f1943325f149b4d135c",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "8110c4f2f929b09c64278678901ce7fb2268a2c87bd51b530673868f4b1505fb",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "84b5540876bcf9faa220f271576cefd89e9d46c18ed6f1f2c253265f14598fc3",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "85693ec6673c02f9a3230a1d93856c0c3bbf0212a28fed87a91dfcb376d92633",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "857fb5de07baf715d00aeb5b1d4d80a0d2e1761b4812324e53f23d14ca9868d6",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "86180bb5bf283e5ea792f46e815d4e9f7276feb26c639a251fe629741d53458a",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "880a96bd860b30c8deb3427cee452b09a8bfc01651f557ef676ff4121b92b4fb",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "8c88054ea91e71c235c8e870f815dc9504e861cd47d4b9e8d1e4c701dbcc6070",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "8c8a12a02013385e92eab7e99b9aebb4a3c97af83780aac9a3b0595d6009fde9",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "8e194dcb4a3a579509d0fb5def057b6b6407fae4ef2293f37b714dd7808980bc",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "9189113b5588525a8c23c3910ed3c2bad7c7a386b774d6fd505ea128f8bdc6f8",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "91d647f9005f271918d564a4218ff1618da8099708c6c0b3beaeaabcb11df6da",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "955c70364b3edf597bfe87a3015551ed4bcfb42577a41b4be2db95557fb57aca",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "9874f29531991a81265b3c94b86e81bd239e15a1cb9eccb447e0a5ef33befc91",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "98ae1e791452eae1082a9a96b1d31172d906612cee5183b625557f4de4d15aa1",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "9c26078111c6511c8aa3ace1c36b5db7f9898e428866ee30344c862308b55e8a",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "a01a7db5838ffb642288c307b9726e5553360956131c1ca2f22787b4071dcf29",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "a05bb04d96e859f0d46c7a0db6fc728ab3205f6452282445cf473a3dcfefcb21",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "a131009e8f8c7794a5618efb2ce900a4017c21bada9b8deb373b6173655099a9",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "a5f78a2e793f84695b588bd739368e5effc3bc1b5d957c6efec5f8f96ee75144",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "a85a28da109bad47ceb67e6833bed0a080eed3173ca90f264eea889bf5fd1063",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "a9debb96a6b9f4826c914b3c006bd6632a301fadda9165833e9663dffa35a82a",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "ab2f4ef6d2353a65af7c0ed8791ba614f6f56cb76ae9078994c153d53dacee18",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "ac5744f6b7615f4c1fe76a9ff5b191b1b550cb4aea6c8fbc039a8c9e2b946b84",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "ae54e0c2acc996bd75a33f02b18d82e54f7c1cc9db383e126e194dc0dde5f838",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "ae8d4f25793add911cff72863f8e7f7f92e6a1eb043d87709c3df1806bd2c200",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "aed67fbdfb4907afbfa9f6ada28e7e3401ab21462de9a6cb4bfa3a8f694fe266",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "af9928554bba3044817b3509df5dec734f614f89ceed025a6e18273d996fbe41",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "b24c519560aa10a87d02da3efcdb31e8609b90f5102ea8c2eff5426618e7fa4f",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "b2928e6cfbbc9073bc2653fdeafeffe56e93af72c7834565c9bdc65788cdfe1c",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "b36d24998fddf3106a9a4651c85f897844cc7f24f9cd1023cc9a0c8c4f899fc8",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "b7efe6e4701d761e421707e0ae58419c3cfd34cd91329ea9612983816549e365",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "b92bdf9dda3feee3c6dace531c705f9965ac0ce6f4862c46b5f99a1f5c62858a",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "b98753a42514005d540df3dc24ee54b8f51675c9e12c478103ca7f03b2028159",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "bd890810a407e7b993496b3e462a37f4e2f3548a77d95fdda3d1dbdf19ce2d92",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "be45a04edd30a5d3dce9df5543c277427369479d75ae9f5a86f6b4a6d68f7291",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "c301d27bc619c2ca6c67212004c21adc94a5ada8d06458c64f69652192a7c95d",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "c75de7fb6fd816097cc87fc3745e7cb694eca833415c3503e10e5622f815e921",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "cab4f3d13c415247540bb6d470e17fa4648e2f119c849e476d5928d05a2409cf",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "caf5dde095b350c73d930962a6c9160ecd2af0bcf3fec9b55a0590d7df9da7ca",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "ccdb50377ea99880b45322c7d8adc33bd7c8f9a335ab96db5b5c670a1aafeb96",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "cd42123488c5fa4ec2ff1e22fe81402c6681568167161ed5aec7d37a4a36aa8c",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "cf28b772c5f19f3c9493c0ac1f2aa95eaf3e2e7e72f4e5b626ca4d22f14dbc01",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "d1fe40fc28dbcf98b1d4ee8cf65d35495b63ecf825242361126ae33e1150ed56",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "d39f96163af8f6626b396019689b9a3590aa3b5ace14c8e2dffc95ed82234a7a",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "d55510d65466576cfdcf3c970e307cf18d519f595a1baba758aebb33d477720b",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "d55b83adbb42b32b3086acad672ea2bb0088cfcefef0e03aa9cd8462c153bcb5",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "d65a995545c4fcf06e19298ebd57fce5e83d5ea09cac211bbd61a2cdfc95c301",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "d88320b18a005b68733bc8b53caa0a4bc8482e57c72adfc4a3e050ec81859064",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "d9cf236d898d96fd45d63458f163aea4e4ffe8eb06e87189d818730d10a2cf7e",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "daf77f1698090f7a39ef3b041adfec8ee14ff764a1f65b6aac2a9de28ce2d812",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "ddad9e5a6618fc8cfe005a3665f63d51f3dda5117915e876c95c28b189f61050",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00101-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "e15d8bea520eaf3e8a58bc6aaf4ff7e849da92483b8770e3d0e888513037825c",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "e16e4c3622f9862475359195d09a93bf58b71f7246a0a555eb18deaa348729ec",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "ea9c6a11a59aa61c65bdcd753efb3b9863907980c16f57aa393ee945f0d82d1f",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "f0ce4bb35935c48e6c6fc87359e46f8e5d0fedc2edd3c1e73581b226c71d3758",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "f1d201e83bbfa1ed580011ee565d8d7105057c012c056db3befbdc4bd2d05777",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00040-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "f249fb32c1f4aaf6125d3e542e292de8dd34e8ad27c4257e640d72e7bb77cdc7",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "fc2caba1f52395828981ac086c78258f2a84ac2a9d1636fe8ff02ed89198e1d8",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00081-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "fd119a0b860bf8cfaec944b0433728dc3fea6d0a78c9dc150ecb05b7b29d0650",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Math",
+    "sha256": "fd6c6a6565232d95b4a3c77b02727c8d470911f67a7a1bfb64829e4e14cf9101",
+    "source": "ai2-adapt-dev/openmath-2-math",
+    "shard": "train-00106-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "029f5fd3234f71294e739e882362ea6661e348e96a4eaf60365ef89a4b3eb0d1",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "0398f27d2e0f03af682b39193e4c9255913299d452bf6ddb420706189a0bb454",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "0832c7d9f4ae8d58a24afc37c81d670f4b38cdc8bcceb283a346c657ce404e33",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "085673c6e32cc273a2374d8aacc5e82c7414913ddb89ed42f177be0e2bb623bb",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "091c0cc39c440868e969b86146827709f76490bcb42ec1974be77a6f985dbb62",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "0daa0040962107061769fbff4d0cce7d8210f3812675486a653b7618bdcc740c",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "0fdbe49d9bb53ac28c8dc3f8339897a9892f967e59277e1aee687e7a003e9f38",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "0ff585ceb55851fa2a98a87e74f5831659c71743fc6339b9066b327d9306034e",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "11143712690649d9021ca19da706234db12435719f5c8bd48be35b7cfceea3f5",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "17de917b8cd57705a0f1cd8e1aa2154a57721dfd1780b9722b2c4cac49a3fbfd",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "1a7db77e81cad6b306bba47581f189852e719ae4785fc06aced552be9fccd2d9",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "1aae1784c5077e1b95c76ba2c6e252d810841eb25f8c65e7df015c9b7b60f084",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "1b0da43d18d7213a747bd006c9ee10692eb5c96fd23610df7720b3c19c56fe33",
+    "source": "stackexchange-physics",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "1b1202ef748c9e5b5b3c2356e5cca3cd22eb354d64fd90ca30a0a9bfb0c79a94",
+    "source": "stackexchange-physics",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "1b9105c694a4fc4d9d22048b2998d663a4697f6dc65019221dfd5c39121b0733",
+    "source": "stackexchange-physics",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "1e09e801971acea3218961f62b2410c351fe3aae0588a9e3721726e50700c443",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "1f252be522ea594be7688590f4369297b0c9a107e3ba138fcac4106931f45344",
+    "source": "stackexchange-physics",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "1f6a489b9e2f58d49b7a39080986c34e1404f8049da09fbe0da7a059d7fd324d",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "220cdce7503cabb66bbfae3f56c86ac38812cb419b50f8d6e6ef6e36038e0d40",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "237f24768cad4ea5c7e6f0ce4392286f32dbf9e14759ad80e0bb2c37c199e419",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "23d8af21bf461bbf29dbcd143ed7a9e234e6586b909fcaf7e4fb89624379a4e7",
+    "source": "stackexchange-physics",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "24652d252f5b16c33903b163f0aec0f9e4062bbc4efab86fda1415556400ffd0",
+    "source": "stackexchange-physics",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "24bb09c5f859342205b76af5de6274d50995e87916060da05bd43f8cd5f3147d",
+    "source": "stackexchange-physics",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "24f72b97491628f3b4bd9d8a1648237715f3399e57a7f991ce68c61f52c0caf8",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "2546493ed0288f7c76079486a9fa7d2415ce801feb583c203016d64f58192f0e",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "25d39c049e4097f4b5e4ce4798a275903704eddee0756ae694122e0a5e08388c",
+    "source": "stackexchange-physics",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "286b600c09c5335c0d65512533046748c6f512e3cabe640c37c877622e7944c0",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "2c44ad2ff17f4d264946118150a2f697e8b4c4712f4deeca15d42ed8c3d4257d",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "2cfa62db7d630cc5994946f700cee2e9a1e4e465e40419a4caa52c872ad5f4f3",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "3657f5577356efea6b76c893c27afd2721a8f9adbd316d71be2c6633ac162128",
+    "source": "stackexchange-physics",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "4200cbc893a652cb9e366880cdd52821f2b8f74f3a8c20611b9a719198e1faa3",
+    "source": "stackexchange-physics",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "42101b488725bc075d7220bb8422b764844cc8e5110216f6b90904ed002d2476",
+    "source": "stackexchange-physics",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "456ca95f2d1e0915a9b695f8570c8cd3d89e6b7c35c0b3154422aeff0c0dad83",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "46b5790de583d12686fa51d58b3f4792b34411da798f05e7e11faf112b07c681",
+    "source": "stackexchange-physics",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "471cfba01974f768d4d21a95925618dffdb58cc6a81b0c5cfeb3d3dd21a7e4e2",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "492f6225e9001b9af4ff5aa7a7f3a45a7e4591092abc45102ac2f388ee2b015d",
+    "source": "stackexchange-physics",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "49e15767ee1872832934591b5a76e7b8ca6feac95a3c1d64879d27e9b08db20f",
+    "source": "stackexchange-physics",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "4c1665584b8fae302db51e3bf907985c8a6f0c2098e37967cc4674ded37aadbd",
+    "source": "stackexchange-physics",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "4d0c1ff38cc52dbf69d904a945249671d963b0e46d98356e5e33b9b115f87977",
+    "source": "stackexchange-physics",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "5165fb6024aa220d3a648c2795a5f01f5b41405887d61f1ffbe7de58bc18e253",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "520f89b2d3d0704edccc8fa6deab5985d89d4925f17b8a8d89fd55da4186ec59",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "53945c1da3fa9bb7c6bc0e1bb95243925b20a979a2da04cd3448e25b54fb0c35",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "57899ff36ea440571995b85dd94dcea7c7b52d1ba5253fa8b48447ff23943d1e",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "6119d4ece9df52835fce898aab97ee416eb42905e3ff3cffaed8adab4261ea2c",
+    "source": "stackexchange-physics",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "612831c6121a9f8e23ec799c122ce742dbcb7ab481d0d9b733d310ab2d2e8497",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "6236d671355522755828625b9458da20bfe1fe88804ef63dc0b4b42f824dffd5",
+    "source": "stackexchange-physics",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "63a42017869b2d776ef0a6f1b6cd47891ca0d97107441ea90e9d8ec34a9f6ddc",
+    "source": "stackexchange-physics",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "711811ba4a64b8cd5449f3164cb774a614404acd9003fff8dee0218268918dbe",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "72300d01f50bf09e33d6c2063fa0b29342806dcfdb30ca073f4b2d5be3a6cf0e",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "732a30876cf555eb0a1ca37da17e783378f7bf8a6c2e7d4eae388d14f9f6a748",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "74250202ddcb2a17d53d919dd54bc96ef7dd6038ad226a671d62331292058fb5",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "750d9b29571e1827c428147d43b4b7a38ab12673883f8967740a61741b26a3fc",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "7b6c11aa8bdf02f9b24a39e75ec298904f4832848f9c776be70b4af6033d91a3",
+    "source": "stackexchange-physics",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "7f15a4e2353fb64c44aee7cf11ec325681f41fc18bd9e70df9e6b3db6779fc50",
+    "source": "stackexchange-physics",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "8020db9cdcb8fc623155709eecca9665e8cbaf3879d8c619f00fea57962576de",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "812035145faccea3810f370512e58d57846524130412aa93d962e17447990fe0",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "8135fbb9db232e63918abb6c16baccc77b46878c86aed712f66bb1c0f5562856",
+    "source": "stackexchange-physics",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "8466eae56bca90393c7c0a89df1639dfa1b4b7f5a97844a4a3397d037ca71204",
+    "source": "stackexchange-physics",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "849fec998cc1eab423e15477fe9e483e13dcefc53a1039fb4b26b4345c963e37",
+    "source": "stackexchange-physics",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "85c7ba5271714d97eedb6249dc324dabbaeded81917feff8e25445769bebc579",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "86fa630ad9d4dced85a236dbd2076a508685fd1e9dfb01c0cb54603c9c7b8ef7",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "87ed4dbb480ae105e61bb07255ee33a3f6db4502082a3f70a04fe8493fe57af4",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "8d5dcbde418c057607a9af3e538e2f1b1ce70de235b517ee890483c8c95aa23c",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "8e30ef3a61d848e80cdee0c7c153635ad123b2a7230b77f50aec71a79b950237",
+    "source": "stackexchange-physics",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "9045324e2f09cbbfa76faa100f00a77c8b2c6f1c41485fde08e6299ebeedd309",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "92258e6355a22d61e91e75853f59efae88442e3f826e340755b97fefa0905f89",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "93dd87eb284bab3ed8e14a075dcc28cdc9df6be7339e165885e26411fe65cef7",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "9470a51ee54987a1b8475bddd07c97709c0a76e3aaf92761e7142b22b38e00b2",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "94a56ef0db88ab18b0d9c4032b052d22c251456f6ac54723d4144090eaaa6f12",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "97dbb171ea57474146e45fb1f376d5cae6a5297f0458649dca682197be25268f",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "99983f86bd2bd4fb5727108a45d4329ba1c3ae55f9c835e685722d7338f873cc",
+    "source": "stackexchange-physics",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "9e3c075bf59aa7d1592fc55a588477edf7fc771692430882ac6a3e7c4f703444",
+    "source": "stackexchange-physics",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "9e5dacea648bb55bf303a35c08689bab9b8737ec23ca268fb20c371e34932dbb",
+    "source": "stackexchange-physics",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "9e6da621a07e4a0a477b9790d24653dae7c7045839da320023b0bdbe323fa794",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "9e9eb44e2278430be84308b34362021fdc681cd17af0d9d855a48e9f259c40d9",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "a25848fba591476f9c8fad630ab7b3c520a8f0e56f9734a2e13055686da1a060",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "a27ca95ff2318661cbaaf2182e6eb494b25efaeb218028b476ae56bca5e9d45f",
+    "source": "stackexchange-physics",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "a490b477f63a1525c1e281ec12d330417132e3dfd627bf39e6630d93833ca368",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "a57839b47248f22da972470d3a66b3638106c489f08e8d8c68b09e8b2e73d520",
+    "source": "stackexchange-physics",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "a6f2fca006a25bb838b67fbd80ede0084207b466157a52622fec7c9ae54bcccc",
+    "source": "stackexchange-physics",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "a9969f51458578a2c2cc95128d89d7fe0232aba207786c786641305092bbf0c0",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "b0a6101385c1788454ac3ae75e70b461b3ada943991ab6827fd6520cf00a4441",
+    "source": "stackexchange-physics",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "b0de7164b2776716d325701715f6e8c618c28da4f205ee8c43afab811ed65869",
+    "source": "stackexchange-physics",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "b14242dedcbce4cbb86a30aeb88e442b5bf38525ab619611770a0774b0f689c0",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "b54e9a230ee7ae243d86b28c646a4a7b94b3e8f60ba22ac7572b8be9e1ab7c1b",
+    "source": "stackexchange-physics",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "b61abbaea548941862c669304aa721a3f9c1047a2a5fcecb31d450689f0478e3",
+    "source": "stackexchange-physics",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "b62991c776529716101ab36417560a134d0da4b635f4d56f251ca69e7343befb",
+    "source": "stackexchange-physics",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "b68c07b099f88a1d21da63406cff72b61a04c330023ddcb2a5e74e1d2154e15f",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "b87488b14dc40521f10c2147577786b293c77cec9ecd53dd5ad81c269cb9c039",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "ba4ee5159606c5f1b1350a5fb25ceba985d29297c3a1c50749ebb7903da1906e",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "be1a590b04e5d3d468e75b51378ba9d8641da086902e947d27dc19636a1c56c0",
+    "source": "stackexchange-physics",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "c080fd34cb25f4201c5fd9ba4345673c50a33f0b45f5d85ef8e92b3b4b94e243",
+    "source": "stackexchange-physics",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "c6236e7739b86f0ba1229aa0ad74f1888906db8de89a0820c475b3a2c7672c1c",
+    "source": "stackexchange-physics",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "ca070ac90030cd3ddc1f4ee179ec1f22dbb47a7d61b0df051b2a0d7030243bd1",
+    "source": "stackexchange-physics",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "cc6920f84ca98a8ebd11c3cd9d7873d4ba76e0433f999dbb0e4040ae5b4bc3b7",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "cd8524b4fa3882043bde8f9804b5b518b795a9cdb880b691ff3d5a48cf90adbd",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "cf39509163018f13c82124c2f80b93ba809be56c16e879e59efd75f02276f33f",
+    "source": "stackexchange-physics",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "d160ac3188d46412f44a192603337f0f90a21c5fe3d271c5cdf973b7cb26b585",
+    "source": "stackexchange-physics",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "d30f34c594552815966a5fbcf546f763b17fab152a7513e1e5d688c6555f7d16",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "d52ce19f9ffc274f9065caa4d423074db448bd9562d3972297dd7bc788d1af46",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "d7c12f09f5b4335d9d49cf7c1f125bc2663d4b7ffe4e5dcf374912fdc729cc5c",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "da89316f2dab97c5492bb31002c0547b9ecfe328aaf5f35eb75ba620efe5c53a",
+    "source": "stackexchange-physics",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "dba324f625f6fac36da2b12f84086f86da2474a346ec36d5a5ecca9484041bd3",
+    "source": "stackexchange-physics",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "dcd5729d34ae8e615787d34ddc10599ef58b1eb1d7c87b9d967c2325c0da67c5",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "dcf5af3f37c5442df694ff64d9468da927227dacd7f068850ea678efb5b7583a",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "ddbc4f17a7b4215e18fb9499ccb1b7355dd8744a41456e39197270b60cbd9815",
+    "source": "stackexchange-physics",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "e10b02212981c66023588ca5b8a0eff959201d8e40d1bd1a9e7bcab55d4f1d90",
+    "source": "stackexchange-physics",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "e168605ee6d9d1ff81a0aac1eca805eb4d925372bfa04b47271079ec8f40f628",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "e1803d03b9267b73af659ffa6c2abd0c1cf6f5e43b67f05aca0b290c2056b0a4",
+    "source": "stackexchange-physics",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "e262d347710fa30d99e1c3e8575d3d3b725604a0b1a9858ba856759c424c2a15",
+    "source": "stackexchange-physics",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "e27693fae986c63a40b22b1962872cd21b42d73e853bf98ba296ce0a3de613b9",
+    "source": "stackexchange-physics",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "e4aad04ed6d51cc3645a25c6a37779247cb119119f5d9d19f0a39fa8c8f3471f",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "e83ea37647da6932b1bc510b8885120c971a945195948767dcf7c6e5ff815580",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "e8ad49b73e0d17da17e6c00fbf8128ce84746170d48f58a23a16f93e5c8ae19e",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "e8bbc10431098bfb70b56afc3a48143c6742e06b6266d211d4635c127222590b",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "eef5b8f5a0ac3ddea4f980f6b1bd3749b26e182618c8f8138d7dd296303bf334",
+    "source": "stackexchange-physics",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "ef56abba5495d68ffd4434c6e7630d419de91a45b1731691797160f5292dcdf3",
+    "source": "stackexchange-physics",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "f185b863ca3f595faa325d56da792a207168887f524ce0967cb5e2471301693f",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "f2ae0c8c017d659d057063c6c8059fdd557d71343bc0a21cecc975589b904ad0",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "f2fa41db6b43ba3058e25e0796280d0413dd45d62edf4f103f8902637446bce6",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "f42ae80d56ce24b9de8ff6fbcf4a912ece2503b194ad267e12a18821c75c9fa4",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "fcfba8189922e7b399de342e974243fa19a4603369d1397263e16e7ddff71cf9",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00116-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "fdb4b976dbf1a651fd63c0c7e4619441dda5a2246439ebcd75fbdcce85e67cf6",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "fde97cb9627d2ed85cc12342504728b2990faf7dcbf5b778cb7bf4efb6a71c0e",
+    "source": "stackexchange-physics",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "fe6f88c7ab65799b477793132ff1d5cac4c9eae845138c0dade85b0c5b5a945e",
+    "source": "stackexchange-physics",
+    "shard": "train-00110-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "fe71e2ee18961ef6686d27830afe3423cee87653c4a20fcc3384f8ccdd16fe63",
+    "source": "stackexchange-physics",
+    "shard": "train-00113-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "fed37d8386b13952cb57fa1a7599a235901e86a6f70147315e01b3bfc9a441d4",
+    "source": "organic-chemistry-questions",
+    "shard": "train-00119-of-00120.parquet"
+  },
+  {
+    "domain": "Science",
+    "sha256": "ffc4fe2073f84bc1b8c6ded20f3bfbd05f3b65d3b8443f9aec40a0436fea1622",
+    "source": "stackexchange-physics",
+    "shard": "train-00110-of-00120.parquet"
+  }
+]
