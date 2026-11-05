@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "groups": 640,
+  "domains": 5,
+  "points_per_domain": 512,
+  "points": 2560,
+  "views": 2,
+  "seeds": [
+    42,
+    2,
+    3
+  ],
+  "finite_features": true,
+  "no_point_clipping_or_per_domain_transform": true,
+  "pdf_svg_exports_valid": true,
+  "exit_code": 0
+}

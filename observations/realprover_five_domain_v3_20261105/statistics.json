@@ -1,0 +1,176 @@
+[
+  {
+    "view": "raw128",
+    "seed": 42,
+    "points": 2560,
+    "kl_divergence": 2.2585291862487793,
+    "high_dimensional": {
+      "within_domain_dispersion": {
+        "Pre-training": 87559.015625,
+        "Code": 44133.46875,
+        "Math": 52500.4765625,
+        "Science": 105680.046875,
+        "Formal Proof": 52020.1953125
+      },
+      "centroid_distance_to_formal_proof": {
+        "Pre-training": 124.76593017578125,
+        "Code": 88.5135269165039,
+        "Math": 81.18700408935547,
+        "Science": 98.2544174194336,
+        "Formal Proof": 0.0
+      }
+    },
+    "two_dimensional_within_domain_dispersion": {
+      "Pre-training": 707.0506591796875,
+      "Code": 976.2205810546875,
+      "Math": 1000.4136962890625,
+      "Science": 937.6614990234375,
+      "Formal Proof": 647.17041015625
+    }
+  },
+  {
+    "view": "raw128",
+    "seed": 2,
+    "points": 2560,
+    "kl_divergence": 2.285116672515869,
+    "high_dimensional": {
+      "within_domain_dispersion": {
+        "Pre-training": 87559.015625,
+        "Code": 44133.46875,
+        "Math": 52500.4765625,
+        "Science": 105680.046875,
+        "Formal Proof": 52020.1953125
+      },
+      "centroid_distance_to_formal_proof": {
+        "Pre-training": 124.76593017578125,
+        "Code": 88.5135269165039,
+        "Math": 81.18700408935547,
+        "Science": 98.2544174194336,
+        "Formal Proof": 0.0
+      }
+    },
+    "two_dimensional_within_domain_dispersion": {
+      "Pre-training": 724.6410522460938,
+      "Code": 1020.725830078125,
+      "Math": 1099.22509765625,
+      "Science": 964.6412353515625,
+      "Formal Proof": 604.2625732421875
+    }
+  },
+  {
+    "view": "raw128",
+    "seed": 3,
+    "points": 2560,
+    "kl_divergence": 2.2878589630126953,
+    "high_dimensional": {
+      "within_domain_dispersion": {
+        "Pre-training": 87559.015625,
+        "Code": 44133.46875,
+        "Math": 52500.4765625,
+        "Science": 105680.046875,
+        "Formal Proof": 52020.1953125
+      },
+      "centroid_distance_to_formal_proof": {
+        "Pre-training": 124.76593017578125,
+        "Code": 88.5135269165039,
+        "Math": 81.18700408935547,
+        "Science": 98.2544174194336,
+        "Formal Proof": 0.0
+      }
+    },
+    "two_dimensional_within_domain_dispersion": {
+      "Pre-training": 667.4931640625,
+      "Code": 810.67041015625,
+      "Math": 912.6512451171875,
+      "Science": 907.3447265625,
+      "Formal Proof": 570.1494140625
+    }
+  },
+  {
+    "view": "native_context",
+    "seed": 42,
+    "points": 2560,
+    "kl_divergence": 2.1652960777282715,
+    "high_dimensional": {
+      "within_domain_dispersion": {
+        "Pre-training": 56482.6484375,
+        "Code": 34000.40234375,
+        "Math": 33931.9375,
+        "Science": 44204.9609375,
+        "Formal Proof": 49323.80078125
+      },
+      "centroid_distance_to_formal_proof": {
+        "Pre-training": 132.6990509033203,
+        "Code": 99.41300964355469,
+        "Math": 91.3833999633789,
+        "Science": 107.95986938476562,
+        "Formal Proof": 0.0
+      }
+    },
+    "two_dimensional_within_domain_dispersion": {
+      "Pre-training": 665.6647338867188,
+      "Code": 1118.60888671875,
+      "Math": 1102.449462890625,
+      "Science": 947.9727783203125,
+      "Formal Proof": 654.518798828125
+    }
+  },
+  {
+    "view": "native_context",
+    "seed": 2,
+    "points": 2560,
+    "kl_divergence": 2.1707329750061035,
+    "high_dimensional": {
+      "within_domain_dispersion": {
+        "Pre-training": 56482.6484375,
+        "Code": 34000.40234375,
+        "Math": 33931.9375,
+        "Science": 44204.9609375,
+        "Formal Proof": 49323.80078125
+      },
+      "centroid_distance_to_formal_proof": {
+        "Pre-training": 132.6990509033203,
+        "Code": 99.41300964355469,
+        "Math": 91.3833999633789,
+        "Science": 107.95986938476562,
+        "Formal Proof": 0.0
+      }
+    },
+    "two_dimensional_within_domain_dispersion": {
+      "Pre-training": 911.6420288085938,
+      "Code": 1140.8975830078125,
+      "Math": 1168.046142578125,
+      "Science": 881.4844360351562,
+      "Formal Proof": 734.6068115234375
+    }
+  },
+  {
+    "view": "native_context",
+    "seed": 3,
+    "points": 2560,
+    "kl_divergence": 2.130767822265625,
+    "high_dimensional": {
+      "within_domain_dispersion": {
+        "Pre-training": 56482.6484375,
+        "Code": 34000.40234375,
+        "Math": 33931.9375,
+        "Science": 44204.9609375,
+        "Formal Proof": 49323.80078125
+      },
+      "centroid_distance_to_formal_proof": {
+        "Pre-training": 132.6990509033203,
+        "Code": 99.41300964355469,
+        "Math": 91.3833999633789,
+        "Science": 107.95986938476562,
+        "Formal Proof": 0.0
+      }
+    },
+    "two_dimensional_within_domain_dispersion": {
+      "Pre-training": 746.8436889648438,
+      "Code": 1092.91552734375,
+      "Math": 1184.70654296875,
+      "Science": 962.380126953125,
+      "Formal Proof": 664.4423828125
+    }
+  }
+]

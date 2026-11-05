@@ -45,3 +45,7 @@ See [REAL-Prover observation results and reproduction](reports/REALPROVER_OBSERV
 ## Qwen3 Fig.2(b): no-PCA controls and original figure styling
 
 [新一版比较图与完整报告](observations/qwen3_fig2b_v3_20261105/README.md)：原字体、标题位置、坐标轴和0..5色条；相同点比较PCA/无PCA，原始坐标及全局展示变换均公开。
+
+## REAL-Prover: Formal Proof fifth domain and clean Fig2b comparison
+
+[两栏无额外标注图、REAL-Prover五域主图和全部对照](observations/realprover_five_domain_v3_20261105/README.md)：加入Formal Proof(Lean State–Tactic)，不使用MATH-500测试题作校准或表征输入；六张无PCA可视化已完成。

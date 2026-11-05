@@ -1,0 +1,9 @@
+{
+  "guard_status": "DONE",
+  "elapsed_s": 257.3399865627289,
+  "max_total_gpu3_memory_mib": 29715,
+  "min_gpu3_free_mib": 51439,
+  "max_health_s": 0.005411898717284203,
+  "retrieval_probe_max_s": 0.004998083226382732,
+  "guard_stop_reason": null
+}

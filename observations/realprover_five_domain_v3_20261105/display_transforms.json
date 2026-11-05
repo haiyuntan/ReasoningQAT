@@ -1,0 +1,140 @@
+{
+  "realprover_five_domain_raw128_seed42": {
+    "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+    "angle_radians": -1.6863153330906644,
+    "reflected": true,
+    "orthogonal_matrix": [
+      [
+        0.11526225106324313,
+        -0.9933350962690455
+      ],
+      [
+        -0.9933350962690455,
+        -0.11526225106324313
+      ]
+    ],
+    "subtract_center_after_rotation": [
+      0.7513537230578038,
+      -0.5571835082019447
+    ],
+    "uniform_scale": 0.6310704306505563,
+    "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+    "points_outside_display_axes": 0,
+    "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+  },
+  "realprover_five_domain_raw128_seed2": {
+    "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+    "angle_radians": -2.061752429713469,
+    "reflected": true,
+    "orthogonal_matrix": [
+      [
+        0.4714692739566384,
+        -0.8818824886087716
+      ],
+      [
+        -0.8818824886087716,
+        -0.4714692739566384
+      ]
+    ],
+    "subtract_center_after_rotation": [
+      0.12189514960678238,
+      1.1034655531962336
+    ],
+    "uniform_scale": 0.6001443441871431,
+    "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+    "points_outside_display_axes": 0,
+    "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+  },
+  "realprover_five_domain_raw128_seed3": {
+    "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+    "angle_radians": 0.6536442072096844,
+    "reflected": false,
+    "orthogonal_matrix": [
+      [
+        0.7938730926789316,
+        -0.6080834751252401
+      ],
+      [
+        0.6080834751252401,
+        0.7938730926789316
+      ]
+    ],
+    "subtract_center_after_rotation": [
+      -1.300234046911676,
+      3.9457627799403667
+    ],
+    "uniform_scale": 0.6154599744888859,
+    "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+    "points_outside_display_axes": 0,
+    "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+  },
+  "realprover_five_domain_native_context_seed42": {
+    "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+    "angle_radians": -4.143656800189186,
+    "reflected": false,
+    "orthogonal_matrix": [
+      [
+        -0.5385642365968479,
+        -0.8425844545556572
+      ],
+      [
+        0.8425844545556572,
+        -0.5385642365968479
+      ]
+    ],
+    "subtract_center_after_rotation": [
+      -3.105885511768573,
+      3.248041974885851
+    ],
+    "uniform_scale": 0.5602429283711992,
+    "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+    "points_outside_display_axes": 0,
+    "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+  },
+  "realprover_five_domain_native_context_seed2": {
+    "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+    "angle_radians": -4.574893493017995,
+    "reflected": false,
+    "orthogonal_matrix": [
+      [
+        -0.13706267111700465,
+        -0.9905623777361382
+      ],
+      [
+        0.9905623777361382,
+        -0.13706267111700465
+      ]
+    ],
+    "subtract_center_after_rotation": [
+      0.07201953114058313,
+      4.340988856736814
+    ],
+    "uniform_scale": 0.5358013269912539,
+    "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+    "points_outside_display_axes": 0,
+    "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+  },
+  "realprover_five_domain_native_context_seed3": {
+    "orientation": "Pre-training below pooled reasoning; one global optional reflection places Code left of Science",
+    "angle_radians": -0.8193714902498278,
+    "reflected": true,
+    "orthogonal_matrix": [
+      [
+        -0.682680604793097,
+        -0.730716902664316
+      ],
+      [
+        -0.730716902664316,
+        0.682680604793097
+      ]
+    ],
+    "subtract_center_after_rotation": [
+      0.7744741984012293,
+      2.1690476475011735
+    ],
+    "uniform_scale": 0.5855099466069307,
+    "random_pair_distance_max_abs_error": 1.4210854715202004e-14,
+    "points_outside_display_axes": 0,
+    "warning": "Presentation transform only, fitted from category means. Not evidence of independent coordinate replication. No per-domain translation/scaling or point removal."
+  }
+}

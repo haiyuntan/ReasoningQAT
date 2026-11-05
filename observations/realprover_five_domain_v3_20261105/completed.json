@@ -1,0 +1,8 @@
+{
+  "status": "DONE",
+  "plots": 6,
+  "primary": "plots/realprover_five_domain_raw128_seed42.png",
+  "domain_name": "Formal Proof (Lean State\u2013Tactic)",
+  "not_evidence_of_theorem_solving_ability": true,
+  "display": "One global orientation/reflection and uniform scale; native coordinates retained"
+}

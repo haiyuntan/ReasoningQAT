@@ -1,0 +1,12 @@
+{
+  "raw128": {
+    "groups": 640,
+    "elapsed_s": 32.279746427200735,
+    "peak_allocated_bytes": 15282943488
+  },
+  "native_context": {
+    "groups": 640,
+    "elapsed_s": 102.50834529940039,
+    "peak_allocated_bytes": 15282943488
+  }
+}

@@ -1,6 +1,6 @@
 # REAL-Prover five-domain representation observation
 
-Status: inputs frozen; GPU forward not yet complete.
+Status: DONE; both input views and all six plots completed with exit0. Hook, feature, coordinate, PDF/SVG and resource checks passed.
 
 ## Clean two-panel Qwen3 comparison requested by the user
 
@@ -44,3 +44,20 @@ GPU3 only, batch1,32GiB allocator cap, approximately50% duty cycle. The existing
 Local `inputs.jsonl` and high-dimensional `*_features.npz` are not intended for Git. Publish small metadata, coordinates, PNG/PDF/SVG, methods and source code. Scripts assume this folder sits under the existing Reasoning workspace and uses the existing isolated observation environments.
 
 Sources: [official ReasoningQAT data processing](https://github.com/yasu0001/ReasoningQAT/blob/main/datautils_block.py), [ReasoningQAT Fig.2(b)](https://proceedings.iclr.cc/paper_files/paper/2026/file/209423f076b6479ab3a4f45886e30306-Paper-Conference.pdf), [official state–tactic dataset](https://huggingface.co/datasets/FrenzyMath/state_tactic_pairs).
+
+## REAL-Prover primary figure
+
+![Five-domain raw content](plots/realprover_five_domain_raw128_seed42.png)
+
+[PNG](plots/realprover_five_domain_raw128_seed42.png) · [PDF](plots/realprover_five_domain_raw128_seed42.pdf) · [SVG](plots/realprover_five_domain_raw128_seed42.svg)
+
+绿色Formal Proof在主图更偏向上方区域，与其他域仍有重叠；方位经过全局展示对齐，没有独立语义，不可据此认定知识模块或证明正确率。
+
+## All fixed views and seeds
+
+| View | seed42 | seed2 | seed3 |
+|---|---|---|---|
+| raw128 | [图片](plots/realprover_five_domain_raw128_seed42.png) | [图片](plots/realprover_five_domain_raw128_seed2.png) | [图片](plots/realprover_five_domain_raw128_seed3.png) |
+| native_context | [图片](plots/realprover_five_domain_native_context_seed42.png) | [图片](plots/realprover_five_domain_native_context_seed2.png) | [图片](plots/realprover_five_domain_native_context_seed3.png) |
+
+[层位置验证](hook_validation.json) · [数据/图片校验](validation_summary.json) · [输入选择](selection.json) · [资源保护结果](resource_summary.json) · [统计](statistics.json) · [显示变换](display_transforms.json)。
