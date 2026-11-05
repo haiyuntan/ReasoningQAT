@@ -1,0 +1,12 @@
+{
+  "counts": {
+    "Pre-training": 128,
+    "Code": 128,
+    "Math": 128,
+    "Science": 128
+  },
+  "input_sha256": "a3980aedbd5cf0fb36f91c88765e4766f2d37ba8261823485beb14930c2e1508",
+  "reasoning": "seed2 random shard order and random candidate rows, cap32 per shard/domain, identical eligible groups across views",
+  "pretraining": "official sequential buffer/BOS/EOS; not random corpus sample",
+  "sampling_limitation": "Not exact HF whole-corpus shuffle; longer-than2048 response eligibility bias; FineWeb source-order bias"
+}

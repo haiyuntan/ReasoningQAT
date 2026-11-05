@@ -1,0 +1,9 @@
+{
+  "primary_seed2_2d_dispersion_ratios": {
+    "pooled_reasoning_to_pretraining": 2.630010077081234,
+    "Code": 2.379606795915251,
+    "Math": 2.775111713518393,
+    "Science": 2.6595327792640044
+  },
+  "warning": "t-SNE changes global geometry and density; these are descriptive, not high-dimensional variance estimates."
+}

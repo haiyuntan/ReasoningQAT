@@ -1,0 +1,8 @@
+{
+  "run_id": "qwen3_fig2b_v2",
+  "status": "DONE",
+  "reason": null,
+  "returncode": 0,
+  "elapsed_s": 1225.7698225975037,
+  "log": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/fig2b_qwen3_v2_20261105/logs/qwen3_fig2b_v2.log"
+}

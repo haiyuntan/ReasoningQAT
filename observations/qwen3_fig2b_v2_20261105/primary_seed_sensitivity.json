@@ -1,0 +1,8 @@
+{
+  "2d_pooled_reasoning_to_pretraining_dispersion": {
+    "2": 2.630010077081234,
+    "3": 2.6267339999678803,
+    "42": 2.655028515874019
+  },
+  "note": "Descriptive t-SNE geometry, not high-dimensional distance preservation."
+}

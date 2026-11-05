@@ -1,0 +1,146 @@
+[
+  {
+    "feature": "mean_128",
+    "norm": "none",
+    "pretraining_dispersion": 1712.4884205757833,
+    "pooled_reasoning_dispersion": 1591.149262273154,
+    "pooled_reasoning_to_pretraining": 0.9291445379456452,
+    "individual_domain_ratio": {
+      "Code": 0.7447439927246619,
+      "Math": 0.7078353526310172,
+      "Science": 0.9084093863152393
+    }
+  },
+  {
+    "feature": "mean_128",
+    "norm": "l2",
+    "pretraining_dispersion": 0.05407680250085659,
+    "pooled_reasoning_dispersion": 0.05255014920551182,
+    "pooled_reasoning_to_pretraining": 0.9717687950333123,
+    "individual_domain_ratio": {
+      "Code": 0.781479152364323,
+      "Math": 0.7622866808884083,
+      "Science": 0.9148567212093979
+    }
+  },
+  {
+    "feature": "last_128",
+    "norm": "none",
+    "pretraining_dispersion": 16116.416171118211,
+    "pooled_reasoning_dispersion": 13444.47412973122,
+    "pooled_reasoning_to_pretraining": 0.8342099128604469,
+    "individual_domain_ratio": {
+      "Code": 0.8359848738612787,
+      "Math": 0.7534039769653598,
+      "Science": 0.8669158005472146
+    }
+  },
+  {
+    "feature": "last_128",
+    "norm": "l2",
+    "pretraining_dispersion": 0.568699111341469,
+    "pooled_reasoning_dispersion": 0.5666800603274974,
+    "pooled_reasoning_to_pretraining": 0.9964497025338953,
+    "individual_domain_ratio": {
+      "Code": 1.0023594905831261,
+      "Math": 0.9524794577175246,
+      "Science": 0.9787021566626952
+    }
+  },
+  {
+    "feature": "token_128",
+    "norm": "none",
+    "pretraining_dispersion": 23786448.423125796,
+    "pooled_reasoning_dispersion": 23646792.38458191,
+    "pooled_reasoning_to_pretraining": 0.994128756169916,
+    "individual_domain_ratio": {
+      "Code": 1.0132431382320575,
+      "Math": 0.9861423447187867,
+      "Science": 0.982953748577726
+    }
+  },
+  {
+    "feature": "token_128",
+    "norm": "l2",
+    "pretraining_dispersion": 0.6387433883360032,
+    "pooled_reasoning_dispersion": 0.63829557899481,
+    "pooled_reasoning_to_pretraining": 0.9992989213675311,
+    "individual_domain_ratio": {
+      "Code": 1.0010775246790713,
+      "Math": 0.9771374478325003,
+      "Science": 0.9838522894953321
+    }
+  },
+  {
+    "feature": "mean_512",
+    "norm": "none",
+    "pretraining_dispersion": 1688.9560437646037,
+    "pooled_reasoning_dispersion": 2196.5881080369904,
+    "pooled_reasoning_to_pretraining": 1.3005596659229204,
+    "individual_domain_ratio": {
+      "Code": 0.5715374488184223,
+      "Math": 1.0054105493362533,
+      "Science": 1.1834274005076424
+    }
+  },
+  {
+    "feature": "mean_512",
+    "norm": "l2",
+    "pretraining_dispersion": 0.09285411386474174,
+    "pooled_reasoning_dispersion": 0.10185834527045762,
+    "pooled_reasoning_to_pretraining": 1.0969718091201874,
+    "individual_domain_ratio": {
+      "Code": 0.696881262621075,
+      "Math": 0.7186919088109731,
+      "Science": 0.9891249120381009
+    }
+  },
+  {
+    "feature": "last_512",
+    "norm": "none",
+    "pretraining_dispersion": 13240.599795588456,
+    "pooled_reasoning_dispersion": 8853.796111850903,
+    "pooled_reasoning_to_pretraining": 0.6686854257766206,
+    "individual_domain_ratio": {
+      "Code": 0.801185470619255,
+      "Math": 0.43551499498247187,
+      "Science": 0.6335459059567621
+    }
+  },
+  {
+    "feature": "last_512",
+    "norm": "l2",
+    "pretraining_dispersion": 0.5222631409895688,
+    "pooled_reasoning_dispersion": 0.43332109657743595,
+    "pooled_reasoning_to_pretraining": 0.8296987908363433,
+    "individual_domain_ratio": {
+      "Code": 0.965191426760684,
+      "Math": 0.566829298868799,
+      "Science": 0.7790367918320859
+    }
+  },
+  {
+    "feature": "token_512",
+    "norm": "none",
+    "pretraining_dispersion": 23750590.863352295,
+    "pooled_reasoning_dispersion": 23648217.364283558,
+    "pooled_reasoning_to_pretraining": 0.9956896441163195,
+    "individual_domain_ratio": {
+      "Code": 1.0140253089022646,
+      "Math": 0.988741294513586,
+      "Science": 0.9842602289023746
+    }
+  },
+  {
+    "feature": "token_512",
+    "norm": "l2",
+    "pretraining_dispersion": 0.6230774008402865,
+    "pooled_reasoning_dispersion": 0.6230154776431208,
+    "pooled_reasoning_to_pretraining": 0.9999006171671735,
+    "individual_domain_ratio": {
+      "Code": 0.9949385984599489,
+      "Math": 0.9816066421692194,
+      "Science": 0.9868778504075375
+    }
+  }
+]

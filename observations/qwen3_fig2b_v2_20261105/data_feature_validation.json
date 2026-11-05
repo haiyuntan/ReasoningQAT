@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "groups": 512,
+  "tokens_per_input": 2048,
+  "arrays": {
+    "calibration_chat": "PASS: nine finite arrays, expected shapes, shared FineWeb forward parity",
+    "raw_conversation": "PASS: nine finite arrays, expected shapes, shared FineWeb forward parity",
+    "response_only": "PASS: nine finite arrays, expected shapes, shared FineWeb forward parity"
+  },
+  "assistant_coverage": {
+    "Code": {
+      "mean_after_first_assistant_header_fraction": 0.6775398254394531,
+      "no_assistant_within_2048": 3
+    },
+    "Math": {
+      "mean_after_first_assistant_header_fraction": 0.9533195495605469,
+      "no_assistant_within_2048": 0
+    },
+    "Science": {
+      "mean_after_first_assistant_header_fraction": 0.8567543029785156,
+      "no_assistant_within_2048": 0
+    }
+  }
+}

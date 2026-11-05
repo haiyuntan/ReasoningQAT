@@ -1,0 +1,15 @@
+{
+  "peak_allocated_bytes": 4064542720,
+  "calibration_chat": {
+    "samples": 512,
+    "elapsed_s": 71.82477413024753
+  },
+  "raw_conversation": {
+    "samples": 512,
+    "elapsed_s": 71.48308081552386
+  },
+  "response_only": {
+    "samples": 512,
+    "elapsed_s": 71.6225869609043
+  }
+}

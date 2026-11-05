@@ -1,0 +1,22 @@
+[
+  {
+    "points": 2048,
+    "seed": 2,
+    "two_dimensional_reasoning_to_pretraining_dispersion": 2.549270654449042
+  },
+  {
+    "points": 2048,
+    "seed": 3,
+    "two_dimensional_reasoning_to_pretraining_dispersion": 2.383679844981843
+  },
+  {
+    "points": 2048,
+    "seed": 42,
+    "two_dimensional_reasoning_to_pretraining_dispersion": 2.116408403081755
+  },
+  {
+    "points": 4096,
+    "seed": 2,
+    "two_dimensional_reasoning_to_pretraining_dispersion": 2.3706515804289396
+  }
+]

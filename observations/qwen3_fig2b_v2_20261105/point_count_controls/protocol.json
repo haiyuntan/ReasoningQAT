@@ -1,0 +1,21 @@
+{
+  "primary_unchanged": "8192 points (16/source), fixed seed2",
+  "controls": [
+    {
+      "tokens_per_source": 4,
+      "seeds": [
+        2,
+        3,
+        42
+      ]
+    },
+    {
+      "tokens_per_source": 8,
+      "seeds": [
+        2
+      ]
+    }
+  ],
+  "selection": "first4/8 of16 already uniformly sampled positions; all128 sources/domain retained",
+  "justification": "Original point count not published; t-SNE topology depends on the number of points and neighborhood scale."
+}

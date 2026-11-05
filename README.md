@@ -37,3 +37,7 @@ See [REAL-Prover observation results and reproduction](reports/REALPROVER_OBSERV
 ## Qwen3-1.7B Fig. 2(b) reconstruction (2026-11-05)
 
 [图片画廊、对照和统计](observations/qwen3_fig2b_20261105/README.md)。流程完成，论文核心几何现象尚未确认复现；包含全部28张图片，避免挑图。
+
+## Qwen3 Fig. 2(b) corrected reconstruction (2026-11-05)
+
+[修正版图集、原图对照及验证报告](observations/qwen3_fig2b_v2_20261105/README.md)。60张实验图片，完整问答/固定2048token；二维定性更接近，但高维排序仍未复现。

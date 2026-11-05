@@ -1,34 +1,76 @@
-# Fig. 2(b) reconstruction v2: calibration-aligned inputs
+# ReasoningQAT Fig. 2(b)：修正版复现
 
-Status: running; a completed forward is not a confirmed reproduction of the paper's geometric claim.
+**本轮完成。二维现象比v1更接近论文，但不声称精确复现或证实同样的高维几何。**
 
-The original paper explicitly specifies full-precision Qwen3-1.7B, Transformer block14, and Pre-training/Code/Math/Science. Its exact plotting inputs, activation location within the block, pooling, normalization, sampling and t-SNE configuration are not released. Official calibration code is therefore evidence for an input construction hypothesis, not proof of the figure's original procedure.
+主要修正：使用完整问题与回答，按官方校准代码套用chat template；严格2048 token；由序列均值主图改为逐token主图；补充去模板问答、仅回答、三种激活位置和归一化对照。四域各128组，逐token主图每组随机抽取16个位置；固定第14层，不挑层或种子。
 
-## Evidence-based corrections from v1
+三个主图种子的二维“合并推理/预训练离散度”约为2.63、2.63、2.66；2048/4096点数对照也大于1。原始高维主配置却为0.659（按源组bootstrap95%CI：0.646–0.672）。说明二维外观不能直接推出原始空间中推理表征更分散。
 
-- v1 used only human questions, 128 to512 tokens. Official `get_openthoughts_shuffled` includes all human/assistant turns, applies the native chat template, requires at least2048 tokens, and truncates from the beginning. v2's primary input follows that construction.
-- v1 selected the first eligible reasoning questions in shard order. v2 uses seed2 random shard order and random candidate rows, caps each reasoning domain at32 per shard, and collects128 eligible groups/domain. This is not the official whole-dataset HF shuffle. All three views share the same source groups.
-- FineWeb follows the official BOS+document+EOS buffering, exactly2048 tokens and discard-after-cut behavior. It is sequential, as in upstream; source-order bias remains. The same FineWeb representations are a reference across views.
-- Primary panel uses sampled individual token activations, not only sequence means. Mean and last-position controls remain available. Sixteen token positions/source are sampled uniformly from positions32..2047 with a source-hash-derived seed. Tokens in one source are correlated. No token identity filtering or domain-specific position selection is performed.
-- Block14 is explicitly one-based: zero-based block13. A full28-block forward checks the block input against `hidden_states[13]` and block output against `hidden_states[14]`. Execution is then shortened to14 blocks and all captured locations must match the full forward exactly on the probe. The hook remains before the final model norm.
+[统计报告](RESULTS.md) · [方法与局限](METHOD.md) · [层位置验证](hook_validation.json) · [数据与特征验证](data_feature_validation.json) · [完整高维统计](pooled_dispersion.json)
 
-## Frozen comparison grid
+## 原论文、v1与v2并排比较
 
-Three views: official calibration-style chat; raw full conversation without template; response-only without template. Non-chat views are controls, not claims about upstream.
+![原图与两版复现](paper_v1_v2_comparison.png)
 
-Three activation locations: block input, block output, and post-attention layer-normalized MLP input. Three summaries:16 sampled tokens, sequence mean, and last token. Two preprocessing choices: raw and L2 normalized. All use joint PCA50 and joint t-SNE(perplexity30,1500iterations). Fixed seed2 for all panels; the declared primary panel additionally has seeds3/42 as sensitivity checks. No selected layer/seed winner.
+原图来源：[Okoshi et al., ICLR 2026, Fig. 2(b)](https://proceedings.iclr.cc/paper_files/paper/2026/file/209423f076b6479ab3a4f45886e30306-Paper-Conference.pdf)。作者未完整公开绘图协议；原图作为署名比较参考保留。
 
-Declared primary: `plots/calibration_chat_block_out_token_none_seed2.png`.
+## 预先指定主图
 
-High-dimensional within-domain mean squared distance to centroid and reasoning/pre-training dispersion ratios are retained for every configuration. Domain silhouette is a supplementary measure, not the paper's dispersion claim. A visually similar t-SNE plot alone does not confirm the claim; a ratio above1 in one selected control does not establish robustness.
+![主图](plots/calibration_chat_block_out_token_none_seed2.png)
 
-## Isolation and output
+## 固定比较网格
 
-GPU3 only, allocator cap12GiB, batch1, approximately50% duty cycle. Existing guard monitors retrieval health and actual queries, memory reserves, active production fingerprint, and new retrieval failures. It can stop only the observation child. Running production source/configuration and v1 outputs are untouched. Shared hardware has no strict QoS guarantee.
+三个输入视图×三个激活位置，均为逐token、无归一化、seed2。各面板独立拟合，坐标轴不能跨图直接比较。
 
-Local high-dimensional features and tokenized inputs are retained for analysis but are not intended for Git. Publish PNGs, 2D coordinates, protocol, selection metadata, hook validation, statistics and scripts. Original and v1 figures remain separately labeled.
+![比较网格](comparison_grid.png)
 
-Sources:
+## 全部56张固定配置图
 
-- https://proceedings.iclr.cc/paper_files/paper/2026/file/209423f076b6479ab3a4f45886e30306-Paper-Conference.pdf
-- https://github.com/yasu0001/ReasoningQAT/blob/main/datautils_block.py
+| 输入 | 激活 | 汇总 | 无归一化 seed2 | L2 seed2 |
+|---|---|---|---|---|
+| calibration_chat | block_in | mean | [图片](plots/calibration_chat_block_in_mean_none_seed2.png) | [图片](plots/calibration_chat_block_in_mean_l2_seed2.png) |
+| calibration_chat | block_in | token | [图片](plots/calibration_chat_block_in_token_none_seed2.png) | [图片](plots/calibration_chat_block_in_token_l2_seed2.png) |
+| calibration_chat | block_in | last | [图片](plots/calibration_chat_block_in_last_none_seed2.png) | [图片](plots/calibration_chat_block_in_last_l2_seed2.png) |
+| calibration_chat | block_out | mean | [图片](plots/calibration_chat_block_out_mean_none_seed2.png) | [图片](plots/calibration_chat_block_out_mean_l2_seed2.png) |
+| calibration_chat | block_out | token | [图片](plots/calibration_chat_block_out_token_none_seed2.png) | [图片](plots/calibration_chat_block_out_token_l2_seed2.png) |
+| calibration_chat | block_out | last | [图片](plots/calibration_chat_block_out_last_none_seed2.png) | [图片](plots/calibration_chat_block_out_last_l2_seed2.png) |
+| calibration_chat | mlp_in | mean | [图片](plots/calibration_chat_mlp_in_mean_none_seed2.png) | [图片](plots/calibration_chat_mlp_in_mean_l2_seed2.png) |
+| calibration_chat | mlp_in | token | [图片](plots/calibration_chat_mlp_in_token_none_seed2.png) | [图片](plots/calibration_chat_mlp_in_token_l2_seed2.png) |
+| calibration_chat | mlp_in | last | [图片](plots/calibration_chat_mlp_in_last_none_seed2.png) | [图片](plots/calibration_chat_mlp_in_last_l2_seed2.png) |
+| raw_conversation | block_in | mean | [图片](plots/raw_conversation_block_in_mean_none_seed2.png) | [图片](plots/raw_conversation_block_in_mean_l2_seed2.png) |
+| raw_conversation | block_in | token | [图片](plots/raw_conversation_block_in_token_none_seed2.png) | [图片](plots/raw_conversation_block_in_token_l2_seed2.png) |
+| raw_conversation | block_in | last | [图片](plots/raw_conversation_block_in_last_none_seed2.png) | [图片](plots/raw_conversation_block_in_last_l2_seed2.png) |
+| raw_conversation | block_out | mean | [图片](plots/raw_conversation_block_out_mean_none_seed2.png) | [图片](plots/raw_conversation_block_out_mean_l2_seed2.png) |
+| raw_conversation | block_out | token | [图片](plots/raw_conversation_block_out_token_none_seed2.png) | [图片](plots/raw_conversation_block_out_token_l2_seed2.png) |
+| raw_conversation | block_out | last | [图片](plots/raw_conversation_block_out_last_none_seed2.png) | [图片](plots/raw_conversation_block_out_last_l2_seed2.png) |
+| raw_conversation | mlp_in | mean | [图片](plots/raw_conversation_mlp_in_mean_none_seed2.png) | [图片](plots/raw_conversation_mlp_in_mean_l2_seed2.png) |
+| raw_conversation | mlp_in | token | [图片](plots/raw_conversation_mlp_in_token_none_seed2.png) | [图片](plots/raw_conversation_mlp_in_token_l2_seed2.png) |
+| raw_conversation | mlp_in | last | [图片](plots/raw_conversation_mlp_in_last_none_seed2.png) | [图片](plots/raw_conversation_mlp_in_last_l2_seed2.png) |
+| response_only | block_in | mean | [图片](plots/response_only_block_in_mean_none_seed2.png) | [图片](plots/response_only_block_in_mean_l2_seed2.png) |
+| response_only | block_in | token | [图片](plots/response_only_block_in_token_none_seed2.png) | [图片](plots/response_only_block_in_token_l2_seed2.png) |
+| response_only | block_in | last | [图片](plots/response_only_block_in_last_none_seed2.png) | [图片](plots/response_only_block_in_last_l2_seed2.png) |
+| response_only | block_out | mean | [图片](plots/response_only_block_out_mean_none_seed2.png) | [图片](plots/response_only_block_out_mean_l2_seed2.png) |
+| response_only | block_out | token | [图片](plots/response_only_block_out_token_none_seed2.png) | [图片](plots/response_only_block_out_token_l2_seed2.png) |
+| response_only | block_out | last | [图片](plots/response_only_block_out_last_none_seed2.png) | [图片](plots/response_only_block_out_last_l2_seed2.png) |
+| response_only | mlp_in | mean | [图片](plots/response_only_mlp_in_mean_none_seed2.png) | [图片](plots/response_only_mlp_in_mean_l2_seed2.png) |
+| response_only | mlp_in | token | [图片](plots/response_only_mlp_in_token_none_seed2.png) | [图片](plots/response_only_mlp_in_token_l2_seed2.png) |
+| response_only | mlp_in | last | [图片](plots/response_only_mlp_in_last_none_seed2.png) | [图片](plots/response_only_mlp_in_last_l2_seed2.png) |
+
+主配置随机种子：[seed2](plots/calibration_chat_block_out_token_none_seed2.png) · [seed3](plots/calibration_chat_block_out_token_none_seed3.png) · [seed42](plots/calibration_chat_block_out_token_none_seed42.png)。
+
+## 点数敏感性对照
+
+主图8192点保持不变。以下来自相同源组的预先采样token子集，不能按相似程度替换主图。
+
+- [calibration_chat_block_out_2048points_seed2](point_count_controls/calibration_chat_block_out_2048points_seed2.png)
+- [calibration_chat_block_out_2048points_seed3](point_count_controls/calibration_chat_block_out_2048points_seed3.png)
+- [calibration_chat_block_out_2048points_seed42](point_count_controls/calibration_chat_block_out_2048points_seed42.png)
+- [calibration_chat_block_out_4096points_seed2](point_count_controls/calibration_chat_block_out_4096points_seed2.png)
+
+## 验证与边界
+
+第14层hook与完整模型hidden_states索引13/14一致；缩短至14层执行时与完整28层前向完全一致。全部特征有限、形状正确；三个输入对照的FineWeb基线前向完全一致。采样来自多个随机分片，但不是官方全语料shuffle；长回答筛选及FineWeb顺序采样仍有偏差。token在同一源组内相关。
+
+本轮约20.4分钟；GPU3检索优先，正式实验代码、配置、结果未改动。全部旧图保留。仅上传图片、二维坐标、代码及统计，未上传模型权重、完整高维特征、原始文本或token输入。代码按本机workspace根目录布局运行；发布目录本身不是独立环境安装包。
+
+[SHA256文件清单](artifact_inventory.json)。

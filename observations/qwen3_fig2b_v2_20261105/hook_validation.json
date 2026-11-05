@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "block_one_based": 14,
+  "input_matches_hidden_states_index": 13,
+  "output_matches_hidden_states_index": 14,
+  "full28_vs_prefix14_max_abs": {
+    "block_in": 0.0,
+    "mlp_in": 0.0,
+    "block_out": 0.0
+  },
+  "probe_tokens": 128
+}
