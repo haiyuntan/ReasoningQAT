@@ -1,0 +1,38 @@
+{
+  "model": "Qwen3-1.7B BF16",
+  "block": 14,
+  "samples_per_domain": 128,
+  "tokens_per_input": 2048,
+  "views": [
+    "calibration_chat",
+    "raw_conversation",
+    "response_only"
+  ],
+  "hooks": [
+    "block_in",
+    "block_out",
+    "mlp_in"
+  ],
+  "pooling": [
+    "token16_after_first32",
+    "mean",
+    "last"
+  ],
+  "normalization": [
+    "none",
+    "l2"
+  ],
+  "pca": 50,
+  "perplexity": 30,
+  "iterations": 1500,
+  "main": "calibration_chat_block_out_token_none_seed2",
+  "main_seeds": [
+    2,
+    3,
+    42
+  ],
+  "controls_seed": 2,
+  "official_source": "https://raw.githubusercontent.com/yasu0001/ReasoningQAT/main/datautils_block.py",
+  "script_sha256": "5eb40d8fdeadee5cfb09c1ca5f433654a0c3edf5043b527b2769067d971a49a5",
+  "limitation": "Fig2b exact inputs and hook/pooling not released; calibration match is a hypothesis, not proof of original figure protocol."
+}
