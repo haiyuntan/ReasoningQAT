@@ -1,0 +1,4 @@
+# These small frozen result/snapshot JSONL files are publication artifacts.
+!*.jsonl
+__pycache__/
+*.pyc

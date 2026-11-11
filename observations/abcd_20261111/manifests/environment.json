@@ -1,0 +1,17 @@
+{
+  "mode": "independent filesystem copy of prior observation conda prefix; production untouched",
+  "probe": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_calibration_v3_20261111/envs/forward\n2.2.2+cu121\n4.52.4\n1.26.4\n",
+  "source": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_20261104_all_layers/envs/forward",
+  "audit_packages_copied_from_matching_observation_data_prefix": [
+    "pyarrow",
+    "pandas",
+    "pandas.libs",
+    "scipy",
+    "scipy.libs",
+    "dateutil",
+    "pytz",
+    "tzdata",
+    "six.py"
+  ],
+  "no_network_install": true
+}

@@ -1,0 +1,37 @@
+{
+  "single_seconds": 1.6438564639538527,
+  "trials": [
+    {
+      "batch": 2,
+      "seconds": 1.1894293120130897,
+      "max_score_abs": 0.09337806701660156,
+      "peak_allocated_bytes": 16034454528,
+      "valid": false
+    },
+    {
+      "batch": 4,
+      "seconds": 1.0680038845166564,
+      "max_score_abs": 0.062317848205566406,
+      "peak_allocated_bytes": 16780152832,
+      "valid": false
+    },
+    {
+      "batch": 8,
+      "seconds": 1.0082126818597317,
+      "max_score_abs": 0.1109161376953125,
+      "peak_allocated_bytes": 18275665408,
+      "valid": false
+    }
+  ],
+  "selected_batch": 1,
+  "runtime_resources": {
+    "version": "throughput-v2-20261111",
+    "allocator_cap_gib": 56,
+    "duty_cycle": 0.9,
+    "candidate_batch_size": 8,
+    "gpu_free_reserve_mib": 8192,
+    "batch_score_max_abs_tolerance": 0.02,
+    "note": "Up to approximately 90% total GPU3 memory including retrieval; no artificial memory filling. Reduce batch on OOM or score-parity failure. Scientific sample/protocol unchanged."
+  },
+  "parity_case": "valid_103"
+}

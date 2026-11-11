@@ -1,0 +1,78 @@
+{
+  "groups": [
+    {
+      "state_id": "dfde97ae90c2ce5a3952ece312a904f688b876daedbfc90abea591bb59841d02",
+      "input_ids_sha": "740977e20b4134fbd68890015c0074c9e30d941c1bcdecb3b19382a349e2f4a2"
+    },
+    {
+      "state_id": "fdfe888e23ef26299d9702b0f68f871e96c29674bab3497bf6b4ec7ea67147c1",
+      "input_ids_sha": "50ea2c42a4105ae673daf8ece9a515473022a044573b231b1fececc8ce416f75"
+    },
+    {
+      "state_id": "778eca9ddcef8653066b9ad24f355eec8418de6405533eb5378362c0c94bc340",
+      "input_ids_sha": "f8c638ae62682fcfa8862b728e9c4530faa7e32581f28721f03f2e6bbf08aa05"
+    },
+    {
+      "state_id": "1655de290cca52cf03b15d094229ff8c7780a4102b4fc5bf39f863433056b66f",
+      "input_ids_sha": "bc4c479c22aec5b17065aecab9f88b109036e846b07b93b010afce85351b7b16"
+    },
+    {
+      "state_id": "9e724b809bba028751c4e82fffe72df53b5764d466fa028b2ab4514187c1728e",
+      "input_ids_sha": "56f8e0edd8b6371438b782aab81afa68a4dfde47d7d51cfd1dac4c8db981974a"
+    },
+    {
+      "state_id": "3b15b54a1c51657d0cfca7412c786e8e548322b73bb483422726eb2bfa22355b",
+      "input_ids_sha": "b226921806352d5c5b271a9b89ff5384189bc032deff23859a8491930e1b9bac"
+    },
+    {
+      "state_id": "a1804a3eceb8e8eee66626260c059aa853a35e8ee761ee9826f62d66138c5664",
+      "input_ids_sha": "67689c6062ef3c1b6a6c0aa36255e753e756f24a04da96d5f3e9c1188a814b2a"
+    },
+    {
+      "state_id": "30cf59423cba4e169c3dd3bb8e97626d6ce7bf6d20706ee1ebe57c94e182167f",
+      "input_ids_sha": "1315c4e6d6a216954595d85291b2d1d8d8bf02b4d7de977e2312b2ca8274c946"
+    },
+    {
+      "state_id": "5fd24155c3caf5e99f8661cca48a75e519936708deb48c838635e64e47342c0e",
+      "input_ids_sha": "11d58c89aa5eca364677751d0a543707de8906d71993dd8c60ed0b48e34373b6"
+    },
+    {
+      "state_id": "b2d65c83cff9d12c254914bddd665978c3e63ef35a9fccf828652bd65ca18178",
+      "input_ids_sha": "28e96fc0fdb0cfd684f95c77c0f1e2cb2a015b4db32e0cdb21f2af6e6fdcbde8"
+    },
+    {
+      "state_id": "a75f2b2d368f0fb69e7197d9f1354610b82b627739312a04969574c664768e0e",
+      "input_ids_sha": "6dd2b086c888597376b4a2da63cf71fc7ad1c9b33037e05608b97f7421cad6f8"
+    },
+    {
+      "state_id": "bae428a6a0fd150d6433610e0cd1e5cf3d7fb2f31257dd193f9831171b6a33b2",
+      "input_ids_sha": "8251859414a93fa8533b731b5fcd093f400d9becb368ed90547d8ac0f33864c7"
+    },
+    {
+      "state_id": "6d261cbe7ef11b75d3c734c3ce827f418efe86663259c80aed38c4ac3f1d0425",
+      "input_ids_sha": "2dcf1fafe2b9f2dc4525ef04419c1fa966adc228e37d2abdbc04d604452a7b2b"
+    },
+    {
+      "state_id": "1739f564a0825a218cf9793eb60556c545085c1a921853aee556fa9b77cf8659",
+      "input_ids_sha": "2c6e7ef9fb9fca9aaca0612cad3711538a1e484068c29b57400fd5c15ef96110"
+    },
+    {
+      "state_id": "d1a7ad33a3e70df8a447c84dd2ca77803bb320713dea3bf2f8331607a3ea86f2",
+      "input_ids_sha": "51b8cb4ba4ba7dd922009d04245a35dae20fdd31f7f8545ac5b40340bbbdb41a"
+    },
+    {
+      "state_id": "60448ae4d81b532746f553c0df9c22a7385a4d9e944ffe4c0b3e1a5ce1a3d0e7",
+      "input_ids_sha": "0b82dcfb64b83985b28ffe255a0d8653867d8e947171060331ce118e3a58a935"
+    }
+  ],
+  "split": "S-OBS-DISC",
+  "rank": 4,
+  "layers": [
+    7,
+    14,
+    21,
+    28
+  ],
+  "frozen_before_valid_forward": true,
+  "target": "mean reference-tactic log probability gradient at last prompt token"
+}

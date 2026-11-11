@@ -1,0 +1,19 @@
+{
+  "state": "a : ℕ\nb : ℕ\nh : a = b\n⊢ b = a",
+  "verdicts": [
+    {
+      "action": "exact h.symm",
+      "lean_status": "VALID_TRANSITION",
+      "goals_remaining": 0,
+      "proof_verified": false,
+      "note": "tactic transition only, not full-kernel proof verification"
+    },
+    {
+      "action": "rfl",
+      "lean_status": "INVALID_TACTIC",
+      "proof_verified": false,
+      "error": "{'message': 'Tactic error', 'data': \"tactic 'rfl' failed, the left-hand side\\n  b\\nis not definitionally equal to the right-hand side\\n  a\\na b : ℕ\\nh : a = b\\n⊢ b = a\", 'code': 1}"
+    }
+  ],
+  "retrieval_status": "ready"
+}

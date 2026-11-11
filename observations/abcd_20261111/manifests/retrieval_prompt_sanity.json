@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "returned": 10,
+  "schema": [
+    "Formal name",
+    "Formal statement",
+    "Informal name",
+    "Informal statement"
+  ],
+  "prompt_length_characters": 2092
+}

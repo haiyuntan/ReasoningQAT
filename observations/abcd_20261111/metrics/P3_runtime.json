@@ -1,0 +1,17 @@
+{
+  "peak_allocated_bytes": 18275665408,
+  "peak_reserved_bytes": 21034434560,
+  "gpu_uuid": "GPU-74ffe9e9-634a-34f9-22fa-03120b4764f7",
+  "training": false,
+  "method": "P3",
+  "runtime_resources": {
+    "version": "throughput-v2-20261111",
+    "allocator_cap_gib": 56,
+    "duty_cycle": 0.9,
+    "candidate_batch_size": 8,
+    "gpu_free_reserve_mib": 8192,
+    "batch_score_max_abs_tolerance": 0.02,
+    "note": "Up to approximately 90% total GPU3 memory including retrieval; no artificial memory filling. Reduce batch on OOM or score-parity failure. Scientific sample/protocol unchanged."
+  },
+  "selected_batch": 1
+}

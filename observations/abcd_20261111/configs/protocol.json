@@ -1,0 +1,17 @@
+{
+  "version": "ABCD-v3-pilot-20261111", "training": false, "seed": 2,
+  "models": ["P0", "P3", "P4", "P6"],
+  "layers_one_based": [7,14,21,28], "functional_rank": 4,
+  "discovery_groups": 16, "valid_theorems": 32, "rule_pairs": 8,
+  "max_sequence_length": 2048, "batch_size": 1, "duty_cycle": 0.5,
+  "allocator_cap_gib": 32, "gpu_uuid": "GPU-74ffe9e9-634a-34f9-22fa-03120b4764f7",
+  "gpu_free_reserve_mib": 16384, "host_available_reserve_gib": 64,
+  "retrieval_queries_per_second": 0.2, "retrieval_probe_interval_s": 30,
+  "retrieval_latency_soft_s": 10, "retrieval_latency_hard_s": 20,
+  "retrieval_consecutive_limit": 3,
+  "candidates": ["rfl", "simp", "aesop", "omega", "ring", "linarith", "nlinarith", "norm_num"],
+  "selection": "SHA256(seed2|canonical theorem), before all model scores; ROOT_ONLY; no proposer rollout",
+  "scope": "G0-G3 audit then G4 ABCD engineering pilot, not confirmatory or paper result; no M training",
+  "missing_reference": "Referenced REALProver_ABCD_Observation_SOP_20261111.md not found locally; v3 protocol applied; missing SOP recorded",
+  "controls": {"A": ["total NMSE", "random rank4", "PCA rank4"], "B": ["P0 baseline", "paired alpha-renaming", "length/tokenization report"], "C": ["remove first premise", "same-token-length distractor", "reverse premise order"], "D": ["exact BF16 teacher replay", "float32 algebraic residual"]}
+}

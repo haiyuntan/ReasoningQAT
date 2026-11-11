@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "single_visible_gpu": true,
+  "gradient_layers": [
+    7,
+    14,
+    21,
+    28
+  ],
+  "same_input_replay_max_abs": {
+    "7": 0.0,
+    "14": 0.0,
+    "21": 0.0,
+    "28": 0.0
+  },
+  "peak_allocated_bytes": 15357213696,
+  "training": false,
+  "note": "small engineering check only; not external ABCD evidence"
+}

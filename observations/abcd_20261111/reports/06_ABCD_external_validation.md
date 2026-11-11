@@ -1,0 +1,2 @@
+# ABCD pilot
+See metrics/ABCD_summary.json, A_per_theorem.jsonl and D_*.jsonl. A bases were fit only on S-OBS-DISC; V-REAL roots are held out. B is a small typed alpha-renaming family, not broad symmetry evidence. C uses frozen true retrieval plus remove/order/token-length controls. D requires numeric replay parity before interpretation. All results are exploratory engineering pilot; G5 external confirmation NOT COMPLETED.

@@ -1,0 +1,14 @@
+{
+  "status": "PILOT_DONE",
+  "source_local_commit": "43d4afb6a976e3eda71f5afec48e0621b9090ee7",
+  "source_workspace": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_calibration_v3_20261111",
+  "publication_branch": "reports/realprover-abcd-20261111",
+  "not_included": [
+    "weights",
+    "environment prefixes",
+    "binary Lean dependencies",
+    "full training dataset",
+    "activation/block caches"
+  ],
+  "source_data_license": "state_tactic_pairs Apache-2.0 per pinned upstream dataset card; public miniF2F/mathlib provenance retained"
+}

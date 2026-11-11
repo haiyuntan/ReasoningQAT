@@ -1,0 +1,31 @@
+{
+  "rows": 56407,
+  "schema": "tactic: string\ninput: string\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 485",
+  "data_sha256": "5d3239af61185af7d4ab882f38e8c3dc443881616ce1b1e5003f58867fef8c5f",
+  "source_revision": "91bb339e61ff045d3ebf97cd94d1df1d755dd745",
+  "length_quantiles": {
+    "0": 292.0,
+    "0.25": 792.0,
+    "0.5": 914.0,
+    "0.75": 1061.0,
+    "0.9": 1233.0,
+    "0.95": 1373.0,
+    "0.99": 1778.9400000000023,
+    "1": 4347.0
+  },
+  "templates": {
+    "native_incontext": 46308,
+    "other": 10099
+  },
+  "long_2048": 187,
+  "short_2048": 56220,
+  "suffix_marker_retained": 182,
+  "explicit_overlap_excluded": 0,
+  "unique_states_screened": 55585,
+  "cal_groups": 44653,
+  "obs_groups": 10932,
+  "state_group_disjoint": true,
+  "source_theorem_disjoint": "UNKNOWN; dataset has no certified source theorem IDs",
+  "M_training": "NOT_STARTED; G2 full span parity not implemented",
+  "acquisition_receipt_sha256": "882aca9ab71178010698fefbaa5c0b40028b0412af36e11c493b4bc03a5c222a"
+}

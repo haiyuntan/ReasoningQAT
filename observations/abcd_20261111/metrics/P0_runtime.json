@@ -1,0 +1,7 @@
+{
+  "peak_allocated_bytes": 30102557696,
+  "peak_reserved_bytes": 33288093696,
+  "gpu_uuid": "GPU-74ffe9e9-634a-34f9-22fa-03120b4764f7",
+  "training": false,
+  "method": "P0"
+}

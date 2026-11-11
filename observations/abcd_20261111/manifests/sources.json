@@ -1,0 +1,35 @@
+{
+  "files": [
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/REALPROVER/manager/manage/prompt_manage.py",
+      "sha256": "00d152f0d1e89c8b1db213ca8692b05722cdbcc037cf4b9f4d2f6011431cb038"
+    },
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/REALPROVER/manager/thirdparty/interactive.py",
+      "sha256": "8c825039af4b4af23314564fbcb9b1781853c9f30f4a7c9461cc0b50afe4ad6a"
+    },
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/REALPROVER/manager/thirdparty/generator.py",
+      "sha256": "48cbe11ab0dce03d90ff23bb250241c855e996365bb1b18f02fba054cfd05cd6"
+    },
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/REALPROVER/manager/search/best_first.py",
+      "sha256": "172ce208885d47f9781102575860ae1d85f2236031d3a1cad1f0750a7bfd6f8e"
+    },
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/research/adapters/training.py",
+      "sha256": "4e4e74ced1bf9bb8e4956753a994cdb35c7a5985553776638876ebad12e479a7"
+    },
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/research/vendor/reasoningqat/datautils_block.py",
+      "sha256": "342d231dddc77903c9b35042f0f3b48abba523be7c328bdc85d3805dda650a36"
+    },
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/REALProver_Calibration_and_ABCD_DataProtocol_v3_20261111.md",
+      "sha256": "1bd7f971a851aec88e96d39b46ed2f17c2ec3a2b72b454579299a0a02c2a68cf"
+    }
+  ],
+  "official_realprover_revision": "3e5987dc1009a7addc935bcd7b4ae777738a0848",
+  "valid_sha256": "93bdd4a1da9d7e4eed60d6d352bf73b7df09f96039ef4bfda5dca0ae8d535d4b",
+  "tokenizer_sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa"
+}

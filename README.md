@@ -49,3 +49,8 @@ See [REAL-Prover observation results and reproduction](reports/REALPROVER_OBSERV
 ## REAL-Prover: Formal Proof fifth domain and clean Fig2b comparison
 
 [两栏无额外标注图、REAL-Prover五域主图和全部对照](observations/realprover_five_domain_v3_20261105/README.md)：加入Formal Proof(Lean State–Tactic)，不使用MATH-500测试题作校准或表征输入；六张无PCA可视化已完成。
+
+
+## REAL-Prover ABCD pilot (2026-11-11)
+
+[中文结果汇总](observations/abcd_20261111/RESULTS.zh.md) · [原始指标](observations/abcd_20261111/metrics/ABCD_summary.json) · [复核说明](observations/abcd_20261111/REPRODUCE.md)。独立 pilot 结果，G5 confirmation 未完成。

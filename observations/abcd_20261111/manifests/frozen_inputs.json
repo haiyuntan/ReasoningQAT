@@ -1,0 +1,6 @@
+{
+  "configs/protocol.json": "bf2794a43b8b690581f611d1411854cde68282d93549b257678c612967dca41c",
+  "manifests/V_real_states.jsonl": "07213500d977e2cb52fdcada1b7b2e023d7df7e0ce0f0ba99f243d46063659e3",
+  "manifests/discovery_pilot.jsonl": "1db6d98178c861ca377376f2b620d60529a21c030fb2f7d8b4dd91d86c962f39",
+  "manifests/models.json": "a94df89223611e3cc7813f65187d3019a0103389d937741dc8fd475b2828a182"
+}

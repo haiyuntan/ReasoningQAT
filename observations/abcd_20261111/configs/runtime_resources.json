@@ -1,0 +1,9 @@
+{
+  "version": "throughput-v2-20261111",
+  "allocator_cap_gib": 56,
+  "duty_cycle": 0.90,
+  "candidate_batch_size": 8,
+  "gpu_free_reserve_mib": 8192,
+  "batch_score_max_abs_tolerance": 0.02,
+  "note": "Up to approximately 90% total GPU3 memory including retrieval; no artificial memory filling. Reduce batch on OOM or score-parity failure. Scientific sample/protocol unchanged."
+}

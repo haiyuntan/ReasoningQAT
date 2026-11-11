@@ -1,0 +1,23 @@
+{
+  "state_tactic_pairs": {
+    "rows": 56407,
+    "sha256": "5d3239af61185af7d4ab882f38e8c3dc443881616ce1b1e5003f58867fef8c5f",
+    "revision": "91bb339e61ff045d3ebf97cd94d1df1d755dd745",
+    "S-CAL-TRAIN": 44653,
+    "S-OBS-DISC": 10932,
+    "group_basis": "exact state, not certified source theorem",
+    "semantic_overlap": "UNKNOWN",
+    "BF16_distribution": "TRAIN_DISTRIBUTION"
+  },
+  "V-REAL": {
+    "theorems_selected": 32,
+    "split": "minif2f-valid",
+    "selection": "static SHA256, no outcome used"
+  },
+  "T-FINAL": {
+    "split": "minif2f-test",
+    "rows": 244,
+    "results_not_read": true
+  },
+  "M": "NOT_STARTED"
+}

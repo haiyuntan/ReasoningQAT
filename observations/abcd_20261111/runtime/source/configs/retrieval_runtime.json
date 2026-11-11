@@ -1,0 +1,6 @@
+{
+  "search_backend": "cpu_sharded",
+  "cpu_shards": 8,
+  "cache_entries": 2048,
+  "cache_bytes": 16777216
+}

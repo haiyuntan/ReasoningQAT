@@ -1,0 +1,8 @@
+{
+  "lean_version": "Lean (version 4.16.0, x86_64-unknown-linux-gnu, commit 128a1e6b0a82, Release)",
+  "toolchain_sha": "38e1db7f371dcb49f3c83ddd2a7b9298c71455dc8f86e5605bb4c1e269863e45",
+  "lake_manifest_sha": "c448ca1e50b8deecdbb34e104074ad42014437d80647bc5d0dbdcbe18100f2f3",
+  "interactive_sha": "60515d22d44beeb166ab3e79024485471a1edecfd7b095678c8f65473b7bbf5c",
+  "write_workspace": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_calibration_v3_20261111/runtime/lean",
+  "packages": "read-only shared dependency assets; independent generated files"
+}
