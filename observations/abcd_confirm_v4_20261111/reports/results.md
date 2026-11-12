@@ -1,0 +1,2 @@
+# ABCD confirmation
+Actual estimates and coverage are in metrics/confirmation_summary.json. A primary=layer28 paired rho difference, Bonferroni CIs across9 A/B/C ×P3/P4/P6 primary comparisons; other layers/P5 secondary. B family-clustered, length-matched primary. C deletion minus matched-length control; lexical distractor relevance is not certified. D strict replay before interpreting prefix/last-token geometry; undefined cosines/cancellation stay null. No proof-search accuracy or M-training claim.

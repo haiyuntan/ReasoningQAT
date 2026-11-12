@@ -1,0 +1,12 @@
+{
+  "source_commit": "49549412c818f11c09737da48e4a61dc1d1d7031",
+  "source_workspace": "observation_abcd_confirm_v4_20261111",
+  "status": "CONFIRMATION_DONE",
+  "excluded": [
+    "weights",
+    "envs",
+    "activation caches",
+    "Lean binaries",
+    "logs"
+  ]
+}

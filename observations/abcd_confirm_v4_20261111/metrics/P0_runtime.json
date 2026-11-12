@@ -1,0 +1,16 @@
+{
+  "peak_allocated_bytes": 16097540096,
+  "peak_reserved_bytes": 17934843904,
+  "GPU": {
+    "uuid": "GPU-74ffe9e9-634a-34f9-22fa-03120b4764f7",
+    "allocator_cap_gib": 56,
+    "free_reserve_mib": 8192,
+    "host_reserve_gib": 64,
+    "duty": 0.9,
+    "latency_soft_s": 10,
+    "latency_hard_s": 20,
+    "slow_limit": 3
+  },
+  "batch": 1,
+  "training": false
+}

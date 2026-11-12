@@ -3,3 +3,6 @@ vendor/** -whitespace
 
 # Preserve exact csv.writer CRLF evidence bytes in the observation inventory.
 observations/**/manifests/checkpoint_inventory.csv whitespace=cr-at-eol
+
+# Preserve byte-identical upstream confirmation runtime snapshot.
+observations/abcd_confirm_v4_20261111/runtime/source/** -whitespace

@@ -1,0 +1,5 @@
+{
+  "source": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_calibration_v3_20261111/envs/forward",
+  "mode": "independent file copy with isolated plotting dependency install",
+  "probe": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_abcd_confirm_v4_20261111/envs/forward\n2.2.2+cu121\n4.52.4\nmatplotlib=3.10.8\n"
+}

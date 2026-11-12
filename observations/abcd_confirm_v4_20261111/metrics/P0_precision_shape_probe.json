@@ -1,0 +1,117 @@
+{
+  "status": "DIAGNOSTIC_COMPLETE",
+  "BF16_padding_max_abs": 0.12282276153564453,
+  "BF16_batch2_max_abs": 0.031239032745361328,
+  "FP32_padding_max_abs": 4.76837158203125e-06,
+  "FP32_batch2_max_abs": 5.0067901611328125e-06,
+  "precision_dependence_supported_on_development": true,
+  "records": [
+    {
+      "development_case": "valid_192",
+      "action": "rfl",
+      "fp32_base": -15.467263221740723,
+      "fp32_padding_delta": {
+        "8": 0.0,
+        "32": 4.76837158203125e-06
+      },
+      "fp32_batch2_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "development_case": "valid_192",
+      "action": "simp",
+      "fp32_base": -4.340484619140625,
+      "fp32_padding_delta": {
+        "8": 0.0,
+        "32": 3.814697265625e-06
+      },
+      "fp32_batch2_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "development_case": "valid_61",
+      "action": "rfl",
+      "fp32_base": -5.039621829986572,
+      "fp32_padding_delta": {
+        "8": 0.0,
+        "32": -2.384185791015625e-06
+      },
+      "fp32_batch2_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "development_case": "valid_61",
+      "action": "simp",
+      "fp32_base": -8.067176818847656,
+      "fp32_padding_delta": {
+        "8": 0.0,
+        "32": -1.9073486328125e-06
+      },
+      "fp32_batch2_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "development_case": "valid_79",
+      "action": "rfl",
+      "fp32_base": -4.735407829284668,
+      "fp32_padding_delta": {
+        "8": 0.0,
+        "32": 0.0
+      },
+      "fp32_batch2_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "development_case": "valid_79",
+      "action": "simp",
+      "fp32_base": -3.974741220474243,
+      "fp32_padding_delta": {
+        "8": 0.0,
+        "32": 0.0
+      },
+      "fp32_batch2_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "development_case": "valid_201",
+      "action": "rfl",
+      "fp32_base": -8.799261093139648,
+      "fp32_padding_delta": {
+        "8": 0.0,
+        "32": 0.0
+      },
+      "fp32_batch2_delta": [
+        -1.9073486328125e-06,
+        -1.9073486328125e-06
+      ]
+    },
+    {
+      "development_case": "valid_201",
+      "action": "simp",
+      "fp32_base": -2.0588765144348145,
+      "fp32_padding_delta": {
+        "8": 0.0,
+        "32": 0.0
+      },
+      "fp32_batch2_delta": [
+        5.0067901611328125e-06,
+        5.0067901611328125e-06
+      ]
+    }
+  ],
+  "primary_precision_unchanged": "BF16 batch1 unpadded",
+  "peak_allocated_bytes": 31296968192,
+  "source_checkpoint_unchanged": true
+}

@@ -1,0 +1,43 @@
+{
+  "theorem_id": "rule_012_renamed",
+  "base_group": "rule_012",
+  "family_id": "family_1",
+  "variant": "renamed",
+  "B_length_matched": true,
+  "split": "V-RULE-CONFIRM",
+  "model_id": "P6",
+  "protocol_sha": "e5b8afa09ddbcc5bff20498df9900dd63797724554edfca94685c6b302089d4d",
+  "checkpoint_sha": "3f80bf1b3dfeeabf4a16fee00782a48359566dfb2ab01246df562251de6943bc",
+  "case_sha": "879808a2bb3fd6aeb49db7fbc7942cc551bfd2243ce044eb718923679e99a3d0",
+  "candidate_actions": [
+    "simpa only [g]",
+    "rfl",
+    "simp",
+    "aesop"
+  ],
+  "candidate_origin": [
+    "CONSTRUCTED_VERIFIED_REFERENCE",
+    "STATIC",
+    "STATIC",
+    "STATIC"
+  ],
+  "scores": {
+    "full": [
+      -1.7620267868041992,
+      -7.578827857971191,
+      -0.1887248456478119,
+      -4.042967319488525
+    ]
+  },
+  "input_ids_sha": {
+    "full": [
+      "d91ab126081258118028e8a84a180902c187ae4f858bf9a6079982bdfa64c2e0",
+      "71907ea9ac3f0ba434db773e012280d2fd6aa84193fce6267ad0e5da79a6adbc",
+      "1d60c067ccfa17170414195cbe4604e2b7bb2d94d28b1412954a500d260d6cb6",
+      "6a7e77bca8cfaa0dc70c2557251c401a26237a92f6537d0e9fda85eb5cc47427"
+    ]
+  },
+  "status": "DONE",
+  "numeric_path": "single_unpadded_BF16",
+  "retrieval_sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+}

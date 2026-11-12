@@ -1,0 +1,75 @@
+{
+  "version": "ABCD-confirm-v4-20261111",
+  "seed": 2,
+  "training": false,
+  "models": [
+    "P0",
+    "P3",
+    "P4",
+    "P6",
+    "P5"
+  ],
+  "primary_models": [
+    "P3",
+    "P4",
+    "P6"
+  ],
+  "primary_layer": 28,
+  "A_layers": [
+    7,
+    14,
+    21,
+    28
+  ],
+  "A_rank": 4,
+  "A_fit_groups": 128,
+  "confirm_theorems": 128,
+  "D_theorems": 32,
+  "D_layers": 28,
+  "B_pairs": 64,
+  "B_families": 8,
+  "C_premises": 3,
+  "rendered_premises": 6,
+  "max_sequence_length": 4096,
+  "fit_max_sequence_length": 2048,
+  "static_actions": [
+    "rfl",
+    "simp",
+    "aesop",
+    "omega",
+    "ring",
+    "linarith",
+    "nlinarith",
+    "norm_num"
+  ],
+  "numeric_development_cases": 4,
+  "numeric_repeats": 3,
+  "same_input_noise_tolerance": 1e-05,
+  "batch_size": 1,
+  "bootstrap_replicates": 10000,
+  "primary_familywise_alpha": 0.05,
+  "selection": "SHA256(confirm-v4|seed2|canonical theorem), excluding all32 pilot valid IDs, before new model scores",
+  "A_primary": "paired bootstrap Spearman(functional error,static8 action drift) minus Spearman(total NMSE,same drift), layer28; Bonferroni CI across P3/P4/P6",
+  "B_primary": "length-matched alpha-renaming excess sensitivity, bootstrap family clusters; unmatched separately",
+  "C_primary": "per-theorem removal influence drift minus same-length control drift; valid-application labels secondary, not necessity claims",
+  "D_primary": "32 frozen confirmation roots, all28 complete block maps; strict teacher replay before exact algebra and cancellation interpretation",
+  "P5": "preregistered secondary external baseline, after P3/P4/P6",
+  "M_training": "NOT_STARTED; no optimizer, no valid/test text in QAT",
+  "no_test_result_selection": true,
+  "GPU": {
+    "uuid": "GPU-74ffe9e9-634a-34f9-22fa-03120b4764f7",
+    "allocator_cap_gib": 56,
+    "free_reserve_mib": 8192,
+    "host_reserve_gib": 64,
+    "duty": 0.9,
+    "latency_soft_s": 10,
+    "latency_hard_s": 20,
+    "slow_limit": 3
+  },
+  "primary_comparisons": 9,
+  "primary_families": [
+    "A layer28 rho difference",
+    "B length-matched family-cluster excess",
+    "C removal-minus-same-length contrast"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "stage": "unit_guard",
+  "status": "RUNNING",
+  "time": 1794393672.2740176,
+  "command": [
+    "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_abcd_confirm_v4_20261111/envs/forward/bin/python",
+    "-u",
+    "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/observation_abcd_confirm_v4_20261111/src/unused.py"
+  ],
+  "gpu": true,
+  "protocol_sha": "e5b8afa09ddbcc5bff20498df9900dd63797724554edfca94685c6b302089d4d"
+}
