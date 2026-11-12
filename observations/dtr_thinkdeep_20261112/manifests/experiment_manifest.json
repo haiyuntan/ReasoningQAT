@@ -1,0 +1,236 @@
+{
+  "protocol_sha": "65e8aaa4228704b9536577af9b306a3ad79cb74433d5dd6a0dc7b22d02b0858c",
+  "frozen_cases_sha": "94b7e1cf5a2711110e8ec1866384d02d8487f949dddc90d03a08c15f484fc219",
+  "split_sha": "c2642c2a554edab97239f3d4e34a4cd182adee85bccd69488e6b5ca1197c9137",
+  "models": {
+    "P0": {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/models/REAL-Prover-v1-bf16",
+      "files": [
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/models/REAL-Prover-v1-bf16/model-00001-of-00004.safetensors",
+          "sha256": "ee47ed2bcec347b49889318e18829317c28a24c9218a18ed656af309ad9dbe8c",
+          "size": 4877660776
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/models/REAL-Prover-v1-bf16/model-00002-of-00004.safetensors",
+          "sha256": "35f819719647d84594f4d1097dd76371c2273072a4ba44e90d496a93506730f5",
+          "size": 4932751008
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/models/REAL-Prover-v1-bf16/model-00003-of-00004.safetensors",
+          "sha256": "a869a66b2eb8e0cc4a034b7106c677b62b3dfe7e0fcd6e7e28ce3236a35591e8",
+          "size": 4330865200
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/models/REAL-Prover-v1-bf16/model-00004-of-00004.safetensors",
+          "sha256": "51437ff72d3506924876b22f775dcf20702276381d58973ac937d870dc2cc12e",
+          "size": 1089994880
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/models/REAL-Prover-v1-bf16/config.json",
+          "sha256": "9300ba2c659d60e7a60da5914855261854b4ba692011cdb62328b442a7004125",
+          "size": 748
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/models/REAL-Prover-v1-bf16/tokenizer.json",
+          "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+          "size": 11421896
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/models/REAL-Prover-v1-bf16/tokenizer_config.json",
+          "sha256": "c4400576e1e4e80ff7e78e74be927022e283fb7143337331ac65e9531636e0dd",
+          "size": 7346
+        }
+      ],
+      "checkpoint_sha": "0c31231899004437f9282b97212ffeda7de4cf3a85bb49d1a0f91d4e705d0124"
+    },
+    "P3": {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P3/eval_model",
+      "files": [
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P3/eval_model/model-00001-of-00004.safetensors",
+          "sha256": "8c497799f59c382edc2e97b7cbf0f25053469cdd6f85dfc0b889ac7a717e253c",
+          "size": 4877660776
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P3/eval_model/model-00002-of-00004.safetensors",
+          "sha256": "eaa61a6e59f984284df5a2c5b8a2a3b4dfe894524536a5cd21e748b3a06e2291",
+          "size": 4932751008
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P3/eval_model/model-00003-of-00004.safetensors",
+          "sha256": "4a5b3f0533585f98ad77f01d104a6b64a83531375ca99fc801bf6d4aae18f16c",
+          "size": 4330865200
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P3/eval_model/model-00004-of-00004.safetensors",
+          "sha256": "51437ff72d3506924876b22f775dcf20702276381d58973ac937d870dc2cc12e",
+          "size": 1089994880
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P3/eval_model/config.json",
+          "sha256": "7e28c66d45d01a83b3bf06c65aada9c6114ba920e89906e017aae15e77a9cb40",
+          "size": 702
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P3/eval_model/tokenizer.json",
+          "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+          "size": 11421896
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P3/eval_model/tokenizer_config.json",
+          "sha256": "cded8b9874fb16c1f08153b1cb5dcd40b3372cd3f99919c9d08ef0026ba75aeb",
+          "size": 4716
+        }
+      ],
+      "checkpoint_sha": "27846a768f9467fc20bd30b344ec86a5a8a754c5656923df514f26dbdab01d14"
+    },
+    "P4": {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P4/eval_model",
+      "files": [
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P4/eval_model/model-00001-of-00004.safetensors",
+          "sha256": "726ca388d10a4d9e6429d2c2b1255c787fe2f4134cd433652bca647e5634ab2a",
+          "size": 4877660776
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P4/eval_model/model-00002-of-00004.safetensors",
+          "sha256": "dc7863773f3029f53b95676690bcf5667b81f50f1aade7238290cb7cd77cf03c",
+          "size": 4932751008
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P4/eval_model/model-00003-of-00004.safetensors",
+          "sha256": "0a31498765e479e6538bb24e27a3ee587ed8751f7f728150be8ed48193202878",
+          "size": 4330865200
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P4/eval_model/model-00004-of-00004.safetensors",
+          "sha256": "51437ff72d3506924876b22f775dcf20702276381d58973ac937d870dc2cc12e",
+          "size": 1089994880
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P4/eval_model/config.json",
+          "sha256": "7e28c66d45d01a83b3bf06c65aada9c6114ba920e89906e017aae15e77a9cb40",
+          "size": 702
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P4/eval_model/tokenizer.json",
+          "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+          "size": 11421896
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P4/eval_model/tokenizer_config.json",
+          "sha256": "cded8b9874fb16c1f08153b1cb5dcd40b3372cd3f99919c9d08ef0026ba75aeb",
+          "size": 4716
+        }
+      ],
+      "checkpoint_sha": "51a08604db7659f2923fab885b3280410fbb7e6b8f96ba56ae75c50eed0975b3"
+    },
+    "P6": {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P6/eval_model",
+      "files": [
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P6/eval_model/model-00001-of-00004.safetensors",
+          "sha256": "4ecc114ef7161b7e4b742992fbc49e0493ec160bb40c506ff6e2b6a11693d324",
+          "size": 4877660776
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P6/eval_model/model-00002-of-00004.safetensors",
+          "sha256": "94f34f6f1d22707f0c76f0866910be1e28591552c09bfc97b7f6337649f35d06",
+          "size": 4932751008
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P6/eval_model/model-00003-of-00004.safetensors",
+          "sha256": "14a8f8cdf4e110133f07ca901543d0f252a6cfe58bf9309026ee187efe30eac9",
+          "size": 4330865200
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P6/eval_model/model-00004-of-00004.safetensors",
+          "sha256": "51437ff72d3506924876b22f775dcf20702276381d58973ac937d870dc2cc12e",
+          "size": 1089994880
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P6/eval_model/config.json",
+          "sha256": "7e28c66d45d01a83b3bf06c65aada9c6114ba920e89906e017aae15e77a9cb40",
+          "size": 702
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P6/eval_model/tokenizer.json",
+          "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+          "size": 11421896
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P6/eval_model/tokenizer_config.json",
+          "sha256": "cded8b9874fb16c1f08153b1cb5dcd40b3372cd3f99919c9d08ef0026ba75aeb",
+          "size": 4716
+        }
+      ],
+      "checkpoint_sha": "3f80bf1b3dfeeabf4a16fee00782a48359566dfb2ab01246df562251de6943bc"
+    },
+    "P5": {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P5/eval_model",
+      "files": [
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P5/eval_model/model-00001-of-00004.safetensors",
+          "sha256": "68aa5fa2dbea758129b182f9fcd9735f2e7d712a6be04315ec451357316d95b0",
+          "size": 4877660776
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P5/eval_model/model-00002-of-00004.safetensors",
+          "sha256": "c2917a1d21797b409c7bb7ef02143204ff1b11d5a516e711747c050146d6705e",
+          "size": 4932751008
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P5/eval_model/model-00003-of-00004.safetensors",
+          "sha256": "d7fbbca0207160618777e5143d08bb7a3f001a2a5e44b1ed3855c4ec79ddf94f",
+          "size": 4330865200
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P5/eval_model/model-00004-of-00004.safetensors",
+          "sha256": "51437ff72d3506924876b22f775dcf20702276381d58973ac937d870dc2cc12e",
+          "size": 1089994880
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P5/eval_model/config.json",
+          "sha256": "7e28c66d45d01a83b3bf06c65aada9c6114ba920e89906e017aae15e77a9cb40",
+          "size": 702
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P5/eval_model/tokenizer.json",
+          "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+          "size": 11421896
+        },
+        {
+          "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P5/eval_model/tokenizer_config.json",
+          "sha256": "cded8b9874fb16c1f08153b1cb5dcd40b3372cd3f99919c9d08ef0026ba75aeb",
+          "size": 4716
+        }
+      ],
+      "checkpoint_sha": "6fa10ae36840847e368a5c60141cfde95ec6f900d219222c9f393eeaa2c4a672"
+    }
+  },
+  "Lean_sha": "60515d22d44beeb166ab3e79024485471a1edecfd7b095678c8f65473b7bbf5c",
+  "retrieval": {
+    "adapter_loaded": true,
+    "asset_manifest_sha256": "bafb0adc6daecdaa9c710f1bfcc270ec5c80eed163dc78c68b1c84d9206a3a32",
+    "cache_entries": 2048,
+    "premises": 252444,
+    "runtime_sha256": "fcb60604f57bbe9b69934decbb8e9fd58d637721c59c0e757d6248e8168c5d69",
+    "search_backend": "cpu_sharded",
+    "source_revision": "3e5987dc1009a7addc935bcd7b4ae777738a0848",
+    "status": "ready"
+  },
+  "source_sha": {
+    "engine.py": "96b7a54c5294ea53221c9a1409c86e2326f220c05c1b7f0421914968c534ef6f",
+    "pipeline.py": "e65fa15c2f4a0b06c83a626ad87689c82342e96fc6f2639165a389f466da20d9",
+    "numerics.py": "7213bb72cb92da7d49ff706d404d182700a3622b68edb07320be5f0691a7614e",
+    "lean.py": "1fabb1f7cd461878fa459df71526b96d71777e6f51581c7f1a335ed374470025",
+    "common.py": "b239745e49336c162fd175c105b9332d8ee1d71c078a6612cae6599e42745567",
+    "run.py": "e9e7aa0fc6667584bb713449b2deb7d13225a99d07f83e145c37df273b58b6bd",
+    "dtr.py": "a155b1c7ba8fa817f4802263b8c7a5261b8a477f7d44578f26082bdaca49202d",
+    "copy_environment.py": "a49fe9d1d0ebfa366de76f6ffdc24a017bfda8adb52c0d07cd06539dcaf0dc5b"
+  },
+  "user_resource_override": "Pause formal GPU0-2; use GPU1; shared retrieval preserved",
+  "dtype": "BF16 dense W2A16",
+  "semantic_overlap": "UNKNOWN"
+}

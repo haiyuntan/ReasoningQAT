@@ -1,0 +1,15 @@
+{
+  "stage": "report",
+  "status": "DONE",
+  "updated_at": 1794466122.1037266,
+  "pid": 2258605,
+  "primary": {
+    "n": 8,
+    "mean": -0.5203125,
+    "ci": [
+      -0.7979166666666667,
+      -0.22395833333333334
+    ]
+  },
+  "status_science": "INCONCLUSIVE_LOW_POWER"
+}

@@ -1,0 +1,9 @@
+{
+  "stage": "generation_progress",
+  "status": "RUNNING",
+  "updated_at": 1794465464.6652236,
+  "pid": 2241990,
+  "theorem_id": "dtr_confirm_104",
+  "split": "D-CONFIRM",
+  "completed_tactics": 352
+}
