@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "statistics_identical": true,
+  "png_images_bitwise_identical": 8,
+  "documented_single_figure_cli": "PASS",
+  "rebuild_from_canonical_scripts": "PASS",
+  "pdf_note": "PDF creation timestamps may differ; PNG bytes and numerical tables checked exactly"
+}

@@ -1,0 +1,11 @@
+envs/
+upstream/
+runtime/
+caches/
+logs/
+metrics/
+plots/
+tmp/
+manifests/
+__pycache__/
+*.pyc

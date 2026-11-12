@@ -1,0 +1,13 @@
+{
+  "scope": "POST_PRIMARY_EXPLORATORY_DEV_ONLY",
+  "models": [
+    "P3",
+    "P6"
+  ],
+  "generation_origin": "P4",
+  "theorems": 24,
+  "candidates_per_state": 8,
+  "source_sha": "94b7e1cf5a2711110e8ec1866384d02d8487f949dddc90d03a08c15f484fc219",
+  "deadline_utc": "2026-11-12T07:08:00Z",
+  "main_primary_unchanged": true
+}

@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "source_hashes": 1445,
+  "tactic_rows": 1088,
+  "token_rows": 15848,
+  "full_layer_records": 1088,
+  "figures": 8,
+  "P4_primary_intervals": "UNCHANGED_EXACT",
+  "same_token_pairing": "PASS"
+}

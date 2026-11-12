@@ -1,0 +1,1767 @@
+{
+  "seed": 2,
+  "bootstrap_replicates": 10000,
+  "bootstrap_unit": "theorem_id",
+  "main_split": "D-CONFIRM",
+  "generation_origin": "P4 only; P0 and optional models replay exact same tokens",
+  "models_natural_generation": [
+    "P4"
+  ],
+  "models_paired_replay": [
+    "P0",
+    "P3",
+    "P6"
+  ],
+  "Fig1": {
+    "models": [
+      "P0",
+      "P4"
+    ],
+    "split": "D-CONFIRM",
+    "metrics": {
+      "P0_token_length": {
+        "bins": [
+          {
+            "mean": 0.9666666666666667,
+            "ci": [
+              0.8918168168168169,
+              1.0
+            ],
+            "n_tactics": 30,
+            "n_theorems": 9,
+            "x_mean": 3.566666666666667,
+            "bin": 1,
+            "lower": 1.0,
+            "upper": 8.0
+          },
+          {
+            "mean": 0.9666666666666667,
+            "ci": [
+              0.8636363636363636,
+              1.0
+            ],
+            "n_tactics": 30,
+            "n_theorems": 10,
+            "x_mean": 8.633333333333333,
+            "bin": 2,
+            "lower": 8.0,
+            "upper": 10.0
+          },
+          {
+            "mean": 0.5862068965517241,
+            "ci": [
+              0.2571428571428571,
+              0.9259259259259259
+            ],
+            "n_tactics": 29,
+            "n_theorems": 8,
+            "x_mean": 11.206896551724139,
+            "bin": 3,
+            "lower": 10.0,
+            "upper": 15.0
+          },
+          {
+            "mean": 0.5526315789473685,
+            "ci": [
+              0.22857142857142856,
+              0.9230769230769231
+            ],
+            "n_tactics": 38,
+            "n_theorems": 11,
+            "x_mean": 17.710526315789473,
+            "bin": 4,
+            "lower": 15.0,
+            "upper": 21.0
+          },
+          {
+            "mean": 0.45454545454545453,
+            "ci": [
+              0.19047619047619047,
+              0.7575757575757576
+            ],
+            "n_tactics": 33,
+            "n_theorems": 12,
+            "x_mean": 29.03030303030303,
+            "bin": 5,
+            "lower": 21.0,
+            "upper": 48.0
+          }
+        ],
+        "rho_spearman": -0.4751642173825153,
+        "edges": [
+          1.0,
+          8.0,
+          10.0,
+          15.0,
+          21.0,
+          48.0
+        ],
+        "tie_rule": "all equal values in same bin; no jitter or outcome-based edges",
+        "bin_collapse": false
+      },
+      "P4_token_length": {
+        "bins": [
+          {
+            "mean": 0.9666666666666667,
+            "ci": [
+              0.8918168168168169,
+              1.0
+            ],
+            "n_tactics": 30,
+            "n_theorems": 9,
+            "x_mean": 3.566666666666667,
+            "bin": 1,
+            "lower": 1.0,
+            "upper": 8.0
+          },
+          {
+            "mean": 0.9666666666666667,
+            "ci": [
+              0.8636363636363636,
+              1.0
+            ],
+            "n_tactics": 30,
+            "n_theorems": 10,
+            "x_mean": 8.633333333333333,
+            "bin": 2,
+            "lower": 8.0,
+            "upper": 10.0
+          },
+          {
+            "mean": 0.5862068965517241,
+            "ci": [
+              0.2571428571428571,
+              0.9259259259259259
+            ],
+            "n_tactics": 29,
+            "n_theorems": 8,
+            "x_mean": 11.206896551724139,
+            "bin": 3,
+            "lower": 10.0,
+            "upper": 15.0
+          },
+          {
+            "mean": 0.5526315789473685,
+            "ci": [
+              0.22857142857142856,
+              0.9230769230769231
+            ],
+            "n_tactics": 38,
+            "n_theorems": 11,
+            "x_mean": 17.710526315789473,
+            "bin": 4,
+            "lower": 15.0,
+            "upper": 21.0
+          },
+          {
+            "mean": 0.45454545454545453,
+            "ci": [
+              0.19047619047619047,
+              0.7575757575757576
+            ],
+            "n_tactics": 33,
+            "n_theorems": 12,
+            "x_mean": 29.03030303030303,
+            "bin": 5,
+            "lower": 21.0,
+            "upper": 48.0
+          }
+        ],
+        "rho_spearman": -0.4751642173825153,
+        "edges": [
+          1.0,
+          8.0,
+          10.0,
+          15.0,
+          21.0,
+          48.0
+        ],
+        "tie_rule": "all equal values in same bin; no jitter or outcome-based edges",
+        "bin_collapse": false
+      },
+      "P0_dtr": {
+        "bins": [
+          {
+            "mean": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ],
+            "n_tactics": 26,
+            "n_theorems": 6,
+            "x_mean": 0.03181818181818182,
+            "bin": 1,
+            "lower": 0.0,
+            "upper": 0.1111111111111111
+          },
+          {
+            "mean": 0.5483870967741935,
+            "ci": [
+              0.13793103448275862,
+              0.9285714285714286
+            ],
+            "n_tactics": 31,
+            "n_theorems": 9,
+            "x_mean": 0.14755127857594652,
+            "bin": 2,
+            "lower": 0.1111111111111111,
+            "upper": 0.2222222222222222
+          },
+          {
+            "mean": 0.6666666666666666,
+            "ci": [
+              0.32,
+              0.9459459459459459
+            ],
+            "n_tactics": 39,
+            "n_theorems": 10,
+            "x_mean": 0.25737641108681825,
+            "bin": 3,
+            "lower": 0.2222222222222222,
+            "upper": 0.3205714285714286
+          },
+          {
+            "mean": 0.7586206896551724,
+            "ci": [
+              0.48,
+              0.9142857142857143
+            ],
+            "n_tactics": 29,
+            "n_theorems": 7,
+            "x_mean": 0.3543046718770003,
+            "bin": 4,
+            "lower": 0.3205714285714286,
+            "upper": 0.4166666666666667
+          },
+          {
+            "mean": 0.5714285714285714,
+            "ci": [
+              0.24324324324324326,
+              0.9230769230769231
+            ],
+            "n_tactics": 35,
+            "n_theorems": 9,
+            "x_mean": 0.5847949759613992,
+            "bin": 5,
+            "lower": 0.4166666666666667,
+            "upper": 1.0
+          }
+        ],
+        "rho_spearman": -0.1877218199234516,
+        "edges": [
+          0.0,
+          0.1111111111111111,
+          0.2222222222222222,
+          0.3205714285714286,
+          0.4166666666666667,
+          1.0
+        ],
+        "tie_rule": "all equal values in same bin; no jitter or outcome-based edges",
+        "bin_collapse": false
+      },
+      "P4_dtr": {
+        "bins": [
+          {
+            "mean": 0.7419354838709677,
+            "ci": [
+              0.36821052631578965,
+              1.0
+            ],
+            "n_tactics": 31,
+            "n_theorems": 7,
+            "x_mean": 0.07497597279380962,
+            "bin": 1,
+            "lower": 0.0,
+            "upper": 0.16666666666666666
+          },
+          {
+            "mean": 0.8484848484848485,
+            "ci": [
+              0.519962962962963,
+              1.0
+            ],
+            "n_tactics": 33,
+            "n_theorems": 8,
+            "x_mean": 0.20786654423018058,
+            "bin": 2,
+            "lower": 0.16666666666666666,
+            "upper": 0.23888888888888893
+          },
+          {
+            "mean": 0.5384615384615384,
+            "ci": [
+              0.21428571428571427,
+              1.0
+            ],
+            "n_tactics": 26,
+            "n_theorems": 9,
+            "x_mean": 0.28330459133626557,
+            "bin": 3,
+            "lower": 0.23888888888888893,
+            "upper": 0.3333333333333333
+          },
+          {
+            "mean": 0.631578947368421,
+            "ci": [
+              0.3333333333333333,
+              0.8787878787878788
+            ],
+            "n_tactics": 38,
+            "n_theorems": 11,
+            "x_mean": 0.3600345855464399,
+            "bin": 4,
+            "lower": 0.3333333333333333,
+            "upper": 0.4096256684491979
+          },
+          {
+            "mean": 0.6875,
+            "ci": [
+              0.3870967741935484,
+              0.9090909090909091
+            ],
+            "n_tactics": 32,
+            "n_theorems": 11,
+            "x_mean": 0.5378881684837966,
+            "bin": 5,
+            "lower": 0.4096256684491979,
+            "upper": 1.0
+          }
+        ],
+        "rho_spearman": -0.08159743529300816,
+        "edges": [
+          0.0,
+          0.16666666666666666,
+          0.23888888888888893,
+          0.3333333333333333,
+          0.4096256684491979,
+          1.0
+        ],
+        "tie_rule": "all equal values in same bin; no jitter or outcome-based edges",
+        "bin_collapse": false
+      }
+    }
+  },
+  "Fig2": {
+    "models": [
+      "P0",
+      "P4"
+    ],
+    "cases": {
+      "V0_P0": {
+        "candidate_id": "ff7f52db892e55a755e73815abc5c4ace46aa367992812dcdcc98723e980b9a4",
+        "DTR": 0.3333333333333333,
+        "tokens": 6,
+        "shown_tokens": 6,
+        "status": "VALID_TRANSITION"
+      },
+      "V0_P4": {
+        "candidate_id": "ff7f52db892e55a755e73815abc5c4ace46aa367992812dcdcc98723e980b9a4",
+        "DTR": 0.5,
+        "tokens": 6,
+        "shown_tokens": 6,
+        "status": "VALID_TRANSITION"
+      },
+      "V3_P0": {
+        "candidate_id": "221508fb4db983685e5d5e2deafa6cfe914704bcc635c5b03a388b1d1cc7d1b7",
+        "DTR": 0.20833333333333334,
+        "tokens": 24,
+        "shown_tokens": 24,
+        "status": "INVALID"
+      },
+      "V3_P4": {
+        "candidate_id": "221508fb4db983685e5d5e2deafa6cfe914704bcc635c5b03a388b1d1cc7d1b7",
+        "DTR": 0.25,
+        "tokens": 24,
+        "shown_tokens": 24,
+        "status": "INVALID"
+      }
+    },
+    "color_range": [
+      0,
+      0.6931471805599453
+    ],
+    "split": "D-CONFIRM"
+  },
+  "Fig3": {
+    "models": [
+      "P0",
+      "P4"
+    ],
+    "split": "D-CONFIRM",
+    "targets": {
+      "is_valid_transition": {
+        "P0": {
+          "dtr": {
+            "n_theorems": 8,
+            "mean": 0.31640625,
+            "ci": [
+              0.11875,
+              0.5346354166666667
+            ],
+            "per_theorem": [
+              {
+                "theorem_id": "dtr_confirm_117",
+                "value": 0.3333333333333333
+              },
+              {
+                "theorem_id": "dtr_confirm_21",
+                "value": 0.78125
+              },
+              {
+                "theorem_id": "dtr_confirm_215",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_235",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_237",
+                "value": 0.8
+              },
+              {
+                "theorem_id": "dtr_confirm_81",
+                "value": 0.25
+              },
+              {
+                "theorem_id": "dtr_confirm_87",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_90",
+                "value": 0.36666666666666664
+              }
+            ]
+          },
+          "self_certainty": {
+            "n_theorems": 8,
+            "mean": 0.7958333333333334,
+            "ci": [
+              0.6270833333333334,
+              0.9453125
+            ],
+            "per_theorem": [
+              {
+                "theorem_id": "dtr_confirm_117",
+                "value": 0.75
+              },
+              {
+                "theorem_id": "dtr_confirm_21",
+                "value": 0.8125
+              },
+              {
+                "theorem_id": "dtr_confirm_215",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_235",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_237",
+                "value": 0.4666666666666667
+              },
+              {
+                "theorem_id": "dtr_confirm_81",
+                "value": 0.9375
+              },
+              {
+                "theorem_id": "dtr_confirm_87",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_90",
+                "value": 0.4
+              }
+            ]
+          },
+          "avg_logprob": {
+            "n_theorems": 8,
+            "mean": 0.8369791666666666,
+            "ci": [
+              0.6572916666666666,
+              0.9791666666666666
+            ],
+            "per_theorem": [
+              {
+                "theorem_id": "dtr_confirm_117",
+                "value": 0.9166666666666666
+              },
+              {
+                "theorem_id": "dtr_confirm_21",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_215",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_235",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_237",
+                "value": 0.6
+              },
+              {
+                "theorem_id": "dtr_confirm_81",
+                "value": 0.3125
+              },
+              {
+                "theorem_id": "dtr_confirm_87",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_90",
+                "value": 0.8666666666666667
+              }
+            ]
+          },
+          "token_length": {
+            "n_theorems": 8,
+            "mean": 0.2109375,
+            "ci": [
+              0.05,
+              0.3885416666666667
+            ],
+            "per_theorem": [
+              {
+                "theorem_id": "dtr_confirm_117",
+                "value": 0.3333333333333333
+              },
+              {
+                "theorem_id": "dtr_confirm_21",
+                "value": 0.6875
+              },
+              {
+                "theorem_id": "dtr_confirm_215",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_235",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_237",
+                "value": 0.26666666666666666
+              },
+              {
+                "theorem_id": "dtr_confirm_81",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_87",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_90",
+                "value": 0.4
+              }
+            ]
+          }
+        },
+        "P4": {
+          "dtr": {
+            "n_theorems": 8,
+            "mean": 0.3895833333333333,
+            "ci": [
+              0.14583333333333331,
+              0.6666666666666666
+            ],
+            "per_theorem": [
+              {
+                "theorem_id": "dtr_confirm_117",
+                "value": 0.3333333333333333
+              },
+              {
+                "theorem_id": "dtr_confirm_21",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_215",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_235",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_237",
+                "value": 0.43333333333333335
+              },
+              {
+                "theorem_id": "dtr_confirm_81",
+                "value": 0.25
+              },
+              {
+                "theorem_id": "dtr_confirm_87",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_90",
+                "value": 0.1
+              }
+            ],
+            "interval_source": "frozen primary analysis, reused exactly"
+          },
+          "self_certainty": {
+            "n_theorems": 8,
+            "mean": 0.9098958333333333,
+            "ci": [
+              0.8213541666666666,
+              0.9765625
+            ],
+            "per_theorem": [
+              {
+                "theorem_id": "dtr_confirm_117",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_21",
+                "value": 0.8125
+              },
+              {
+                "theorem_id": "dtr_confirm_215",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_235",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_237",
+                "value": 0.6666666666666666
+              },
+              {
+                "theorem_id": "dtr_confirm_81",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_87",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_90",
+                "value": 0.8
+              }
+            ],
+            "interval_source": "frozen primary analysis, reused exactly"
+          },
+          "avg_logprob": {
+            "n_theorems": 8,
+            "mean": 0.7608630952380953,
+            "ci": [
+              0.5805059523809524,
+              0.9182291666666667
+            ],
+            "per_theorem": [
+              {
+                "theorem_id": "dtr_confirm_117",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_21",
+                "value": 0.8125
+              },
+              {
+                "theorem_id": "dtr_confirm_215",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_235",
+                "value": 0.42857142857142855
+              },
+              {
+                "theorem_id": "dtr_confirm_237",
+                "value": 0.7333333333333333
+              },
+              {
+                "theorem_id": "dtr_confirm_81",
+                "value": 0.3125
+              },
+              {
+                "theorem_id": "dtr_confirm_87",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_90",
+                "value": 0.8
+              }
+            ],
+            "interval_source": "frozen primary analysis, reused exactly"
+          },
+          "token_length": {
+            "n_theorems": 8,
+            "mean": 0.2109375,
+            "ci": [
+              0.05,
+              0.3828125
+            ],
+            "per_theorem": [
+              {
+                "theorem_id": "dtr_confirm_117",
+                "value": 0.3333333333333333
+              },
+              {
+                "theorem_id": "dtr_confirm_21",
+                "value": 0.6875
+              },
+              {
+                "theorem_id": "dtr_confirm_215",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_235",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_237",
+                "value": 0.26666666666666666
+              },
+              {
+                "theorem_id": "dtr_confirm_81",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_87",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_90",
+                "value": 0.4
+              }
+            ],
+            "interval_source": "frozen primary analysis, reused exactly"
+          }
+        }
+      },
+      "is_goal_closed": {
+        "P0": {
+          "dtr": {
+            "n_theorems": 5,
+            "mean": 0.3666666666666667,
+            "ci": [
+              0.08333333333333333,
+              0.7
+            ],
+            "per_theorem": [
+              {
+                "theorem_id": "dtr_confirm_14",
+                "value": 0.5
+              },
+              {
+                "theorem_id": "dtr_confirm_205",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_226",
+                "value": 0.08333333333333333
+              },
+              {
+                "theorem_id": "dtr_confirm_230",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_81",
+                "value": 0.25
+              }
+            ]
+          },
+          "self_certainty": {
+            "n_theorems": 5,
+            "mean": 0.1875,
+            "ci": [
+              0.0,
+              0.5625
+            ],
+            "per_theorem": [
+              {
+                "theorem_id": "dtr_confirm_14",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_205",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_226",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_230",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_81",
+                "value": 0.9375
+              }
+            ]
+          },
+          "avg_logprob": {
+            "n_theorems": 5,
+            "mean": 0.0625,
+            "ci": [
+              0.0,
+              0.1875
+            ],
+            "per_theorem": [
+              {
+                "theorem_id": "dtr_confirm_14",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_205",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_226",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_230",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_81",
+                "value": 0.3125
+              }
+            ]
+          },
+          "token_length": {
+            "n_theorems": 5,
+            "mean": 0.2,
+            "ci": [
+              0.0,
+              0.6
+            ],
+            "per_theorem": [
+              {
+                "theorem_id": "dtr_confirm_14",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_205",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_226",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_230",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_81",
+                "value": 0.0
+              }
+            ]
+          }
+        },
+        "P4": {
+          "dtr": {
+            "n_theorems": 5,
+            "mean": 0.35,
+            "ci": [
+              0.05,
+              0.7
+            ],
+            "per_theorem": [
+              {
+                "theorem_id": "dtr_confirm_14",
+                "value": 0.5
+              },
+              {
+                "theorem_id": "dtr_confirm_205",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_226",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_230",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_81",
+                "value": 0.25
+              }
+            ]
+          },
+          "self_certainty": {
+            "n_theorems": 5,
+            "mean": 0.2,
+            "ci": [
+              0.0,
+              0.6
+            ],
+            "per_theorem": [
+              {
+                "theorem_id": "dtr_confirm_14",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_205",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_226",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_230",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_81",
+                "value": 1.0
+              }
+            ]
+          },
+          "avg_logprob": {
+            "n_theorems": 5,
+            "mean": 0.0625,
+            "ci": [
+              0.0,
+              0.1875
+            ],
+            "per_theorem": [
+              {
+                "theorem_id": "dtr_confirm_14",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_205",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_226",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_230",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_81",
+                "value": 0.3125
+              }
+            ]
+          },
+          "token_length": {
+            "n_theorems": 5,
+            "mean": 0.2,
+            "ci": [
+              0.0,
+              0.6
+            ],
+            "per_theorem": [
+              {
+                "theorem_id": "dtr_confirm_14",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_205",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_226",
+                "value": 0.0
+              },
+              {
+                "theorem_id": "dtr_confirm_230",
+                "value": 1.0
+              },
+              {
+                "theorem_id": "dtr_confirm_81",
+                "value": 0.0
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "Fig4": {
+    "models": [
+      "P0",
+      "P4"
+    ],
+    "split": "D-CONFIRM",
+    "groups": {
+      "VALID_TRANSITION_delta_dtr": {
+        "n_theorems": 14,
+        "mean": 0.0466656245831666,
+        "ci": [
+          0.004525495075652641,
+          0.08267367941494781
+        ],
+        "n_tactics": 81
+      },
+      "GOALS_CLOSED_delta_dtr": {
+        "n_theorems": 7,
+        "mean": -0.030542671614100188,
+        "ci": [
+          -0.13887600494743352,
+          0.05219542362399505
+        ],
+        "n_tactics": 30
+      },
+      "INVALID_delta_dtr": {
+        "n_theorems": 11,
+        "mean": 0.0034914574185964634,
+        "ci": [
+          -0.02428995057044856,
+          0.03661074614074279
+        ],
+        "n_tactics": 49
+      },
+      "VALID_TRANSITION_delta_self_certainty": {
+        "n_theorems": 14,
+        "mean": -4.281440484435088,
+        "ci": [
+          -5.077304455465116,
+          -3.524018824182343
+        ],
+        "n_tactics": 81
+      },
+      "GOALS_CLOSED_delta_self_certainty": {
+        "n_theorems": 7,
+        "mean": -3.0893540221375306,
+        "ci": [
+          -4.239511862255278,
+          -1.8127998020483822
+        ],
+        "n_tactics": 30
+      },
+      "INVALID_delta_self_certainty": {
+        "n_theorems": 11,
+        "mean": -4.138607452228539,
+        "ci": [
+          -4.971351162362735,
+          -3.3997945288355593
+        ],
+        "n_tactics": 49
+      }
+    }
+  },
+  "appendix": {
+    "model_curves": {
+      "D-CONFIRM_P0": {
+        "bins": [
+          {
+            "mean": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ],
+            "n_tactics": 26,
+            "n_theorems": 6,
+            "x_mean": 0.03181818181818182,
+            "bin": 1,
+            "lower": 0.0,
+            "upper": 0.1111111111111111
+          },
+          {
+            "mean": 0.5483870967741935,
+            "ci": [
+              0.13793103448275862,
+              0.9285714285714286
+            ],
+            "n_tactics": 31,
+            "n_theorems": 9,
+            "x_mean": 0.14755127857594652,
+            "bin": 2,
+            "lower": 0.1111111111111111,
+            "upper": 0.2222222222222222
+          },
+          {
+            "mean": 0.6666666666666666,
+            "ci": [
+              0.32,
+              0.9459459459459459
+            ],
+            "n_tactics": 39,
+            "n_theorems": 10,
+            "x_mean": 0.25737641108681825,
+            "bin": 3,
+            "lower": 0.2222222222222222,
+            "upper": 0.3205714285714286
+          },
+          {
+            "mean": 0.7586206896551724,
+            "ci": [
+              0.48,
+              0.9142857142857143
+            ],
+            "n_tactics": 29,
+            "n_theorems": 7,
+            "x_mean": 0.3543046718770003,
+            "bin": 4,
+            "lower": 0.3205714285714286,
+            "upper": 0.4166666666666667
+          },
+          {
+            "mean": 0.5714285714285714,
+            "ci": [
+              0.24324324324324326,
+              0.9230769230769231
+            ],
+            "n_tactics": 35,
+            "n_theorems": 9,
+            "x_mean": 0.5847949759613992,
+            "bin": 5,
+            "lower": 0.4166666666666667,
+            "upper": 1.0
+          }
+        ],
+        "rho_spearman": -0.1877218199234516,
+        "edges": [
+          0.0,
+          0.1111111111111111,
+          0.2222222222222222,
+          0.3205714285714286,
+          0.4166666666666667,
+          1.0
+        ],
+        "tie_rule": "all equal values in same bin; no jitter or outcome-based edges",
+        "bin_collapse": false
+      },
+      "D-CONFIRM_P4": {
+        "bins": [
+          {
+            "mean": 0.7419354838709677,
+            "ci": [
+              0.36821052631578965,
+              1.0
+            ],
+            "n_tactics": 31,
+            "n_theorems": 7,
+            "x_mean": 0.07497597279380962,
+            "bin": 1,
+            "lower": 0.0,
+            "upper": 0.16666666666666666
+          },
+          {
+            "mean": 0.8484848484848485,
+            "ci": [
+              0.519962962962963,
+              1.0
+            ],
+            "n_tactics": 33,
+            "n_theorems": 8,
+            "x_mean": 0.20786654423018058,
+            "bin": 2,
+            "lower": 0.16666666666666666,
+            "upper": 0.23888888888888893
+          },
+          {
+            "mean": 0.5384615384615384,
+            "ci": [
+              0.21428571428571427,
+              1.0
+            ],
+            "n_tactics": 26,
+            "n_theorems": 9,
+            "x_mean": 0.28330459133626557,
+            "bin": 3,
+            "lower": 0.23888888888888893,
+            "upper": 0.3333333333333333
+          },
+          {
+            "mean": 0.631578947368421,
+            "ci": [
+              0.3333333333333333,
+              0.8787878787878788
+            ],
+            "n_tactics": 38,
+            "n_theorems": 11,
+            "x_mean": 0.3600345855464399,
+            "bin": 4,
+            "lower": 0.3333333333333333,
+            "upper": 0.4096256684491979
+          },
+          {
+            "mean": 0.6875,
+            "ci": [
+              0.3870967741935484,
+              0.9090909090909091
+            ],
+            "n_tactics": 32,
+            "n_theorems": 11,
+            "x_mean": 0.5378881684837966,
+            "bin": 5,
+            "lower": 0.4096256684491979,
+            "upper": 1.0
+          }
+        ],
+        "rho_spearman": -0.08159743529300816,
+        "edges": [
+          0.0,
+          0.16666666666666666,
+          0.23888888888888893,
+          0.3333333333333333,
+          0.4096256684491979,
+          1.0
+        ],
+        "tie_rule": "all equal values in same bin; no jitter or outcome-based edges",
+        "bin_collapse": false
+      },
+      "D-DEV_P0": {
+        "bins": [
+          {
+            "mean": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ],
+            "n_tactics": 36,
+            "n_theorems": 8,
+            "x_mean": 0.015015282869789402,
+            "bin": 1,
+            "lower": 0.0,
+            "upper": 0.1
+          },
+          {
+            "mean": 0.5405405405405406,
+            "ci": [
+              0.23684210526315788,
+              0.875
+            ],
+            "n_tactics": 37,
+            "n_theorems": 13,
+            "x_mean": 0.14341919341919346,
+            "bin": 2,
+            "lower": 0.1,
+            "upper": 0.2
+          },
+          {
+            "mean": 0.7560975609756098,
+            "ci": [
+              0.5555555555555556,
+              0.8983050847457628
+            ],
+            "n_tactics": 41,
+            "n_theorems": 14,
+            "x_mean": 0.2422516915356036,
+            "bin": 3,
+            "lower": 0.2,
+            "upper": 0.29411764705882354
+          },
+          {
+            "mean": 0.6410256410256411,
+            "ci": [
+              0.3684210526315789,
+              0.8837209302325582
+            ],
+            "n_tactics": 39,
+            "n_theorems": 11,
+            "x_mean": 0.3411811495640979,
+            "bin": 4,
+            "lower": 0.29411764705882354,
+            "upper": 0.3935897435897437
+          },
+          {
+            "mean": 0.6410256410256411,
+            "ci": [
+              0.3684210526315789,
+              0.8666666666666667
+            ],
+            "n_tactics": 39,
+            "n_theorems": 11,
+            "x_mean": 0.47247586431221433,
+            "bin": 5,
+            "lower": 0.3935897435897437,
+            "upper": 0.6
+          }
+        ],
+        "rho_spearman": -0.20680680885399644,
+        "edges": [
+          0.0,
+          0.1,
+          0.2,
+          0.29411764705882354,
+          0.3935897435897437,
+          0.6
+        ],
+        "tie_rule": "all equal values in same bin; no jitter or outcome-based edges",
+        "bin_collapse": false
+      },
+      "D-DEV_P3": {
+        "bins": [
+          {
+            "mean": 0.8378378378378378,
+            "ci": [
+              0.6060606060606061,
+              1.0
+            ],
+            "n_tactics": 37,
+            "n_theorems": 11,
+            "x_mean": 0.08219742313496518,
+            "bin": 1,
+            "lower": 0.0,
+            "upper": 0.15789473684210525
+          },
+          {
+            "mean": 0.7567567567567568,
+            "ci": [
+              0.41935483870967744,
+              1.0
+            ],
+            "n_tactics": 37,
+            "n_theorems": 12,
+            "x_mean": 0.19353498151343562,
+            "bin": 2,
+            "lower": 0.15789473684210525,
+            "upper": 0.2631578947368421
+          },
+          {
+            "mean": 0.8529411764705882,
+            "ci": [
+              0.6785714285714286,
+              0.9722222222222222
+            ],
+            "n_tactics": 34,
+            "n_theorems": 13,
+            "x_mean": 0.2847902269728895,
+            "bin": 3,
+            "lower": 0.2631578947368421,
+            "upper": 0.3333333333333333
+          },
+          {
+            "mean": 0.868421052631579,
+            "ci": [
+              0.7037037037037037,
+              0.96
+            ],
+            "n_tactics": 38,
+            "n_theorems": 13,
+            "x_mean": 0.356355829413105,
+            "bin": 4,
+            "lower": 0.3333333333333333,
+            "upper": 0.4166666666666667
+          },
+          {
+            "mean": 0.34782608695652173,
+            "ci": [
+              0.061224489795918366,
+              0.6428571428571429
+            ],
+            "n_tactics": 46,
+            "n_theorems": 11,
+            "x_mean": 0.5231583241544207,
+            "bin": 5,
+            "lower": 0.4166666666666667,
+            "upper": 0.875
+          }
+        ],
+        "rho_spearman": -0.29047988184619555,
+        "edges": [
+          0.0,
+          0.15789473684210525,
+          0.2631578947368421,
+          0.3333333333333333,
+          0.4166666666666667,
+          0.875
+        ],
+        "tie_rule": "all equal values in same bin; no jitter or outcome-based edges",
+        "bin_collapse": false
+      },
+      "D-DEV_P4": {
+        "bins": [
+          {
+            "mean": 0.6923076923076923,
+            "ci": [
+              0.325,
+              0.9444696969696966
+            ],
+            "n_tactics": 39,
+            "n_theorems": 11,
+            "x_mean": 0.06579033192745568,
+            "bin": 1,
+            "lower": 0.0,
+            "upper": 0.13766233766233768
+          },
+          {
+            "mean": 0.8484848484848485,
+            "ci": [
+              0.6,
+              0.9736842105263158
+            ],
+            "n_tactics": 33,
+            "n_theorems": 9,
+            "x_mean": 0.19995577184154958,
+            "bin": 2,
+            "lower": 0.13766233766233768,
+            "upper": 0.2857142857142857
+          },
+          {
+            "mean": 0.95,
+            "ci": [
+              0.8125,
+              1.0
+            ],
+            "n_tactics": 40,
+            "n_theorems": 13,
+            "x_mean": 0.313772696601644,
+            "bin": 3,
+            "lower": 0.2857142857142857,
+            "upper": 0.35294117647058826
+          },
+          {
+            "mean": 0.7368421052631579,
+            "ci": [
+              0.5,
+              0.9230769230769231
+            ],
+            "n_tactics": 38,
+            "n_theorems": 11,
+            "x_mean": 0.3822944975018464,
+            "bin": 4,
+            "lower": 0.35294117647058826,
+            "upper": 0.42857142857142855
+          },
+          {
+            "mean": 0.38095238095238093,
+            "ci": [
+              0.06976744186046512,
+              0.6666666666666666
+            ],
+            "n_tactics": 42,
+            "n_theorems": 11,
+            "x_mean": 0.555586319609429,
+            "bin": 5,
+            "lower": 0.42857142857142855,
+            "upper": 0.8
+          }
+        ],
+        "rho_spearman": -0.23429468843048107,
+        "edges": [
+          0.0,
+          0.13766233766233768,
+          0.2857142857142857,
+          0.35294117647058826,
+          0.42857142857142855,
+          0.8
+        ],
+        "tie_rule": "all equal values in same bin; no jitter or outcome-based edges",
+        "bin_collapse": false
+      },
+      "D-DEV_P6": {
+        "bins": [
+          {
+            "mean": 0.6571428571428571,
+            "ci": [
+              0.2916330645161291,
+              0.9473684210526315
+            ],
+            "n_tactics": 35,
+            "n_theorems": 10,
+            "x_mean": 0.1560162899789522,
+            "bin": 1,
+            "lower": 0.05263157894736842,
+            "upper": 0.2222222222222222
+          },
+          {
+            "mean": 0.8571428571428571,
+            "ci": [
+              0.7027027027027027,
+              0.975609756097561
+            ],
+            "n_tactics": 42,
+            "n_theorems": 13,
+            "x_mean": 0.25709409367611774,
+            "bin": 2,
+            "lower": 0.2222222222222222,
+            "upper": 0.31188811188811194
+          },
+          {
+            "mean": 0.8125,
+            "ci": [
+              0.5263157894736842,
+              0.96875
+            ],
+            "n_tactics": 32,
+            "n_theorems": 12,
+            "x_mean": 0.34704881877990434,
+            "bin": 3,
+            "lower": 0.31188811188811194,
+            "upper": 0.375
+          },
+          {
+            "mean": 0.5581395348837209,
+            "ci": [
+              0.28203125,
+              0.8297872340425532
+            ],
+            "n_tactics": 43,
+            "n_theorems": 12,
+            "x_mean": 0.41655755591118104,
+            "bin": 4,
+            "lower": 0.375,
+            "upper": 0.48717948717948717
+          },
+          {
+            "mean": 0.7,
+            "ci": [
+              0.43901369276850666,
+              0.8974358974358975
+            ],
+            "n_tactics": 40,
+            "n_theorems": 11,
+            "x_mean": 0.6297760436731025,
+            "bin": 5,
+            "lower": 0.48717948717948717,
+            "upper": 0.9
+          }
+        ],
+        "rho_spearman": -0.10992841636236046,
+        "edges": [
+          0.05263157894736842,
+          0.2222222222222222,
+          0.31188811188811194,
+          0.375,
+          0.48717948717948717,
+          0.9
+        ],
+        "tie_rule": "all equal values in same bin; no jitter or outcome-based edges",
+        "bin_collapse": false
+      }
+    },
+    "token_types": {
+      "P0_identifier": {
+        "n_theorems": 20,
+        "mean": 0.2990905067741457,
+        "ci": [
+          0.20420868087839034,
+          0.4087489846266861
+        ],
+        "n_tokens": 1125
+      },
+      "P0_keyword": {
+        "n_theorems": 15,
+        "mean": 0.24444444444444444,
+        "ci": [
+          0.06666666666666667,
+          0.4666666666666667
+        ],
+        "n_tokens": 94
+      },
+      "P0_numeral": {
+        "n_theorems": 9,
+        "mean": 0.7907639339213335,
+        "ci": [
+          0.6347629339067347,
+          0.9274779146764087
+        ],
+        "n_tokens": 178
+      },
+      "P0_operator": {
+        "n_theorems": 11,
+        "mean": 0.229004329004329,
+        "ci": [
+          0.08225108225108226,
+          0.41991341991341985
+        ],
+        "n_tokens": 90
+      },
+      "P0_other": {
+        "n_theorems": 14,
+        "mean": 0.16648886827458256,
+        "ci": [
+          0.056814123376623386,
+          0.32282003710575136
+        ],
+        "n_tokens": 205
+      },
+      "P0_punctuation": {
+        "n_theorems": 19,
+        "mean": 0.24860355850129218,
+        "ci": [
+          0.17554804674100993,
+          0.32339620391411245
+        ],
+        "n_tokens": 525
+      },
+      "P0_whitespace": {
+        "n_theorems": 9,
+        "mean": 0.4147428333964098,
+        "ci": [
+          0.1875746714456392,
+          0.6522411637243334
+        ],
+        "n_tokens": 105
+      },
+      "P4_identifier": {
+        "n_theorems": 20,
+        "mean": 0.25105210779507103,
+        "ci": [
+          0.17981257011105378,
+          0.3213447131178056
+        ],
+        "n_tokens": 1125
+      },
+      "P4_keyword": {
+        "n_theorems": 15,
+        "mean": 0.3111111111111111,
+        "ci": [
+          0.1111111111111111,
+          0.5555555555555555
+        ],
+        "n_tokens": 94
+      },
+      "P4_numeral": {
+        "n_theorems": 9,
+        "mean": 0.7506728377009507,
+        "ci": [
+          0.6099670433145009,
+          0.8791077242003532
+        ],
+        "n_tokens": 178
+      },
+      "P4_operator": {
+        "n_theorems": 11,
+        "mean": 0.4002164502164502,
+        "ci": [
+          0.22272727272727275,
+          0.6004329004329004
+        ],
+        "n_tokens": 90
+      },
+      "P4_other": {
+        "n_theorems": 14,
+        "mean": 0.12603973407544836,
+        "ci": [
+          0.053869047619047615,
+          0.2076691017316017
+        ],
+        "n_tokens": 205
+      },
+      "P4_punctuation": {
+        "n_theorems": 19,
+        "mean": 0.33047674104907776,
+        "ci": [
+          0.22582760680011252,
+          0.45072181652058746
+        ],
+        "n_tokens": 525
+      },
+      "P4_whitespace": {
+        "n_theorems": 9,
+        "mean": 0.36864782534488005,
+        "ci": [
+          0.125,
+          0.6289683931075937
+        ],
+        "n_tokens": 105
+      },
+      "delta_identifier": {
+        "n_theorems": 20,
+        "mean": -0.048038398979074706,
+        "ci": [
+          -0.16518965301322264,
+          0.028978626773873875
+        ]
+      },
+      "delta_keyword": {
+        "n_theorems": 15,
+        "mean": 0.06666666666666667,
+        "ci": [
+          0.0,
+          0.2
+        ]
+      },
+      "delta_numeral": {
+        "n_theorems": 9,
+        "mean": -0.04009109622038276,
+        "ci": [
+          -0.08733850129198964,
+          0.0
+        ]
+      },
+      "delta_operator": {
+        "n_theorems": 11,
+        "mean": 0.17121212121212118,
+        "ci": [
+          0.0,
+          0.37878787878787873
+        ]
+      },
+      "delta_other": {
+        "n_theorems": 14,
+        "mean": -0.0404491341991342,
+        "ci": [
+          -0.20173160173160173,
+          0.0625
+        ]
+      },
+      "delta_punctuation": {
+        "n_theorems": 19,
+        "mean": 0.0818731825477856,
+        "ci": [
+          0.017787428976576123,
+          0.16056683999644436
+        ]
+      },
+      "delta_whitespace": {
+        "n_theorems": 9,
+        "mean": -0.046095008051529794,
+        "ci": [
+          -0.125,
+          0.009661835748792265
+        ]
+      }
+    },
+    "case_panels": {
+      "V0": {
+        "candidate_id": "ff7f52db892e55a755e73815abc5c4ace46aa367992812dcdcc98723e980b9a4",
+        "full_tactic": "norm_num [IsLeast]",
+        "token_count": 6
+      },
+      "V3": {
+        "candidate_id": "221508fb4db983685e5d5e2deafa6cfe914704bcc635c5b03a388b1d1cc7d1b7",
+        "full_tactic": "have h₄ := h₃ 8 (by norm_num) ⟨by norm_num, by norm_num⟩",
+        "token_count": 24
+      }
+    },
+    "outcome_distributions": {
+      "P0_VALID_TRANSITION": {
+        "n_tactics": 81,
+        "mean": 0.23273930853680883,
+        "median": 0.25,
+        "n_theorems": 14
+      },
+      "P0_GOALS_CLOSED": {
+        "n_tactics": 30,
+        "mean": 0.4073977873977873,
+        "median": 0.2222222222222222,
+        "n_theorems": 7
+      },
+      "P0_INVALID": {
+        "n_tactics": 49,
+        "mean": 0.3083241719424453,
+        "median": 0.2727272727272727,
+        "n_theorems": 11
+      },
+      "P4_VALID_TRANSITION": {
+        "n_tactics": 81,
+        "mean": 0.28023103411132305,
+        "median": 0.25,
+        "n_theorems": 14
+      },
+      "P4_GOALS_CLOSED": {
+        "n_tactics": 30,
+        "mean": 0.3283357383357383,
+        "median": 0.24444444444444444,
+        "n_theorems": 7
+      },
+      "P4_INVALID": {
+        "n_tactics": 49,
+        "mean": 0.30397388204293574,
+        "median": 0.3,
+        "n_theorems": 11
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "seed": 2,
+  "selection": "Uniform seeded choice among complete confirmation P4 candidates by observed validity only; never JSD, DTR or appearance",
+  "V0": {
+    "theorem_id": "dtr_confirm_21",
+    "state_id": "d4d36666a343af982dd1ceeb56686c18b01bfadcb7c60a517b4638c827bd9c79",
+    "candidate_id": "ff7f52db892e55a755e73815abc5c4ace46aa367992812dcdcc98723e980b9a4",
+    "model": "P4",
+    "split": "D-CONFIRM",
+    "tactic_text": "norm_num [IsLeast]",
+    "token_length": 6,
+    "dtr": 0.5,
+    "self_certainty": 17.88939158121745,
+    "avg_logprob": -0.7485119745858052,
+    "negative_entropy": -0.15413884745794348,
+    "lean_status": "VALID_TRANSITION",
+    "is_valid_transition": 1,
+    "is_goal_closed": 0,
+    "token_count_used_in_dtr": 6,
+    "deep_token_count": 3,
+    "generation_origin": "P4",
+    "measurement": "natural P4",
+    "seed": 13
+  },
+  "V3": {
+    "theorem_id": "dtr_confirm_189",
+    "state_id": "a2c79851cd7ef6a768fabeecacbc2487f24372e6ef82fac26e505e3477e6538d",
+    "candidate_id": "221508fb4db983685e5d5e2deafa6cfe914704bcc635c5b03a388b1d1cc7d1b7",
+    "model": "P4",
+    "split": "D-CONFIRM",
+    "tactic_text": "have h₄ := h₃ 8 (by norm_num) ⟨by norm_num, by norm_num⟩",
+    "token_length": 24,
+    "dtr": 0.25,
+    "self_certainty": 20.45095721880595,
+    "avg_logprob": -0.12047900966288576,
+    "negative_entropy": -0.05733398427733921,
+    "lean_status": "INVALID",
+    "is_valid_transition": 0,
+    "is_goal_closed": 0,
+    "token_count_used_in_dtr": 24,
+    "deep_token_count": 6,
+    "generation_origin": "P4",
+    "measurement": "natural P4",
+    "seed": 5
+  },
+  "V1": {
+    "status": "NOT_APPLICABLE",
+    "reason": "No independently generated P0 candidate pool. Same tactic on same Lean state has model-invariant verdict; replay cannot supply P0-valid/P4-invalid outcomes.",
+    "fallback": "V3 used for main invalid row"
+  },
+  "V2": {
+    "status": "NOT_APPLICABLE",
+    "reason": "No independently generated P0 candidates; cannot assign different verdicts to identical replayed tokens.",
+    "fallback": "V0 used for main valid row"
+  }
+}

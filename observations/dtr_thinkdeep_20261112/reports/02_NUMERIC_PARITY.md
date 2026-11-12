@@ -1,0 +1,117 @@
+# 02_NUMERIC_PARITY.md
+
+```json
+{
+  "status": "PASS",
+  "native": {
+    "status": "PASS",
+    "records": [
+      {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "top1": true
+      },
+      {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "top1": true
+      },
+      {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "top1": true
+      },
+      {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "top1": true
+      },
+      {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "top1": true
+      },
+      {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "top1": true
+      },
+      {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "top1": true
+      },
+      {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "top1": true
+      },
+      {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "top1": true
+      },
+      {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "top1": true
+      },
+      {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "top1": true
+      },
+      {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "top1": true
+      },
+      {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "top1": true
+      },
+      {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "top1": true
+      },
+      {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "top1": true
+      },
+      {
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "top1": true
+      }
+    ],
+    "probe_sha": "4a18fcac5f6ec42b0af53327ae4b0b6fdc1ee580b2eb3aaddea901951b1937e6"
+  },
+  "checks": [
+    {
+      "lens_max_abs": 0.0,
+      "lens_mean_abs": 0.0,
+      "jsd_fp64_abs_error": 3.1934280775303137e-09
+    },
+    {
+      "lens_max_abs": 0.0,
+      "lens_mean_abs": 0.0,
+      "jsd_fp64_abs_error": 2.409184012286403e-07
+    },
+    {
+      "lens_max_abs": 0.0,
+      "lens_mean_abs": 0.0,
+      "jsd_fp64_abs_error": 1.385607960591173e-07
+    },
+    {
+      "lens_max_abs": 0.0,
+      "lens_mean_abs": 0.0,
+      "jsd_fp64_abs_error": 2.961359543141029e-07
+    }
+  ],
+  "path": "batch1 full prefix noKV; exact pre-next-token replay",
+  "future_inclusive_matrix": "NOT_USED_BF16_SHAPE_SENSITIVITY"
+}
+```

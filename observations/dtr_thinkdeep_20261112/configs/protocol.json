@@ -1,0 +1,43 @@
+{
+  "model": "REAL-Prover-v1",
+  "models": [
+    "P4",
+    "P0"
+  ],
+  "layers": 28,
+  "g": 0.5,
+  "rho": 0.85,
+  "cutoff": 24,
+  "jsd_unit": "nats",
+  "primary_lens": "final RMSNorm then same lm_head each layer",
+  "raw_lens": "secondary all layers unnormalized",
+  "sampling_temperature": 1.5,
+  "top_p": 0.9,
+  "max_new_tokens": 48,
+  "production_max_tokens": 256,
+  "seeds": [
+    2,
+    3,
+    5,
+    7,
+    11,
+    13,
+    17,
+    19
+  ],
+  "pool_size": 8,
+  "token_rule": "generated tactic IDs excluding EOS; whitespace retained; EOS/whitespace sensitivity reported",
+  "primary": "P4 theorem-macro within-state concordance DTR minus SelfCertainty",
+  "bootstrap": 10000,
+  "seed": 2,
+  "alpha": 0.05,
+  "min_clusters": 20,
+  "intermediate_states": "NOT_RUN_TIME_BUDGET",
+  "P0_natural_generation": "NOT_RUN_TIME_BUDGET; P0 matched replay only",
+  "training": false,
+  "deadline_utc": "2026-11-12T07:11:00+00:00",
+  "GPU_uuid": "GPU-0be33c78-9cb8-bf7d-3dcd-6e702d14dbf0",
+  "runtime": "full-prefix batch1 noKV; before-token state",
+  "Lean_heartbeats_raw": 200000000,
+  "Lean_response_wall_s": 20
+}
