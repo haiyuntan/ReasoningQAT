@@ -1,0 +1,27 @@
+{
+  "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P1/eval_model",
+  "files": [
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P1/eval_model/model-00001-of-00004.safetensors",
+      "size": 4877660776,
+      "sha256": "16465c475c2322fbacb44158eaaba7829f429b17c02c1aaf6001352b2e46d086"
+    },
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P1/eval_model/model-00002-of-00004.safetensors",
+      "size": 4932751008,
+      "sha256": "1d9e89fc6a7fc21be8abcb02febdab630cd7bd19ae0e1c915a822bb00c4398f8"
+    },
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P1/eval_model/model-00003-of-00004.safetensors",
+      "size": 4330865200,
+      "sha256": "d3640a2f5e2e3b13c82e1a53a9b6eda76dc57fb8db757f80499a8159c7fe0c6b"
+    },
+    {
+      "path": "/XYFS01/HDD_POOL/sysu_qling/sysu_qling_3/tan/Reasoning/runs/realprover_formal_four_gpu_v16/formal/P1/eval_model/model-00004-of-00004.safetensors",
+      "size": 1089994880,
+      "sha256": "51437ff72d3506924876b22f775dcf20702276381d58973ac937d870dc2cc12e"
+    }
+  ],
+  "checkpoint_sha": "818c1979b5c1c9bff67a9df97a92ff820e37fefabb2cf8d64a2d699603b63a58",
+  "export_sha": "c9051e1ba9e163962a52bce2d3a9f391e3274dff148e55ab8d3c66ba3275f056"
+}

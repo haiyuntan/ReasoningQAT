@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "layout": "paper Fig1 | paper Fig2 / P0 BF16 | P1 W2G128",
+  "selected_quantized_model": "P1",
+  "reason": "Paired measurements of identical prompt and generated token sequence.",
+  "candidate_id": "15389a81c259188fe4a4fa1a0a671cec31afc5ef9e2fa246bf2699c94c8889b1",
+  "input_sha256": {
+    "DTR_source_Fig1.pdf": "a5f3f20a35b92ced9c38d36509891f64ae1e71f8c8a5bc92f9e5ef31353e1bd1",
+    "DTR_source_Fig2.pdf": "967eb24b997ac352bf1545bcfa3c7bb163100aa9c15eb2c0fc38b0ca45a6f536",
+    "Fig2_REALProver_P0_paper_style.pdf": "17b85231e9a82fd92cb921de83d25170ec27af002632fe63234a1fd4f150522a",
+    "Fig2_REALProver_P1_paper_style.pdf": "e3ddac29cd436bc4e5743beb55adf95732f7ede0cea9ce2dd0e7ecc3951e16a8"
+  },
+  "same_token_pairing": true,
+  "P0_measurement": "same-token replay of P4-generated tactic",
+  "generation_origin": "P4",
+  "quantized_measurement": "same-token P1 replay",
+  "display_units": "bits; frozen primary metrics remain nats",
+  "source_paper": "https://arxiv.org/pdf/2602.13517v2",
+  "changes": "Composition and minimal panel identifiers only; vector panels kept in original proportions.",
+  "output_sha256": {
+    "png": "72c66ad46a6f00904afdef59923ddd7eb68ff37b8ece8a570ac29991acfb500e",
+    "pdf": "a421f847c0ef88a0914df67341c499b90ed874b08f8d432cab8a2dd623a926a7"
+  },
+  "script_sha256": "45f23b3b440fb3357009e69909e1397e0ba8adc67f8113c3099966284f89230e",
+  "P1_measurement_sha256": "64b547a32d2cfa6fe35663783bb72232641fe21b128b45f0b0e48539033edff6",
+  "P1_checkpoint_manifest_sha256": "b8915a90288f2bb676caa7c499d52d1111c7b305a62d7c99e1456814f0d2a941"
+}

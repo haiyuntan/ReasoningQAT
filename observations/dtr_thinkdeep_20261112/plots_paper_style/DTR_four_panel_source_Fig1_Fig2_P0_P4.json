@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "layout": "paper Fig1 | paper Fig2 / P0 BF16 | P4 W2G128",
+  "selected_quantized_model": "P4",
+  "reason": "Complete paired layerwise measurements already exist for P0/P4 on identical tokens; no P1 measurement for this case.",
+  "candidate_id": "15389a81c259188fe4a4fa1a0a671cec31afc5ef9e2fa246bf2699c94c8889b1",
+  "input_sha256": {
+    "DTR_source_Fig1.pdf": "a5f3f20a35b92ced9c38d36509891f64ae1e71f8c8a5bc92f9e5ef31353e1bd1",
+    "DTR_source_Fig2.pdf": "967eb24b997ac352bf1545bcfa3c7bb163100aa9c15eb2c0fc38b0ca45a6f536",
+    "Fig2_REALProver_P0_paper_style.pdf": "17b85231e9a82fd92cb921de83d25170ec27af002632fe63234a1fd4f150522a",
+    "Fig2_REALProver_P4_paper_style.pdf": "5b61ffb37719c9ec60c7f1623092178891a8979dbb1ea163f538767b1adf6f3c"
+  },
+  "same_token_pairing": true,
+  "P0_measurement": "same-token replay of P4-generated tactic",
+  "P4_measurement": "natural P4 generation",
+  "display_units": "bits; frozen primary metrics remain nats",
+  "source_paper": "https://arxiv.org/pdf/2602.13517v2",
+  "changes": "Composition and minimal panel identifiers only; vector panels kept in original proportions.",
+  "output_sha256": {
+    "png": "e08fd6ab6ff39b08fa0f1d86bf21e29db0a00ec0d1de9dd9a390f0f9cc52665c",
+    "pdf": "32c70b9e3b1a90195dac466b3edf64c25186c5a8186bac46761f499fc8e29ab8"
+  },
+  "script_sha256": "ae3392dc55f5422af2525ac66da95ff6f7723f34c069332b19a634d0f1bf17d8"
+}

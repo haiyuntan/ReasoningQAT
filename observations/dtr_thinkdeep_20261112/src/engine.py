@@ -2,13 +2,13 @@ import torch,time,math
 from common import *
 from dtr import jsd,certainty
 class Engine:
-    def __init__(self,name):
+    def __init__(self,name,inventory=None):
         from transformers import AutoTokenizer,AutoModelForCausalLM
         assert torch.cuda.device_count()==1;self.name=name
         torch.set_num_threads(2);torch.manual_seed(2);torch.use_deterministic_algorithms(True)
         torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cudnn.allow_tf32=False
         torch.cuda.set_per_process_memory_fraction(.80)
-        self.inventory=read(W/'manifests/models.json');path=self.inventory[name]['path']
+        self.inventory=read(W/'manifests/models.json') if inventory is None else inventory;path=self.inventory[name]['path']
         self.tokenizer=AutoTokenizer.from_pretrained(self.inventory['P0']['path'],local_files_only=True)
         self.model=AutoModelForCausalLM.from_pretrained(path,local_files_only=True,torch_dtype=torch.bfloat16,attn_implementation='eager').to('cuda').eval();self.model.requires_grad_(False)
         ids=self.model.generation_config.eos_token_id;self.eos=set(ids if isinstance(ids,list) else [ids]);self.hidden={};self.hooks=[]
